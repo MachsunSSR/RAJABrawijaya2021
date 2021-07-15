@@ -14,7 +14,7 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
+        'guard' => 'api',
         'passwords' => 'users',
     ],
 
@@ -42,8 +42,8 @@ return [
         ],
 
         'api' => [
-            'driver' => 'token',
-            'provider' => 'users',
+            'driver' => 'jwt',
+            'provider' => 'mahasiswa',
             'hash' => false,
         ],
     ],
@@ -70,7 +70,10 @@ return [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
-
+        'mahasiswa' => [
+            'driver' => 'eloquent',
+            'model' => App\Entity\Mahasiswa::class,
+        ]
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
