@@ -10,10 +10,3 @@ Route::group(['prefix' => 'superteam', 'namespace' => 'Superteam', 'name' => 'su
         });
     });
 });
-
-Route::get('/', function() {
-    return 'nothing here!!';
-});
-Route::get('/{any}', function() {
-    return 'nothing here!!';
-});
