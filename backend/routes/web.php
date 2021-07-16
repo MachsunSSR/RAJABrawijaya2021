@@ -8,6 +8,8 @@ Route::group(['prefix' => 'superteam', 'namespace' => 'Superteam', 'name' => 'su
         Route::get('/', function () {
             return view('pages/dashboard');
         });
+
+        Route::resource('access', 'AccessManagementController')->except('show');
     });
 });
 
