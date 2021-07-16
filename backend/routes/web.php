@@ -4,9 +4,16 @@ Route::group(['prefix' => 'superteam', 'namespace' => 'Superteam', 'name' => 'su
     Route::get('login', 'AuthController@loginView');
     Route::post('login', 'AuthController@loginProcess');
     Route::get('logout', 'AuthController@logout');
-    Route::middleware('auth:web', function () {
+    Route::group(['middleware' => 'auth:web'], function () {
         Route::get('/', function () {
             return view('pages/dashboard');
         });
     });
+});
+
+Route::get('/', function() {
+    return 'nothing here!!';
+});
+Route::get('/{any}', function() {
+    return 'nothing here!!';
 });
