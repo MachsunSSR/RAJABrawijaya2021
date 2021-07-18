@@ -14,7 +14,7 @@
     <title>Raport Penilaian RAJA Brawijaya</title>
 
     @if(Session::has('raport_file'))
-    <meta http-equiv="refresh" content="3;url={{ Session::get('raport_file') }}">
+        <meta http-equiv="refresh" content="1;url={{ Session::get('raport_file') }}">
     @endif
 </head>
 
