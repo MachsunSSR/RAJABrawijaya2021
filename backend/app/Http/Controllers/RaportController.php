@@ -17,21 +17,26 @@ class RaportController extends Controller
     }
 
     public function action(Request $request) {
-        $nim = $request->input('nim');
-        $angkatan = $request->input('angkatan');
-
-        $raport = Raport::where('nim', $nim)->first();
-        if (!$raport) {
-            $maba = Maba20::with(['penugasan', 'presensiOh'])->where('nim', $nim)->first();
-            if (!$maba) {
-                return back()->with('failed_message', 'Mohon maaf data anda tidak ditemukan');
+        try {
+            $nim = $request->input('nim');
+            $angkatan = $request->input('angkatan');
+            
+            $raport = Raport::where('nim', $nim)->first();
+            if (!$raport) {
+                $maba = Maba20::with(['penugasan', 'presensiOh'])->where('nim', $nim)->first();
+                if (!$maba) {
+                    return back()->with('failed_message', 'Mohon maaf data anda tidak ditemukan');
+                }
+                
+                $raport = $this->generateRaport2020($nim, $maba);
             }
-
-            $raport = $this->generateRaport2020($nim, $maba);
+            
+            session()->flash('raport_file', asset('assets/raport/pdf/2020/'.$raport->file));
+            return back()->with('success_message', 'Berhasil mengunduh raport kamu');
+        } catch (Throwable $e) {
+            return back()->with('failed_message', 'Terjadi kesalahan, silahkan hubungi kontak yang tertulis pada informasi!');
         }
-
-        session()->flash('raport_file', asset('assets/raport/pdf/2020/'.$raport->file));
-        return back()->with('success_message', 'Berhasil mengunduh raport kamu');
+        
     }
 
     private function generateRaport2020($nim, $data) {
@@ -102,7 +107,7 @@ class RaportController extends Controller
 
 
         if ($data->presensiOh) $presensi['oh'] = 100;
-        
+
         $pdf->SetXY(177, 210);
         $pdf->Write(0, $presensi['oh']);
 
