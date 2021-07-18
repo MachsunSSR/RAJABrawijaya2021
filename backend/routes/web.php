@@ -1,5 +1,9 @@
 <?php
 
+Route::get('raport', 'RaportController@index');
+Route::post('raport', 'RaportController@action');
+
+
 Route::group(['prefix' => 'superteam', 'namespace' => 'Superteam', 'name' => 'superteam.'], function () {
     Route::get('login', 'AuthController@loginView');
     Route::post('login', 'AuthController@loginProcess');
