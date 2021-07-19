@@ -37,11 +37,11 @@ const routes = [
         name: "Crisis Center",
         routes: [
             {
-                path: "app/pengumuman",
+                path: "pengumuman",
                 name: "Pengumuman",
             },
             {
-                path: "app/laporan-kendala",
+                path: "laporan-kendala",
                 name: "Laporan Kendala",
             },
         ],
