@@ -1,17 +1,17 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
-body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-        "Helvetica Neue", sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+@layer base {
+	h1 {
+		@apply text-2xl font-bold;
+	}
+	h2 {
+		@apply text-xl;
+	}
+	.btn-primary {
+		@apply px-4 py-2 text-deepBlue border-2 bg-white border-deepBlue hover:bg-deepBlue hover:text-white rounded-2 transition-all duration-1000 ease-in-out;
+	}
 }
 
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-        monospace;
-}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSwwQkFBQTtBQUNBLGdDQUFnQztBQUNoQywrQkFBc0I7O0FBRXRCO0NBQ0M7RUFDQyx5QkFBeUI7Q0FDMUI7Q0FDQTtFQUNDLGNBQWM7Q0FDZjtDQUNEO0VBQ0Usc0pBQXNKO0NBQ3ZKO0FBQ0QiLCJmaWxlIjoiaW5kZXguY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLyogQHRhaWx3aW5kIGJhc2U7XHJcbkB0YWlsd2luZCBjb21wb25lbnRzO1xyXG5AdGFpbHdpbmQgdXRpbGl0aWVzOyAqL1xyXG5AaW1wb3J0ICd0YWlsd2luZGNzcy9iYXNlJztcclxuQGltcG9ydCAndGFpbHdpbmRjc3MvY29tcG9uZW50cyc7XHJcbkBpbXBvcnQgJ3RhaWx3aW5kY3NzL3V0aWxpdGllcyc7XHJcbiJdfQ== */
