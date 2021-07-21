@@ -16,32 +16,34 @@ function Layout() {
     }, [location]);
 
     return (
-        <div
-            className={`flex h-screen bg-gray-50 dark:bg-gray-900 ${
-                isSidebarOpen && "overflow-hidden"
-            }`}
-        >
-            <Sidebar />
+        <div>
+            <div
+                className={`flex h-screen bg-gray-50 dark:bg-gray-900 ${
+                    isSidebarOpen && "overflow-hidden"
+                }`}
+            >
+                <Sidebar />
 
-            <div className="flex flex-col flex-1 w-full">
-                <Header />
-                <Main>
-                    <Switch>
-                        {routes.map((route, i) => {
-                            return route.component ? (
-                                <Route
-                                    key={i}
-                                    exact={true}
-                                    path={`/app${route.path}`}
-                                    render={(props) => (
-                                        <route.component {...props} />
-                                    )}
-                                />
-                            ) : null;
-                        })}
-                        <Redirect exact from="/app" to="/app/dashboard" />
-                    </Switch>
-                </Main>
+                <div className="flex flex-col flex-1 w-full">
+                    <Header />
+                    <Main>
+                        <Switch>
+                            {routes.map((route, i) => {
+                                return route.component ? (
+                                    <Route
+                                        key={i}
+                                        exact={true}
+                                        path={`/app${route.path}`}
+                                        render={(props) => (
+                                            <route.component {...props} />
+                                        )}
+                                    />
+                                ) : null;
+                            })}
+                            <Redirect exact from="/app" to="/app/dashboard" />
+                        </Switch>
+                    </Main>
+                </div>
             </div>
         </div>
     );

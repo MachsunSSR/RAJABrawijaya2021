@@ -31,7 +31,7 @@ export default function Navbar() {
                 {/* <!-- Search input --> */}
                 <span></span>
                 <ul
-                    className="flex items-center flex-shrink-0 space-x-6 cursor-pointer hover:bg-gray-200 px-4 py-2 rounded transition-bg duration-200"
+                    className="flex items-center flex-shrink-0 space-x-6 cursor-pointer hover:shadow-md px-4 py-2 rounded transition-bg duration-200"
                     key={isProfileMenuOpen.toString()}
                     onClick={handleProfileClick}
                 >

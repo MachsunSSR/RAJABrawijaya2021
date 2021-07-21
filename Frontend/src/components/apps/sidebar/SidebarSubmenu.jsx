@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Transition } from "@windmill/react-ui";
+import * as Icons from "../../../icons";
+import { DropdownIcon } from "../../../icons";
+
+function Icon({ icon, ...props }) {
+    const Icon = Icons[icon];
+    return <Icon {...props} />;
+}
 
 export default function SidebarSubmenu({ route }) {
     const [isDropdownMenuOpen, setIsDropdownMenuOpen] = useState(false);
@@ -12,19 +19,19 @@ export default function SidebarSubmenu({ route }) {
     return (
         <li className="relative px-6 py-3" key={route.name}>
             <button
-                className="inline-flex items-center justify-between w-full text-sm font-semibold transition-colors "
+                className="inline-flex items-center justify-between w-full text-base font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                 onClick={handleDropdownMenuClick}
                 aria-haspopup="true"
             >
-                <span className="inline-flex items-center justify-between w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
-                    {/* <Icon
+                <span className="inline-flex items-center ">
+                    <Icon
                         className="w-5 h-5"
                         aria-hidden="true"
                         icon={route.icon}
-                    /> */}
+                    />
                     <span className="ml-4">{route.name}</span>
                 </span>
-                {/* <DropdownIcon className="w-4 h-4" aria-hidden="true" /> */}
+                <DropdownIcon className="w-4 h-4" aria-hidden="true" />
             </button>
             <Transition
                 show={isDropdownMenuOpen}
@@ -41,7 +48,7 @@ export default function SidebarSubmenu({ route }) {
                 >
                     {route.routes.map((r) => (
                         <NavLink
-                            className="px-4 py-2 transition-colors duration-150 hover:text-white hover:bg-purple-600 rounded cursor-pointer"
+                            className="px-4 py-2 transition-colors duration-150 hover:text-white hover:bg-purple-600 rounded cursor-pointer mb-2"
                             key={r.name}
                             to={r.path}
                             activeClassName="text-white bg-purple-600 rounded"
