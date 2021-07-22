@@ -2,8 +2,50 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+@font-face {
+   font-family: 'Batavia Glamore NORMAL';
+   src: url('./assets/fonts/BataviaGlamoreNORMAL-Regular.woff2') format('woff2'),
+       url('./assets/fonts/BataviaGlamoreNORMAL-Regular.woff') format('woff'),
+       url('./assets/fonts/BataviaGlamoreNORMAL-Regular.ttf') format('truetype');
+   font-weight: normal;
+   font-style: normal;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: 'Batavia Glamore NORMAL';
+   src: url('./assets/fonts/BataviaGlamoreNORMALITALIC-Ital.woff2') format('woff2'),
+       url('./assets/fonts/BataviaGlamoreNORMALITALIC-Ital.woff') format('woff'),
+       url('./assets/fonts/BataviaGlamoreNORMALITALIC-Ital.ttf') format('truetype');
+   font-weight: normal;
+   font-style: italic;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: 'Batavia Glamore';
+   src: url('./assets/fonts/BataviaGlamoreBOLD-Bold.woff2') format('woff2'),
+       url('./assets/fonts/BataviaGlamoreBOLD-Bold.woff') format('woff'),
+       url('./assets/fonts/BataviaGlamoreBOLD-Bold.ttf') format('truetype');
+   font-weight: bold;
+   font-style: normal;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: 'Batavia Glamore';
+   src: url('./assets/fonts/BataviaGlamoreBOLDITALIC-BoldIt.woff2') format('woff2'),
+       url('./assets/fonts/BataviaGlamoreBOLDITALIC-BoldIt.woff') format('woff'),
+       url('./assets/fonts/BataviaGlamoreBOLDITALIC-BoldIt.ttf') format('truetype');
+   font-weight: bold;
+   font-style: italic;
+   font-display: swap;
+}
+
+
+
 @layer base {
-	h1 {
+	h1{
 		@apply text-2xl font-bold;
 	}
 	h2 {
@@ -12,6 +54,28 @@
 	.btn-primary {
 		@apply px-4 py-2 text-deepBlue border-2 bg-white border-deepBlue hover:bg-deepBlue hover:text-white rounded-2 transition-all duration-1000 ease-in-out;
 	}
+	.links {
+		@apply text-lg text-white;
+	}
+   .batavia{
+      @apply font-pro;
+   }
 }
 
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSwwQkFBQTtBQUNBLGdDQUFnQztBQUNoQywrQkFBc0I7O0FBRXRCO0NBQ0M7RUFDQyx5QkFBeUI7Q0FDMUI7Q0FDQTtFQUNDLGNBQWM7Q0FDZjtDQUNEO0VBQ0Usc0pBQXNKO0NBQ3ZKO0FBQ0QiLCJmaWxlIjoiaW5kZXguY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLyogQHRhaWx3aW5kIGJhc2U7XHJcbkB0YWlsd2luZCBjb21wb25lbnRzO1xyXG5AdGFpbHdpbmQgdXRpbGl0aWVzOyAqL1xyXG5AaW1wb3J0ICd0YWlsd2luZGNzcy9iYXNlJztcclxuQGltcG9ydCAndGFpbHdpbmRjc3MvY29tcG9uZW50cyc7XHJcbkBpbXBvcnQgJ3RhaWx3aW5kY3NzL3V0aWxpdGllcyc7XHJcbiJdfQ== */
+.rec.rec-arrow {
+	border-radius: 0;
+	background-color: #fc6238;
+	width: fit-content;
+	min-width: 2px;
+	line-height: inherit;
+	height: 100%;
+	padding: 0;
+}
+
+.rec.rec-dot_active{
+   background-color: #fc6238;
+   box-shadow: none;
+}
+
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSwwQkFBQTtBQUNBLGdDQUFnQztBQUNoQywrQkFBc0I7O0FBRXRCO0NBQ0M7RUFDQyxvQ0FBeUI7Q0FDMUI7Q0FDQTtFQUNDLGNBQWM7Q0FDZjtDQUNEO0VBQ0Usc0pBQXNKO0NBQ3ZKO0NBQ0Q7RUFDRSx5QkFBeUI7Q0FDMUI7QUFDRDs7QUFFQTtDQUNDLGdCQUFnQjtDQUNoQix5QkFBeUI7Q0FDekIsa0JBQWtCO0NBQ2xCLGNBQWM7Q0FDZCxvQkFBb0I7Q0FDcEIsWUFBWTtDQUNaLFVBQVU7QUFDWDs7QUFFQTtHQUNHLHlCQUF5QjtHQUN6QixnQkFBZ0I7QUFDbkIiLCJmaWxlIjoiaW5kZXguY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLyogQHRhaWx3aW5kIGJhc2U7XHJcbkB0YWlsd2luZCBjb21wb25lbnRzO1xyXG5AdGFpbHdpbmQgdXRpbGl0aWVzOyAqL1xyXG5AaW1wb3J0ICd0YWlsd2luZGNzcy9iYXNlJztcclxuQGltcG9ydCAndGFpbHdpbmRjc3MvY29tcG9uZW50cyc7XHJcbkBpbXBvcnQgJ3RhaWx3aW5kY3NzL3V0aWxpdGllcyc7XHJcbiJdfQ== */

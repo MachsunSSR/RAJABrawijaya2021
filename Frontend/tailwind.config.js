@@ -3,7 +3,10 @@ module.exports = {
 	darkMode: false, // or 'media' or 'class'
 	theme: {
 		extend: {
-			backgroundImage: (theme) => ({}),
+			backgroundImage: (theme) => ({
+				'jumbotron-bg': "url('/src/assets/jumbotronDummy.svg')",
+				'sekilas1-bg': "url('/src/assets/sekilasDummy.svg')",
+			}),
 		},
 		screens: {
 			xs: { min: '0px', max: '639px' },
@@ -40,6 +43,7 @@ module.exports = {
 			pink: '#FF97C5',
 			midRed: '#FF5768',
 			midYellow: '#FFBF65',
+			purpleMaghrib: '#452B48',
 		},
 		spacing: {
 			px: '1px',
@@ -147,7 +151,8 @@ module.exports = {
 			default: '1',
 		},
 		fontFamily: {
-			sans: ['Work Sans', 'sans-serif'],
+			sans: ['Poppins', 'sans-serif'],
+         pro: ['Batavia Glamore']
 		},
 		fontSize: {
 			xs: '0.75rem',
@@ -162,6 +167,9 @@ module.exports = {
 			'6xl': '3rem',
 			'7xl': '3.75rem',
 			'8xl': '4rem',
+         'jumbotronlg' : '6.5rem',
+         'jumbotronmd' : '5rem',
+         'jumbotronsm' : '4.5rem',
 		},
 		fontWeight: {
 			hairline: '100',
@@ -228,15 +236,20 @@ module.exports = {
 			'5xl': '64rem',
 			'6xl': '72rem',
 			full: '100%',
+			xsScreen: '270px',
+			
 		},
 		minHeight: {
 			0: '0',
 			full: '100%',
 			screen: '100vh',
+			section: '90vh',
+         cards: '270px',
 		},
 		minWidth: {
 			0: '0',
 			full: '100%',
+         cards: '270px',
 		},
 		objectPosition: {
 			bottom: 'bottom',

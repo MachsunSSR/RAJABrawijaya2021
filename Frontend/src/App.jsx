@@ -1,16 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
-
-const ContainerTest = styled.div`
-	/* padding: 20rem; */
-	border: 1px solid red;
-`;
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Landing from './pages/Landing';
+import Navbar from './components/Navbar';
+import Galeri from './pages/Galeri';
+import AdhikaraInfo from './pages/AdhikaraInfo';
+import Faq from './pages/Faq';
 
 export default function App() {
 	return (
-		<ContainerTest className="p-[100px] border-2 border-midPink text-lightblue">
-			<h1>tes</h1>
-			<button className="btn-primary">clickme</button>
-		</ContainerTest>
+		<>
+			<Router>
+				<Navbar />
+				<Switch>
+					<Route exact path={'/'} component={Landing} />
+					<Route path={'/galeri'} component={Galeri} />
+					<Route path={'/adhikara-info'} component={AdhikaraInfo} />
+					<Route path={'/faq'} component={Faq} />
+				</Switch>
+			</Router>
+		</>
 	);
 }
