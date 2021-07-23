@@ -1,5 +1,11 @@
+.visual1{
+   position: absolute;
+   width: 100%;
+   top: 0;
+   max-width: 180px;
+}
 
-.sekilasTextHeading{
+.rangkaianTextHeading{
    position: relative;
    top: 25px;
    padding-left: 15px;
@@ -15,7 +21,7 @@
 }
 
 
-.sekilasHeadline{
+.rangkaianHeadline{
    font-size: 2.5rem;
 
    @media only screen and (min-width: 600px) {
@@ -31,18 +37,13 @@
    }
 }
 
-.box{
-   width: 50px;
-   height: 50px;
-   background-color: #452B48;
-   position: absolute;
-   top: 0;
-}
 
-.visual1{
-   // border: 1px solid red;
-   position: absolute;
-   bottom: 0;
-   width: 100%;
-   max-width: 180px;
+.line{
+   height: 8px;
+   width: 300px;
+   display: none;
+   background-color: #FC6238;
+   @media only screen and (min-width: 768px) {
+      display: block;
+   }
 }

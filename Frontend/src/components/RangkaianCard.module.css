@@ -1,0 +1,15 @@
+.rangkaianCard {
+  width: 300px;
+  height: 400px;
+  background-color: orange;
+}
+.rangkaianCard .cardDetail {
+  height: 70px;
+  width: 100%;
+  background-color: orangered;
+  transition: all 0.3s;
+}
+.rangkaianCard .cardDetail:hover {
+  height: 100%;
+  padding: 2rem;
+}/*# sourceMappingURL=RangkaianCard.module.css.map */

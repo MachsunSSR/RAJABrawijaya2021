@@ -1,0 +1,34 @@
+.cardAnimations{
+   cursor: pointer;
+   position: relative;
+   transition: all .3s;
+   background-size: 100%;
+   &::before {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		width: 0;
+		height: 100%;
+      z-index: 2;
+		background-color: #FC6238;
+      mix-blend-mode: multiply;
+     
+		transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+	}
+   &:hover{
+      // transform: scale(1.2);
+      background-size: 110%;
+   }
+
+	&:hover::before {
+		left: 0;
+		right: auto;
+		width: 100%;
+	}
+}
+.cardText{
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+}

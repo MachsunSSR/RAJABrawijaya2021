@@ -1,5 +1,50 @@
 .sekilasTextHeading {
   position: relative;
-  top: 50px;
-  z-index: 2;
+  top: 25px;
+  padding-left: 15px;
+  z-index: 3;
+}
+@media only screen and (min-width: 690px) {
+  .sekilasTextHeading {
+    top: 50px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .sekilasTextHeading {
+    top: 60px;
+  }
+}
+
+.sekilasHeadline {
+  font-size: 2.5rem;
+}
+@media only screen and (min-width: 600px) {
+  .sekilasHeadline {
+    font-size: 3.9rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .sekilasHeadline {
+    font-size: 4.9rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .sekilasHeadline {
+    font-size: 5.9rem;
+  }
+}
+
+.box {
+  width: 50px;
+  height: 50px;
+  background-color: #452B48;
+  position: absolute;
+  top: 0;
+}
+
+.visual1 {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  max-width: 180px;
 }/*# sourceMappingURL=Sekilas.module.css.map */

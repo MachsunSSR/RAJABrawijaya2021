@@ -60,4 +60,25 @@
   .menuIcon:hover span:last-of-type {
     width: 12px;
   }
+}
+.linkAnimations {
+  position: relative;
+}
+.linkAnimations::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  right: 0;
+  width: 0;
+  height: 2px;
+  background-color: #FC6238;
+  transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.linkAnimations:hover {
+  color: #FC6238;
+}
+.linkAnimations:hover::before {
+  left: 0;
+  right: auto;
+  width: 100%;
 }/*# sourceMappingURL=Navbar.module.css.map */
