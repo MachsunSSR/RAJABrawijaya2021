@@ -1,11 +1,11 @@
 import React, { useContext, useState } from "react";
-import { SidebarContext } from "../../context/SidebarContext";
+import { SidebarContext } from "../context/SidebarContext";
 import {
     MenuIcon,
     OutlinePersonIcon,
     OutlineCogIcon,
     OutlineLogoutIcon,
-} from "../../icons";
+} from "../assets/icons";
 import { Avatar, Dropdown, DropdownItem } from "@windmill/react-ui";
 
 export default function Navbar() {
@@ -13,7 +13,6 @@ export default function Navbar() {
     const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
 
     function handleProfileClick() {
-        console.log(isProfileMenuOpen);
         setIsProfileMenuOpen(!isProfileMenuOpen);
     }
 

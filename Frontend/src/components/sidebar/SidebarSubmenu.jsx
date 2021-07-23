@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Transition } from "@windmill/react-ui";
-import * as Icons from "../../../icons";
-import { DropdownIcon } from "../../../icons";
+import * as Icons from "../../assets/icons";
+import { DropdownIcon } from "../../assets/icons";
 
 function Icon({ icon, ...props }) {
     const Icon = Icons[icon];

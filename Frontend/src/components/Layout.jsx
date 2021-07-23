@@ -1,11 +1,10 @@
-import React, { useContext, Suspense, useEffect, lazy } from "react";
+import React, { useContext, useEffect } from "react";
 import { Switch, Route, Redirect, useLocation } from "react-router-dom";
-import routes from "../../routes/apps/sidebar";
-
+import routes from "../routes";
 import Sidebar from "./sidebar";
 import Header from "./Navbar";
 import Main from "./Main";
-import { SidebarContext } from "../../context/SidebarContext";
+import { SidebarContext } from "../context/SidebarContext";
 
 function Layout() {
     const { isSidebarOpen, closeSidebar } = useContext(SidebarContext);
