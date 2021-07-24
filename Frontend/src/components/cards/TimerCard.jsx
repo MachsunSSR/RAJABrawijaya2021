@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "@windmill/react-ui";
 
-const TimerCard = () => {
+const TimerCard = ({ tanggal, judul }) => {
     const [timerDays, setTimerDays] = useState(0);
     const [timerHours, setTimerHours] = useState(0);
     const [timerMinutes, setTimerMinutes] = useState(0);
@@ -9,7 +9,7 @@ const TimerCard = () => {
     let interval;
     const day = 24 * 60 * 60 * 1000;
 
-    const countdownDate = new Date("September 25, 2021");
+    const countdownDate = new Date(tanggal);
 
     //Timer Interval
     const countDown = () => {
@@ -47,8 +47,8 @@ const TimerCard = () => {
 
     return (
         <section className="p-5 rounded shadow-md space-y-4 px-5" id="cardBox">
-            <h3 className="text-center" id="cardJudul">
-                Judul
+            <h3 className="text-center text-2xl font-bold" id="cardJudul">
+                {judul}
             </h3>
             <div className="flex justify-center gap-2" id="containerClock">
                 <span className="space-y-1" id="dayContainer">
@@ -56,27 +56,27 @@ const TimerCard = () => {
                         className="flex items-center justify-center gap-1"
                         id="dayClock"
                     >
-                        <h4>{timerDays}</h4>
+                        <h4 className="text-4xl font-bold">{timerDays}</h4>
                     </div>
                     <h4 className="text-center">Hari</h4>
                 </span>
-                <span>:</span>
+                <span className="text-4xl font-bold">:</span>
                 <span className="space-y-1" id="dayContainer">
                     <div
                         className="flex items-center justify-center gap-1"
                         id="dayClock"
                     >
-                        <h4>{timerHours}</h4>
+                        <h4 className="text-4xl font-bold">{timerHours}</h4>
                     </div>
                     <h4 className="text-center">Jam</h4>
                 </span>
-                <span>:</span>
+                <span className="text-4xl font-bold">:</span>
                 <span className="space-y-1" id="dayContainer">
                     <div
                         className="flex items-center justify-center gap-1"
                         id="dayClock"
                     >
-                        <h4>{timerMinutes}</h4>
+                        <h4 className="text-4xl font-bold">{timerMinutes}</h4>
                     </div>
                     <h4 className="text-center">Menit</h4>
                 </span>
