@@ -2,8 +2,10 @@ import { lazy } from "react";
 
 // use lazy for better code splitting, a.k.a. load faster
 // const Dashboard = lazy(() => import("../pages/Dashboard"));
+const Dashboard = lazy(() => import("../pages/Dashboard"));
 const Penugasan = lazy(() => import("../pages/Penugasan"));
 const Presensi = lazy(() => import("../pages/Presensi"));
+const Penilaian = lazy(() => import("../pages/Penilaian"));
 // const Forms = lazy(() => import('../pages/Forms'))
 // const Cards = lazy(() => import('../pages/Cards'))
 // const Charts = lazy(() => import('../pages/Charts'))
@@ -24,10 +26,10 @@ const Presensi = lazy(() => import("../pages/Presensi"));
  * `routes/sidebar.js`
  */
 const routes = [
-    // {
-    //     path: "/dashboard", // the url
-    //     component: Dashboard, // view rendered
-    // },
+    {
+        path: "/dashboard", // the url
+        component: Dashboard, // view rendered
+    },
     {
         path: "/penugasan",
         component: Penugasan,
@@ -35,6 +37,10 @@ const routes = [
     {
         path: "/presensi",
         component: Presensi,
+    },
+    {
+        path: "/penilaian",
+        component: Penilaian,
     },
 ];
 

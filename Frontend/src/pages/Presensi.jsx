@@ -1,22 +1,23 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
+import React from "react";
 import PresensiCard from "../components/cards/PresensiCard";
-import { Button } from "@windmill/react-ui";
-import { useForm } from "react-hook-form";
-import swal from "sweetalert";
+// import { Button } from "@windmill/react-ui";
+// import { useForm } from "react-hook-form";
+// import swal from "sweetalert";
 
 const Presensi = () => {
-    const { register, handleSubmit } = useForm();
-    const [name, setName] = useState("");
+    // const { register, handleSubmit } = useForm();
+    // const [name, setName] = useState("");
 
-    const onSubmit = (data) =>
-        swal(
-            "Berhasil Melakukan Presensi!",
-            `Kode Presensi = ${data.kode}`,
-            "success"
-        );
-    const toInputUppercase = (e) => {
-        e.target.value = ("" + e.target.value).toUpperCase();
-    };
+    // const onSubmit = (data) =>
+    //     swal(
+    //         "Berhasil Melakukan Presensi!",
+    //         `Kode Presensi = ${data.kode}`,
+    //         "success"
+    //     );
+    // const toInputUppercase = (e) => {
+    //     e.target.value = ("" + e.target.value).toUpperCase();
+    // };
 
     return (
         <>
@@ -25,9 +26,11 @@ const Presensi = () => {
                 id="Kode Presensi"
                 className="flex flex-col justify-center text-center gap-8"
             >
-                <h1 className="font-semibold text-4xl">Kode Presensi</h1>
+                <h1 className="font-semibold text-3xl">
+                    Presensi RAJA Brawijaya
+                </h1>
                 <p className="text-gray-400">
-                    Kode presensi hanya dapat dilihat pada jam yang telah
+                    presensi hanya dapat dilakukan pada jam yang telah
                     ditentukan oleh panitia
                 </p>
                 <div
@@ -38,7 +41,7 @@ const Presensi = () => {
                     <PresensiCard judul="PBPK" kode="RAJAPBPK2021" />
                     <PresensiCard judul="Open House" kode="RAJAOH2021" />
                 </div>
-                <div
+                {/* <div
                     id="containerForm"
                     className="flex flex-col justify-center items-center space-y-8 py-8"
                 >
@@ -65,7 +68,7 @@ const Presensi = () => {
                             Submit
                         </Button>
                     </form>
-                </div>
+                </div> */}
             </section>
         </>
     );

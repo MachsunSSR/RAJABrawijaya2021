@@ -5,33 +5,27 @@ import {
     ModalBody,
     ModalFooter,
     Button,
-    Transition,
-    Alert,
 } from "@windmill/react-ui";
 import swal from "sweetalert";
 
 const PresensiCard = ({ judul, kode }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
+
     function openModal() {
         setIsModalOpen(true);
     }
+
+    function Hadir() {
+        closeModal();
+        swal(
+            `Berhasil Melakukan Presensi ${judul}!`,
+            "Silahkan logout dari RAJA Apps dan kembali ke zoom ",
+            "success"
+        );
+    }
+
     function closeModal() {
-        navigator.clipboard
-            .writeText(kode)
-            .then(() => {
-                // console.log("Text copied to clipboard");
-                setIsModalOpen(false);
-                swal(
-                    "Berhasil Menyalin Kode!",
-                    "Silahkan masukkan kode presensi pada kolom input kode",
-                    "success"
-                );
-            })
-            .catch((err) => {
-                window.clipboardData.setData(kode);
-                setIsModalOpen(false);
-                // console.error("Could not copy text: ", err);
-            });
+        setIsModalOpen(false);
     }
 
     return (
@@ -45,18 +39,17 @@ const PresensiCard = ({ judul, kode }) => {
 
             <Modal isOpen={isModalOpen} onClose={closeModal}>
                 <ModalHeader className="text-center">
-                    Kode Presensi Anda :
+                    Anda akan melakukan presensi pada rangkaian :
                 </ModalHeader>
-                <ModalHeader className="text-3xl font-bold text-center">
-                    {kode}
+                <ModalHeader className="text-5xl font-bold text-center">
+                    {judul}
                 </ModalHeader>
                 <ModalBody className="py-5 text-center">
-                    Silahkan copy kode ini dan masukkan kedalam kolom kode
-                    presensi yang berada di bawah halaman
+                    Tekan tombol hadir untuk melakukan presensi.
                 </ModalBody>
                 <ModalFooter>
-                    <Button className="w-full sm:w-auto" onClick={closeModal}>
-                        Salin Kode
+                    <Button className="w-full sm:w-auto" onClick={Hadir}>
+                        Hadir
                     </Button>
                 </ModalFooter>
             </Modal>

@@ -17,7 +17,7 @@ export default function SidebarContent() {
                 className="ml-6 text-xl font-bold text-gray-800 dark:text-gray-200"
                 href="#"
             >
-                Windmill
+                RAJA Apps
             </a>
             <ul className="mt-6">
                 {routes.map((route) =>
