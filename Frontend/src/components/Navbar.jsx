@@ -1,15 +1,23 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Navbar.module.css'
 
 const Navbar = () => {
    const [clicked, setClicked] = useState(false);
+   const [offset, setOffset] = useState(0);
 	const handleMenuIcon = () => {
 		setClicked(!clicked);
 	};
 
+  
+   useEffect(() => {
+     window.onscroll = () => {
+       setOffset(window.pageYOffset)
+     }
+   }, []);
+ 
 	return (
-		<div className="bg-purpleMaghrib px-20 py-1 h-20 flex items-center xs:px-5 fixed left-0 right-0 z-1000">
+		<div className={`${offset > 0 ? 'bg-purpleMaghrib' : 'bg-transparent'} px-15 py-1 h-20 flex items-center xs:px-3 sm:px-3 fixed left-0 right-0 z-1000 transition-all delay-200 ease-in-out`}>
 			<div className="flex justify-between items-center w-full">
 				<div className="">
 					<img

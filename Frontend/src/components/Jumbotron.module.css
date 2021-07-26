@@ -1,18 +1,39 @@
-.jumbotronHeadline {
+.jumbotronHeadline1 {
   font-size: 3.9rem;
+  position: relative;
 }
 @media only screen and (min-width: 640px) {
-  .jumbotronHeadline {
+  .jumbotronHeadline1 {
     font-size: 3.9rem;
   }
 }
 @media only screen and (min-width: 768px) {
-  .jumbotronHeadline {
+  .jumbotronHeadline1 {
+    font-size: 5.9rem;
+    top: 40px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .jumbotronHeadline1 {
+    font-size: 6.9rem;
+  }
+}
+
+.jumbotronHeadline2 {
+  font-size: 3.9rem;
+}
+@media only screen and (min-width: 640px) {
+  .jumbotronHeadline2 {
+    font-size: 3.9rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .jumbotronHeadline2 {
     font-size: 5.9rem;
   }
 }
 @media only screen and (min-width: 1024px) {
-  .jumbotronHeadline {
+  .jumbotronHeadline2 {
     font-size: 6.9rem;
   }
 }

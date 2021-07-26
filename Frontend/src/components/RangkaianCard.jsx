@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './RangkaianCard.module.css';
-const Cards = () => {
+const Cards = ({nama, desc, img}) => {
 	const [onHover, setOnHover] = useState(false);
 
 	const handleMouseEnter = (e) => {
@@ -9,10 +9,10 @@ const Cards = () => {
 	};
 	return (
 		<div
-			className={`min-w-cards min-h-cards mx-2 flex justify-end items-end ${styles.rangkaianCard} overflow-hidden cursor-pointer`}
+			className={`min-w-cards min-h-cards mx-2 flex justify-end items-end ${styles.rangkaianCard} overflow-hidden cursor-pointer bg-purpleMaghrib ${img}`}
 		>
 			<div
-				className={`${styles.cardDetail}`}
+				className={`${styles.cardDetail} bg-pinkThrid `}
 				onMouseEnter={() => setOnHover(true)}
 				onMouseLeave={() => setOnHover(false)}
 			>
@@ -21,7 +21,9 @@ const Cards = () => {
 						onHover ? 'hidden' : 'block'
 					}`}
 				>
-					<div></div>
+					<div>
+                 <h1 className="pl-5 text-white uppercase">{nama}</h1>
+               </div>
 					<svg
 						width="53"
 						height="50"
@@ -35,7 +37,7 @@ const Cards = () => {
 						/>
 					</svg>
 				</div>
-				<p className={`${onHover ? 'inline' : 'hidden'}`}>
+				<p className={`${onHover ? 'inline' : 'hidden'} text-white`}>
 					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus,
 					ratione placeat dolores quis sequi fugiat dolorem illo quae
 					reiciendis aliquid.

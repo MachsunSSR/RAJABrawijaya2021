@@ -5,21 +5,22 @@ const Jumbotron = () => {
 	return (
 		<Sections
 			propsClass={
-				'bg-jumbotron-bg bg-cover bg-no-repeat bg-center justify-start items-end'
+				'bg-jumbotron-bg bg-cover bg-no-repeat bg-center justify-start items-center lg:items-end xl:items-end'
 			}
+         propsClass2={'mt-10 lg:mb-5 xl:mb-5'}
 		>
-			<div className="w-3/3  w-min pb-5 sm:pb-8">
-				<div className={`pb-6 border-b-2 border-orange ${styles.jumbotronAkronim}`}>
+			<div className="w-3/3  w-min sm:pb-8">
+				<div className={`pb-3 border-b-2 border-orange ${styles.jumbotronAkronim}`}>
 					<h1 className={`text-white text-xl `}>
 						Rangkaian Acara Jelajah Almamater Universitas Brawijaya
 					</h1>
 				</div>
 
-				<div className="pt-5">
-					<h1 className={`batavia text-white ${styles.jumbotronHeadline}`}>
+				<div className="relative">
+					<h1 className={`batavia text-white ${styles.jumbotronHeadline1}`}>
 						RAJA
 					</h1>
-					<h1 className={`batavia text-white ${styles.jumbotronHeadline}`}>
+					<h1 className={`batavia text-white ${styles.jumbotronHeadline2}`}>
 						Brawijaya 2021
 					</h1>
 				</div>

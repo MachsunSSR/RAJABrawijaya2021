@@ -6,6 +6,12 @@ module.exports = {
 			backgroundImage: (theme) => ({
 				'jumbotron-bg': "url('/src/assets/jumbotronDummy.svg')",
 				'sekilas1-bg': "url('/src/assets/sekilasDummy.svg')",
+				'white-bg': "url('/src/assets/sekilasbg.svg')",
+				'galeri-bg': "url('/src/assets/galeriDummy.svg')",
+				'logo-bg': "url('/src/assets/logoDescDummy.svg')",
+				'pk2-bg': "url('/src/assets/pk2Dummy.svg')",
+				'pbpk-bg': "url('/src/assets/pbpkDummy.svg')",
+				'oh-bg': "url('/src/assets/ohDummy.svg')",
 			}),
 		},
 		screens: {
@@ -44,6 +50,8 @@ module.exports = {
 			midRed: '#FF5768',
 			midYellow: '#FFBF65',
 			purpleMaghrib: '#452B48',
+         pinkThrid: '#E35466',
+         whiteSoft: '#F0F0F0'
 		},
 		spacing: {
 			px: '1px',
@@ -223,6 +231,7 @@ module.exports = {
 		maxHeight: {
 			full: '100%',
 			screen: '100vh',
+         galeri: '80vh'
 		},
 		maxWidth: {
 			xs: '20rem',
@@ -237,7 +246,7 @@ module.exports = {
 			'6xl': '72rem',
 			full: '100%',
 			xsScreen: '270px',
-			
+			'2/4': '10%'
 		},
 		minHeight: {
 			0: '0',
@@ -245,6 +254,7 @@ module.exports = {
 			screen: '100vh',
 			section: '90vh',
          cards: '270px',
+         galeri: '80vh'
 		},
 		minWidth: {
 			0: '0',

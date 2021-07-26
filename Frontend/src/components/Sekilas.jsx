@@ -14,11 +14,11 @@ const Sekilas = () => {
 	];
 	return (
 		<Sections
-			propsClass={'justify-center items-center relative lg:px-20'}
+			propsClass={'justify-center items-center relative bg-white-bg bg-cover no-repeat bg-fixed'}
 			propsClass2={'w-full'}
 		>
          <div className={`${styles.box}`}></div>
-			<div className="relative pb-25 pt-15">
+			<div className="relative py-25 xs:py-10">
 				<div className={`${styles.sekilasTextHeading}`}>
 					<h1 className={`batavia text-jumbotronmd xs:text-5xl sm:text-jumbotronsm md:text-jumbotronmd text-purpleMaghrib ${styles.sekilasHeadline}`}>
 						Sekilas Rabraw
@@ -32,7 +32,7 @@ const Sekilas = () => {
 					<Cards>2</Cards>
 				</Carousel>
 			</div>
-         <img src={`${process.env.PUBLIC_URL}/assets/visual1.svg`} alt=""  className={`${styles.visual1}`}/>
+         {/* <img src={`${process.env.PUBLIC_URL}/assets/visual1.svg`} alt=""  className={`${styles.visual1}`}/> */}
 		</Sections>
 	);
 };

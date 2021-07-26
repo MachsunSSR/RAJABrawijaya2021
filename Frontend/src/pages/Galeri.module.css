@@ -1,0 +1,75 @@
+@media only screen and (min-width: 500px) {
+  .jumbotronGaleriContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.jumbotronGaleriContainer .galeriHeading {
+  font-size: 2.9rem;
+}
+@media only screen and (min-width: 500px) {
+  .jumbotronGaleriContainer .galeriHeading {
+    font-size: 3.9rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .jumbotronGaleriContainer .galeriHeading {
+    font-size: 4.9rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .jumbotronGaleriContainer .galeriHeading {
+    font-size: 5.9rem;
+  }
+}
+.jumbotronGaleriContainer .galeriDesc {
+  font-size: 1.1rem;
+}
+@media only screen and (min-width: 500px) {
+  .jumbotronGaleriContainer .galeriDesc {
+    font-size: 1.1rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .jumbotronGaleriContainer .galeriDesc {
+    font-size: 1.2rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .jumbotronGaleriContainer .galeriDesc {
+    font-size: 1.2rem;
+  }
+}
+.jumbotronGaleriContainer .galeriJumbotron {
+  max-width: 550px;
+  width: 100%;
+}
+@media only screen and (min-width: 500px) {
+  .jumbotronGaleriContainer .galeriJumbotron {
+    min-width: 300px;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  .jumbotronGaleriContainer .galeriJumbotron {
+    min-width: 300px;
+    margin-top: 200px;
+    margin-left: 3rem;
+  }
+}
+
+.vector {
+  transform: scaleX(-1);
+  position: absolute;
+  bottom: -1px;
+  right: 0;
+  max-width: 250px;
+  z-index: 0;
+}
+@media only screen and (min-width: 500px) {
+  .vector {
+    transform: scaleX(1);
+    left: 0;
+    max-width: 320px;
+  }
+}/*# sourceMappingURL=Galeri.module.css.map */
