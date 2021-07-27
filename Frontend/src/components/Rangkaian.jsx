@@ -3,6 +3,7 @@ import RangkaianCard from './RangkaianCard';
 import styles from './Rangkaian.module.css';
 import Sections from './Sections';
 
+
 const Rangkaian = () => {
 	return (
 		<Sections
