@@ -2,18 +2,32 @@ import React, { useState, useCallback } from 'react';
 import Sections from '../components/Sections';
 import styles from './Galeri.module.css';
 import Viewer from 'react-viewer';
-import { render } from 'react-dom';
 import Gallery from 'react-photo-gallery';
-import Carousel, { Modal, ModalGateway } from 'react-images';
 import classNames from 'classnames';
 import { photos } from './photos';
+import { videos } from './videos';
+import styles1 from '../components/Modal.module.css';
+
 const Galeri = () => {
-   const [ visible, setVisible ] = useState(false);
+	const [visible, setVisible] = useState(false);
 	const [currentImage, setCurrentImage] = useState(0);
+	const [modalData, setModalData] = useState();
+	const [filtered, setFiltered] = useState('semua');
+	let close = true;
+	const handleOpenModal = (link) => {
+		setModalData({ link, close });
+	};
+	const handleCloseModal = () => {
+		setModalData();
+	};
 
 	const openLightbox = useCallback((event, { photo, index }) => {
-		setCurrentImage(index);
-      setVisible(true);
+		if (photo.links !== '') {
+			handleOpenModal(photo.links);
+		} else {
+			setCurrentImage(index);
+			setVisible(true);
+		}
 	}, []);
 
 	const closeLightbox = () => {
@@ -58,25 +72,93 @@ const Galeri = () => {
 			</Sections>
 
 			<Sections
-				propsClass={
-					'justify-center items-center relative lg:px-20'
-				}
+				propsClass={'justify-center relative lg:px-20 justify-center'}
 				propsClass2={'w-full my-20  w-full'}
 			>
 				<div>
 					<div className="flex space-x-3 mb-5">
-						<p className={classNames('cursor-pointer text-lg font-bold text-purpleMaghrib')}>Semua</p>
-						<p className={classNames('cursor-pointer text-lg text-purpleMaghrib')}>Foto</p>
-						<p className={classNames('cursor-pointer  text-lg text-purpleMaghrib')}>Video</p>
+						<p
+							className={classNames(
+								'cursor-pointer text-lg text-purpleMaghrib', filtered === 'semua' ? 'font-bold border-b-2 border-purpleMaghrib' : ''
+							)}
+                        onClick={() => setFiltered('semua')}
+						>
+							Semua
+						</p>
+						<p
+							className={classNames(
+								'cursor-pointer text-lg text-purpleMaghrib', filtered === 'foto' ? 'font-bold border-b-2 border-purpleMaghrib' : ''
+							)}
+                     onClick={() => setFiltered('foto')}
+						>
+							Foto
+						</p>
+						<p
+							className={classNames(
+								'cursor-pointer  text-lg text-purpleMaghrib', filtered === 'video' ? 'font-bold border-b-2 border-purpleMaghrib' : ''
+							)}
+                     onClick={() => setFiltered('video')}
+						>
+							Video
+						</p>
 					</div>
 					<div>
 						<Viewer
 							visible={visible}
 							onClose={closeLightbox}
 							images={photos}
-                     activeIndex={currentImage}
+							activeIndex={currentImage}
 						/>
-                  <Gallery photos={photos} onClick={openLightbox} />
+						{filtered === 'semua' ? (
+							<div className={`${styles.contentWrapper}`} key={Math.random()}>
+								<Gallery photos={photos} onClick={openLightbox} />
+								<Gallery photos={videos} onClick={openLightbox} />
+							</div>
+						) : filtered === 'foto' ? (
+                     <div className={`${styles.contentWrapper}`} key={Math.random()}>
+							<Gallery photos={photos} onClick={openLightbox} />
+                     </div>
+						) : filtered === 'video' ? (
+                     <div className={`${styles.contentWrapper}`} key={Math.random()}>
+							<Gallery photos={videos} onClick={openLightbox} />
+                     </div>
+						) : (
+							''
+						)}
+					</div>
+				</div>
+				<div
+					className={`${styles1.modal} ${
+						modalData ? 'flex justify-center items-center' : 'hidden'
+					}`}
+					onClick={handleCloseModal}
+				>
+					<div className={`${styles1.modalContent}`}>
+						<img
+							src={`${process.env.PUBLIC_URL}/assets/vectorkiri.svg`}
+							alt=""
+							className={`${styles1.vectorKiri}`}
+						/>
+						<div className="p-5 relative z-4">
+							{modalData ? (
+								<div className="h-full mt-5">
+									<iframe
+										src={`${modalData.link}`}
+										className="my-0 mx-auto"
+										width="100%"
+										frameBorder="0"
+										height="100%"
+									/>
+								</div>
+							) : (
+								''
+							)}
+						</div>
+						<img
+							src={`${process.env.PUBLIC_URL}/assets/vectorkanan.svg`}
+							alt=""
+							className={`${styles1.vectorKanan}`}
+						/>
 					</div>
 				</div>
 			</Sections>

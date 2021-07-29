@@ -8,12 +8,10 @@ import { sekilasData } from './sekilasData';
 // import Modal from './Modal';
 const Sekilas = () => {
 	const breakPoints = [
-		{ width: 1, itemsToShow: 1 },
+		{ width: 1, itemsToShow: 1, showArrows: false },
 		{ width: 530, itemsToShow: 2 },
 		{ width: 850, itemsToShow: 3 },
-		{ width: 1150, itemsToShow: 4, itemsToScroll: 2 },
-		{ width: 1450, itemsToShow: 5 },
-		{ width: 1750, itemsToShow: 6 },
+		{ width: 1150, itemsToShow: 3 },
 	];
 	const [modalData, setModalData] = useState();
 	let close = true;
@@ -21,7 +19,6 @@ const Sekilas = () => {
 		setModalData({ title, link, desc, close });
 	};
 	const handleCloseModal = () => {
-		// setClose(false)
 		setModalData();
 	};
 	return (
@@ -46,6 +43,7 @@ const Sekilas = () => {
 							<div
 								key={id}
 								onClick={() => handleOpenModal(title, link, desc)}
+                        className="mx-2"
 							>
 								<Cards title={title} bg={``} />
 							</div>
@@ -75,9 +73,9 @@ const Sekilas = () => {
 										<iframe
 											src={`${modalData.link}`}
 											className="my-0 mx-auto"
-                                 width="100%"
-                                 frameBorder="0"
-                                 height="100%"
+											width="100%"
+											frameBorder="0"
+											height="100%"
 										/>
 									</div>
 								) : (

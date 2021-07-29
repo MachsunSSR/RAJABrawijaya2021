@@ -39,7 +39,11 @@
 		// background-color: #ffffff;
 		border-radius: 10px;
 		cursor: pointer;
-		padding: 1rem 2rem;
+		padding: 1rem 1.5rem;
+      @media only screen and (min-width: 640px) {
+         padding: 1rem 2rem;
+      }
+      // font-size: .5rem;
 		// color: #452b48;
 		// color: #3f52ff;
 		&:hover {
@@ -48,7 +52,10 @@
 			color: white;
 		}
 		h1 {
-			font-size: 20px;
+			font-size: 16px;
+         @media only screen and (min-width: 640px) {
+           font-size: 18px;
+         }
 			// font-weight: 600;
 		}
 

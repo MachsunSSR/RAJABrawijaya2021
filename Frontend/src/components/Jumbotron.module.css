@@ -42,4 +42,22 @@
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+}
+
+.jumbotronVideo {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+
+.sectionProps1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to bottom, #e35467e7, #452b48dc);
+  background-blend-mode: multiply;
 }/*# sourceMappingURL=Jumbotron.module.css.map */

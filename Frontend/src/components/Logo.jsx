@@ -65,7 +65,7 @@ const Logo = () => {
 											key={id}
 										>
 											<img
-												src={`${process.env.PUBLIC_URL}/assets/${img}.svg`}
+												src={`${process.env.PUBLIC_URL}/assets/${img}.png`}
 												alt={`${img}`}
 												className={``}
 											/>
@@ -103,20 +103,21 @@ const Logo = () => {
 								</div>
 								<div className={`${styles.textContainer} xs:ml-0 `}>
 									<h1
-										className={`text-purpleMaghrib text-4xl xs:text-3xl font-bold`}
+										className={`text-purpleMaghrib text-4xl xs:text-3xl font-bold xs:text-center`}
 									>
 										{nameActive}
 									</h1>
-									<p className={`text-white font-light text-md mt-3`}>
+									<p className={`text-white font-light text-md mt-3 xs:text-center`}>
 										{descActive}
 									</p>
+                           <div className={`${styles.lines}`}></div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div className={classNames(styles.logoShowContainer)}>
+					<div className={classNames(styles.logoShowContainer)} key={Math.random()}>
 						<img
-							src={`${process.env.PUBLIC_URL}/assets/${imgActive}.svg`}
+							src={`${process.env.PUBLIC_URL}/assets/${imgActive}.png`}
 							alt={`${imgActive}`}
 							className={` ${styles.imgLogo}`}
 						/>

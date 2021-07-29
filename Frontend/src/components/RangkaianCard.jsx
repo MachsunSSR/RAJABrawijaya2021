@@ -9,8 +9,9 @@ const Cards = ({nama, desc, img}) => {
 	};
 	return (
 		<div
-			className={`min-w-cards min-h-cards mx-2 flex justify-end items-end ${styles.rangkaianCard} overflow-hidden cursor-pointer bg-purpleMaghrib ${img}`}
-		>
+			className={`flex justify-end items-end ${styles.rangkaianCard} overflow-hidden cursor-pointer bg-purpleMaghrib ${img}`}
+		>  
+      <img src={`${process.env.PUBLIC_URL}/assets/rangkaianFrame.png`} alt="frame" className={`${styles.frame}`} />
 			<div
 				className={`${styles.cardDetail} bg-pinkThrid `}
 				onMouseEnter={() => setOnHover(true)}

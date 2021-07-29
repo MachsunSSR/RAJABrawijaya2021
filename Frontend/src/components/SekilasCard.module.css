@@ -3,6 +3,8 @@
   position: relative;
   transition: all 0.3s;
   background-size: 100%;
+  width: 100%;
+  max-width: 350px;
 }
 .cardAnimations::before {
   content: "";

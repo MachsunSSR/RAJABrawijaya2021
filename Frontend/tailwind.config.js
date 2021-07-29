@@ -4,10 +4,10 @@ module.exports = {
 	theme: {
 		extend: {
 			backgroundImage: (theme) => ({
-				'jumbotron-bg': "url('/src/assets/jumbotronDummy.svg')",
-				'sekilas1-bg': "url('/src/assets/sekilasDummy.svg')",
-				'white-bg': "url('/src/assets/sekilasbg.svg')",
-				'galeri-bg': "url('/src/assets/galeriDummy.svg')",
+				'jumbotron-bg': "url('/src/assets/jumbotrons.png')",
+				'sekilas1-bg': "url('/src/assets/sekilasDummy1.jpg')",
+				'white-bg': "url('/src/assets/sekilasbg1.jpg')",
+				'galeri-bg': "url('/src/assets/galeriDummy1.jpg')",
 				'logo-bg': "url('/src/assets/logoDescDummy.svg')",
 				'pk2-bg': "url('/src/assets/pk2Dummy.svg')",
 				'pbpk-bg': "url('/src/assets/pbpkDummy.svg')",
@@ -72,6 +72,7 @@ module.exports = {
 			20: '5rem',
 			24: '6rem',
 			25: '6.25rem',
+         30: '10%',
 			32: '8rem',
 			40: '10rem',
 			41: '10.3125rem',
@@ -231,7 +232,8 @@ module.exports = {
 		maxHeight: {
 			full: '100%',
 			screen: '100vh',
-         galeri: '80vh'
+         galeri: '80vh',
+         info: '70vh',
 		},
 		maxWidth: {
 			xs: '20rem',
@@ -246,7 +248,9 @@ module.exports = {
 			'6xl': '72rem',
 			full: '100%',
 			xsScreen: '270px',
-			'2/4': '10%'
+			'2/4': '10%',
+         containerMax: '1400px',
+         screenMax : '1920px'
 		},
 		minHeight: {
 			0: '0',
@@ -254,7 +258,8 @@ module.exports = {
 			screen: '100vh',
 			section: '90vh',
          cards: '270px',
-         galeri: '80vh'
+         galeri: '80vh',
+         info: '70vh',
 		},
 		minWidth: {
 			0: '0',
