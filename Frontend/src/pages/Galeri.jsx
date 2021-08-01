@@ -28,7 +28,7 @@ const Galeri = () => {
 			setCurrentImage(index);
 			setVisible(true);
 		}
-	}, []);
+	}, [handleOpenModal]);
 
 	const closeLightbox = () => {
 		setCurrentImage(0);

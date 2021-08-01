@@ -3,21 +3,22 @@ import RangkaianCard from './RangkaianCard';
 import styles from './Rangkaian.module.css';
 import Sections from './Sections';
 
-
 const Rangkaian = () => {
 	return (
 		<Sections
-			propsClass={'justify-center items-center relative lg:px-20 bg-white-bg bg-cover no-repeat bg-fixed'}
+			propsClass={
+				'justify-center items-center relative lg:px-20 bg-white-bg bg-cover no-repeat bg-fixed'
+			}
 			propsClass2={'w-full'}
 		>
 			<div className="flex justify-between">
-				{/* <img
+				<img
 					src={`${process.env.PUBLIC_URL}/assets/visual2.svg`}
 					alt=""
 					className={`${styles.visual1}`}
-				/> */}
-            <div></div>
-            <div className={`${styles.line} bg-pinkThrid`}></div>
+				/>
+				<div></div>
+				<div className={`${styles.line} bg-pinkThrid`}></div>
 			</div>
 			<div className="relative py-30 xs:py-10">
 				<div className={`${styles.rangkaianTextHeading}`}>
@@ -28,9 +29,27 @@ const Rangkaian = () => {
 					</h1>
 				</div>
 				<div className="flex flex-col items-center space-y-10 md:flex-row md:space-y-0 lg:flex-row xl:flex-row lg:space-y-0 xl:space-y-0 space-x-6 xs:space-x-0 sm:space-x-0">
-               <RangkaianCard nama={'pkkmb'} img={'bg-pk2-bg'}/>
-               <RangkaianCard nama={'pbpk'} img={'bg-pbpk-bg'}/>
-               <RangkaianCard nama={'oh'} img={'bg-oh-bg'}/>
+					<RangkaianCard
+						nama={'pkkmb'}
+						img={'bg-pk2-bg'}
+						desc={
+							'Pengenalan Kehidupan Kampus Mahasiswa Baru Universitas Brawijaya (PKKMB) adalah kegiatan penyambutan mahasiswa baru sebagai bentuk kegiatan yang bertujuan untuk membuat rasa kebanggan dan penanaman nilai kepada mahasiswa baru akan almamater kita bersama, Universitas Brawijaya.'
+						}
+					/>
+					<RangkaianCard
+						nama={'pbpk'}
+						img={'bg-pbpk-bg'}
+						desc={
+							'Pembinaan Budi Pekerti dan Kepemimpinan (PBPK) merupakan rangkaian acara yang bertujuan untuk melakukan pembinaan karakter keagamaan, melatih jiwa kepemimpinan dan mengajarkan kita untuk dapat membela Negara Kesatuan Republik Indonesia (NKRI) dan mahasiswa baru Universitas Brawijaya.'
+						}
+					/>
+					<RangkaianCard
+						nama={'oh'}
+						img={'bg-oh-bg'}
+						desc={
+							'Open House Lembaga Kedaulatan Mahasiswa (OH) merupakan penutup dari serangkaian acara RAJA Brawijaya. Di sana, kamu bisa memilih Unit Kegiatan Mahasiswa (UKM) dan LKM di Universitas Brawijaya sesuai minat dan bakal di bidang akademik maupun non-akademik.'
+						}
+					/>
 				</div>
 			</div>
 		</Sections>

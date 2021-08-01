@@ -38,14 +38,14 @@ const Sekilas = () => {
 					</h1>
 				</div>
 				<Carousel breakPoints={breakPoints}>
-					{sekilasData.map(({ id, title, link, desc }) => {
+					{sekilasData.map(({ id, title, link, desc, bg }) => {
 						return (
 							<div
 								key={id}
 								onClick={() => handleOpenModal(title, link, desc)}
                         className="mx-2"
 							>
-								<Cards title={title} bg={``} />
+								<Cards title={title} bg={bg} />
 							</div>
 						);
 					})}
@@ -95,7 +95,7 @@ const Sekilas = () => {
 					</div>
 				</div>
 			</div>
-			{/* <img src={`${process.env.PUBLIC_URL}/assets/visual1.svg`} alt=""  className={`${styles.visual1}`}/> */}
+			<img src={`${process.env.PUBLIC_URL}/assets/visual1.svg`} alt=""  className={`${styles.visual1}`}/>
 		</Sections>
 	);
 };

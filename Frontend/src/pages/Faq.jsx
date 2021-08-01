@@ -22,10 +22,10 @@ const Faq = () => {
 
    useEffect(() => {
       faqData.filter((obj)=>{
-         obj.pertanyaan.toLowerCase().indexOf(search.toLowerCase()) > -1 ? newFaq.push(obj) : console.log('gaada') 
+         return obj.pertanyaan.toLowerCase().indexOf(search.toLowerCase()) > -1 ? newFaq.push(obj) : console.log('gaada') 
       })
       setSearched(newFaq);
-   },[search])
+   },[search, newFaq])
 
 	return (
 		<Sections

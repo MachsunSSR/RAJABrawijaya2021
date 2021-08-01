@@ -31,7 +31,6 @@ const Navbar = () => {
 							className="w-full max-w-xsScreen"
 						/>
 					</Link>
-					<h1></h1>
 				</div>
 				<div
 					className={classNames(
@@ -60,7 +59,7 @@ const Navbar = () => {
 								className={`links  ${styles.linkAnimations}`}
 								onClick={handleMenuIcon}
 							>
-								Adhikara Info
+								Abhiyaksa Info
 							</Link>
 							<Link
 								to={'/faq'}
@@ -78,7 +77,7 @@ const Navbar = () => {
 							</Link>
 							{clicked ? (
 								<p className="text-white">
-									&copy; 2021 PIT RAJA Brawijaya.
+									&copy; 2021, Tim IT RAJA Brawijaya 2021.
 								</p>
 							) : (
 								''
@@ -99,7 +98,7 @@ const Navbar = () => {
 								to={'/adhikara-info'}
 								className={`links  ${styles.linkAnimations}`}
 							>
-								Adhikara Info
+								Abhiyaksa Info
 							</Link>
 							<Link
 								to={'/faq'}

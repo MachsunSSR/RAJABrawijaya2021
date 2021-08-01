@@ -3,10 +3,6 @@ import styles from './RangkaianCard.module.css';
 const Cards = ({nama, desc, img}) => {
 	const [onHover, setOnHover] = useState(false);
 
-	const handleMouseEnter = (e) => {
-		setOnHover(true);
-		console.log(e.target.children[1]);
-	};
 	return (
 		<div
 			className={`flex justify-end items-end ${styles.rangkaianCard} overflow-hidden cursor-pointer bg-purpleMaghrib ${img}`}
@@ -39,9 +35,7 @@ const Cards = ({nama, desc, img}) => {
 					</svg>
 				</div>
 				<p className={`${onHover ? 'inline' : 'hidden'} text-white`}>
-					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus,
-					ratione placeat dolores quis sequi fugiat dolorem illo quae
-					reiciendis aliquid.
+					{desc}
 				</p>
 			</div>
 		</div>

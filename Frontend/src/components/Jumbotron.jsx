@@ -28,7 +28,7 @@ const Jumbotron = () => {
 					<div
 						className={`pb-3 border-b-2 border-orange ${styles.jumbotronAkronim}`}
 					>
-						<h1 className={`text-white text-xl `}>
+						<h1 className={`text-white text-xl `} >
 							Rangkaian Acara Jelajah Almamater Universitas Brawijaya
 						</h1>
 					</div>

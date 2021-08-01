@@ -6,6 +6,8 @@ module.exports = {
 			backgroundImage: (theme) => ({
 				'jumbotron-bg': "url('/src/assets/jumbotrons.png')",
 				'sekilas1-bg': "url('/src/assets/sekilasDummy1.jpg')",
+				'sekilas2-bg': "url('/src/assets/apaitu.png')",
+				'sekilas3-bg': "url('/src/assets/jingle.png')",
 				'white-bg': "url('/src/assets/sekilasbg1.jpg')",
 				'galeri-bg': "url('/src/assets/galeriDummy1.jpg')",
 				'logo-bg': "url('/src/assets/logoDescDummy.svg')",
@@ -249,8 +251,8 @@ module.exports = {
 			full: '100%',
 			xsScreen: '270px',
 			'2/4': '10%',
-         containerMax: '1400px',
-         screenMax : '1920px'
+         containerMax: '1000px',
+         screenMax : '1100px'
 		},
 		minHeight: {
 			0: '0',

@@ -1,7 +1,7 @@
 import React from 'react';
 import Sections from '../../components/Sections';
 import styles from '../Faq.module.css';
-import classnames from 'classnames';
+// import classnames from 'classnames';
 const Info = ({ children, title }) => {
 	return (
 		<div>

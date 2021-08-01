@@ -34,16 +34,16 @@ const AdhikaraInfo = () => {
 			>
 				<div className={`${styles.infoCardWrapper}`}>
 					<Link to={`/adhikara-info/info-twibbon`}>
-						<Cards title={'Informasi Twibbon'} />
+						<Cards title={'Informasi Twibbon'} bg={'bg-sekilas1-bg'}/>
 					</Link>
 					<Link to={`/adhikara-info/info-atribut`}>
-						<Cards title={'Informasi Atribut'} />
+						<Cards title={'Informasi Atribut'} bg={'bg-sekilas2-bg'}/>
 					</Link>
 					<Link to={`/adhikara-info/informasi-lain1`}>
-						<Cards title={'Informasi 1'} />
+						<Cards title={'Informasi 1'} bg={'bg-sekilas3-bg'}/>
 					</Link>
 					<Link to={`/adhikara-info/informasi-lain2`}>
-						<Cards title={'Informasi 2'} />
+						<Cards title={'Informasi 2'} bg={'bg-sekilas1-bg'}/>
 					</Link>
 				</div>
 			</Sections>

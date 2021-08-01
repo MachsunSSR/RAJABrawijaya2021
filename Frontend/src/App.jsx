@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Landing from './pages/Landing';
 import Navbar from './components/Navbar';
@@ -9,6 +8,8 @@ import Faq from './pages/Faq';
 import AnnounceButton from './components/AnnounceButton';
 import Twibbon from './pages/info/InformasiTwibbon';
 import Atribut from './pages/info/InformasiAtribut';
+import Footer from './components/Footer';
+import NotFound from './pages/NotFound';
 
 export default function App() {
 	return (
@@ -21,6 +22,8 @@ export default function App() {
 					<Route path={'/galeri'} component={Galeri} />
 					<Route exact path={'/adhikara-info'} component={AdhikaraInfo} />
 					<Route path={'/faq'} component={Faq} />
+					<Route path={'*'} component={NotFound} />
+               
 					<Switch>
 						<Route
 							exact
@@ -34,6 +37,7 @@ export default function App() {
 						/>
 					</Switch>
 				</Switch>
+            <Footer/>
 			</Router>
 		</>
 	);

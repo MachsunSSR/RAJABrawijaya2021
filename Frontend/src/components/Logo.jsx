@@ -55,7 +55,7 @@ const Logo = () => {
 										<div
 											className={`${classNames(
 												styles.logoBox,
-												id == active
+												id === active
 													? 'bg-purpleMaghrib'
 													: 'bg-transparent'
 											)}`}
@@ -117,7 +117,7 @@ const Logo = () => {
 					</div>
 					<div className={classNames(styles.logoShowContainer)} key={Math.random()}>
 						<img
-							src={`${process.env.PUBLIC_URL}/assets/${imgActive}.png`}
+							src={`${process.env.PUBLIC_URL}/assets/logo/${imgActive}.png`}
 							alt={`${imgActive}`}
 							className={` ${styles.imgLogo}`}
 						/>
