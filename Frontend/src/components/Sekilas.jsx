@@ -71,6 +71,7 @@ const Sekilas = () => {
 								modalData.desc === '' ? (
 									<div className="h-full mt-5">
 										<iframe
+                              title="Youtube Video"
 											src={`${modalData.link}`}
 											className="my-0 mx-auto"
 											width="100%"

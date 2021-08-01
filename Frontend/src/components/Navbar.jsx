@@ -55,7 +55,7 @@ const Navbar = () => {
 								Galeri
 							</Link>
 							<Link
-								to={'/adhikara-info'}
+								to={'/abhiyaksa-info'}
 								className={`links  ${styles.linkAnimations}`}
 								onClick={handleMenuIcon}
 							>
@@ -95,7 +95,7 @@ const Navbar = () => {
 								Galeri
 							</Link>
 							<Link
-								to={'/adhikara-info'}
+								to={'/abhiyaksa-info'}
 								className={`links  ${styles.linkAnimations}`}
 							>
 								Abhiyaksa Info

@@ -20,24 +20,23 @@ export default function App() {
 				<Switch>
 					<Route exact path={'/'} component={Landing} />
 					<Route path={'/galeri'} component={Galeri} />
-					<Route exact path={'/adhikara-info'} component={AdhikaraInfo} />
+					<Route exact path={'/abhiyaksa-info'} component={AdhikaraInfo} />
 					<Route path={'/faq'} component={Faq} />
-					<Route path={'*'} component={NotFound} />
-               
 					<Switch>
 						<Route
 							exact
-							path={'/adhikara-info/info-twibbon'}
+							path={'/abhiyaksa-info/info-twibbon'}
 							component={Twibbon}
 						/>
 						<Route
 							exact
-							path={'/adhikara-info/info-atribut'}
+							path={'/abhiyaksa-info/info-atribut'}
 							component={Atribut}
 						/>
 					</Switch>
+					<Route path={'*'} component={NotFound} />
 				</Switch>
-            <Footer/>
+				<Footer />
 			</Router>
 		</>
 	);

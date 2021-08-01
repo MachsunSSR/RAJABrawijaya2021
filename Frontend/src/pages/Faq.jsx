@@ -9,7 +9,7 @@ const Faq = () => {
    const [search, setSearch] = useState('');
    const [searched, setSearched] = useState([]);
    // const [newFaq, setNewFaq] = useState([]);
-   let newFaq = [];
+   
 	const handleClick = (id) => {
 		setClicked(!clicked);
       setIdActive(id)
@@ -21,11 +21,12 @@ const Faq = () => {
    }
 
    useEffect(() => {
+      let newFaq = [];
       faqData.filter((obj)=>{
          return obj.pertanyaan.toLowerCase().indexOf(search.toLowerCase()) > -1 ? newFaq.push(obj) : console.log('gaada') 
       })
       setSearched(newFaq);
-   },[search, newFaq])
+   },[search])
 
 	return (
 		<Sections

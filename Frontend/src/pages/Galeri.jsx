@@ -21,14 +21,14 @@ const Galeri = () => {
 		setModalData();
 	};
 
-	const openLightbox = useCallback((event, { photo, index }) => {
+	const openLightbox = useCallback((handleOpenModal, { photo, index }) => {
 		if (photo.links !== '') {
 			handleOpenModal(photo.links);
 		} else {
 			setCurrentImage(index);
 			setVisible(true);
 		}
-	}, [handleOpenModal]);
+	}, []);
 
 	const closeLightbox = () => {
 		setCurrentImage(0);
@@ -143,6 +143,7 @@ const Galeri = () => {
 							{modalData ? (
 								<div className="h-full mt-5">
 									<iframe
+                           title="Youtube Video"
 										src={`${modalData.link}`}
 										className="my-0 mx-auto"
 										width="100%"
