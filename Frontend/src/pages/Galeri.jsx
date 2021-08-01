@@ -21,14 +21,14 @@ const Galeri = () => {
 		setModalData();
 	};
 
-	const openLightbox = useCallback((handleOpenModal, { photo, index }) => {
+	const openLightbox = useCallback((event, { photo, index }) => {
 		if (photo.links !== '') {
 			handleOpenModal(photo.links);
 		} else {
 			setCurrentImage(index);
 			setVisible(true);
 		}
-	}, []);
+	}, [handleOpenModal]);
 
 	const closeLightbox = () => {
 		setCurrentImage(0);
