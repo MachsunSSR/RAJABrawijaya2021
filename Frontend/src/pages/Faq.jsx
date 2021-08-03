@@ -3,12 +3,15 @@ import Sections from '../components/Sections';
 import styles from './Faq.module.css';
 import classnames from 'classnames';
 import faqData from './faqData';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+Aos.init();
+
 const Faq = () => {
 	const [clicked, setClicked] = useState(false);
    const [idActive, setIdActive] = useState(0);
    const [search, setSearch] = useState('');
    const [searched, setSearched] = useState([]);
-   // const [newFaq, setNewFaq] = useState([]);
    
 	const handleClick = (id) => {
 		setClicked(!clicked);
@@ -17,7 +20,6 @@ const Faq = () => {
 
    const handleChange = (e) =>{
       setSearch(e.target.value)
-      // console.log(search)
    }
 
    useEffect(() => {
@@ -38,6 +40,7 @@ const Faq = () => {
 			<div className="flex flex-col items-center space-y-10 ">
 				<h1
 					className={`batavia text-jumbotronmd text-purpleMaghrib text-center ${styles.faqHeadline}`}
+               data-aos="fade-up"
 				>
 					Pertanyaan dan Jawaban
 				</h1>

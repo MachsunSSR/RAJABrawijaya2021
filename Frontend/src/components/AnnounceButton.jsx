@@ -14,7 +14,7 @@ const AnnounceButton = () => {
 			>
 				Kamu punya informasi terbaru
 			</div>
-			<Link to={'/adhikara-info'}>
+			<Link to={'/abhiyaksa-info'}>
 				<img
 					src={`${process.env.PUBLIC_URL}/assets/announce.png`}
 					alt="announce"

@@ -10,11 +10,17 @@ import Twibbon from './pages/info/InformasiTwibbon';
 import Atribut from './pages/info/InformasiAtribut';
 import Footer from './components/Footer';
 import NotFound from './pages/NotFound';
+import createHistory from "history/createBrowserHistory";
+import ScrollTop from './components/ScrollTop';
+import ComingSoon from './components/ComingSoon';
+// import Aos from 'aos'/;
 
 export default function App() {
+   
 	return (
 		<>
 			<Router>
+            <ScrollTop/>
 				<Navbar />
 				<AnnounceButton />
 				<Switch>
@@ -22,6 +28,8 @@ export default function App() {
 					<Route path={'/galeri'} component={Galeri} />
 					<Route exact path={'/abhiyaksa-info'} component={AdhikaraInfo} />
 					<Route path={'/faq'} component={Faq} />
+					<Route path={'/raja-apps'} component={ComingSoon} />
+					<Route path={'/maps'} component={ComingSoon} />
 					<Switch>
 						<Route
 							exact

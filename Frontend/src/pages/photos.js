@@ -71,4 +71,54 @@ export const photos = [
 		height: 1,
       links: ''
 	},
+	{
+		src: `${process.env.PUBLIC_URL}/assets/galeri/17.jpg`,
+		width: 3,
+		height: 1,
+      links: ''
+	},
+	{
+		src: `${process.env.PUBLIC_URL}/assets/galeri/18.jpg`,
+		width: 2,
+		height: 1,
+      links: ''
+	},
+
+	{
+		src: `${process.env.PUBLIC_URL}/assets/galeri/20.jpg`,
+		width: 2,
+		height: 1,
+      links: ''
+	},
+	{
+		src: `${process.env.PUBLIC_URL}/assets/galeri/21.jpg`,
+		width: 2,
+		height: 2,
+      links: ''
+	},
+	{
+		src: `${process.env.PUBLIC_URL}/assets/galeri/22.jpg`,
+		width: 4,
+		height: 2,
+      links: ''
+	},
+	{
+		src: `${process.env.PUBLIC_URL}/assets/galeri/23.jpg`,
+		width: 2,
+		height: 2,
+      links: ''
+	},
+	{
+		src: `${process.env.PUBLIC_URL}/assets/galeri/24.jpg`,
+		width: 4,
+		height: 2,
+      links: ''
+	},
+	{
+		src: `${process.env.PUBLIC_URL}/assets/galeri/25.jpg`,
+		width: 2,
+		height: 2,
+      links: ''
+	},
+	
 ];

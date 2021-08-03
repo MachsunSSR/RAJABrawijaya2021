@@ -10,6 +10,7 @@ const Navbar = () => {
 		setClicked(!clicked);
 	};
 
+	// console.log(pathname);
 	useEffect(() => {
 		window.onscroll = () => {
 			setOffset(window.pageYOffset);
@@ -23,7 +24,7 @@ const Navbar = () => {
 			} px-15 py-1 h-20 flex items-center xs:px-3 sm:px-3 fixed left-0 right-0 z-1000 transition-all delay-200 ease-in-out justify-center`}
 		>
 			<div className="flex justify-between items-center w-full max-w-containerMax">
-				<div className={classNames(clicked ? styles.logoWhenClicked : '')}>
+				<div className={classNames(clicked ? styles.logoWhenClicked : '', )}>
 					<Link to="/">
 						<img
 							src={`${process.env.PUBLIC_URL}/assets/logo.png`}
@@ -69,6 +70,13 @@ const Navbar = () => {
 								FAQ
 							</Link>
 							<Link
+								to={'/maps'}
+								className={`links  ${styles.linkAnimations}`}
+								onClick={handleMenuIcon}
+							>
+								Peta
+							</Link>
+							<Link
 								to={'/raja-apps'}
 								className={`links  ${styles.linkAnimationsApps}`}
 								onClick={handleMenuIcon}
@@ -105,6 +113,12 @@ const Navbar = () => {
 								className={`links  ${styles.linkAnimations}`}
 							>
 								FAQ
+							</Link>
+							<Link
+								to={'/maps'}
+								className={`links  ${styles.linkAnimations}`}
+							>
+								Peta
 							</Link>
 							<Link
 								to={'/raja-apps'}

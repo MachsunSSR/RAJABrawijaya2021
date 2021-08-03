@@ -3,6 +3,10 @@ import Sections from '../components/Sections';
 import Cards from '../components/SekilasCard';
 import styles from './AdhikaraInfo.module.css';
 import { Link } from 'react-router-dom';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+Aos.init();
+
 const AdhikaraInfo = () => {
 	return (
 		<>
@@ -12,13 +16,14 @@ const AdhikaraInfo = () => {
 				}
 				propsClass2={'mt-25 lg:mb-5 xl:mb-5 w-full'}
 			>
-				<div className="text-right">
+				<div className="text-right xs:mb-15">
 					<h1
 						className={`batavia text-5xl text-white ${styles.adhikaraInfoHeading}`}
+                  data-aos="fade-left"
 					>
 						Abhiyaksa Info
 					</h1>
-					<p className={`text-white pb-5 ${styles.adhikaraInfoDesc}`}>
+					<p className={`text-white pb-5 ${styles.adhikaraInfoDesc}`} data-aos="fade-up">
 						Informasi terupdate seputar PKKMB RAJA Brawijaya
 					</p>
 				</div>

@@ -3,6 +3,9 @@ import styles from './Logo.module.css';
 import Sections from './Sections';
 import classNames from 'classnames';
 import logoData from './logoData';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+Aos.init();
 
 const Logo = () => {
 	const [active, setActive] = useState(1);
@@ -32,6 +35,7 @@ const Logo = () => {
 							styles.logoHeadline,
 							'batavia text-purpleMaghrib'
 						)}
+                  data-aos="fade-up"
 					>
 						Makna Logo
 					</h1>
@@ -63,9 +67,10 @@ const Logo = () => {
 												handleActive(e, nama, desc, img, id)
 											}
 											key={id}
+                                 
 										>
 											<img
-												src={`${process.env.PUBLIC_URL}/assets/${img}.png`}
+												src={`${process.env.PUBLIC_URL}/assets/logo/${img}.png`}
 												alt={`${img}`}
 												className={``}
 											/>
@@ -104,6 +109,7 @@ const Logo = () => {
 								<div className={`${styles.textContainer} xs:ml-0 `}>
 									<h1
 										className={`text-purpleMaghrib text-4xl xs:text-3xl font-bold xs:text-center`}
+                              
 									>
 										{nameActive}
 									</h1>

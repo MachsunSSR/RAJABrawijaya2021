@@ -235,7 +235,7 @@ module.exports = {
 			full: '100%',
 			screen: '100vh',
          galeri: '80vh',
-         info: '70vh',
+         info: '60vh',
 		},
 		maxWidth: {
 			xs: '20rem',
@@ -261,12 +261,13 @@ module.exports = {
 			section: '90vh',
          cards: '270px',
          galeri: '80vh',
-         info: '70vh',
+         info: '60vh',
 		},
 		minWidth: {
 			0: '0',
 			full: '100%',
          cards: '270px',
+         vw: '100vw'
 		},
 		objectPosition: {
 			bottom: 'bottom',
@@ -340,6 +341,7 @@ module.exports = {
 			'11/12': '91.66667%',
 			full: '100%',
 			screen: '100vw',
+         fit: 'fit-content'
 		}),
 		zIndex: {
 			auto: 'auto',

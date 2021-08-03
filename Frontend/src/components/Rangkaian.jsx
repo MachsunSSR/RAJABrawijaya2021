@@ -2,6 +2,9 @@ import React from 'react';
 import RangkaianCard from './RangkaianCard';
 import styles from './Rangkaian.module.css';
 import Sections from './Sections';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+Aos.init();
 
 const Rangkaian = () => {
 	return (
@@ -24,6 +27,7 @@ const Rangkaian = () => {
 				<div className={`${styles.rangkaianTextHeading}`}>
 					<h1
 						className={`batavia text-jumbotronmd xs:text-5xl sm:text-jumbotronsm md:text-jumbotronmd text-pinkThrid ${styles.rangkaianHeadline}`}
+                  data-aos="fade-up"
 					>
 						Rangkaian Acara
 					</h1>

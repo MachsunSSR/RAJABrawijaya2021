@@ -7,6 +7,9 @@ import classNames from 'classnames';
 import { photos } from './photos';
 import { videos } from './videos';
 import styles1 from '../components/Modal.module.css';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+Aos.init();
 
 const Galeri = () => {
 	const [visible, setVisible] = useState(false);
@@ -47,10 +50,11 @@ const Galeri = () => {
 						<div className="max-w-sm lg:self-start md:self-start xl:self-start">
 							<h1
 								className={`batavia text-5xl text-white ${styles.galeriHeading}`}
+                        data-aos="fade-right"
 							>
 								Galeri
 							</h1>
-							<p className={`text-white pb-5 ${styles.galeriDesc}`}>
+							<p className={`text-white pb-5 ${styles.galeriDesc}`} data-aos="fade-up">
 								Berikut adalah beberapa foto dan video pada rangkaian
 								RAJA Brawijaya sebelumnya.
 							</p>

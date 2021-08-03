@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Sections from './Sections';
 import Carousel from 'react-elastic-carousel';
 import Cards from './SekilasCard';
 import styles from './Sekilas.module.css';
 import styles1 from './Modal.module.css';
 import { sekilasData } from './sekilasData';
-// import Modal from './Modal';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+
 const Sekilas = () => {
 	const breakPoints = [
 		{ width: 1, itemsToShow: 1, showArrows: false },
@@ -21,6 +23,11 @@ const Sekilas = () => {
 	const handleCloseModal = () => {
 		setModalData();
 	};
+
+	useEffect(() => {
+      Aos.init();
+   }, []);
+
 	return (
 		<Sections
 			propsClass={
@@ -33,6 +40,7 @@ const Sekilas = () => {
 				<div className={`${styles.sekilasTextHeading}`}>
 					<h1
 						className={`batavia text-jumbotronmd xs:text-5xl sm:text-jumbotronsm md:text-jumbotronmd text-purpleMaghrib ${styles.sekilasHeadline}`}
+                  data-aos="fade-up"
 					>
 						Sekilas Rabraw
 					</h1>
@@ -43,7 +51,7 @@ const Sekilas = () => {
 							<div
 								key={id}
 								onClick={() => handleOpenModal(title, link, desc)}
-                        className="mx-2"
+								className="mx-2 xs:mx-0"
 							>
 								<Cards title={title} bg={bg} />
 							</div>
@@ -71,7 +79,7 @@ const Sekilas = () => {
 								modalData.desc === '' ? (
 									<div className="h-full mt-5">
 										<iframe
-                              title="Youtube Video"
+											title="Youtube Video"
 											src={`${modalData.link}`}
 											className="my-0 mx-auto"
 											width="100%"
@@ -96,7 +104,11 @@ const Sekilas = () => {
 					</div>
 				</div>
 			</div>
-			<img src={`${process.env.PUBLIC_URL}/assets/visual1.svg`} alt=""  className={`${styles.visual1}`}/>
+			<img
+				src={`${process.env.PUBLIC_URL}/assets/visual1.svg`}
+				alt=""
+				className={`${styles.visual1}`}
+			/>
 		</Sections>
 	);
 };

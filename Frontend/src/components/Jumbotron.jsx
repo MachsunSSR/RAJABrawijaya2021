@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Sections from './Sections';
 import styles from './Jumbotron.module.css';
+import Aos from 'aos';
+import 'aos/dist/aos.css'
 
-// bg-jumbotron-bg bg-cover bg-no-repeat bg-center
 const Jumbotron = () => {
+   useEffect(() => {
+      Aos.init();
+   }, [])
 	return (
 		<>
 			<video
@@ -27,8 +31,9 @@ const Jumbotron = () => {
 				<div className="w-3/3  w-min sm:pb-8">
 					<div
 						className={`pb-3 border-b-2 border-orange ${styles.jumbotronAkronim}`}
+                  
 					>
-						<h1 className={`text-white text-xl `} >
+						<h1 className={`text-white text-xl `} data-aos="fade-up">
 							Rangkaian Acara Jelajah Almamater Universitas Brawijaya
 						</h1>
 					</div>
@@ -36,11 +41,13 @@ const Jumbotron = () => {
 					<div className="relative">
 						<h1
 							className={`batavia text-white ${styles.jumbotronHeadline1}`}
+                     data-aos="fade-up"
 						>
 							RAJA
 						</h1>
 						<h1
 							className={`batavia text-white ${styles.jumbotronHeadline2}`}
+                     data-aos="fade-up"
 						>
 							Brawijaya 2021
 						</h1>
@@ -53,4 +60,3 @@ const Jumbotron = () => {
 
 export default Jumbotron;
 
-// text-jumbotronlg xs:text-5xl sm:text-jumbotronsm md:text-jumbotronmd
