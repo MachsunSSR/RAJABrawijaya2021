@@ -15,12 +15,14 @@ const Info = ({ children, title }) => {
 			>
 				<div className="flex flex-col items-center space-y-10 ">
 					<h1
-						className={`batavia text-jumbotronmd text-purpleMaghrib text-center ${styles.faqHeadline}`}
+						className={`batavia text-jumbotronmd text-purpleMaghrib text-center ${styles.faqHeadline} ex:text-6xl exl:text-6xl`}
 					>
 						{title}
 					</h1>
 
-					<div className="w-full space-y-3">{children}</div>
+					<div className="w-full space-y-3">
+                  <p className="ex:text-lg exl:text-xl">{children}</p>
+               </div>
 				</div>
 			</Sections>
 		</div>

@@ -16,6 +16,16 @@
     font-size: 5.9rem;
   }
 }
+@media only screen and (min-width: 1300px) {
+  .adhikaraInfoHeading {
+    font-size: 7.9rem;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  .adhikaraInfoHeading {
+    font-size: 10rem;
+  }
+}
 
 .adhikaraInfoDesc {
   font-size: 1.1rem;
@@ -33,6 +43,11 @@
 @media only screen and (min-width: 1024px) {
   .adhikaraInfoDesc {
     font-size: 1.2rem;
+  }
+}
+@media only screen and (min-width: 1300px) {
+  .adhikaraInfoDesc {
+    font-size: 1.5rem;
   }
 }
 
@@ -61,5 +76,10 @@
 @media only screen and (min-width: 500px) {
   .infoCardWrapper {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+@media only screen and (min-width: 1300px) {
+  .infoCardWrapper {
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
   }
 }/*# sourceMappingURL=AdhikaraInfo.module.css.map */

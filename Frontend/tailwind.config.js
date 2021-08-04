@@ -21,7 +21,9 @@ module.exports = {
 			sm: { min: '640px', max: '767px' },
 			md: { min: '768px', max: '1023px' },
 			lg: { min: '1024px', max: '1279px' },
-			xl: { min: '1280px' },
+			xl: { min: '1280px', max: '1300px' },
+         ex: {min: '1301px', max: '1599px'},
+         exl: {min: '1600px', }
 		},
 		colors: {
 			transparent: 'transparent',
@@ -251,8 +253,9 @@ module.exports = {
 			full: '100%',
 			xsScreen: '270px',
 			'2/4': '10%',
-         containerMax: '1000px',
-         screenMax : '1100px'
+         containerMax: '1500px',
+         navbarMax: '1600px',
+         screenMax : '1500px'
 		},
 		minHeight: {
 			0: '0',
@@ -262,11 +265,13 @@ module.exports = {
          cards: '270px',
          galeri: '80vh',
          info: '60vh',
+         'cards-ex': '440px'
 		},
 		minWidth: {
 			0: '0',
 			full: '100%',
          cards: '270px',
+         'cards-ex': '460px',
          vw: '100vw'
 		},
 		objectPosition: {

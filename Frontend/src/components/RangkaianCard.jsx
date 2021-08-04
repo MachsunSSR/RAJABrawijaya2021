@@ -19,7 +19,7 @@ const Cards = ({nama, desc, img}) => {
 					}`}
 				>
 					<div>
-                 <h1 className="pl-5 text-white uppercase">{nama}</h1>
+                 <h1 className="pl-5 text-white uppercase ex:text-3xl exl:text-4xl">{nama}</h1>
                </div>
 					<svg
 						width="53"
@@ -34,7 +34,7 @@ const Cards = ({nama, desc, img}) => {
 						/>
 					</svg>
 				</div>
-				<p className={`${onHover ? 'inline' : 'hidden'} text-white`}>
+				<p className={`${onHover ? 'inline' : 'hidden'} text-white ex:text-xl exl:text-xl`}>
 					{desc}
 				</p>
 			</div>

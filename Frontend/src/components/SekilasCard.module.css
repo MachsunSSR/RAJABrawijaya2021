@@ -4,7 +4,6 @@
   transition: all 0.3s;
   background-size: 100%;
   width: 100%;
-  max-width: 350px;
 }
 .cardAnimations::before {
   content: "";
@@ -24,6 +23,27 @@
 .cardAnimations:hover::before {
   right: 0;
   width: 100%;
+}
+@media only screen and (min-width: 1280px) {
+  .cardAnimations {
+    min-width: 260px;
+    min-height: 240px;
+  }
+}
+@media only screen and (min-width: 1300px) {
+  .cardAnimations {
+    min-width: 360px;
+    min-height: 340px;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  .cardAnimations {
+    min-width: 460px;
+    min-height: 440px;
+  }
+}
+.cardAnimations img {
+  width: 1000px;
 }
 
 .cardText {

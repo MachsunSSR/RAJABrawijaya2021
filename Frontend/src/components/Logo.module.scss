@@ -3,7 +3,6 @@
 	flex-wrap: wrap;
 	align-items: center;
 
-
 	.logoBox {
 		height: 60px;
 		width: 60px;
@@ -14,12 +13,18 @@
 		align-items: center;
 		transition: 0.3s all ease-in-out;
 		margin: 0.2rem;
-      border-radius: .5rem;
+		border-radius: 0.5rem;
 
-      @media only screen and (min-width: 840px) {
-         height: 70px;
-         width: 70px;
-      }
+		@media only screen and (min-width: 840px) {
+			height: 70px;
+			width: 70px;
+		}
+
+		//100%
+		@media only screen and (min-width: 1300px) {
+			height: 100px;
+         width: 100px;
+		}
 
 		&:hover {
 			background-color: #452b48;
@@ -27,6 +32,9 @@
 		img {
 			max-height: 50px;
 			// width: 100%;
+         @media only screen and (min-width: 1300px) {
+            max-height: 80px;
+         }
 		}
 	}
 }
@@ -38,60 +46,87 @@
 	@media only screen and (min-width: 840px) {
 		max-width: 300px;
 	}
+
+   	//125%
+	@media only screen and (min-width: 1600px) {
+		max-width: 350px;
+	}
 }
 
 .logoShowContainer {
 	width: 100%;
 	display: flex;
 	justify-content: center;
-   animation-name: zoomIn;
-	animation-duration: .3s;
-   // border: 1px solid red;
-   min-height: 400px;
-   
-   @media only screen and (min-width: 840px) {
-      max-width: 35%;
-      margin-left: 1rem;
-      min-height: 500px;
-   }
+	animation-name: zoomIn;
+	animation-duration: 0.3s;
+	// border: 1px solid red;
+	min-height: 400px;
+
+	@media only screen and (min-width: 840px) {
+		max-width: 35%;
+		margin-left: 1rem;
+		min-height: 500px;
+	}
+
+	//125%
+	@media only screen and (min-width: 1600px) {
+		max-width: 40%;
+	}
+
 	.imgLogo {
-      width: 100%;
-      max-width: 200px;
-      @media only screen and (min-width: 840px) {
-         max-width: 270px;
-      }
-		
+		width: 100%;
+		max-width: 200px;
+		@media only screen and (min-width: 840px) {
+			max-width: 270px;
+		}
+
+		//125%
+		@media only screen and (min-width: 1300px) {
+			max-width: 320px;
+		}
+
+		//100%
+		@media only screen and (min-width: 1600px) {
+			max-width: 370px;
+		}
 	}
 }
 
 .left {
-   //  border: 1px solid red;
+	//  border: 1px solid red;
 	@media only screen and (min-width: 840px) {
 		max-width: 70%;
-      width: 100%;
+		width: 100%;
+	}
+
+	//100%
+	@media only screen and (min-width: 1600px) {
+		max-width: 60%;
+		width: 100%;
+		border: 1px solid red;
 	}
 }
 
 .textContainer {
 	@media only screen and (min-width: 640px) {
 		max-width: 50%;
-      width: 100%;
+		width: 100%;
 		margin-left: 3rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 100vh;
-      max-height: 250px;
-      // max-height: 280px;
-      // padding: 2rem;
-   
-      // border: 1px solid red;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 100vh;
+		max-height: 250px;
+		// max-height: 280px;
+		// padding: 2rem;
 
-      .lines{
-         height: 1px;
-         width: 100%;
-         background-color: #452b48;
-      }
+		// border: 1px solid red;
+
+		.lines {
+			height: 1px;
+			width: 100%;
+			background-color: #452b48;
+		}
 	}
 }
 
@@ -109,16 +144,25 @@
 	@media only screen and (min-width: 1024px) {
 		font-size: 5.9rem;
 	}
+
+	//125%
+	@media only screen and (min-width: 1300px) {
+		font-size: 7.9rem;
+	}
+
+	//100%
+	@media only screen and (min-width: 1600px) {
+		font-size: 10rem;
+	}
 }
 
-
 @keyframes zoomIn {
-   0% {
-     opacity: 0;
-     transform: scale(0.5);
-   }
-   100% {
-     opacity: 1; 
-     transform: none;
-   } 
- }
+	0% {
+		opacity: 0;
+		transform: scale(0.5);
+	}
+	100% {
+		opacity: 1;
+		transform: none;
+	}
+}

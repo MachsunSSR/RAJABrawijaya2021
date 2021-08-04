@@ -71,7 +71,7 @@ const Sekilas = () => {
 							className={`${styles1.vectorKiri}`}
 						/>
 						<div className="p-5 relative z-4">
-							<h1 className={`text-center text-2xl text-purpleMaghrib`}>
+							<h1 className={`text-center text-2xl text-purpleMaghrib exl:text-5xl`}>
 								{modalData ? modalData.title : 'Kosongbro'}
 							</h1>
 
@@ -88,7 +88,7 @@ const Sekilas = () => {
 										/>
 									</div>
 								) : (
-									<p className={`text-center mt-5 text-purpleMaghrib`}>
+									<p className={`text-center mt-5 text-purpleMaghrib exl:text-2xl`}>
 										{modalData ? modalData.desc : 'Kosong Bro'}
 									</p>
 								)

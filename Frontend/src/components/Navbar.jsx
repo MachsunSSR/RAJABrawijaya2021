@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import styles from './Navbar.module.css';
 import classNames from 'classnames';
 
@@ -10,6 +10,9 @@ const Navbar = () => {
 		setClicked(!clicked);
 	};
 
+   const { pathname } = useLocation();
+
+
 	// console.log(pathname);
 	useEffect(() => {
 		window.onscroll = () => {
@@ -19,11 +22,9 @@ const Navbar = () => {
 
 	return (
 		<div
-			className={`${
-				offset > 0 ? 'bg-purpleMaghrib' : 'bg-transparent'
-			} px-15 py-1 h-20 flex items-center xs:px-3 sm:px-3 fixed left-0 right-0 z-1000 transition-all delay-200 ease-in-out justify-center`}
+			className={`${pathname !== '/' ? 'bg-purpleMaghrib' : offset > 0 ? 'bg-purpleMaghrib' : 'bg-transparent'} px-15 py-1 h-20 flex items-center xs:px-3 sm:px-3 fixed left-0 right-0 z-1000 transition-all delay-200 ease-in-out justify-center exl:h-24`}
 		>
-			<div className="flex justify-between items-center w-full max-w-containerMax">
+			<div className="flex justify-between items-center w-full max-w-navbarMax">
 				<div className={classNames(clicked ? styles.logoWhenClicked : '', )}>
 					<Link to="/">
 						<img
@@ -35,12 +36,12 @@ const Navbar = () => {
 				</div>
 				<div
 					className={classNames(
-						'justify-around w-3/5 hidden lg:flex xl:flex items-center',
+						'justify-around w-3/5 hidden lg:flex xl:flex items-center ex:flex exl:flex' ,
 						clicked ? `${styles.open}` : ''
 					)}
 				>
 					{clicked ? (
-						<div className="">
+						<div>
 							<Link
 								to="/"
 								className={`links  ${styles.linkAnimations}`}
@@ -93,30 +94,30 @@ const Navbar = () => {
 						</div>
 					) : (
 						<>
-							<Link to="/" className={`links  ${styles.linkAnimations}`}>
+							<Link to="/" className={`links  ${styles.linkAnimations} exl:text-2xl`}>
 								Beranda
 							</Link>
 							<Link
 								to={'/galeri'}
-								className={`links  ${styles.linkAnimations}`}
+								className={`links  ${styles.linkAnimations} exl:text-2xl`}
 							>
 								Galeri
 							</Link>
 							<Link
 								to={'/abhiyaksa-info'}
-								className={`links  ${styles.linkAnimations}`}
+								className={`links  ${styles.linkAnimations} exl:text-2xl`}
 							>
 								Abhiyaksa Info
 							</Link>
 							<Link
 								to={'/faq'}
-								className={`links  ${styles.linkAnimations}`}
+								className={`links  ${styles.linkAnimations} exl:text-2xl`}
 							>
 								FAQ
 							</Link>
 							<Link
 								to={'/maps'}
-								className={`links  ${styles.linkAnimations}`}
+								className={`links  ${styles.linkAnimations} exl:text-2xl`}
 							>
 								Peta
 							</Link>
@@ -124,14 +125,14 @@ const Navbar = () => {
 								to={'/raja-apps'}
 								className={`links  ${
 									offset > 0 ? styles.linkAnimationsApps : 'text-white'
-								}`}
+								} exl:text-2xl`}
 							>
 								Raja Apps
 							</Link>
 						</>
 					)}
 				</div>
-				<div className="lg:hidden xl:hidden">
+				<div className="lg:hidden xl:hidden ex:hidden exl:hidden">
 					<div className={`${styles.menuIcon}`} onClick={handleMenuIcon}>
 						<input
 							type="checkbox"

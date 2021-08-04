@@ -41,6 +41,16 @@
     font-size: 5.9rem;
   }
 }
+@media only screen and (min-width: 1300px) {
+  .rangkaianHeadline {
+    font-size: 7.9rem;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  .rangkaianHeadline {
+    font-size: 10rem;
+  }
+}
 
 .line {
   height: 8px;

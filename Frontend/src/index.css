@@ -65,6 +65,10 @@
 	.batavia {
 		@apply font-pro;
 	}
+
+   p, a{
+      @apply font-sans;
+   }
 }
 
 .rec.rec-arrow {

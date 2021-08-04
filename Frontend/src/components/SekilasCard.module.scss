@@ -4,7 +4,7 @@
    transition: all .3s;
    background-size: 100%;
    width: 100%;
-   max-width: 350px;
+   // max-width: 350px;
    &::before {
 		content: '';
 		position: absolute;
@@ -30,6 +30,27 @@
 		// right: auto;
 		width: 100%;
 	}
+   //150%
+   @media only screen and (min-width: 1280px) {
+		min-width: 260px;
+      min-height: 240px;
+	}
+
+   //125%
+	@media only screen and (min-width: 1300px) {
+		min-width: 360px;
+      min-height: 340px;
+	}
+
+   //100%
+	@media only screen and (min-width: 1600px) {
+		min-width: 460px;
+      min-height: 440px;
+	}
+
+   img{
+      width: 1000px;
+   }
 }
 .cardText{
    position: absolute;

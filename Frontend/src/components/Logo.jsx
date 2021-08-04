@@ -89,31 +89,31 @@ const Logo = () => {
 								>
 									<div className="flex items-center space-x-3">
 										<div className="bg-deepBlue rounded-full p-5"></div>
-										<p className="text-white">Bertanggung Jawab</p>
+										<p className="text-white exl:text-xl">Bertanggung Jawab</p>
 									</div>
 									<div className="flex items-center space-x-3">
 										<div className="bg-midRed rounded-full p-5"></div>
-										<p className="text-white">Semangat</p>
+										<p className="text-white exl:text-xl">Semangat</p>
 									</div>
 									<div className="flex items-center space-x-3">
 										<div className="bg-softPink rounded-full p-5"></div>
-										<p className="text-white">Kepedulian</p>
+										<p className="text-white exl:text-xl">Kepedulian</p>
 									</div>
 									<div className="flex items-center space-x-3">
 										<div className="bg-midYellow rounded-full p-5"></div>
-										<p className="text-white">
+										<p className="text-white exl:text-xl">
 											Optimis dan rasa ingin tahu tinggi
 										</p>
 									</div>
 								</div>
 								<div className={`${styles.textContainer} xs:ml-0 `}>
 									<h1
-										className={`text-purpleMaghrib text-4xl xs:text-3xl font-bold xs:text-center`}
+										className={`text-purpleMaghrib text-4xl xs:text-3xl font-bold xs:text-center exl:text-5xl`}
                               
 									>
 										{nameActive}
 									</h1>
-									<p className={`text-white font-light text-md mt-3 xs:text-center`}>
+									<p className={`text-white font-light text-md mt-3 xs:text-center exl:text-xl`}>
 										{descActive}
 									</p>
                            <div className={`${styles.lines}`}></div>

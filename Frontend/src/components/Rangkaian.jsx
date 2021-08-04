@@ -32,7 +32,7 @@ const Rangkaian = () => {
 						Rangkaian Acara
 					</h1>
 				</div>
-				<div className="flex flex-col items-center space-y-10 md:flex-row md:space-y-0 lg:flex-row xl:flex-row lg:space-y-0 xl:space-y-0 space-x-6 xs:space-x-0 sm:space-x-0">
+				<div className="flex flex-col items-center space-y-10 md:flex-row md:space-y-0 lg:flex-row xl:flex-row lg:space-y-0 xl:space-y-0 space-x-6 xs:space-x-0 sm:space-x-0 ex:flex-row exl:flex-row ex:space-y-0 exl:space-y-0">
 					<RangkaianCard
 						nama={'pkkmb'}
 						img={'bg-pk2-bg'}

@@ -16,6 +16,15 @@
     height: 100vh;
   }
 }
+@media only screen and (min-width: 1600px) {
+  .rangkaianCard {
+    width: 100%;
+    min-width: 100px;
+    max-width: 480px;
+    max-height: 570px;
+    height: 100vh;
+  }
+}
 .rangkaianCard .cardDetail {
   height: 70px;
   width: 100%;
@@ -38,5 +47,11 @@
 @media only screen and (min-width: 690px) {
   .frame {
     height: 400px;
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  .frame {
+    height: 500px;
   }
 }/*# sourceMappingURL=RangkaianCard.module.css.map */

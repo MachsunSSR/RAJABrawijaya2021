@@ -18,7 +18,7 @@ const AnnounceButton = () => {
 				<img
 					src={`${process.env.PUBLIC_URL}/assets/announce.png`}
 					alt="announce"
-					width="50px"
+					width="60px"
 					className="cursor-pointer"
 					onMouseEnter={() => setEntered(true)}
 					onMouseLeave={() => setEntered(false)}

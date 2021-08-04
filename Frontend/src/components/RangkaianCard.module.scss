@@ -16,6 +16,13 @@
       max-height: 470px;
       height: 100vh;
    }
+   @media only screen and (min-width: 1600px) {
+      width: 100%;
+      min-width: 100px;
+      max-width: 480px;
+      max-height: 570px;
+      height: 100vh;
+   }
    // background-color: orange;
 
 
@@ -45,5 +52,9 @@
 
    @media only screen and (min-width: 690px) {
       height: 400px;
+      width: 100%;
+   }
+   @media only screen and (min-width: 1600px) {
+     height: 500px;
    }
 }

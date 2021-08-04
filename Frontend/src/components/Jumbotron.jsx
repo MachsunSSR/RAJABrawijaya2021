@@ -24,7 +24,7 @@ const Jumbotron = () => {
 			</video>
 			<Sections
 				propsClass={
-					`justify-center items-center lg:items-end xl:items-end ${styles.sectionProps1} `
+					`justify-center items-center lg:items-end xl:items-end ex:items-end exl:items-end ${styles.sectionProps1} `
 				}
 				propsClass2={'xs:mt-10 lg:mb-5 xl:mb-5 w-full'}
 			>
@@ -33,7 +33,7 @@ const Jumbotron = () => {
 						className={`pb-3 border-b-2 border-orange ${styles.jumbotronAkronim}`}
                   
 					>
-						<h1 className={`text-white text-xl `} data-aos="fade-up">
+						<h1 className={`text-white text-xl ex:text-3xl exl:text-5xl`} data-aos="fade-up">
 							Rangkaian Acara Jelajah Almamater Universitas Brawijaya
 						</h1>
 					</div>

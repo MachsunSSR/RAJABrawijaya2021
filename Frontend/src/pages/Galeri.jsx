@@ -47,7 +47,7 @@ const Galeri = () => {
 			>
 				<div className="relative z-2 ">
 					<div className={`${styles.jumbotronGaleriContainer}`}>
-						<div className="max-w-sm lg:self-start md:self-start xl:self-start">
+						<div className="max-w-sm lg:self-start md:self-start xl:self-start ex:self-start exl:self-start">
 							<h1
 								className={`batavia text-5xl text-white ${styles.galeriHeading}`}
                         data-aos="fade-right"
@@ -83,7 +83,7 @@ const Galeri = () => {
 					<div className="flex space-x-3 mb-5">
 						<p
 							className={classNames(
-								'cursor-pointer text-lg text-purpleMaghrib', filtered === 'semua' ? 'font-bold border-b-2 border-purpleMaghrib' : ''
+								'cursor-pointer text-lg text-purpleMaghrib ex:text-xl exl:text-2xl', filtered === 'semua' ? 'font-bold border-b-2 border-purpleMaghrib' : ''
 							)}
                         onClick={() => setFiltered('semua')}
 						>
@@ -91,7 +91,7 @@ const Galeri = () => {
 						</p>
 						<p
 							className={classNames(
-								'cursor-pointer text-lg text-purpleMaghrib', filtered === 'foto' ? 'font-bold border-b-2 border-purpleMaghrib' : ''
+								'cursor-pointer text-lg text-purpleMaghrib ex:text-xl exl:text-2xl', filtered === 'foto' ? 'font-bold border-b-2 border-purpleMaghrib' : ''
 							)}
                      onClick={() => setFiltered('foto')}
 						>
@@ -99,7 +99,7 @@ const Galeri = () => {
 						</p>
 						<p
 							className={classNames(
-								'cursor-pointer  text-lg text-purpleMaghrib', filtered === 'video' ? 'font-bold border-b-2 border-purpleMaghrib' : ''
+								'cursor-pointer  text-lg text-purpleMaghrib ex:text-xl exl:text-2xl', filtered === 'video' ? 'font-bold border-b-2 border-purpleMaghrib' : ''
 							)}
                      onClick={() => setFiltered('video')}
 						>

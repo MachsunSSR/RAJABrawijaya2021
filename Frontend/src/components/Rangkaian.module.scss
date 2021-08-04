@@ -40,6 +40,16 @@
    @media only screen and (min-width: 1024px) {
       font-size: 5.9rem;
    }
+   
+	//125%
+	@media only screen and (min-width: 1300px) {
+		font-size: 7.9rem;
+	}
+
+	//100%
+	@media only screen and (min-width: 1600px) {
+		font-size: 10rem;
+	}
 }
 
 
