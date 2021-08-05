@@ -30,10 +30,20 @@
   top: 0;
   left: 0;
 }
+@media only screen and (min-width: 670px) {
+  .modal .modalContent .vectorKiri {
+    width: 90px;
+  }
+}
 .modal .modalContent .vectorKanan {
   position: absolute;
   z-index: 3;
   width: 70px;
   bottom: 0;
   right: 0;
+}
+@media only screen and (min-width: 670px) {
+  .modal .modalContent .vectorKanan {
+    width: 90px;
+  }
 }/*# sourceMappingURL=Modal.module.css.map */

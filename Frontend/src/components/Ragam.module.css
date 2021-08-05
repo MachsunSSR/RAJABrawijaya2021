@@ -1,0 +1,13 @@
+.circleContainer {
+  width: 100%;
+  max-width: 350px;
+}
+
+.circleLogo {
+  transform: scale(1.15);
+  transition: all 0.3s ease-in-out;
+}
+
+.namaOsfak {
+  font-weight: 800;
+}/*# sourceMappingURL=Ragam.module.css.map */

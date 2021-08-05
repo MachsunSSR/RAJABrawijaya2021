@@ -33,7 +33,7 @@ const Jumbotron = () => {
 						className={`pb-3 border-b-2 border-orange ${styles.jumbotronAkronim}`}
                   
 					>
-						<h1 className={`text-white text-xl ex:text-3xl exl:text-5xl`} data-aos="fade-up">
+						<h1 className={`text-white text-xl ex:text-3xl exl:text-5xl font-semibold`} data-aos="fade-up">
 							Rangkaian Acara Jelajah Almamater Universitas Brawijaya
 						</h1>
 					</div>

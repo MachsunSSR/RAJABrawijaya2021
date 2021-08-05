@@ -9,7 +9,7 @@ const Cards = ({ title, bg }) => {
 					alt=""
                className="w-full"
 				/>
-				<p className={`${styles.cardText} pl-5 text-white exl:text-2xl text-bold`}>{title}</p>
+				<p className={`${styles.cardText} pl-5 text-white exl:text-2xl text-bold font-semibold`}>{title}</p>
 			</div>
 		</div>
 	);

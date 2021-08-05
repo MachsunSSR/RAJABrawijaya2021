@@ -7,8 +7,10 @@ import styles1 from './Modal.module.css';
 import { sekilasData } from './sekilasData';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
+import { Redirect, useHistory } from 'react-router-dom';
 
 const Sekilas = () => {
+   let history = useHistory()
 	const breakPoints = [
 		{ width: 1, itemsToShow: 1, showArrows: false },
 		{ width: 530, itemsToShow: 2 },
@@ -18,6 +20,9 @@ const Sekilas = () => {
 	const [modalData, setModalData] = useState();
 	let close = true;
 	const handleOpenModal = (title, link, desc) => {
+      if(link.indexOf('/abhiyaksa-info') >= 0){
+         history.push(link)
+      }
 		setModalData({ title, link, desc, close });
 	};
 	const handleCloseModal = () => {
@@ -64,7 +69,7 @@ const Sekilas = () => {
 					}`}
 					onClick={handleCloseModal}
 				>
-					<div className={`${styles1.modalContent}`}>
+					<div className={`${styles1.modalContent} xs:px-0 sm:px-0 md:px-10 px-20`}>
 						<img
 							src={`${process.env.PUBLIC_URL}/assets/vectorkiri.svg`}
 							alt=""
@@ -88,7 +93,7 @@ const Sekilas = () => {
 										/>
 									</div>
 								) : (
-									<p className={`text-center mt-5 text-purpleMaghrib exl:text-2xl`}>
+									<p className={`mt-5 text-purpleMaghrib exl:text-2xl text-justify`}>
 										{modalData ? modalData.desc : 'Kosong Bro'}
 									</p>
 								)

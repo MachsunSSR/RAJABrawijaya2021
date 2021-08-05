@@ -54,7 +54,7 @@ const Footer = () => {
 						/>
 					</a>
 				</div>
-				<h1 className="text-center text-orange mt-10">
+				<h1 className="text-center text-orange mt-20">
 					Sekretariat RAJA Brawijaya
 				</h1>
 				<p className="text-white text-center mt-5">
@@ -63,7 +63,7 @@ const Footer = () => {
 					Email : rajabrawijaya2021@gmail.com
 				</p>
 
-				<p className="text-white text-center opacity-25 my-10">&copy; 2021, Tim IT RAJA Brawijaya 2021</p>
+				<p className="text-white text-center my-10">&copy; 2021, Tim IT RAJA Brawijaya 2021</p>
 			</div>
 		</Sections>
 	);

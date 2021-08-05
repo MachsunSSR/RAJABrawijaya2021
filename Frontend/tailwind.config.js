@@ -6,14 +6,17 @@ module.exports = {
 			backgroundImage: (theme) => ({
 				'jumbotron-bg': "url('/src/assets/jumbotrons.png')",
 				'sekilas1-bg': "url('/src/assets/sekilasDummy1.jpg')",
-				'sekilas2-bg': "url('/src/assets/apaitu.png')",
-				'sekilas3-bg': "url('/src/assets/jingle.png')",
+				'apaitu-bg': "url('/src/assets/apaitu.jpg')",
+				'jingle-bg': "url('/src/assets/jingle.jpg')",
+				'atribut-bg': "url('/src/assets/atribut.jpg')",
+				'podcast-bg': "url('/src/assets/podcast.jpg')",
 				'white-bg': "url('/src/assets/sekilasbg1.jpg')",
 				'galeri-bg': "url('/src/assets/galeriDummy1.jpg')",
 				'logo-bg': "url('/src/assets/logoDescDummy.svg')",
 				'pk2-bg': "url('/src/assets/pk2Dummy.svg')",
 				'pbpk-bg': "url('/src/assets/pbpkDummy.svg')",
 				'oh-bg': "url('/src/assets/ohDummy.svg')",
+            'twibbon-bg': "url('/src/assets/twibbon.jpg')"
 			}),
 		},
 		screens: {
@@ -243,7 +246,7 @@ module.exports = {
 			xs: '20rem',
 			sm: '24rem',
 			md: '28rem',
-			lg: '32rem',
+			lg: '33rem',
 			xl: '36rem',
 			'2xl': '42rem',
 			'3xl': '48rem',
@@ -265,7 +268,8 @@ module.exports = {
          cards: '270px',
          galeri: '80vh',
          info: '60vh',
-         'cards-ex': '440px'
+         'cards-ex': '440px',
+         'ragamMaskot': '700px'
 		},
 		minWidth: {
 			0: '0',
