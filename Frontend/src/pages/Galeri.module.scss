@@ -51,9 +51,9 @@
 		@media only screen and (min-width: 1024px) {
 			font-size: 1.2rem;
 		}
-      @media only screen and (min-width: 1300px) {
-         font-size: 1.5rem;
-      }
+		@media only screen and (min-width: 1300px) {
+			font-size: 1.5rem;
+		}
 	}
 
 	.galeriJumbotronContainer {
@@ -64,18 +64,21 @@
 		// display: flex;
 		justify-content: center;
 		// align-items: flex-end;
-      // border: 1px solid red;
+		// border: 1px solid red;
 		width: 100%;
 		@media only screen and (min-width: 500px) {
-			height: 400px;
+			height: 360px;
 			justify-content: flex-end;
 			// width: 90%;
 		}
 
-      //125%
-			@media only screen and (min-width: 1300px) {
-				height: 500px;
-			}
+		//125%
+		@media only screen and (min-width: 1300px) {
+			height: 450px;
+		}
+		@media only screen and (min-width: 1600px) {
+			height: 500px;
+		}
 
 		.galeriJumbotron {
 			// max-width: 550px;
@@ -100,7 +103,6 @@
 			@media only screen and (min-width: 1300px) {
 				max-width: 800px;
 			}
-
 		}
 	}
 }

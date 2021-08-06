@@ -14,6 +14,26 @@
   transition: 0.3s all ease-in-out;
   margin: 0.2rem;
   border-radius: 0.5rem;
+  position: relative;
+}
+.logoBoxContainer .logoBox::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  border-radius: 0.5rem;
+  left: 0;
+  width: 0;
+  height: 100%;
+  z-index: 2;
+  background-color: #452b48;
+  transition: width 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.logoBoxContainer .logoBox:hover {
+  background-size: 110%;
+}
+.logoBoxContainer .logoBox:hover::before {
+  right: 0;
+  width: 100%;
 }
 @media only screen and (min-width: 840px) {
   .logoBoxContainer .logoBox {
@@ -27,10 +47,9 @@
     width: 100px;
   }
 }
-.logoBoxContainer .logoBox:hover {
-  background-color: #452b48;
-}
 .logoBoxContainer .logoBox img {
+  position: relative;
+  z-index: 3;
   max-height: 50px;
 }
 @media only screen and (min-width: 1300px) {

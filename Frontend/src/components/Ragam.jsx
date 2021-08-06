@@ -3,15 +3,14 @@ import Sections from './Sections';
 import styles from './Ragam.module.css';
 import { ragamData } from './ragamData';
 import classNames from 'classnames';
+import Tilt from 'react-tilt';
 
 const Ragam = () => {
 	const [active, setActive] = useState({
 		id: 1,
 		namaOspek: 'PROBINMABA FKH',
 		desc: 'PROBINMABA (Program Pembinaan Mahasiswa Baru) merupakan sebuah program dalam upaya pembinaan Mahasiswa Baru Fakultas Kedokteran Hewan Universitas Brawijaya yang diadakan rutin setiap tahunnya. PROBINMABA FKH UB memiliki dua rangkaian yakni PKKMABA (Pengenalan Kehidupan Kampus) dan KRIMA (Krida Mahasiswa). PROBINMABA FKH UB mengangkat sebuah tema yakni “Aktualisasi Pembentukan Pribadi Mahasiswa Baru yang Berintegritas Tinggi Sesuai Keprofesian Dokter Hewan”.',
-      sosmed: [
-			['https://www.instagram.com/maba_fkhubofficial/', 'instagram'],
-		],
+		sosmed: [['https://www.instagram.com/maba_fkhubofficial/', 'instagram']],
 	});
 	return (
 		<Sections
@@ -22,33 +21,40 @@ const Ragam = () => {
 		>
 			<div className="py-25 xs:py-10">
 				<div className="flex xs:flex-col sm:flex-col xs:space-x-0 sm:space-x-0 space-x-5 xs:min-h-0 sm:min-h-0 min-h-ragamMaskot  border-matePink">
-					<div className="image  flex justify-center items-center">
-						<img
-							src={`${process.env.PUBLIC_URL}/assets/maskot.png`}
-							alt="maskot"
-							className=""
-						/>
+					<div className="image flex justify-center items-start">
+						<Tilt
+							options={{
+								max: 8,
+								perspective: 1000,
+								scale: 1,
+								reverse: false,
+							}}
+						>
+							<img
+								src={`${process.env.PUBLIC_URL}/assets/maskot.png`}
+								alt="maskot"
+								className=""
+							/>
+						</Tilt>
 					</div>
 					<div
-						className={`flex flex-col xs:items-center sm:items-center items-start max-w-md ex:max-w-lg exl:max-w-xl `}
+						className={`flex flex-col xs:items-center sm:items-center items-start max-w-sm ex:max-w-md exl:max-w-xl `}
 					>
 						<div
 							className={`space-y-2 space-x-2 xs:my-10 sm:my-10 mb-5 flex flex-wrap xs:justify-center sm:justify-center justify-start ${styles.circleContainer}`}
 						>
 							<div></div>
-							{ragamData.map(({ id, namaOspek, desc, sosmed }) => {
+							{ragamData.map(({ id, namaOspek, desc, sosmed, img }) => {
 								return (
 									<img
 										key={id}
-										src={`${process.env.PUBLIC_URL}/assets/osfakLogo/filkom.png`}
+										src={`${process.env.PUBLIC_URL}/assets/osfakLogo/${img}.png`}
 										alt={`${namaOspek}`}
-										width="50px"
 										className={`${classNames(
-                                 'cursor-pointer',
-                                 id === active.id
-                                    ? styles.circleLogo
-                                    : ''
-                              )}`}
+											'cursor-pointer',
+											styles.logoOnhover,
+											id === active.id ? styles.circleLogo : ''
+										)}`}
 										onClick={() =>
 											setActive({ id, namaOspek, desc, sosmed })
 										}
@@ -57,10 +63,12 @@ const Ragam = () => {
 							})}
 						</div>
 						<div className="textContentContainer xs:ml-0 sm:ml-0 ml-2">
-							<h1 className={`text-purpleMaghrib text-4xl xs:text-3xl xs:text-center uppercase sm:text-center exl:text-5xl ${styles.namaOsfak}`}>
+							<h1
+								className={`text-purpleMaghrib text-4xl xs:text-3xl xs:text-center uppercase sm:text-center exl:text-5xl ${styles.namaOsfak}`}
+							>
 								{active ? active.namaOspek : 'PK2MABA FILKOM'}
 							</h1>
-							<p className="text-white font-light text-md mt-3 xs:text-center sm:text-center exl:text-xl">
+							<p className="text-white font-light text-md mt-3 xs:text-center sm:text-center exl:text-xl text-justify">
 								{active
 									? active.desc
 									: 'PK2MABA - Pengenalan Kehidupan Kampus bagi Mahasiswa Baru Fakultas Ilmu Komputer selanjutnya disingkat PK2MABA FILKOM adalah suatu kegiatan yang memberikan pembekalan kepada mahasiswa tentang kehidupan kampus, baik dari segi akademik maupun non akademik. STARTUP ACADEMY - Merupakan kelanjutan setelah PK2MABA FILKOM yang memfasilitasi mahasiswa dalam pembinaan karya ilmiah, pengenalan organisasi mahasiswa, dan pelaksanaan krida mahasiswa tingkat Program Studi.'}
@@ -73,7 +81,11 @@ const Ragam = () => {
 									{active ? (
 										active.sosmed.map((n, index) => {
 											return (
-												<a href={active.sosmed[index][0]} target="_blank">
+												<a
+													href={active.sosmed[index][0]}
+													target="_blank"
+													rel="noreferrer"
+												>
 													<img
 														src={`${process.env.PUBLIC_URL}/assets/icon/${active.sosmed[index][1]}.png`}
 														alt={active.sosmed[index][1]}
@@ -87,7 +99,8 @@ const Ragam = () => {
 											href={
 												'https://www.instagram.com/pk2maba_filkom/'
 											}
-                                 target="_blank"
+											target="_blank"
+											rel="noreferrer"
 										>
 											<img
 												src={`${process.env.PUBLIC_URL}/assets/icon/instagram.png`}

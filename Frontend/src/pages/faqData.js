@@ -7,12 +7,12 @@ const faqData = [
    {
       id:2,
       pertanyaan: 'Kapan RAJA Brawijaya dilaksanakan?',
-      jawaban: 'Kemungkinan dilaksanakan pada tanggal 17-19 agustus 2021'
+      jawaban: 'Dilaksanakan pada 17-19 agustus 2021'
    },
    {
       id:3,
       pertanyaan: 'Apakah hukum mengikuti RAJA Brawijaya?',
-      jawaban: 'Ya, wajib hukumnya bagi mahasiswa baru untuk mengikuti Acara RAJA Brawijaya.'
+      jawaban: 'Wajib hukumnya bagi mahasiswa baru untuk mengikuti Acara RAJA Brawijaya.'
    },
    {
       id:4,
@@ -22,12 +22,12 @@ const faqData = [
    {
       id:5,
       pertanyaan: 'Apa saja akun sosial media resmi RAJA Brawijaya?',
-      jawaban: 'Kunjungi bagian bawah website, lalu klik pada icon sosial media yang tersedia.'
+      jawaban: 'Kunjungi bagian bawah website, lalu klik icon sosial media yang tersedia.'
    },
    {
       id:6,
       pertanyaan: 'Apakah RAJA Brawijaya menyediakan grup untuk para mahasiswa baru?',
-      jawaban: 'Raja Brawijaya HANYA menyediakan grup maba yang tertera di bagian Dashboard RAJA Apps.'
+      jawaban: 'Raja Brawijaya HANYA menyediakan grup maba yang tertera di bagian dashboard RAJA Apps.'
    },
    {
       id:7,
@@ -47,7 +47,7 @@ const faqData = [
    {
       id:10,
       pertanyaan: 'Kenapa status cluster di form registrasi masih (-) padahal sudah membayar UKT?',
-      jawaban: 'Uh, santai jangan terburu-buru. Status akan berubah dalam rentan waktu 3 hari setelah pembayaran UKT'
+      jawaban: 'Uh, santai jangan terburu-buru. Status akan berubah dalam rentang waktu 3 hari setelah pembayaran UKT'
    },
    {
       id:11,
@@ -87,7 +87,7 @@ const faqData = [
    {
       id:18,
       pertanyaan: 'Bagaimana ketentuan pakaian dan rambut ketika rangkaian RAJA Brawijaya?',
-      jawaban: 'Ketentuan pakaian selama rangkain acara dapat dilihat pada menu “Atribut” di Website RAJA Brawijaya.'
+      jawaban: 'Ketentuan pakaian selama rangkain acara dapat dilihat pada "Informasi Atribut" menu Abhiyaksa Info di Website RAJA Brawijaya.'
    },
    {
       id:19,
@@ -117,7 +117,7 @@ const faqData = [
    {
       id:24,
       pertanyaan: 'Bagaimana pembagian jas almamater UB?',
-      jawaban: 'Informasi jas almamater akan diinfokan di kemudian hari.'
+      jawaban: 'Informasi jas almamater akan diinfokan dikemudian hari. Kemudian hari yang tidak pasti kapan datangnya.'
    },
 ]
 

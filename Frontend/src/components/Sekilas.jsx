@@ -7,7 +7,7 @@ import styles1 from './Modal.module.css';
 import { sekilasData } from './sekilasData';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import { Redirect, useHistory } from 'react-router-dom';
+import {  useHistory } from 'react-router-dom';
 
 const Sekilas = () => {
    let history = useHistory()

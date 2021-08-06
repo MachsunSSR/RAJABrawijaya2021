@@ -1,7 +1,7 @@
 .cardAnimations {
   cursor: pointer;
   position: relative;
-  transition: all 0.3s;
+  transition: all 0.5s;
   background-size: 100%;
   width: 100%;
 }
@@ -15,7 +15,7 @@
   z-index: 2;
   background-color: #FC6238;
   mix-blend-mode: multiply;
-  transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: width 0.2s cubic-bezier(0.25, 1, 0.5, 1);
 }
 .cardAnimations:hover {
   background-size: 110%;

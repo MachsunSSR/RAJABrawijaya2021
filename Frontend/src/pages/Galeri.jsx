@@ -61,7 +61,7 @@ const Galeri = () => {
 						</div>
 						<div className={`${styles.galeriJumbotronContainer}`}>
 							<img
-								src={`${process.env.PUBLIC_URL}/assets/jumbotronGaleri.svg`}
+								src={`${process.env.PUBLIC_URL}/assets/jumbotronGaleri.png`}
 								alt="galeriJumbotron"
 								className={`${styles.galeriJumbotron}`}
 							/>

@@ -64,11 +64,16 @@
 }
 @media only screen and (min-width: 500px) {
   .jumbotronGaleriContainer .galeriJumbotronContainer {
-    height: 400px;
+    height: 360px;
     justify-content: flex-end;
   }
 }
 @media only screen and (min-width: 1300px) {
+  .jumbotronGaleriContainer .galeriJumbotronContainer {
+    height: 450px;
+  }
+}
+@media only screen and (min-width: 1600px) {
   .jumbotronGaleriContainer .galeriJumbotronContainer {
     height: 500px;
   }

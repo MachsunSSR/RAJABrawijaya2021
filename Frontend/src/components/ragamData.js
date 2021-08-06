@@ -6,6 +6,7 @@ export const ragamData = [
       sosmed: [
 			['https://www.instagram.com/maba_fkhubofficial/', 'instagram'],
 		],
+      img: 'fkh'
 	},
 	{
 		id: 2,
@@ -19,6 +20,7 @@ export const ragamData = [
 				'youtube',
 			],
 		],
+      img: 'fib'
 	},
 	{
 		id: 3,
@@ -32,6 +34,7 @@ export const ragamData = [
 				'youtube',
 			],
 		],
+      img: 'filkom'
 	},
 	{
 		id: 4,
@@ -41,6 +44,7 @@ export const ragamData = [
 			['https://www.instagram.com/probinmabafkgub/', 'instagram'],
 			['https://line.me/ti/p/~@iiu6843v', 'line'],
 		],
+      img: 'filkom'
 	},
 	{
 		id: 5,
@@ -51,6 +55,7 @@ export const ragamData = [
 			['https://line.me/ti/p/~@vgh3838g', 'line'],
 			['http://yuwaraja.vokasi.ub.ac.id/', 'website'],
 		],
+      img: 'vokasi'
 	},
 	{
 		id: 6,
@@ -61,6 +66,7 @@ export const ragamData = [
 			['https://line.me/ti/p/~@440oataq', 'line'],
 			['http://mipa.ub.ac.id/', 'website'],
 		],
+      img: 'fmipa'
 	},
 	{
 		id: 7,
@@ -71,6 +77,7 @@ export const ragamData = [
 			['https://line.me/ti/p/~@bemfkub', 'line'],
 			['https://www.youtube.com/channel/UCDq_bytxOQA8cHVQqDjFx3Q', 'youtube'],
 		],
+      img: 'fk'
 	},
 	{
 		id: 8,
@@ -81,6 +88,7 @@ export const ragamData = [
 			['https://line.me/ti/p/~@bemfkub', 'line'],
 			['https://www.youtube.com/channel/UCDq_bytxOQA8cHVQqDjFx3Q', 'youtube'],
 		],
+       img: 'fk'
 	},
 	{
 		id: 9,
@@ -91,6 +99,7 @@ export const ragamData = [
 			['https://line.me/ti/p/~@bemfkub', 'line'],
 			['https://www.youtube.com/channel/UCDq_bytxOQA8cHVQqDjFx3Q', 'youtube'],
 		],
+       img: 'fk'
 	},
 	{
 		id: 10,
@@ -101,6 +110,7 @@ export const ragamData = [
 			['https://line.me/ti/p/~@bemfkub', 'line'],
 			['https://www.youtube.com/channel/UCDq_bytxOQA8cHVQqDjFx3Q', 'youtube'],
 		],
+       img: 'fk'
 	},
 	{
 		id: 11,
@@ -111,6 +121,7 @@ export const ragamData = [
 			['https://line.me/ti/p/~@bemfkub', 'line'],
 			['https://www.youtube.com/channel/UCDq_bytxOQA8cHVQqDjFx3Q', 'youtube'],
 		],
+       img: 'fk'
 	},
 	{
 		id: 12,
@@ -121,6 +132,7 @@ export const ragamData = [
 			['https://line.me/ti/p/~@bemfkub', 'line'],
 			['https://www.youtube.com/channel/UCDq_bytxOQA8cHVQqDjFx3Q', 'youtube'],
 		],
+       img: 'fk'
 	},
 	{
 		id: 13,
@@ -131,6 +143,7 @@ export const ragamData = [
 			['https://line.me/ti/p/~@bemfkub', 'line'],
 			['https://www.youtube.com/channel/UCDq_bytxOQA8cHVQqDjFx3Q', 'youtube'],
 		],
+       img: 'fk'
 	},
 	{
 		id: 14,
@@ -141,6 +154,7 @@ export const ragamData = [
 			['https://line.me/ti/p/~@bemfkub', 'line'],
 			['https://www.youtube.com/channel/UCDq_bytxOQA8cHVQqDjFx3Q', 'youtube'],
 		],
+       img: 'fk'
 	},
 	{
 		id: 15,
@@ -151,6 +165,7 @@ export const ragamData = [
 			['https://line.me/ti/p/~@bemfkub', 'line'],
 			['https://www.youtube.com/channel/UCDq_bytxOQA8cHVQqDjFx3Q', 'youtube'],
 		],
+       img: 'fk'
 	},
 	{
 		id: 16,
@@ -161,6 +176,7 @@ export const ragamData = [
 			['https://line.me/ti/p/~@bemfkub', 'line'],
 			['https://www.youtube.com/channel/UCDq_bytxOQA8cHVQqDjFx3Q', 'youtube'],
 		],
+       img: 'fk'
 	},
 	{
 		id: 17,
@@ -171,5 +187,6 @@ export const ragamData = [
 			['https://line.me/ti/p/~@bemfkub', 'line'],
 			['https://www.youtube.com/channel/UCDq_bytxOQA8cHVQqDjFx3Q', 'youtube'],
 		],
+       img: 'fk'
 	},
 ];

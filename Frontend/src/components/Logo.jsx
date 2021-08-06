@@ -5,6 +5,7 @@ import classNames from 'classnames';
 import logoData from './logoData';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
+import Tilt from 'react-tilt';
 Aos.init();
 
 const Logo = () => {
@@ -35,7 +36,7 @@ const Logo = () => {
 							styles.logoHeadline,
 							'batavia text-purpleMaghrib'
 						)}
-                  data-aos="fade-up"
+						data-aos="fade-up"
 					>
 						Makna Logo
 					</h1>
@@ -67,7 +68,6 @@ const Logo = () => {
 												handleActive(e, nama, desc, img, id)
 											}
 											key={id}
-                                 
 										>
 											<img
 												src={`${process.env.PUBLIC_URL}/assets/logo/${img}.png`}
@@ -89,7 +89,9 @@ const Logo = () => {
 								>
 									<div className="flex items-center space-x-3">
 										<div className="bg-deepBlue rounded-full p-5"></div>
-										<p className="text-white exl:text-xl">Bertanggung Jawab</p>
+										<p className="text-white exl:text-xl">
+											Bertanggung Jawab
+										</p>
 									</div>
 									<div className="flex items-center space-x-3">
 										<div className="bg-midRed rounded-full p-5"></div>
@@ -97,7 +99,9 @@ const Logo = () => {
 									</div>
 									<div className="flex items-center space-x-3">
 										<div className="bg-softPink rounded-full p-5"></div>
-										<p className="text-white exl:text-xl">Kepedulian</p>
+										<p className="text-white exl:text-xl">
+											Kepedulian
+										</p>
 									</div>
 									<div className="flex items-center space-x-3">
 										<div className="bg-midYellow rounded-full p-5"></div>
@@ -109,24 +113,37 @@ const Logo = () => {
 								<div className={`${styles.textContainer} xs:ml-0 `}>
 									<h1
 										className={`text-purpleMaghrib text-4xl xs:text-3xl font-bold xs:text-center exl:text-5xl`}
-                              
 									>
 										{nameActive}
 									</h1>
-									<p className={`text-white font-light text-md mt-3 xs:text-center exl:text-xl`}>
+									<p
+										className={`text-white font-light text-md mt-3 xs:text-center exl:text-xl`}
+									>
 										{descActive}
 									</p>
-                           <div className={`${styles.lines}`}></div>
+									<div className={`${styles.lines}`}></div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div className={classNames(styles.logoShowContainer)} key={Math.random()}>
-						<img
-							src={`${process.env.PUBLIC_URL}/assets/logo/${imgActive}.png`}
-							alt={`${imgActive}`}
-							className={` ${styles.imgLogo}`}
-						/>
+					<div
+						className={classNames(styles.logoShowContainer)}
+						key={Math.random()}
+					>
+						<Tilt
+							options={{
+								max: 8,
+								perspective: 1000,
+								scale: 1,
+								reverse: false,
+							}}
+						>
+							<img
+								src={`${process.env.PUBLIC_URL}/assets/logo/${imgActive}.png`}
+								alt={`${imgActive}`}
+								className={` ${styles.imgLogo}`}
+							/>
+						</Tilt>
 					</div>
 				</div>
 			</div>

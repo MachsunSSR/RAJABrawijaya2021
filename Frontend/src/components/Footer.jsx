@@ -1,5 +1,6 @@
 import React from 'react';
 import Sections from './Sections';
+import styles from './Footer.module.css'
 
 const Footer = () => {
 	return (
@@ -11,42 +12,42 @@ const Footer = () => {
 		>
 			<div>
 				<div className=" flex items-center justify-center space-x-5">
-					<a href="https://vt.tiktok.com/ZGJADvfod/" target="_blank" rel="noreferrer">
+					<a href="https://vt.tiktok.com/ZGJADvfod/" target="_blank" rel="noreferrer" className={`${styles.logoOnhover}`}>
 						<img
 							src={`${process.env.PUBLIC_URL}/assets/icon/tiktok.png`}
 							alt="tiktok"
 							width="45px"
 						/>
 					</a>
-					<a href="https://line.me/ti/p/~@raja_brawijaya" target="_blank" rel="noreferrer">
+					<a href="https://line.me/ti/p/~@raja_brawijaya" target="_blank" rel="noreferrer" className={`${styles.logoOnhover}`}>
 						<img
 							src={`${process.env.PUBLIC_URL}/assets/icon/line.png`}
 							alt="line"
 							width="45px"
 						/>
 					</a>
-					<a href="https://www.instagram.com/raja_brawijaya/" target="_blank" rel="noreferrer">
+					<a href="https://www.instagram.com/raja_brawijaya/" target="_blank" rel="noreferrer" className={`${styles.logoOnhover}`}>
 						<img
 							src={`${process.env.PUBLIC_URL}/assets/icon/instagram.png`}
 							alt="instagram"
 							width="45px"
 						/>
 					</a>
-					<a href="https://t.me/rajabrawijayaub" target="_blank" rel="noreferrer">
+					<a href="https://t.me/rajabrawijayaub" target="_blank" rel="noreferrer" className={`${styles.logoOnhover}`}>
 						<img
 							src={`${process.env.PUBLIC_URL}/assets/icon/telegram.png`}
 							alt="telegram"
 							width="45px"
 						/>
 					</a>
-					<a href="https://twitter.com/raja_brawijaya" target="_blank" rel="noreferrer">
+					<a href="https://twitter.com/raja_brawijaya" target="_blank" rel="noreferrer" className={`${styles.logoOnhover}`}>
 						<img
 							src={`${process.env.PUBLIC_URL}/assets/icon/twitter.png`}
 							alt="twitter"
 							width="45px"
 						/>
 					</a>
-					<a href="https://www.youtube.com/channel/UCpNS1e8i6pgkxqxbdIPnUNQ" target="_blank" rel="noreferrer">
+					<a href="https://www.youtube.com/channel/UCpNS1e8i6pgkxqxbdIPnUNQ" target="_blank" rel="noreferrer" className={`${styles.logoOnhover}`}>
 						<img
 							src={`${process.env.PUBLIC_URL}/assets/icon/youtube.png`}
 							alt="youtube"
