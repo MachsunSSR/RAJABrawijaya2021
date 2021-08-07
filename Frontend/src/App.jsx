@@ -10,17 +10,16 @@ import Twibbon from './pages/info/InformasiTwibbon';
 import Atribut from './pages/info/InformasiAtribut';
 import Footer from './components/Footer';
 import NotFound from './pages/NotFound';
-import createHistory from "history/createBrowserHistory";
+import createHistory from 'history/createBrowserHistory';
 import ScrollTop from './components/ScrollTop';
 import ComingSoon from './components/ComingSoon';
 // import Aos from 'aos'/;
 
 export default function App() {
-   
 	return (
 		<>
 			<Router>
-            <ScrollTop/>
+				<ScrollTop />
 				<Navbar />
 				<AnnounceButton />
 				<Switch>
@@ -30,19 +29,17 @@ export default function App() {
 					<Route path={'/faq'} component={Faq} />
 					<Route path={'/raja-apps'} component={ComingSoon} />
 					<Route path={'/maps'} component={ComingSoon} />
-					<Switch>
-						<Route
-							exact
-							path={'/abhiyaksa-info/info-twibbon'}
-							component={ComingSoon}
-						/>
-						<Route
-							exact
-							path={'/abhiyaksa-info/info-atribut'}
-							component={ComingSoon}
-						/>
-					</Switch>
-					<Route path={'*'} component={NotFound} />
+					<Route
+						exact
+						path={'/abhiyaksa-info/info-twibbon'}
+						component={ComingSoon}
+					/>
+					<Route
+						exact
+						path={'/abhiyaksa-info/info-atribut'}
+						component={ComingSoon}
+					/>
+					<Route exact component={NotFound} />
 				</Switch>
 				<Footer />
 			</Router>

@@ -6,6 +6,7 @@ import Logo from '../components/Logo';
 import Ragam from '../components/Ragam';
 import Rangkaian from '../components/Rangkaian';
 import Sekilas from '../components/Sekilas';
+import NotFound from './NotFound';
 const Landing = () => {
 	return (
 		<div>

@@ -4,7 +4,7 @@ const NotFound = () => {
 	return (
 		<Sections
 			propsClass={
-				'justify-center items-center bg-galeri-bg bg-cover bg-no-repeat relative bg-fixed'
+				'justify-center items-center bg-galeri-bg bg-cover bg-repeat relative'
 			}
 			propsClass2={
 				'bg-whiteSoft w-full rounded-2 xs:p-5 sm:p-5 p-20 my-24 lg:mb-5 xl:mb-5 drop-shadow-xl'
