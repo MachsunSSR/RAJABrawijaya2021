@@ -72,7 +72,7 @@ const Logo = () => {
 											<img
 												src={`${process.env.PUBLIC_URL}/assets/logo/${img}.png`}
 												alt={`${img}`}
-												className={``}
+												className={`object-cover`}
 											/>
 										</div>
 									);

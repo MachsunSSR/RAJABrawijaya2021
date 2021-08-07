@@ -10,13 +10,13 @@ const Landing = () => {
 	return (
 		<div>
 			<Jumbotron />
-			<div className="bg-white-bg no-repeat bg-auto">
+			<div className="bg-white-bg bg-repeat bg-auto">
 				<Sekilas />
 				<Rangkaian />
 			</div>
-			<div className="bg-orange bg-logo-bg no-repeat">
+			<div className="bg-orange bg-logo-bg bg-repeat">
 				<Logo />
-				<Ragam />
+				{/* <Ragam /> */}
 			</div>
 		</div>
 	);

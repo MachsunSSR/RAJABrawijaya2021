@@ -41,7 +41,7 @@ const Ragam = () => {
 						className={`flex flex-col xs:items-center sm:items-center items-start max-w-sm ex:max-w-md exl:max-w-xl `}
 					>
 						<div
-							className={`space-y-2 space-x-2 xs:my-10 sm:my-10 mb-5 flex flex-wrap xs:justify-center sm:justify-center justify-start ${styles.circleContainer}`}
+							className={`space-y-2 space-x-2 xs:my-10 sm:my-10 mb-5 flex flex-wrap xs:justify-center sm:justify-center justify-start flex-start ${styles.circleContainer}`}
 						>
 							<div></div>
 							{ragamData.map(({ id, namaOspek, desc, sosmed, img }) => {
@@ -51,7 +51,7 @@ const Ragam = () => {
 										src={`${process.env.PUBLIC_URL}/assets/osfakLogo/${img}.png`}
 										alt={`${namaOspek}`}
 										className={`${classNames(
-											'cursor-pointer',
+											'cursor-pointer object-cover',
 											styles.logoOnhover,
 											id === active.id ? styles.circleLogo : ''
 										)}`}

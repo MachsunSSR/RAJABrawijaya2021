@@ -114,17 +114,17 @@ const Galeri = () => {
 							activeIndex={currentImage}
 						/>
 						{filtered === 'semua' ? (
-							<div className={`${styles.contentWrapper}`} key={Math.random()}>
-								<Gallery photos={photos} onClick={openLightbox} />
-								<Gallery photos={videos} onClick={openLightbox} />
+							<div className={`${styles.contentWrapper} object-cover flex-start`} key={Math.random()}>
+								<Gallery photos={photos} className={`object-cover flex-start`} onClick={openLightbox} />
+								<Gallery photos={videos} className={`object-cover flex-start`} onClick={openLightbox} />
 							</div>
 						) : filtered === 'foto' ? (
-                     <div className={`${styles.contentWrapper}`} key={Math.random()}>
-							<Gallery photos={photos} onClick={openLightbox} />
+                     <div className={`${styles.contentWrapper} object-cover flex-start`} key={Math.random()}>
+							<Gallery photos={photos} className={`object-cover flex-start`} onClick={openLightbox} />
                      </div>
 						) : filtered === 'video' ? (
-                     <div className={`${styles.contentWrapper}`} key={Math.random()}>
-							<Gallery photos={videos} onClick={openLightbox} />
+                     <div className={`${styles.contentWrapper} object-cover flex-start`} key={Math.random()}>
+							<Gallery photos={videos} className={`object-cover flex-start`} onClick={openLightbox} />
                      </div>
 						) : (
 							''

@@ -56,7 +56,7 @@ const Footer = () => {
 					</a>
 				</div>
 				<h1 className="text-center text-orange mt-20">
-					Sekretariat RAJA Brawijaya
+					Crisis Center RAJA Brawijaya
 				</h1>
 				<p className="text-white text-center mt-5">
 					Gedung EM-DPM UB Lantai 1, Jln. Veteran 06C Malang 65145 <br />
@@ -64,7 +64,7 @@ const Footer = () => {
 					Email : rajabrawijaya2021@gmail.com
 				</p>
 
-				<p className="text-white text-center my-10">&copy; 2021, Tim IT RAJA Brawijaya 2021</p>
+				<p className="text-white text-center my-20">&copy; 2021, Tim IT RAJA Brawijaya 2021</p>
 			</div>
 		</Sections>
 	);
