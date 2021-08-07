@@ -13,6 +13,13 @@ export const sekilasData = [
       desc:'RAJA Brawijaya atau Rangkaian Acara Jelajah Almamater Universitas Brawijaya adalah serangkaian kegiatan yang bertujuan untuk memfasilitasi mahasiswa baru Universitas Brawijaya agar dapat mengetahui hal-hal yang terkait dengan kehidupan kampus. Rangkaian ini sendiri terdiri dari tiga rangkaian yaitu PKKMB, PBPK, dan OH.',
       bg:'bg-apaitu-bg'
 	}, 
+   {
+		id: 5,
+		title: 'Informasi Atribut',
+		link: '/abhiyaksa-info/info-atribut',
+      desc:'',
+      bg:'bg-atribut-bg'
+	},
 	{
 		id: 3,
 		title: 'Rasanya Jadi Anak UB',

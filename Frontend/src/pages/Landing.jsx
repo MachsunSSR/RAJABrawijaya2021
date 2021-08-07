@@ -7,15 +7,19 @@ import Ragam from '../components/Ragam';
 import Rangkaian from '../components/Rangkaian';
 import Sekilas from '../components/Sekilas';
 const Landing = () => {
-   return (
-      <div>
-         <Jumbotron/>
-         <Sekilas/>
-         <Rangkaian/>
-         <Logo/>
-         <Ragam/>
-      </div>
-   );
-}
- 
+	return (
+		<div>
+			<Jumbotron />
+			<div className="bg-white-bg no-repeat bg-auto">
+				<Sekilas />
+				<Rangkaian />
+			</div>
+			<div className="bg-orange bg-logo-bg no-repeat">
+				<Logo />
+				<Ragam />
+			</div>
+		</div>
+	);
+};
+
 export default Landing;

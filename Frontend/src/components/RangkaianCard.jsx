@@ -34,7 +34,7 @@ const Cards = ({nama, desc, img}) => {
 						/>
 					</svg>
 				</div>
-				<p className={`${onHover ? 'inline' : 'hidden'} text-white ex:text-xl exl:text-xl`}>
+				<p className={`${onHover ? 'inline text-white ex:text-xl exl:text-xl' : 'hidden'}` }>
 					{desc}
 				</p>
 			</div>

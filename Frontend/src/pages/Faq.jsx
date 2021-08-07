@@ -33,7 +33,7 @@ const Faq = () => {
 	return (
 		<Sections
 			propsClass={
-				'justify-center items-center bg-galeri-bg bg-cover bg-no-repeat relative bg-fixed'
+				'justify-center items-center bg-galeri-bg  bg-repeat relative '
 			}
 			propsClass2={'bg-whiteSoft w-full rounded-2 xs:p-5 sm:p-5 p-20 mb-32 mt-40 drop-shadow-xl'}
 		>
@@ -44,8 +44,7 @@ const Faq = () => {
 				>
 					Pertanyaan dan Jawaban
 				</h1>
-				<div className="w-3/4 ">
-					
+				<div className="w-3/4 xs:w-full">
 					<form >
 						<input
 							type="text"
@@ -54,6 +53,7 @@ const Faq = () => {
 							className={`w-full ${styles.searchBox}`}
                      placeholder={"Cari pertanyaan"}
                      onChange={(e)=>handleChange(e)}
+
 						/>
 					</form>
 				</div>

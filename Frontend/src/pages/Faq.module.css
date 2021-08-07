@@ -16,6 +16,11 @@
     font-size: 4.9rem;
   }
 }
+@media only screen and (min-width: 1300px) {
+  .faqHeadline {
+    font-size: 6.9rem;
+  }
+}
 
 .searchBox {
   padding: 1rem 2rem;
@@ -25,7 +30,11 @@
   font-weight: 600;
 }
 .searchBox:focus {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 0 1pt #452b48;
   outline: none;
+  transition: 0.1s;
 }
 
 .a1 .ask {

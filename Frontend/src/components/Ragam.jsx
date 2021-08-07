@@ -15,7 +15,7 @@ const Ragam = () => {
 	return (
 		<Sections
 			propsClass={
-				'justify-center items-center relative bg-orange bg-logo-bg bg-cover no-repeat'
+				'justify-center items-center relative'
 			}
 			propsClass2={'w-full '}
 		>

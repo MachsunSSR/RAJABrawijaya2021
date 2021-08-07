@@ -10,7 +10,7 @@ module.exports = {
 				'podcast-bg': "url('/src/assets/podcast.jpg')",
 				'white-bg': "url('/src/assets/sekilasbg1.jpg')",
 				'galeri-bg': "url('/src/assets/galeriDummy1.jpg')",
-				'logo-bg': "url('/src/assets/logoDescDummy.svg')",
+				'logo-bg': "url('/src/assets/logoDescDummy2.png')",
 				'pk2-bg': "url('/src/assets/pk2Dummy.svg')",
 				'pbpk-bg': "url('/src/assets/pbpkDummy.svg')",
 				'oh-bg': "url('/src/assets/ohDummy.svg')",
@@ -256,7 +256,8 @@ module.exports = {
 			'2/4': '10%',
          containerMax: '1500px',
          navbarMax: '1600px',
-         screenMax : '1500px'
+         screenMax : '1500px',
+         imgSalah: '15rem'
 		},
 		minHeight: {
 			0: '0',

@@ -5,7 +5,7 @@ const ComingSoon = () => {
 	return (
 		<Sections
 			propsClass={
-				'justify-center items-center bg-white-bg bg-cover bg-no-repeat relative bg-fixed overflow-hidden'
+				'justify-center items-center bg-white-bg bg-no-repeat relative  overflow-hidden'
 			}
 			propsClass2={
 				'w-full rounded-2 xs:p-5 sm:p-5 p-20 my-24 lg:mb-5 xl:mb-5'

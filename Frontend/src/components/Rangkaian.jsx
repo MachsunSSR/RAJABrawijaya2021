@@ -10,7 +10,7 @@ const Rangkaian = () => {
 	return (
 		<Sections
 			propsClass={
-				'justify-center items-center relative lg:px-20 bg-white-bg bg-cover no-repeat bg-fixed'
+				'justify-center items-center relative lg:px-20'
 			}
 			propsClass2={'w-full'}
 		>

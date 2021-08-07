@@ -17,4 +17,10 @@ export const videos = [
 		height: 1,
       links: 'https://www.youtube.com/embed/ovn5UU2eoiI'
 	},
+	{
+		src: `${process.env.PUBLIC_URL}/assets/galeri/16.png`,
+		width: 1,
+		height: 1,
+      links: 'https://drive.google.com/file/d/17v1gRCoVALQduCM6NVTNzTGa2l9lN4Md/preview'
+	},
 ]

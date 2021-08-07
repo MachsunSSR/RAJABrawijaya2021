@@ -66,9 +66,15 @@
 		@apply font-pro;
 	}
 
-   p, a{
+   /* p, a{
       @apply font-sans;
-   }
+   } */
+
+}
+
+
+p,a{
+   font-family: 'Poppins', sans-serif;
 }
 
 .rec.rec-arrow {

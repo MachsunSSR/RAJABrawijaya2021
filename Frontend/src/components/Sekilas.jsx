@@ -36,7 +36,7 @@ const Sekilas = () => {
 	return (
 		<Sections
 			propsClass={
-				'justify-center items-center relative bg-white-bg bg-cover no-repeat bg-fixed'
+				'justify-center items-center relative'
 			}
 			propsClass2={'w-full'}
 		>
