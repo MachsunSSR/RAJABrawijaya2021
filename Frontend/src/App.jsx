@@ -34,12 +34,12 @@ export default function App() {
 						<Route
 							exact
 							path={'/abhiyaksa-info/info-twibbon'}
-							component={Twibbon}
+							component={ComingSoon}
 						/>
 						<Route
 							exact
 							path={'/abhiyaksa-info/info-atribut'}
-							component={Atribut}
+							component={ComingSoon}
 						/>
 					</Switch>
 					<Route path={'*'} component={NotFound} />
