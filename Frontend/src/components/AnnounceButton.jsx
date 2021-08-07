@@ -12,7 +12,7 @@ const AnnounceButton = () => {
 					entered ? 'visible' : 'hidden'
 				}`}
 			>
-				Kamu punya informasi terbaru
+				Belum ada informasi terbaru
 			</div>
 			<Link to={'/abhiyaksa-info'}>
 				<img
