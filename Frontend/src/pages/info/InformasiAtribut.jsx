@@ -46,7 +46,7 @@ const Atribut = () => {
 						Memakai kaos kaki berwarna putih polos dan tidak transparan.
 					</li>
 					<li>
-						Memakai name tag berukuran B4 beserta tali name tag yang
+						Memakai name tag berukuran B4 (25 x 35,3 cm) beserta tali name tag yang
 						berwarna biru selama kegiatan PKKMB berlangsung. Name tag
 						dapat diunduh{' '}
 						<a
@@ -119,7 +119,7 @@ const Atribut = () => {
 						‎Memakai kaos kaki berwarna putih polos dan tidak transparan.
 					</li>
 					<li>
-						Memakai name tag berukuran B4 beserta tali name tag yang
+						Memakai name tag berukuran B4 (25 x 35,3 cm) beserta tali name tag yang
 						berwarna biru selama kegiatan PKKMB berlangsung. Name tag
 						dapat diunduh{' '}
 						<a
