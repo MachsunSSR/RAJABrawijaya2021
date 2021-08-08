@@ -1,0 +1,153 @@
+.menuIcon {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+.menuIcon .menuIconCheckBox {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+  z-index: 2;
+  -webkit-touch-callout: none;
+  position: absolute;
+  opacity: 0;
+}
+.menuIcon div {
+  margin: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 22px;
+  height: 12px;
+}
+.menuIcon span {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--bar-bg, white);
+  border-radius: 1px;
+  transition: all 0.2s cubic-bezier(0.1, 0.82, 0.76, 0.965);
+}
+.menuIcon span:first-of-type {
+  top: 0;
+}
+.menuIcon span:last-of-type {
+  bottom: 0;
+}
+.menuIcon.active span:first-of-type,
+.menuIcon .menuIconCheckBox:checked + div span:first-of-type {
+  transform: rotate(45deg);
+  top: 5px;
+}
+.menuIcon.active span:last-of-type,
+.menuIcon .menuIconCheckBox:checked + div span:last-of-type {
+  transform: rotate(-45deg);
+  bottom: 5px;
+}
+.menuIcon.active:hover span:first-of-type, .menuIcon.active:hover span:last-of-type, .menuIcon:hover .menuIconCheckBox + div span:first-of-type, .menuIcon:hover .menuIconCheckBox + div span:last-of-type {
+  width: 22px;
+}
+@media (min-width: 1024px) {
+  .menuIcon:hover span:first-of-type {
+    width: 26px;
+  }
+  .menuIcon:hover span:last-of-type {
+    width: 12px;
+  }
+}
+.linkAnimations {
+  position: relative;
+}
+.linkAnimations::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  right: 0;
+  width: 0;
+  height: 2px;
+  background-color: #fc6238;
+  transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.linkAnimations:hover {
+  color: #fc6238;
+}
+.linkAnimations:hover::before {
+  left: 0;
+  right: auto;
+  width: 100%;
+}
+
+.open {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  text-align: center;
+  background-color: #452b48;
+  width: 100%;
+  left: 0;
+  height: 200vh;
+  -webkit-animation: scrollDown 0.5s ease-in-out;
+          animation: scrollDown 0.5s ease-in-out;
+}
+.open div {
+  margin-top: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 180px;
+  text-align: center;
+}
+.open div a {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+.open div p {
+  margin-top: 5rem;
+  font-size: 1rem;
+  color: #b6b6b6;
+}
+
+.logoWhenClicked {
+  position: relative;
+  z-index: 99;
+}
+
+@-webkit-keyframes scrollDown {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    height: 200vh;
+    opacity: 1;
+  }
+}
+
+@keyframes scrollDown {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    height: 200vh;
+    opacity: 1;
+  }
+}
+.linkAnimationsApps {
+  border: 2px solid #fc6238;
+  padding: 0.2rem 0.5rem;
+  border-radius: 10px;
+  color: #fc6238;
+}
+.linkAnimationsApps:hover {
+  color: white;
+  background: #fc6238;
+  transition: 0.3s ease-in-out all;
+}/*# sourceMappingURL=Navbar.module.css.map */

@@ -1,0 +1,57 @@
+.sekilasTextHeading {
+	// position: relative;
+	// top: 25px;
+	// padding-left: 15px;
+	z-index: 3;
+
+	@media only screen and (min-width: 690px) {
+		top: 50px;
+	}
+
+	@media only screen and (min-width: 1024px) {
+		top: 60px;
+	}
+}
+
+.sekilasHeadline {
+	font-size: 2.7rem;
+
+	@media only screen and (min-width: 600px) {
+		font-size: 3.9rem;
+	}
+
+	@media only screen and (min-width: 768px) {
+		font-size: 4.9rem;
+	}
+
+	@media only screen and (min-width: 1024px) {
+		font-size: 5.9rem;
+	}
+
+	//125%
+	@media only screen and (min-width: 1300px) {
+		font-size: 7.9rem;
+	}
+
+	//100%
+	@media only screen and (min-width: 1600px) {
+		font-size: 10rem;
+	}
+}
+
+.box {
+	width: 50px;
+	height: 50px;
+	background-color: #452b48;
+	position: absolute;
+	top: 0;
+}
+
+.visual1 {
+	// border: 1px solid red;
+	position: absolute;
+	left: -120px;
+	bottom: 0;
+	width: 100%;
+	max-width: 200px;
+}

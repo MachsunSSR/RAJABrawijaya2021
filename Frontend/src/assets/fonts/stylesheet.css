@@ -1,0 +1,40 @@
+@font-face {
+    font-family: 'Batavia Glamore NORMAL';
+    src: url('BataviaGlamoreNORMAL-Regular.woff2') format('woff2'),
+        url('BataviaGlamoreNORMAL-Regular.woff') format('woff'),
+        url('BataviaGlamoreNORMAL-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Batavia Glamore NORMAL';
+    src: url('BataviaGlamoreNORMALITALIC-Ital.woff2') format('woff2'),
+        url('BataviaGlamoreNORMALITALIC-Ital.woff') format('woff'),
+        url('BataviaGlamoreNORMALITALIC-Ital.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Batavia Glamore';
+    src: url('BataviaGlamoreBOLD-Bold.woff2') format('woff2'),
+        url('BataviaGlamoreBOLD-Bold.woff') format('woff'),
+        url('BataviaGlamoreBOLD-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Batavia Glamore';
+    src: url('BataviaGlamoreBOLDITALIC-BoldIt.woff2') format('woff2'),
+        url('BataviaGlamoreBOLDITALIC-BoldIt.woff') format('woff'),
+        url('BataviaGlamoreBOLDITALIC-BoldIt.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+

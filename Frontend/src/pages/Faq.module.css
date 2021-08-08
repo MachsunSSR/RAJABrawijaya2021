@@ -1,0 +1,87 @@
+.faqHeadline {
+  font-size: 2.7rem;
+}
+@media only screen and (min-width: 600px) {
+  .faqHeadline {
+    font-size: 3.9rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .faqHeadline {
+    font-size: 3.9rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .faqHeadline {
+    font-size: 4.9rem;
+  }
+}
+@media only screen and (min-width: 1300px) {
+  .faqHeadline {
+    font-size: 6.9rem;
+  }
+}
+
+.searchBox {
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  color: #452b48;
+  font-size: 17px;
+  font-weight: 600;
+}
+.searchBox:focus {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 0 1pt #452b48;
+  outline: none;
+  transition: 0.1s;
+}
+
+.a1 .ask {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 1rem 1.5rem;
+}
+@media only screen and (min-width: 640px) {
+  .a1 .ask {
+    padding: 1rem 2rem;
+  }
+}
+.a1 .ask:hover {
+  background-color: #452b48;
+  transition: background-color 0.5s;
+  color: white;
+}
+.a1 .ask h1 {
+  font-size: 16px;
+}
+@media only screen and (min-width: 640px) {
+  .a1 .ask h1 {
+    font-size: 18px;
+  }
+}
+.a1 .ask .faqIcon {
+  width: 30px;
+}
+.a1 .ans {
+  /* display: none; */
+  color: white;
+  background-color: #452b48;
+  border-radius: 10px;
+  height: 0px;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s ease all;
+  overflow: auto;
+}
+.a1 .show {
+  opacity: 1;
+  visibility: visible;
+  padding: 1rem 2rem;
+  height: 180px;
+  margin-top: 0.5rem;
+  /* max-height: 500px; */
+}/*# sourceMappingURL=Faq.module.css.map */

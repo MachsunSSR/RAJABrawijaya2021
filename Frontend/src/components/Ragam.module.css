@@ -1,0 +1,41 @@
+.circleContainer {
+  width: 100%;
+  max-width: 350px;
+}
+.circleContainer img {
+  width: 50px;
+}
+@media only screen and (min-width: 1300px) {
+  .circleContainer img {
+    width: 60px;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  .circleContainer img {
+    width: 70px;
+  }
+}
+@media only screen and (min-width: 1300px) {
+  .circleContainer {
+    max-width: 450px;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  .circleContainer {
+    max-width: 550px;
+  }
+}
+
+.circleLogo {
+  transform: scale(1.15);
+  transition: all 0.3s ease-in-out;
+}
+
+.namaOsfak {
+  font-weight: 800;
+}
+
+.logoOnhover:hover {
+  transform: scale(1.15);
+  transition: all 0.3s ease-in-out;
+}/*# sourceMappingURL=Ragam.module.css.map */

@@ -1,0 +1,85 @@
+.adhikaraInfoHeading {
+  font-size: 2.9rem;
+}
+@media only screen and (min-width: 500px) {
+  .adhikaraInfoHeading {
+    font-size: 3.9rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .adhikaraInfoHeading {
+    font-size: 4.9rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .adhikaraInfoHeading {
+    font-size: 5.9rem;
+  }
+}
+@media only screen and (min-width: 1300px) {
+  .adhikaraInfoHeading {
+    font-size: 7.9rem;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  .adhikaraInfoHeading {
+    font-size: 10rem;
+  }
+}
+
+.adhikaraInfoDesc {
+  font-size: 1.1rem;
+}
+@media only screen and (min-width: 500px) {
+  .adhikaraInfoDesc {
+    font-size: 1.1rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .adhikaraInfoDesc {
+    font-size: 1.2rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .adhikaraInfoDesc {
+    font-size: 1.2rem;
+  }
+}
+@media only screen and (min-width: 1300px) {
+  .adhikaraInfoDesc {
+    font-size: 1.5rem;
+  }
+}
+
+.vector {
+  transform: scaleX(-1);
+  position: absolute;
+  bottom: -1px;
+  right: 0;
+  max-width: 250px;
+  z-index: 0;
+}
+@media only screen and (min-width: 500px) {
+  .vector {
+    transform: scaleX(1);
+    left: 0;
+    max-width: 400px;
+    width: 100%;
+  }
+}
+
+.infoCardWrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+}
+@media only screen and (min-width: 500px) {
+  .infoCardWrapper {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+@media only screen and (min-width: 1300px) {
+  .infoCardWrapper {
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  }
+}/*# sourceMappingURL=AdhikaraInfo.module.css.map */

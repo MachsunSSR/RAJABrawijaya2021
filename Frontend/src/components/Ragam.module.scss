@@ -1,0 +1,43 @@
+.circleContainer {
+	width: 100%;
+	max-width: 350px;
+
+	img {
+		width: 50px;
+		//125%
+		@media only screen and (min-width: 1300px) {
+         width: 60px;
+		}
+
+		//100%
+		@media only screen and (min-width: 1600px) {
+         width: 70px;
+		}
+	}
+
+	//125%
+	@media only screen and (min-width: 1300px) {
+      max-width: 450px;
+	}
+
+	//100%
+	@media only screen and (min-width: 1600px) {
+      max-width: 550px;
+	}
+}
+
+.circleLogo {
+	transform: scale(1.15);
+	transition: all 0.3s ease-in-out;
+}
+
+.namaOsfak {
+	font-weight: 800;
+}
+
+.logoOnhover {
+	&:hover {
+		transform: scale(1.15);
+		transition: all 0.3s ease-in-out;
+	}
+}

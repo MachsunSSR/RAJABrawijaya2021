@@ -1,0 +1,199 @@
+.logoBoxContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.logoBoxContainer .logoBox {
+  height: 60px;
+  width: 60px;
+  border: 1px solid #452b48;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s all ease-in-out;
+  margin: 0.2rem;
+  border-radius: 0.5rem;
+  position: relative;
+}
+.logoBoxContainer .logoBox::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  border-radius: 0.5rem;
+  left: 0;
+  width: 0;
+  height: 100%;
+  z-index: 2;
+  background-color: #452b48;
+  transition: width 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.logoBoxContainer .logoBox:hover {
+  background-size: 110%;
+}
+.logoBoxContainer .logoBox:hover::before {
+  right: 0;
+  width: 100%;
+}
+@media only screen and (min-width: 840px) {
+  .logoBoxContainer .logoBox {
+    height: 70px;
+    width: 70px;
+  }
+}
+@media only screen and (min-width: 1300px) {
+  .logoBoxContainer .logoBox {
+    height: 100px;
+    width: 100px;
+  }
+}
+.logoBoxContainer .logoBox img {
+  position: relative;
+  z-index: 3;
+  max-height: 50px;
+}
+@media only screen and (min-width: 1300px) {
+  .logoBoxContainer .logoBox img {
+    max-height: 80px;
+  }
+}
+
+.boxColor {
+  width: 100%;
+  max-width: 300px;
+  padding: 2rem;
+}
+@media only screen and (min-width: 840px) {
+  .boxColor {
+    max-width: 300px;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  .boxColor {
+    max-width: 350px;
+  }
+}
+
+.logoShowContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  -webkit-animation-name: zoomIn;
+          animation-name: zoomIn;
+  -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
+  min-height: 400px;
+}
+@media only screen and (min-width: 840px) {
+  .logoShowContainer {
+    max-width: 35%;
+    margin-left: 1rem;
+    min-height: 500px;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  .logoShowContainer {
+    max-width: 40%;
+  }
+}
+.logoShowContainer .imgLogo {
+  width: 100%;
+  max-width: 200px;
+}
+@media only screen and (min-width: 840px) {
+  .logoShowContainer .imgLogo {
+    max-width: 270px;
+  }
+}
+@media only screen and (min-width: 1300px) {
+  .logoShowContainer .imgLogo {
+    max-width: 320px;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  .logoShowContainer .imgLogo {
+    max-width: 370px;
+  }
+}
+
+@media only screen and (min-width: 840px) {
+  .left {
+    max-width: 70%;
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  .left {
+    max-width: 60%;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 640px) {
+  .textContainer {
+    max-width: 50%;
+    width: 100%;
+    margin-left: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    max-height: 250px;
+  }
+  .textContainer .lines {
+    height: 1px;
+    width: 100%;
+    background-color: #452b48;
+  }
+}
+
+.logoHeadline {
+  font-size: 2.7rem;
+}
+@media only screen and (min-width: 600px) {
+  .logoHeadline {
+    font-size: 3.9rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .logoHeadline {
+    font-size: 4.9rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .logoHeadline {
+    font-size: 5.9rem;
+  }
+}
+@media only screen and (min-width: 1300px) {
+  .logoHeadline {
+    font-size: 7.9rem;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  .logoHeadline {
+    font-size: 10rem;
+  }
+}
+
+@-webkit-keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}/*# sourceMappingURL=Logo.module.css.map */
