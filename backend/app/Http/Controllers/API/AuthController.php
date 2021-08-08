@@ -22,8 +22,6 @@ class AuthController extends Controller
             ], 401);
         }
 
-        $databaseInformation = Mahasiswa::firstOrCreate(['nim' => $nim]);
-        MahasiswaHelper::syncSiamWithDatabase($databaseInformation, $siamInformation);
         if (!MahasiswaHelper::isMahasiswaBaru($nim) && !MahasiswaHelper::isWhitelistedUser($nim)) {
             return response()->json([
                 'success' => false,
@@ -31,6 +29,9 @@ class AuthController extends Controller
                 'errorCode' => 403
             ], 403);
         }
+
+        $databaseInformation = Mahasiswa::firstOrCreate(['nim' => $nim]);
+        MahasiswaHelper::syncSiamWithDatabase($databaseInformation, $siamInformation);
 
         $token = auth()->tokenById($nim);
 
