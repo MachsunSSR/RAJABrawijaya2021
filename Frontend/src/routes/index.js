@@ -6,6 +6,12 @@ const Dashboard = lazy(() => import("../pages/Dashboard"));
 const Penugasan = lazy(() => import("../pages/Penugasan"));
 const Presensi = lazy(() => import("../pages/Presensi"));
 const Penilaian = lazy(() => import("../pages/Penilaian"));
+const TugasTwibbon = lazy(() => import("../pages/TugasTwibbon"));
+const TugasBiskuit = lazy(() => import("../pages/TugasBiskuit"));
+const TugasDharma = lazy(() => import("../pages/TugasDharma"));
+const TugasGaung = lazy(() => import("../pages/TugasGaung"));
+const TugasKenali = lazy(() => import("../pages/TugasKenali"));
+const TugasTransformer = lazy(() => import("../pages/TugasTransformer"));
 // const Forms = lazy(() => import('../pages/Forms'))
 // const Cards = lazy(() => import('../pages/Cards'))
 // const Charts = lazy(() => import('../pages/Charts'))
@@ -33,6 +39,30 @@ const routes = [
     {
         path: "/penugasan",
         component: Penugasan,
+    },
+    {
+        path: "/penugasan/tugas-twibbon",
+        component: TugasTwibbon,
+    },
+    {
+        path: "/penugasan/kenali-brawijaya",
+        component: TugasKenali,
+    },
+    {
+        path: "/penugasan/dharma-warta-abhiyaksa",
+        component: TugasDharma,
+    },
+    {
+        path: "/penugasan/gaung-budaya-nusantara",
+        component: TugasGaung,
+    },
+    {
+        path: "/penugasan/transformer",
+        component: TugasTransformer,
+    },
+    {
+        path: "/penugasan/biskuit",
+        component: TugasBiskuit,
     },
     {
         path: "/presensi",

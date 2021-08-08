@@ -10,12 +10,11 @@ const Dashboard = () => {
             <h6>Dashboard RAJA</h6>
             <section
                 id="containerCards"
-                className="grid md:grid-cols-4 grid-cols-2 gap-8 justify-center items-center"
+                className="flex flex-wrap lg:flex-nowrap justify-center items-center space-x-4 "
             >
-                <DashboardCard judul="Tugas Yang Belum Dikerjakan" />
-                <DashboardCard judul="CountodwnRangkaian Selanjutnya" />
-                <DashboardCard judul="UKM Yang Diminati" />
-                <DashboardCard judul="Keminatan MABA" />
+                <DashboardCard judul="Tugas" />
+                <DashboardCard judul="Countodwn Rangkaian Selanjutnya" />
+                <DashboardCard judul="Keminatan" />
             </section>
             <section
                 id="containerBawah"

@@ -24,9 +24,9 @@ const Presensi = () => {
             <h6>Presensi</h6>
             <section
                 id="Kode Presensi"
-                className="flex flex-col justify-center text-center gap-8"
+                className="flex flex-col justify-center text-center space-y-8"
             >
-                <h1 className="font-semibold text-3xl">
+                <h1 className="font-semibold text-3xl dark:text-gray-200">
                     Presensi RAJA Brawijaya
                 </h1>
                 <p className="text-gray-400">
@@ -35,7 +35,7 @@ const Presensi = () => {
                 </p>
                 <div
                     id="containerCard"
-                    className="flex flex-wrap gap-8 md:gap-16 justify-center items-center"
+                    className="flex flex-wrap gap-8 lg:space-x-16 justify-center items-center"
                 >
                     <PresensiCard judul="PKKMB" kode="RAJAPKKMB2021" />
                     <PresensiCard judul="PBPK" kode="RAJAPBPK2021" />

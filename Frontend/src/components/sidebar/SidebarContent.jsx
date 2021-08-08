@@ -31,7 +31,7 @@ export default function SidebarContent() {
                             <NavLink
                                 exact
                                 to={route.path}
-                                className="inline-flex items-center w-full text-md font-semibold px-6 py-3"
+                                className="inline-flex items-center w-full text-md font-semibold px-6 py-3 "
                                 activeClassName="text-white bg-purple-600 rounded"
                             >
                                 <Icon

@@ -271,12 +271,16 @@ Route::group(['prefix' => 'link'], function () {
 	Route::get('upgrading/presensi/akhir', 'RedirectController@presensiAkhirUpgrading');
 	Route::get('PBPKxOH', 'RedirectController@pbpkoh');
 });
-
+// Route::get('/2020', 'StaticPageController@vue')->where('any', '^(?!backend).*$');
 Route::get('/twibbon', 'StaticPageController@twibbon');
 Route::get('/atribut', 'StaticPageController@attribut');
 Route::get('cs2020', function() {
 	return view('comingsoon');
 });
+
+Route::get('/2020/{any}', 'StaticPageController@vue')->where('any', '^(?!api).*$');
+// routes untuk development mode
+
 Route::get('/{any}', 'StaticPageController@comingsoon')->where('any', '^(?!backend).*$');
 Route::group(['middleware' => 'developmentMode'], function () {
 	Route::get('/sso/login', 'AutentikasiController@loginSSO');
@@ -290,5 +294,4 @@ Route::group(['middleware' => 'developmentMode'], function () {
 	});
 });
 
-// Route::get('/2020/{any}', 'StaticPageController@vue')->where('any', '^(?!api).*$');
-// routes untuk development mode
+

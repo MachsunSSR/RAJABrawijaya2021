@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import { Button } from "@windmill/react-ui";
 
-const TimerCard = ({ tanggal, judul }) => {
+const TimerCard = ({ tanggal, judul, route }) => {
     const [timerDays, setTimerDays] = useState(0);
     const [timerHours, setTimerHours] = useState(0);
     const [timerMinutes, setTimerMinutes] = useState(0);
@@ -46,42 +47,56 @@ const TimerCard = ({ tanggal, judul }) => {
     }, []);
 
     return (
-        <section className="p-5 rounded shadow-md space-y-4 px-5" id="cardBox">
-            <h3 className="text-center text-2xl font-bold" id="cardJudul">
+        <section
+            className="p-5 rounded shadow-md space-y-4 px-5 bg-white dark:bg-gray-800"
+            id="cardBox"
+        >
+            <h3
+                className="text-center text-2xl font-bold dark:text-gray-200"
+                id="cardJudul"
+            >
                 {judul}
             </h3>
-            <div className="flex justify-center gap-2" id="containerClock">
+            <div className="flex justify-center space-x-2" id="containerClock">
                 <span className="space-y-1" id="dayContainer">
                     <div
                         className="flex items-center justify-center gap-1"
                         id="dayClock"
                     >
-                        <h4 className="text-4xl font-bold">{timerDays}</h4>
+                        <h4 className="text-4xl font-bold dark:text-gray-200">
+                            {timerDays}
+                        </h4>
                     </div>
-                    <h4 className="text-center">Hari</h4>
+                    <h4 className="text-center dark:text-gray-400">Hari</h4>
                 </span>
-                <span className="text-4xl font-bold">:</span>
+                <span className="text-4xl font-bold dark:text-gray-200">:</span>
                 <span className="space-y-1" id="dayContainer">
                     <div
                         className="flex items-center justify-center gap-1"
                         id="dayClock"
                     >
-                        <h4 className="text-4xl font-bold">{timerHours}</h4>
+                        <h4 className="text-4xl font-bold dark:text-gray-200">
+                            {timerHours}
+                        </h4>
                     </div>
-                    <h4 className="text-center">Jam</h4>
+                    <h4 className="text-center dark:text-gray-400">Jam</h4>
                 </span>
-                <span className="text-4xl font-bold">:</span>
+                <span className="text-4xl font-bold dark:text-gray-200">:</span>
                 <span className="space-y-1" id="dayContainer">
                     <div
                         className="flex items-center justify-center gap-1"
                         id="dayClock"
                     >
-                        <h4 className="text-4xl font-bold">{timerMinutes}</h4>
+                        <h4 className="text-4xl font-bold dark:text-gray-200">
+                            {timerMinutes}
+                        </h4>
                     </div>
-                    <h4 className="text-center">Menit</h4>
+                    <h4 className="text-center dark:text-gray-400">Menit</h4>
                 </span>
             </div>
-            <Button className="w-full">Kerjakan</Button>
+            <NavLink exact to={route} className="w-full">
+                <Button className="w-full mt-5">Kerjakan</Button>
+            </NavLink>
         </section>
     );
 };
