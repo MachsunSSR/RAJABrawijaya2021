@@ -141,6 +141,21 @@ const faqData = [
 		jawaban:
 			'Informasi jas almamater akan diinfokan dikemudian hari. Kemudian hari yang tidak pasti kapan datangnya.',
 	},
+   {
+		id: 50,
+		pertanyaan:
+			'Apakah MABA diwajibkan memposting twibbon yang telah diberikan?',
+		jawaban:
+			'Wajib ya sobat, niatkan dalam hati kalian posting twibbon bukan untuk pamer, tetapi untuk menanamkan kebanggaan kalian sudah berhasil keterima di UB, asik.',
+	},
+];
+
+export default faqData;
+
+
+/*
+
+
 	{
 		id: 25,
 		pertanyaan:
@@ -300,13 +315,7 @@ const faqData = [
 		jawaban:
 			'Buku pedoman PKM dapat dicari di google atau bisa melalui website PKM Universitas Brawijaya',
 	},
-	{
-		id: 50,
-		pertanyaan:
-			'Apakah MABA diwajibkan memposting twibbon yang telah diberikan?',
-		jawaban:
-			'Wajib ya sobat, niatkan dalam hati kalian posting twibbon bukan untuk pamer, tetapi untuk menanamkan kebanggaan kalian sudah berhasil keterima di UB, asik.',
-	},
+
 	{
 		id: 51,
 		pertanyaan:
@@ -314,6 +323,7 @@ const faqData = [
 		jawaban:
 			'Bumper RAJA Brawijaya 2021 dapat diakses dalam link berikut https://bit.ly/PerangkatPenugasanAbhiyaksa59',
 	},
-];
 
-export default faqData;
+
+
+*/
