@@ -158,7 +158,7 @@ export const ragamData = [
 	},
 	{
 		id: 15,
-		namaOspek: 'NAWASERNA FIA',
+		namaOspek: 'NAWASENA FIA',
 		desc: 'PKKMB (Pengenalan Kehidupan Kampus Mahasiswa Baru) FIA UB 2021 merupakan kegiatan pengenalan kehidupan kampus yang dilaksanakan atau diselenggarakan oleh Fakultas Ilmu Administrasi Universitas Brawijaya. Nama PKKMB FIA UB tahun ini adalah NAWASENA 2021 yang berasal dari bahasa Sansekerta dengan arti masa depan yang cerah. Tujuan dari PKKMB FIA UB adalah membina dan memperkenalkan mahasiswa baru pada kegiatan akademik dan kemahasiswaan agar mahasiswa lebih mudah untuk beradaptasi dengan kehidupan perguruan tinggi di FIA UB.',
 		sosmed: [
 			['https://www.instagram.com/pkkmb_fiaub/', 'instagram'],

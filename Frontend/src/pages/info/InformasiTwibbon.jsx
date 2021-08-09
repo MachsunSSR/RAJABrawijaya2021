@@ -40,7 +40,7 @@ const Twibbon = () => {
 				A. Cara penggunaan dan Download Twibbon
 			</h1>
 			<a
-				href="https://drive.google.com/drive/folders/14VwdKPd1GbtjcKIhXXvwI9-Lj4LxnjYQ"
+				href="https://drive.google.com/drive/folders/13h9uD7SUbvrFRnVNwYgXJnv0ZQ2PKUbJ?usp=sharing"
 				target="_blank"
 				rel="noreferrer"
 				className="w-full bg-orange block  p-3 rounded-3"

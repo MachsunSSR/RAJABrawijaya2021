@@ -46,13 +46,14 @@ const Atribut = () => {
 						Memakai kaos kaki berwarna putih polos dan tidak transparan.
 					</li>
 					<li>
-						Memakai name tag berukuran B4 (25 x 35,3 cm) beserta tali name tag yang
-						berwarna biru selama kegiatan PKKMB berlangsung. Name tag
-						dapat diunduh{' '}
+						Memakai name tag berukuran B4 (25 x 35,3 cm) beserta tali name
+						tag yang berwarna biru selama kegiatan PKKMB berlangsung. Name
+						tag dapat diunduh{' '}
 						<a
-							href="https://drive.google.com/drive/folders/1iL7DDvXLbhDkM2dp5ouMt3VPOz2yie2v"
+							href="https://drive.google.com/file/d/1qexABrIXwP-ecZAGLaoXcLjpMunlZnGn/view?usp=sharing
+                     "
 							target="_blank"
-                     rel="noreferrer"
+							rel="noreferrer"
 							className="underline"
 						>
 							di sini.
@@ -119,13 +120,14 @@ const Atribut = () => {
 						‎Memakai kaos kaki berwarna putih polos dan tidak transparan.
 					</li>
 					<li>
-						Memakai name tag berukuran B4 (25 x 35,3 cm) beserta tali name tag yang
-						berwarna biru selama kegiatan PKKMB berlangsung. Name tag
-						dapat diunduh{' '}
+						Memakai name tag berukuran B4 (25 x 35,3 cm) beserta tali name
+						tag yang berwarna biru selama kegiatan PKKMB berlangsung. Name
+						tag dapat diunduh{' '}
 						<a
-							href="https://drive.google.com/drive/folders/1iL7DDvXLbhDkM2dp5ouMt3VPOz2yie2v"
+							href="https://drive.google.com/file/d/1qexABrIXwP-ecZAGLaoXcLjpMunlZnGn/view?usp=sharing
+                     "
 							target="_blank"
-                     rel="noreferrer"
+							rel="noreferrer"
 							className="underline"
 						>
 							di sini.
@@ -157,9 +159,10 @@ const Atribut = () => {
 					/>
 				</div>
 				<a
-					href="https://drive.google.com/drive/folders/1iL7DDvXLbhDkM2dp5ouMt3VPOz2yie2v"
+					href="https://drive.google.com/file/d/1qexABrIXwP-ecZAGLaoXcLjpMunlZnGn/view?usp=sharing
+               "
 					target="_blank"
-               rel="noreferrer"
+					rel="noreferrer"
 					className="w-full bg-orange block  p-3 rounded-3"
 				>
 					<h2 className="text-md font-bold text-center text-white xs:text-sm sm:text-sm">
