@@ -3,7 +3,6 @@ import InfoTemplate from '../info/InfoTemplate';
 import styles from '../Faq.module.css';
 
 const Twibbon = () => {
-	const [copySuccess, setCopySuccess] = useState('');
 	const textAreaRef = useRef(null);
    const [nama, setNama] = useState('(NAMA)')
    const [fak, setFak] = useState('(FAKULTAS)')
@@ -11,12 +10,13 @@ const Twibbon = () => {
 
 
 	function copyToClipboard(e) {
+      
 		textAreaRef.current.select();
 		document.execCommand('copy');
 		// This is just personal preference.
 		// I prefer to not show the whole text area selected.
 		e.target.focus();
-		setCopySuccess('Copied!');
+      alert('Berhasil Mencopy Caption!')
 	}
 
 	return (
@@ -83,6 +83,7 @@ const Twibbon = () => {
 					ref={textAreaRef}
 					className="w-full h-screen text-sm ex:text-lg exl:text-xl rounded-2 p-5"
 					value={`"Cakra Manggilingan, Ngundhuh Wohing Pakerti"
+
 Detik-detik perjuangan akan terus berjalan. Tawa dan air mata merupakan pasang surut sebuah
 kehidupan seperti roda yang akan selalu berputar. Kerendahan hati, keberanian, serta tanggung jawab
 akan membawa perubahan.

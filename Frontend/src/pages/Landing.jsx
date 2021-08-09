@@ -7,7 +7,7 @@ import Ragam from '../components/Ragam';
 import Rangkaian from '../components/Rangkaian';
 import Sekilas from '../components/Sekilas';
 import Statistik from '../components/Statistik';
-import NotFound from './NotFound';
+
 const Landing = () => {
 	return (
 		<div>
@@ -18,7 +18,7 @@ const Landing = () => {
 			</div>
 			<div className="bg-orange bg-logo-bg bg-repeat">
 				<Logo />
-				{/* <Ragam /> */}
+				<Ragam />
             <Statistik/>
 			</div>
 		</div>
