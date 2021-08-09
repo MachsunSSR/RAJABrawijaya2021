@@ -8,7 +8,6 @@ import Rangkaian from "../components/Rangkaian";
 import Sekilas from "../components/Sekilas";
 import Statistik from "../components/Statistik";
 import NotFound from "./NotFound";
-
 const Landing = () => {
     return (
         <div>
