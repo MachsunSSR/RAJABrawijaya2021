@@ -3,7 +3,7 @@ import React from "react";
 const TugasTransformer = () => {
     return (
         <div>
-            <h6 className="text-center mt-6">Pengumpulan Tugas Twibbon</h6>
+            <h6 className="text-center mt-6">Pengumpulan Tugas Transformer</h6>
         </div>
     );
 };
