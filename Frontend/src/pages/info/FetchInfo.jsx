@@ -53,7 +53,16 @@ const FetchInfo = () => {
                   </div>
                </InfoTemplate>
          ) : (
-            console.log(articleActive, 'njjjj')
+            <InfoTemplate
+                  title={`Loading data...`}
+                  props={
+                     'bg-whiteSoft xs:p-5 sm:p-5 p-20 mt-40 drop-shadow-xl mb-32'
+                  }
+               >
+                  <div>
+                     loading
+                  </div>
+               </InfoTemplate>
          )}
 		</>
 	);
