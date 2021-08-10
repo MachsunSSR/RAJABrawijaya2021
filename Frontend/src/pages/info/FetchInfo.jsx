@@ -40,6 +40,7 @@ const FetchInfo = () => {
         <>
             {/* {isFailed && <div>{isFailed}</div>}
 			{isPending && <div>Loading...</div>} */}
+
             {articleActive !== null ? (
                 <InfoTemplate
                     title={`${articleActive.subtitle}`}
