@@ -14,7 +14,7 @@ module.exports = {
 				'pk2-bg': "url('/src/assets/pk2Dummy.svg')",
 				'pbpk-bg': "url('/src/assets/pbpkDummy.svg')",
 				'oh-bg': "url('/src/assets/ohDummy.svg')",
-            'twibbon-bg': "url('/src/assets/twibbon.jpg')"
+            'twibbon-bg': "url('/src/assets/twibbon.jpg')",
 			}),
 		},
 		screens: {

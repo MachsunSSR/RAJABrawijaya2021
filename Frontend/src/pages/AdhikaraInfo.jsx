@@ -57,14 +57,13 @@ const AdhikaraInfo = ({ match }) => {
 								<Link to={`/abhiyaksa-info/${article.slug}`}>
 									<Cards
 										title={`${article.title}`}
-                              bg={''}
+                              bg={``}
 										fetchImg={`http://103.139.244.67${article.image.url}`}
 									/>
 								</Link>
 							);
 						})
                ) : <div>loading</div>}
-
 					{/* <Link to={`/abhiyaksa-info/informasi-lain1`}>
 						<Cards title={'Informasi 1'} bg={'bg-sekilas3-bg'}/>
 					</Link> */}

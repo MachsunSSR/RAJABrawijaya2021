@@ -29,7 +29,7 @@ const Cards = ({ title, bg, fetchImg }) => {
 				</div>
 			) : (
 				<CardWrapper
-					className={`min-w-cards min-h-cards bg-center flex justify-end items-end ex:min-w-cards-ex ex:min-h-cards-ex ${styles.cardAnimations} `}
+					className={`min-w-cards min-h-cards bg-center flex justify-end items-end ex:min-w-cards-ex ex:min-h-cards-ex ${styles.cardAnimations}`}
 					bgFetch={`${fetchImg}`}
 				>
 					<div className={`relative z-3`}>
