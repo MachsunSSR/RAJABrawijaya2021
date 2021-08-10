@@ -73,6 +73,8 @@ const AdhikaraInfo = ({ match }) => {
                         <div>loading</div>
                     )}
 
+                    <div></div>
+
                     {/* <Link to={`/abhiyaksa-info/informasi-lain1`}>
 						<Cards title={'Informasi 1'} bg={'bg-sekilas3-bg'}/>
 					</Link> */}
