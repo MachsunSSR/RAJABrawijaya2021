@@ -5,9 +5,12 @@ import styles from './AdhikaraInfo.module.css';
 import { Link } from 'react-router-dom';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
+import { useArticles } from '../routes/Context';
+
 Aos.init();
 
-const AdhikaraInfo = () => {
+const AdhikaraInfo = ({ match }) => {
+	const {articles, setArticles} = useArticles();
 	return (
 		<>
 			<Sections
@@ -19,11 +22,14 @@ const AdhikaraInfo = () => {
 				<div className="text-right xs:mb-15">
 					<h1
 						className={`batavia text-5xl text-white ${styles.adhikaraInfoHeading}`}
-                  data-aos="fade-left"
+						data-aos="fade-left"
 					>
 						Abhiyaksa Info
 					</h1>
-					<p className={`text-white pb-5 ${styles.adhikaraInfoDesc}`} data-aos="fade-up">
+					<p
+						className={`text-white pb-5 ${styles.adhikaraInfoDesc}`}
+						data-aos="fade-up"
+					>
 						Informasi terupdate seputar PKKMB RAJA Brawijaya
 					</p>
 				</div>
@@ -39,15 +45,41 @@ const AdhikaraInfo = () => {
 			>
 				<div className={`${styles.infoCardWrapper}`}>
 					<Link to={`/abhiyaksa-info/info-twibbon`}>
-						<Cards title={'Informasi Twibbon'} bg={'bg-twibbon-bg'}/>
+						<Cards title={'Informasi Twibbon'} bg={'bg-twibbon-bg'} />
 					</Link>
 					<Link to={`/abhiyaksa-info/info-atribut`}>
-						<Cards title={'Informasi Atribut'} bg={'bg-atribut-bg'}/>
+						<Cards title={'Informasi Atribut'} bg={'bg-atribut-bg'} />
 					</Link>
+
+					{articles.length > 0 ? (
+                  articles.map((article) => {
+							return (
+								<Link to={`/abhiyaksa-info/${article.slug}`}>
+									<Cards
+										title={`${article.title}`}
+                              bg={''}
+										fetchImg={`http://103.139.244.67${article.image.url}`}
+									/>
+								</Link>
+							);
+						})
+               ) : <div>loading</div>}
+
 					{/* <Link to={`/abhiyaksa-info/informasi-lain1`}>
 						<Cards title={'Informasi 1'} bg={'bg-sekilas3-bg'}/>
 					</Link> */}
-               <div></div>
+					{/* {articles === ''
+						? 'anjing'
+						: articles.map((article) => {
+								return (
+									<Link to={`/abhiyaksa-info/${article.id}`}>
+										<Cards
+											title={`${article.title}`}
+											fetchImg={`http://103.139.244.67${article.image.url}`}
+										/>
+									</Link>
+								);
+						  })} */}
 					{/* <Link to={`/abhiyaksa-info/informasi-lain2`} className={`hidden`}> 
 						<Cards title={'Informasi 2'} bg={'bg-sekilas1-bg'}/>
 					</Link> */}

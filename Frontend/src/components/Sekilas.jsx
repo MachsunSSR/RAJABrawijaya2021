@@ -7,10 +7,12 @@ import styles1 from './Modal.module.css';
 import { sekilasData } from './sekilasData';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import {  useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+import { useArticles } from '../routes/Context';
 
 const Sekilas = () => {
-   let history = useHistory()
+	let history = useHistory();
+	const {articles, setArticles} = useArticles();
 	const breakPoints = [
 		{ width: 1, itemsToShow: 1, showArrows: false },
 		{ width: 530, itemsToShow: 2 },
@@ -20,9 +22,9 @@ const Sekilas = () => {
 	const [modalData, setModalData] = useState();
 	let close = true;
 	const handleOpenModal = (title, link, desc) => {
-      if(link.indexOf('/abhiyaksa-info') >= 0){
-         history.push(link)
-      }
+		if (link.indexOf('/abhiyaksa-info') >= 0) {
+			history.push(link);
+		}
 		setModalData({ title, link, desc, close });
 	};
 	const handleCloseModal = () => {
@@ -30,14 +32,12 @@ const Sekilas = () => {
 	};
 
 	useEffect(() => {
-      Aos.init();
-   }, []);
+		Aos.init();
+	}, []);
 
 	return (
 		<Sections
-			propsClass={
-				'justify-center items-center relative'
-			}
+			propsClass={'justify-center items-center relative'}
 			propsClass2={'w-full'}
 		>
 			<div className={`${styles.box}`}></div>
@@ -45,12 +45,27 @@ const Sekilas = () => {
 				<div className={`${styles.sekilasTextHeading}`}>
 					<h1
 						className={`batavia text-jumbotronmd xs:text-5xl sm:text-jumbotronsm md:text-jumbotronmd text-purpleMaghrib ${styles.sekilasHeadline}`}
-                  data-aos="fade-up"
+						data-aos="fade-up"
 					>
 						Sekilas Rabraw
 					</h1>
 				</div>
 				<Carousel breakPoints={breakPoints}>
+					{articles.map((article) => {
+						return (
+							<div
+								key={article.id}
+								onClick={() => handleOpenModal(article.title, `/abhiyaksa-info/${article.slug}`)}
+								className="mx-2 xs:mx-0"
+							>
+								<Cards
+									title={article.title}
+									bg={''}
+									fetchImg={`http://103.139.244.67${article.image.url}`}
+								/>
+							</div>
+						);
+					})}
 					{sekilasData.map(({ id, title, link, desc, bg }) => {
 						return (
 							<div
@@ -69,14 +84,18 @@ const Sekilas = () => {
 					}`}
 					onClick={handleCloseModal}
 				>
-					<div className={`${styles1.modalContent} xs:px-0 sm:px-0 md:px-10 px-20`}>
+					<div
+						className={`${styles1.modalContent} xs:px-0 sm:px-0 md:px-10 px-20`}
+					>
 						<img
 							src={`${process.env.PUBLIC_URL}/assets/vectorkiri.svg`}
 							alt=""
 							className={`${styles1.vectorKiri}`}
 						/>
 						<div className="p-5 relative z-4">
-							<h1 className={`text-center text-2xl text-purpleMaghrib exl:text-5xl`}>
+							<h1
+								className={`text-center text-2xl text-purpleMaghrib exl:text-5xl`}
+							>
 								{modalData ? modalData.title : 'Kosongbro'}
 							</h1>
 
@@ -93,7 +112,9 @@ const Sekilas = () => {
 										/>
 									</div>
 								) : (
-									<p className={`mt-5 text-purpleMaghrib exl:text-2xl text-justify`}>
+									<p
+										className={`mt-5 text-purpleMaghrib exl:text-2xl text-justify`}
+									>
 										{modalData ? modalData.desc : 'Kosong Bro'}
 									</p>
 								)
