@@ -19,12 +19,12 @@ const Atribut = () => {
                     <img
                         src={`${process.env.PUBLIC_URL}/assets/cowo1.png`}
                         alt="cowo"
-                        className="w-full max-w-sm ex:max-w-md exl:max-w-xl"
+                        className="w-full box-border max-w-xs ex:max-w-md exl:max-w-xl"
                     />
                     <img
                         src={`${process.env.PUBLIC_URL}/assets/cowo2.png`}
                         alt="cowo"
-                        className="w-full max-w-sm ex:max-w-md exl:max-w-xl"
+                        className="w-full box-border max-w-xs ex:max-w-md exl:max-w-xl"
                     />
                 </div>
                 <ol type="1" className="list-decimal my-8 ml-5">
@@ -49,7 +49,7 @@ const Atribut = () => {
                         transparan.
                     </li>
                     <li>
-                        Memakai name tag berukuran B4 (10,5 cm x 15 cm) beserta
+                        Memakai name tag berukuran (10,5 cm x 15 cm) beserta
                         tali name tag yang berwarna biru selama kegiatan PKKMB
                         berlangsung. Name tag dapat diunduh{" "}
                         <a
@@ -75,24 +75,24 @@ const Atribut = () => {
                     <img
                         src={`${process.env.PUBLIC_URL}/assets/cewe1.png`}
                         alt="cewe"
-                        className="w-full max-w-sm ex:max-w-md exl:max-w-xl"
+                        className="w-full box-border max-w-xs  ex:max-w-md exl:max-w-xl"
                     />
                     <img
                         src={`${process.env.PUBLIC_URL}/assets/cewe2.png`}
                         alt="cewe"
-                        className="w-full max-w-sm ex:max-w-md exl:max-w-xl"
+                        className="w-full box-border max-w-xs ex:max-w-md exl:max-w-xl"
                     />
                 </div>
                 <div className="w-full flex items-center xs:flex-col sm:flex-col bg-white justify-center space-x-5 p-5 rounded-2 my-8">
                     <img
                         src={`${process.env.PUBLIC_URL}/assets/hijab1.png`}
                         alt="hijab"
-                        className="w-full max-w-sm ex:max-w-md exl:max-w-xl"
+                        className="w-full box-border max-w-xs ex:max-w-md exl:max-w-xl"
                     />
                     <img
                         src={`${process.env.PUBLIC_URL}/assets/hijab2.png`}
                         alt="hijab"
-                        className="w-full max-w-sm ex:max-w-md exl:max-w-xl"
+                        className="w-full box-border max-w-xs ex:max-w-md exl:max-w-xl"
                     />
                 </div>
                 <ol type="1" className="list-decimal my-8 ml-5">
@@ -129,7 +129,7 @@ const Atribut = () => {
                         transparan.
                     </li>
                     <li>
-                        Memakai name tag berukuran B4 (25 x 35,3 cm) beserta
+                        Memakai name tag berukuran (10.5 x 15 cm) beserta
                         tali name tag yang berwarna biru selama kegiatan PKKMB
                         berlangsung. Name tag dapat diunduh{" "}
                         <a
@@ -151,11 +151,11 @@ const Atribut = () => {
                 <h1 className="my-8 text-black xs:text-xl sm:text-xl ex:text-3xl exl:text-3xl">
                     Atribut yang salah
                 </h1>
-                <div className="w-full flex items-center xs:flex-col sm:flex-col bg-white justify-center space-x-5 p-5 rounded-2 my-8">
+                <div className="w-full flex items-center box-border xs:flex-col sm:flex-col bg-white justify-center space-x-5 p-5 rounded-2 my-8">
                     <img
                         src={`${process.env.PUBLIC_URL}/assets/cowosalah.png`}
                         alt="hijab"
-                        className="w-full max-w-imgSalah exl:max-w-xs"
+                        className="w-full  max-w-imgSalah exl:max-w-xs"
                     />
                     <img
                         src={`${process.env.PUBLIC_URL}/assets/cewesalah.png`}

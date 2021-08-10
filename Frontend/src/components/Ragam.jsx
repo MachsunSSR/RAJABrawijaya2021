@@ -68,7 +68,7 @@ const Ragam = () => {
 							>
 								{active ? active.namaOspek : 'PK2MABA FILKOM'}
 							</h1>
-							<p className="text-white font-light text-md mt-3 xs:text-center sm:text-center exl:text-xl text-justify">
+							<p className="text-white font-light text-md mt-3 lg:max-w-2xl xs:text-center sm:text-center exl:text-xl text-justify">
 								{active
 									? active.desc
 									: 'PK2MABA - Pengenalan Kehidupan Kampus bagi Mahasiswa Baru Fakultas Ilmu Komputer selanjutnya disingkat PK2MABA FILKOM adalah suatu kegiatan yang memberikan pembekalan kepada mahasiswa tentang kehidupan kampus, baik dari segi akademik maupun non akademik. STARTUP ACADEMY - Merupakan kelanjutan setelah PK2MABA FILKOM yang memfasilitasi mahasiswa dalam pembinaan karya ilmiah, pengenalan organisasi mahasiswa, dan pelaksanaan krida mahasiswa tingkat Program Studi.'}

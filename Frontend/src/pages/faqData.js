@@ -150,6 +150,76 @@ const faqData = [
         jawaban:
             "Wajib ya sobat, niatkan dalam hati kalian posting twibbon bukan untuk pamer, tetapi untuk menanamkan kebanggaan kalian sudah berhasil keterima di UB, asik.",
     },
+    {
+        id: 52,
+        pertanyaan:
+            "Nama pada nametag ditulis tangan atau ketik?",
+        jawaban:
+            "Bebas asal sopan",
+    },
+    {
+        id: 53,
+        pertanyaan:
+            "Bagaimana jika pantofel saya ada aksesorisnya tapi tetap warna dominannya hitam?",
+        jawaban:
+            "Asalkan berwarna hitam, dan bukan warna merah pdip atau ungu maghrib.",
+    },
+    {
+        id: 54,
+        pertanyaan:
+            "Kemeja saya berwarna putih, tetapi ada kantongnya. Apakah boleh?",
+        jawaban:
+            "Poin utamanya adalah berwarna putih dan merupakan kemeja, silahkan tarik kesimpulan dari pernyataan itu.",
+    },
+    {
+        id: 55,
+        pertanyaan:
+            "Ketentuan untuk foto nametag?",
+        jawaban:
+            "Foto formal background merah dengan kemeja putih, kerudung putih (bagi perempuan yang berhijab dan tidak berhijab memakai dasi hitam), memakai dasi hitam untuk laki-laki, disarankan menggunakan foto SIAM.",
+    },
+    {
+        id: 56,
+        pertanyaan:
+            "Kalau foto SIAM menggunakan almet UB boleh?",
+        jawaban:
+            "Boleeeeh sobat boleh.",
+    },
+    {
+        id: 57,
+        pertanyaan:
+            "Saya punya nya rok span/plisket tapi berwarna hitam, boleh?",
+        jawaban:
+            "Rok wiru. Diketentuan sudah dijelaskan jangan bernegosiasi, ok.",
+    },
+    {
+        id: 58,
+        pertanyaan:
+            "Apakah sabuk harus hitam polos? bagaimana jika sabuk SMA/SMK?",
+        jawaban:
+            "Hitam, jika ada logo SMA/SMK tidak apa-apa.",
+    },
+    {
+        id: 59,
+        pertanyaan:
+            "Pantofel wajib ada talinya?",
+        jawaban:
+            "Diketentuan sudah jelas ya sob, pantofel hitam titik. Berarti selama itu hitam dan pantofel diperbolehkan.",
+    },
+    {
+        id: 60,
+        pertanyaan:
+            "Nametag fotonya boleh langsung print atau tempel pake lem?",
+        jawaban:
+            "Boleh yang mana aja yaaaaaaa, selama itu foto anda bukan tetangga anda.",
+    },
+    {
+        id: 61,
+        pertanyaan:
+            "Saya PSDKU Kediri, dicaption fakultasnya jadi apa ya?",
+        jawaban:
+            "PSDKU Kediri.",
+    },
 ];
 
 export default faqData;

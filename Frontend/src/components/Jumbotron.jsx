@@ -24,7 +24,7 @@ const Jumbotron = () => {
 			</video>
 			<Sections
 				propsClass={
-					`justify-center items-center lg:items-end xl:items-end ex:items-end exl:items-end ${styles.sectionProps1} `
+					`justify-center items-center md:items-end lg:items-end xl:items-end ex:items-end exl:items-end ${styles.sectionProps1} `
 				}
 				propsClass2={'xs:mt-10 lg:mb-5 xl:mb-5 w-full'}
 			>

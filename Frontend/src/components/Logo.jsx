@@ -112,7 +112,7 @@ const Logo = () => {
 								</div>
 								<div className={`${styles.textContainer} xs:ml-0 `}>
 									<h1
-										className={`text-purpleMaghrib text-4xl xs:text-3xl font-bold xs:text-center exl:text-5xl`}
+										className={`text-purpleMaghrib text-4xl xs:text-3xl lg:text-2xl font-bold xs:text-center exl:text-5xl`}
 									>
 										{nameActive}
 									</h1>

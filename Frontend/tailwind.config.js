@@ -257,7 +257,7 @@ module.exports = {
          containerMax: '1500px',
          navbarMax: '1600px',
          screenMax : '1500px',
-         imgSalah: '15rem'
+         imgSalah: '14rem'
 		},
 		minHeight: {
 			0: '0',

@@ -41,7 +41,7 @@ const Navbar = () => {
 				</div>
 				<div
 					className={classNames(
-						'justify-around w-3/5 hidden lg:flex xl:flex items-center ex:flex exl:flex',
+						'justify-around w-3/5 hidden xl:flex items-center ex:flex exl:flex',
 						clicked ? `${styles.open}` : ''
 					)}
 				>
@@ -146,7 +146,7 @@ const Navbar = () => {
 						</>
 					)}
 				</div>
-				<div className="lg:hidden xl:hidden ex:hidden exl:hidden">
+				<div className=" xl:hidden ex:hidden exl:hidden">
 					<div className={`${styles.menuIcon}`} onClick={handleMenuIcon}>
 						<input
 							type="checkbox"
