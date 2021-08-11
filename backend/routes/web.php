@@ -21,4 +21,4 @@ Route::group(['prefix' => 'superteam', 'namespace' => 'Superteam', 'name' => 'su
 // all url will use this route if that url not registered to any route
 Route::get('/{any}', function() {
     return view('react');
-});
+})->where('any', '^(?!api).*$');
