@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import InfoTemplate from './InfoTemplate';
 import { useParams } from 'react-router-dom';
-import useFetchArticles from '../../routes/useFetchArticles';
+// import useFetchArticles from '../../routes/useFetchArticles';
 import { useArticles } from '../../routes/Context';
 import { getArticles } from '../../routes/FetchArticles';
 
@@ -28,11 +28,6 @@ const FetchInfo = () => {
 		});
 	}, [articleActive, slug, articles, setArticles]);
 
-	const input = `<p className="text-purpleMaghrib text-center">
-
-Some *emphasis* and <strong>strong</strong>!
-
-</p>`;
 	// console.log(id);
 	// const articles = useArticles();
 	// const {
@@ -54,9 +49,8 @@ Some *emphasis* and <strong>strong</strong>!
 				>
 					<div className="my-8 ml-5 text-lg">
 						<h1 className="my-8 text-black xs:text-xl sm:text-xl ex:text-3xl exl:text-3xl">
-							A. Pengumuman Gladi Bersih PKKMB RAJA Brawijaya 2021
+							{articleActive.title}
 						</h1>
-						{/* <ReactMarkdown source={input}/> */}
 						<ReactMarkdown skipHtml={true}>
 							{articleActive.content}
 						</ReactMarkdown>
