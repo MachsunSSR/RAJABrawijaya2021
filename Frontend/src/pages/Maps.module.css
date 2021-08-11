@@ -1,0 +1,21 @@
+.mark7 {
+  position: absolute;
+}
+@media only screen and (min-width: 1024px) {
+  .mark7 {
+    right: 42%;
+    top: 55%;
+  }
+}
+@media only screen and (min-width: 1300px) {
+  .mark7 {
+    right: 43%;
+    top: 57%;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  .mark7 {
+    right: 43%;
+    top: 60%;
+  }
+}/*# sourceMappingURL=Maps.module.css.map */

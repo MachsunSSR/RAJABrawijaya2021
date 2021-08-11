@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Markdown from 'react-markdown';
+import ReactMarkdown from 'react-markdown';
 import InfoTemplate from './InfoTemplate';
 import { useParams } from 'react-router-dom';
 import useFetchArticles from '../../routes/useFetchArticles';
@@ -8,30 +8,33 @@ import { getArticles } from '../../routes/FetchArticles';
 
 const FetchInfo = () => {
 	const { slug } = useParams();
-   const [articleActive, setArticleActive] = useState(null);
-   // const [articlesFetch, setArticleFet] = useState(null);
-   const {articles, setArticles} = useArticles();
+	const [articleActive, setArticleActive] = useState(null);
+	// const [articlesFetch, setArticleFet] = useState(null);
+	const { articles, setArticles } = useArticles();
 
-   useEffect(() => {
-      if(articles.length <= 0){
-         async function get() {
-            const res = await getArticles();
-            setArticles(res)
-         }
-         get();
+	useEffect(() => {
+		if (articles.length <= 0) {
+			async function get() {
+				const res = await getArticles();
+				setArticles(res);
+			}
+			get();
+		}
+		articles.forEach((article) => {
+			if (article.slug === slug) {
+				setArticleActive(article);
+				return article;
+			}
+		});
+	}, [articleActive, slug, articles, setArticles]);
 
-      }
-      articles.forEach(article => {
-         if(article.slug === slug) {
-            setArticleActive(article);
-            return article;
-         }
-      })
-   }, [articleActive, slug, articles, setArticles])
+	const input = `<p className="text-purpleMaghrib text-center">
 
-   console.log(articleActive)
-   // console.log(id);
-   // const articles = useArticles();
+Some *emphasis* and <strong>strong</strong>!
+
+</p>`;
+	// console.log(id);
+	// const articles = useArticles();
 	// const {
 	// 	data: articles,
 	// 	isPending,
@@ -41,29 +44,34 @@ const FetchInfo = () => {
 		<>
 			{/* {isFailed && <div>{isFailed}</div>}
 			{isPending && <div>Loading...</div>} */}
+
 			{articleActive !== null ? (
-               <InfoTemplate
-                  title={`${articleActive.title}`}
-                  props={
-                     'bg-whiteSoft xs:p-5 sm:p-5 p-20 mt-40 drop-shadow-xl mb-32'
-                  }
-               >
-                  <div>
-                     <Markdown>{articleActive.content}</Markdown>
-                  </div>
-               </InfoTemplate>
-         ) : (
-            <InfoTemplate
-                  title={`Loading data...`}
-                  props={
-                     'bg-whiteSoft xs:p-5 sm:p-5 p-20 mt-40 drop-shadow-xl mb-32'
-                  }
-               >
-                  <div>
-                     loading
-                  </div>
-               </InfoTemplate>
-         )}
+				<InfoTemplate
+					title={`${articleActive.subtitle}`}
+					props={
+						'bg-whiteSoft xs:p-5 sm:p-5 p-20 mt-40 drop-shadow-xl mb-32'
+					}
+				>
+					<div className="my-8 ml-5 text-lg">
+						<h1 className="my-8 text-black xs:text-xl sm:text-xl ex:text-3xl exl:text-3xl">
+							A. Pengumuman Gladi Bersih PKKMB RAJA Brawijaya 2021
+						</h1>
+						{/* <ReactMarkdown source={input}/> */}
+						<ReactMarkdown skipHtml={true}>
+							{articleActive.content}
+						</ReactMarkdown>
+					</div>
+				</InfoTemplate>
+			) : (
+				<InfoTemplate
+					title={`Loading data...`}
+					props={
+						'bg-whiteSoft xs:p-5 sm:p-5 p-20 mt-40 drop-shadow-xl mb-32'
+					}
+				>
+					<div>loading</div>
+				</InfoTemplate>
+			)}
 		</>
 	);
 };
