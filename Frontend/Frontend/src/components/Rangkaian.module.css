@@ -1,0 +1,61 @@
+.visual1 {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: -120px;
+  max-width: 200px;
+}
+
+.rangkaianTextHeading {
+  top: 10px;
+  z-index: 3;
+}
+@media only screen and (min-width: 690px) {
+  .rangkaianTextHeading {
+    top: 50px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .rangkaianTextHeading {
+    top: 20px;
+  }
+}
+
+.rangkaianHeadline {
+  font-size: 2.7rem;
+  text-align: left;
+}
+@media only screen and (min-width: 600px) {
+  .rangkaianHeadline {
+    font-size: 3.9rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .rangkaianHeadline {
+    font-size: 4.9rem;
+    text-align: right;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .rangkaianHeadline {
+    font-size: 5.9rem;
+  }
+}
+@media only screen and (min-width: 1300px) {
+  .rangkaianHeadline {
+    font-size: 7.9rem;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  .rangkaianHeadline {
+    font-size: 10rem;
+  }
+}
+
+.line {
+  height: 3px;
+  width: 50%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}/*# sourceMappingURL=Rangkaian.module.css.map */

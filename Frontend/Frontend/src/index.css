@@ -1,0 +1,107 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+@font-face {
+	font-family: 'Batavia Glamore NORMAL';
+	src: url('./assets/fonts/BataviaGlamoreNORMAL-Regular.woff2') format('woff2'),
+		url('./assets/fonts/BataviaGlamoreNORMAL-Regular.woff') format('woff'),
+		url('./assets/fonts/BataviaGlamoreNORMAL-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Batavia Glamore NORMAL';
+	src: url('./assets/fonts/BataviaGlamoreNORMALITALIC-Ital.woff2')
+			format('woff2'),
+		url('./assets/fonts/BataviaGlamoreNORMALITALIC-Ital.woff') format('woff'),
+		url('./assets/fonts/BataviaGlamoreNORMALITALIC-Ital.ttf')
+			format('truetype');
+	font-weight: normal;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Batavia Glamore';
+	src: url('./assets/fonts/BataviaGlamoreBOLD-Bold.woff2') format('woff2'),
+		url('./assets/fonts/BataviaGlamoreBOLD-Bold.woff') format('woff'),
+		url('./assets/fonts/BataviaGlamoreBOLD-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Batavia Glamore';
+	src: url('./assets/fonts/BataviaGlamoreBOLDITALIC-BoldIt.woff2')
+			format('woff2'),
+		url('./assets/fonts/BataviaGlamoreBOLDITALIC-BoldIt.woff') format('woff'),
+		url('./assets/fonts/BataviaGlamoreBOLDITALIC-BoldIt.ttf')
+			format('truetype');
+	font-weight: bold;
+	font-style: italic;
+	font-display: swap;
+}
+
+@layer base {
+	h1 {
+		@apply text-2xl font-bold;
+	}
+	h2 {
+		@apply text-xl;
+	}
+	.btn-primary {
+		@apply px-4 py-2 text-deepBlue border-2 bg-white border-deepBlue hover:bg-deepBlue hover:text-white rounded-2 transition-all duration-1000 ease-in-out;
+	}
+	.links {
+		@apply text-lg text-white;
+	}
+	.batavia {
+		@apply font-pro;
+	}
+
+   /* p, a{
+      @apply font-sans;
+   } */
+
+}
+
+
+p,a{
+   font-family: 'Poppins', sans-serif;
+}
+
+.rec.rec-arrow {
+	border-radius: 0;
+	background-color: #fc6238;
+	width: fit-content;
+	min-width: 2px;
+	line-height: inherit;
+	height: 100%;
+	padding: 0;
+}
+
+.rec.rec-dot_active {
+	background-color: #fc6238;
+	box-shadow: none;
+}
+
+iframe {
+	width: 100%;
+	max-width: 600px;
+	/* height: 100%; */
+	max-height: 400px;
+	display: block; /* iframes are inline by default */
+	background: #000;
+	border: none; /* Reset default border */
+	height: 100vh; /* Viewport-relative units */
+	/* width: 100vw; */
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSwwQkFBQTtBQUNBLGdDQUFnQztBQUNoQywrQkFBc0I7QUFDdEI7O3NCQUVDOztBQUVEO0NBQ0MscUNBQXFDO0NBQ3JDOzsyRUFFRDtDQUNBLG1CQUFBO0NBQ0Msa0JBQWtCO0NBQ25CLGtCQUFBO0FBQ0E7O0FBRUE7Q0FDQyxxQ0FBcUM7Q0FDckM7Ozs7cUJBSW9CO0NBQ3JCLG1CQUFBO0NBQ0Msa0JBQUE7Q0FDQSxrQkFBQTtBQUNEOztBQUVBO0NBQ0MsOEJBQUU7Q0FDRjs7c0VBRXFFO0NBQ3RFLGlCQUFBO0NBQ0Msa0JBQUU7Q0FDRixrQkFBRTtBQUNIOztBQUVBO0NBQ0MsOEJBQW9CO0NBQ3BCOzs7O3FCQUlvQjtDQUNyQixpQkFBQTtDQUNDLGtCQUFBO0NBQ0Esa0JBQUM7QUFDRjs7QUFFQTtDQUNDO0VBQ0EseUJBQUE7Q0FDQTtDQUNBO0VBQ0EsY0FBQTtDQUNBO0NBQ0E7RUFDQyxzSkFBQztDQUNGO0NBQ0E7RUFDRCx5QkFBQTtDQUNDO0NBQ0Q7RUFDQyxlQUFnQjtDQUNoQjtBQUNEOztBQUVBO0NBQ0MsZ0JBQVk7Q0FDWix5QkFBVTtDQUNYLGtCQUFBO0NBQ0MsY0FBYztDQUNmLG9CQUFBO0NBQ0MsWUFBRTtDQUNGLFVBQUU7QUFDSDs7QUFFQTtDQUNDLHlCQUF5QjtDQUN6QixnQkFBZ0I7QUFDakI7O0FBRUE7Q0FDQyxXQUFXO0NBQ1gsZ0JBQWdCO0NBQ2hCLGtCQUFrQjtDQUNsQixpQkFBaUI7Q0FDakIsY0FBYyxFQUFFLGtDQUFrQztDQUNsRCxnQkFBZ0I7Q0FDaEIsWUFBWSxFQUFFLHlCQUF5QjtDQUN2QyxhQUFhLEVBQUUsNEJBQTRCO0NBQzNDLGtCQUFrQjtBQUNuQiIsImZpbGUiOiJpbmRleC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvKiBAdGFpbHdpbmQgYmFzZTtcclxuQHRhaWx3aW5kIGNvbXBvbmVudHM7XHJcbkB0YWlsd2luZCB1dGlsaXRpZXM7ICovXHJcbkBpbXBvcnQgJ3RhaWx3aW5kY3NzL2Jhc2UnO1xyXG5AaW1wb3J0ICd0YWlsd2luZGNzcy9jb21wb25lbnRzJztcclxuQGltcG9ydCAndGFpbHdpbmRjc3MvdXRpbGl0aWVzJztcclxuIl19 */

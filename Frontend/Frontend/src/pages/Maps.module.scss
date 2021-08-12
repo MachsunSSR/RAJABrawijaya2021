@@ -1,0 +1,27 @@
+.mark7 {
+	position: absolute;
+
+
+	@media only screen and (min-width: 600px) {
+	}
+
+	@media only screen and (min-width: 768px) {
+	}
+
+	@media only screen and (min-width: 1024px) {
+      right: 42%;
+      top: 55%;
+	}
+
+	//125%
+	@media only screen and (min-width: 1300px) {
+      right: 43%;
+      top: 57%;
+	}
+
+	//100%
+	@media only screen and (min-width: 1600px) {
+      right: 43%;
+      top: 60%;
+	}
+}

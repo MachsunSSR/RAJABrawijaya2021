@@ -1,0 +1,58 @@
+.cardAnimations{
+   cursor: pointer;
+   position: relative;
+   transition: all .5s;
+   background-size: 100%;
+   width: 100%;
+   // max-width: 350px;
+   &::before {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		// right: 0;
+      left: 0;
+		width: 0;
+		height: 100%;
+      z-index: 2;
+		background-color: #FC6238;
+      mix-blend-mode: multiply;
+		transition: width 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+	}
+   &:hover{
+      // transform: scale(1.2);
+      background-size: 110%;
+   }
+
+	&:hover::before {
+		// left: 0;
+      right: 0;
+		// right: auto;
+		width: 100%;
+	}
+   //150%
+   @media only screen and (min-width: 1280px) {
+		min-width: 260px;
+      min-height: 240px;
+	}
+
+   //125%
+	@media only screen and (min-width: 1300px) {
+		min-width: 360px;
+      min-height: 340px;
+	}
+
+   //100%
+	@media only screen and (min-width: 1600px) {
+		min-width: 460px;
+      min-height: 440px;
+	}
+
+   img{
+      width: 1000px;
+   }
+}
+.cardText{
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+}

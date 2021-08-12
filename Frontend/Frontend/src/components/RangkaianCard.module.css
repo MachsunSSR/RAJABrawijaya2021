@@ -1,0 +1,57 @@
+.rangkaianCard {
+  width: 100%;
+  max-width: 300px;
+  height: 400px;
+  background-size: 150px;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+@media only screen and (min-width: 690px) {
+  .rangkaianCard {
+    width: 100%;
+    min-width: 100px;
+    max-width: 480px;
+    max-height: 470px;
+    height: 100vh;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  .rangkaianCard {
+    width: 100%;
+    min-width: 100px;
+    max-width: 480px;
+    max-height: 570px;
+    height: 100vh;
+  }
+}
+.rangkaianCard .cardDetail {
+  height: 70px;
+  width: 100%;
+  transition: all 0.3s;
+  position: relative;
+  z-index: 3;
+}
+.rangkaianCard .cardDetail:hover {
+  height: 100%;
+  padding: 2rem;
+}
+
+.frame {
+  position: absolute;
+  top: 0;
+  height: 330px;
+  transition: all 1s;
+  z-index: 2;
+}
+@media only screen and (min-width: 690px) {
+  .frame {
+    height: 400px;
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  .frame {
+    height: 500px;
+  }
+}/*# sourceMappingURL=RangkaianCard.module.css.map */

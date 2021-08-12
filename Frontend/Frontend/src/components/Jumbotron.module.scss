@@ -1,0 +1,78 @@
+.jumbotronHeadline1 {
+	font-size: 3.9rem;
+	position: relative;
+	// top : 40px;
+
+	@media only screen and (min-width: 640px) {
+		font-size: 3.9rem;
+	}
+
+	@media only screen and (min-width: 768px) {
+		font-size: 5.9rem;
+		top: 40px;
+	}
+
+	@media only screen and (min-width: 1024px) {
+		font-size: 6.9rem;
+	}
+
+	//125%
+	@media only screen and (min-width: 1300px) {
+		font-size: 8.9rem;
+	}
+
+	//100%
+	@media only screen and (min-width: 1600px) {
+		font-size: 11.25rem;
+	}
+}
+
+.jumbotronHeadline2 {
+	font-size: 3.9rem;
+
+	@media only screen and (min-width: 640px) {
+		font-size: 3.9rem;
+	}
+
+	@media only screen and (min-width: 768px) {
+		font-size: 5.9rem;
+	}
+
+	@media only screen and (min-width: 1024px) {
+		font-size: 6.9rem;
+	}
+	//125%
+	@media only screen and (min-width: 1300px) {
+		font-size: 8.9rem;
+	}
+
+	//100%
+	@media only screen and (min-width: 1600px) {
+		font-size: 11.25rem;
+	}
+}
+
+.jumbotronAkronim {
+	width: fit-content;
+}
+
+.jumbotronVideo {
+	object-fit: cover;
+	width: 100vw;
+	height: 100vh;
+	// position: fixed;
+	top: 0;
+	left: 0;
+	// position: relative;
+	// z-index: 1;
+	// background-blend-mode: overlay;
+}
+
+.sectionProps1 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: linear-gradient(to bottom, #e35467e7, #452b48dc);
+	background-blend-mode: multiply;
+}
