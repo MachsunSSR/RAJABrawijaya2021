@@ -1,5 +1,12 @@
 export const sekilasData = [
 	{
+		id: 6,
+		title: 'Panduan PKKMB 2021',
+		link: '/abhiyaksa-info/panduan-pkkmb',
+      desc:'',
+      bg:'bg-panduan-bg'
+	},
+	{
 		id: 5,
 		title: 'Informasi Pertanyaan PKKMB',
 		link: '/abhiyaksa-info/info-pertanyaan',

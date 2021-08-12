@@ -17,6 +17,7 @@ module.exports = {
                 "twibbon-bg": "url('/src/assets/twibbon.jpg')",
                 "gladi-bg": "url('/src/assets/gladi.jpg')",
                 "halo-bg": "url('/src/assets/haloselma.jpg')",
+                "panduan-bg": "url('/src/assets/panduan.jpg')",
             }),
         },
         screens: {
