@@ -1,7 +1,7 @@
 export const sekilasData = [
 	{
 		id: 5,
-		title: 'Informasi Pertanyaan',
+		title: 'Informasi Pertanyaan PKKMB',
 		link: '/abhiyaksa-info/info-pertanyaan',
       desc:'',
       bg:'bg-halo-bg'

@@ -67,7 +67,7 @@ const AdhikaraInfo = ({ match }) => {
 					)}
 
 					<Link to={`/abhiyaksa-info/info-pertanyaan`}>
-						<Cards title={'Informasi Pertanyaan'} bg={'bg-halo-bg'} />
+						<Cards title={'Informasi Pertanyaan PKKMB'} bg={'bg-halo-bg'} />
 					</Link>
 					<div></div>
 
