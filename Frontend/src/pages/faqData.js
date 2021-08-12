@@ -220,6 +220,13 @@ const faqData = [
         jawaban:
             "PSDKU Kediri.",
     },
+    {
+        id: 62,
+        pertanyaan:
+            "Apakah foto siam bisa diganti?",
+        jawaban:
+            "Bisa, info lebih lanjut hubungi Halo Selma",
+    },
 ];
 
 export default faqData;
