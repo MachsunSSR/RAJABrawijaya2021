@@ -11,6 +11,7 @@ import {
     Avatar,
     Badge,
 } from "@windmill/react-ui";
+import { DataPenugasan } from "../services/Penugasan";
 
 const TablePenilaian = () => {
     const headerTable = ["NAMA TUGAS", "NILAI", "STATUS", "DEADLINE"];
@@ -33,18 +34,18 @@ const TablePenilaian = () => {
                     </TableRow>
                 </TableHeader>
                 <TableBody>
-                    {listTugas.map((dataTugas) => (
+                    {DataPenugasan.map((dataTugas) => (
                         <TableRow className=" hover:bg-gray-200 transition-bg duration-300 cursor-pointer">
                             <TableCell>
                                 <span className="text-sm">
-                                    {dataTugas.nama}
+                                    {dataTugas.judul}
                                 </span>
                             </TableCell>
                             <TableCell>
                                 <span className="text-sm">-</span>
                             </TableCell>
                             <TableCell>
-                                <Badge type="success">success</Badge>
+                                <Badge type="danger">Belum Dikerjakan</Badge>
                             </TableCell>
                             <TableCell>
                                 <span className="text-sm">

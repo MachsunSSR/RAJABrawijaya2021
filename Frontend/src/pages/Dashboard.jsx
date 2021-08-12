@@ -14,7 +14,6 @@ const Dashboard = () => {
             >
                 <DashboardCard judul="Tugas" />
                 <DashboardCard judul="Countodwn Rangkaian Selanjutnya" />
-                <DashboardCard judul="Keminatan" />
             </section>
             <section
                 id="containerBawah"

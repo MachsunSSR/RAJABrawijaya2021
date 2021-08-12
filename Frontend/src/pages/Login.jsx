@@ -1,24 +1,96 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useContext } from "react";
 import Image from "../assets/img/login.jpg";
 import { useForm } from "react-hook-form";
 import swal from "sweetalert";
 import { Label, Input, Button } from "@windmill/react-ui";
-import { login } from "../services/API";
+import $ from "jquery";
+import { AuthContext } from "../context/GlobalState";
 
 function Login() {
     const { register, handleSubmit } = useForm();
     const [nim, setNim] = useState("");
     const [password, setPassword] = useState("");
+    const [loading, setLoading] = useState(false);
+
+    const [state, dispatch] = useContext(AuthContext);
+
+    const submitLogin = () => {
+        setLoading(true);
+        $.ajax({
+            type: "POST",
+            url: "https://rajabrawijaya.ub.ac.id/api/maba/login",
+            data: {
+                nim,
+                password,
+            },
+            beforeSend: function () {
+                setLoading(true);
+            },
+            success: function (res) {
+                if (res.success) {
+                    console.log("hai");
+                    dispatch({
+                        type: "LOGIN",
+                        payload: res.data,
+                    });
+                } else {
+                    setLoading(false);
+                    onPasswordSalah();
+                }
+                // successLogin();
+            },
+        });
+        setLoading(false);
+    };
+
     const onSubmit = () => {
+        setLoading(true);
         if (nim.length !== 15) {
             onNimKurang();
         } else if (nim.substring(0, 2) !== "21") {
             onBukanMaba();
         } else {
-            login(nim, password);
+            submitLogin();
         }
     };
+
+    // const fetchLogin = () => {
+    //     const config = {
+    //         headers: {
+    //             "Content-Type": "application/json",
+    //             Authorization: "Bearer" + authState.token,
+    //         },
+    //     };
+    // };
+
+    // const successLogin = () => {
+    //     $.ajax({
+    //         type: "POST",
+    //         url: "https://rajabrawijaya.ub.ac.id/api/maba/login",
+    //         data: {
+    //             nim,
+    //             password,
+    //         },
+    //         success: function (response) {
+    //             setauthState({
+    //                 ...authState,
+    //                 loggedIn: true,
+    //                 nim: response.data.nim,
+    //                 nama: response.data.nama,
+    //                 fakultas: response.data.fakultas,
+    //                 jurusan: response.data.jurusan,
+    //                 prodi: response.data.prodi,
+    //                 jenjang: response.data.jenjang,
+    //                 foto: response.data.foto,
+    //                 cluster: response.data.cluster,
+    //                 kelompok: response.data.kelompok,
+    //                 sosmed: response.data.sosmed,
+    //                 teman_sekelompok: response.data.teman_sekelompok,
+    //             });
+    //             <Redirect to="app/" />;
+    //         },
+    //     });
+    // };
 
     const onBukanMaba = () =>
         swal(
@@ -31,6 +103,13 @@ function Login() {
         swal(
             "NIM anda tidak 15 digit",
             "Kok ga fokus? kamu lagi ada masalah? sini cerita..",
+            "error"
+        );
+
+    const onPasswordSalah = () =>
+        swal(
+            "Password Anda Salah",
+            "Meskipun kamu cewe, kalo password kamu salah ya gbs login :)",
             "error"
         );
     return (
@@ -59,6 +138,7 @@ function Login() {
                                     <Input
                                         className="mt-1 font-semibold"
                                         type="text"
+                                        required
                                         placeholder="215150xxxxxx"
                                         {...register("nim", { required: true })}
                                         value={nim}
@@ -72,6 +152,7 @@ function Login() {
                                     </span>
                                     <Input
                                         className="mt-1"
+                                        required
                                         type="password"
                                         placeholder="********"
                                         {...register("passwrod", {
@@ -88,10 +169,9 @@ function Login() {
                                     className="mt-4"
                                     block
                                     type="submit"
-                                    tag={Link}
-                                    to="/app"
+                                    disabled={loading}
                                 >
-                                    Log in
+                                    {loading ? "Loading..." : "Login"}
                                 </Button>
                             </form>
                         </div>

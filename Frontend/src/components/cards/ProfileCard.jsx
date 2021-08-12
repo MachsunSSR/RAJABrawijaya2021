@@ -36,32 +36,16 @@ const ProfileCard = () => {
                 </span>
             </div>
 
-            <div
-                id="officialAccount"
-                className="grid grid-cols-1 lg:grid-cols-2 space-y-6 lg:space-y-0"
-            >
-                <section id="OARabraw" className="space-y-4">
-                    <h2 className="font-semibold text-center lg:text-left dark:text-gray-400">
-                        Group Resmi Cluster
-                    </h2>
-                    <span className="flex justify-center lg:justify-start">
-                        <Button className="w-56">
-                            Group Telegram Cluster 16
-                        </Button>
-                    </span>
-                </section>
+            {/* <section id="OA Rabraw" className="space-y-4 lg:ml-2">
+                <h2 className="font-semibold text-center lg:text-left dark:text-gray-400">
+                    Official Account Fakultas/Prodi
+                </h2>
+                <span className="flex lg:flex-col lg:space-y-4 space-x-4 lg:space-x-0 justify-center lg:justify-start">
+                    <Button className="w-56">Instagram PK2MABA</Button>
 
-                <section id="OA Rabraw" className="space-y-4 lg:ml-2">
-                    <h2 className="font-semibold text-center lg:text-left dark:text-gray-400">
-                        Official Account Fakultas/Prodi
-                    </h2>
-                    <span className="flex lg:flex-col lg:space-y-4 space-x-4 lg:space-x-0 justify-center lg:justify-start">
-                        <Button className="w-56">Instagram PK2MABA</Button>
-
-                        <Button className="w-56">Instagram Ospek Prodi</Button>
-                    </span>
-                </section>
-            </div>
+                    <Button className="w-56">Instagram Ospek Prodi</Button>
+                </span>
+            </section> */}
         </section>
     );
 };

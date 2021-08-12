@@ -6,6 +6,7 @@ const Dashboard = lazy(() => import("../pages/Dashboard"));
 const Penugasan = lazy(() => import("../pages/Penugasan"));
 const Presensi = lazy(() => import("../pages/Presensi"));
 const Penilaian = lazy(() => import("../pages/Penilaian"));
+const Perizinan = lazy(() => import("../pages/Perizinan"));
 const TugasTwibbon = lazy(() => import("../pages/TugasTwibbon"));
 const TugasBiskuit = lazy(() => import("../pages/TugasBiskuit"));
 const TugasDharma = lazy(() => import("../pages/TugasDharma"));
@@ -71,6 +72,10 @@ const routes = [
     {
         path: "/penilaian",
         component: Penilaian,
+    },
+    {
+        path: "/perizinan",
+        component: Perizinan,
     },
 ];
 

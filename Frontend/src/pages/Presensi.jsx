@@ -41,34 +41,6 @@ const Presensi = () => {
                     <PresensiCard judul="PBPK" kode="RAJAPBPK2021" />
                     <PresensiCard judul="Open House" kode="RAJAOH2021" />
                 </div>
-                {/* <div
-                    id="containerForm"
-                    className="flex flex-col justify-center items-center space-y-8 py-8"
-                >
-                    <h1 className="font-semibold text-4xl">
-                        Masukkan Kode Presensi
-                    </h1>
-                    <form
-                        onSubmit={handleSubmit(onSubmit)}
-                        className="w-full space-y-4"
-                    >
-                        <input
-                            className="w-full lg:w-2/3 rounded-2xl px-5 py-6 text-lg font-semibold"
-                            {...register("kode")}
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
-                            onInput={toInputUppercase}
-                            placeholder="Masukkan Kode Presensi..."
-                        />
-                        <p className="text-gray-400 pb-4">
-                            NB: Hubungi admin apabila mengalami kendala presensi
-                        </p>
-
-                        <Button className="w-48" type="submit">
-                            Submit
-                        </Button>
-                    </form>
-                </div> */}
             </section>
         </>
     );

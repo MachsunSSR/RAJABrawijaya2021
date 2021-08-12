@@ -7,10 +7,12 @@ import {
     OutlineLogoutIcon,
 } from "../assets/icons";
 import { Avatar, Dropdown, DropdownItem } from "@windmill/react-ui";
+import { AuthContext } from "../context/GlobalState";
 
 export default function Navbar() {
     const { toggleSidebar } = useContext(SidebarContext);
     const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
+    const { state, dispatch } = useContext(AuthContext);
 
     function handleProfileClick() {
         setIsProfileMenuOpen(!isProfileMenuOpen);
@@ -56,7 +58,9 @@ export default function Navbar() {
                             isOpen={isProfileMenuOpen}
                             onClose={() => setIsProfileMenuOpen(false)}
                         >
-                            <DropdownItem onClick={() => alert("Log out!")}>
+                            <DropdownItem
+                                onClick={() => dispatch({ type: "LOGOUT" })}
+                            >
                                 <OutlineLogoutIcon
                                     className="w-4 h-4 mr-3"
                                     aria-hidden="true"

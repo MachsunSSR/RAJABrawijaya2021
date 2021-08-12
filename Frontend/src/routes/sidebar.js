@@ -26,26 +26,16 @@ const routes = [
         icon: "PresensiIcon",
         name: "Presensi",
     },
+    {
+        path: "/app/perizinan",
+        icon: "CrisisCenterIcon",
+        name: "Perizinan",
+    },
     // {
     //     path: "/app/minat-ukm",
     //     icon: "MinatUKMIcon",
     //     name: "Minat UKM",
     // },
-    {
-        // path: "/app/crisis-center",
-        icon: "CrisisCenterIcon",
-        name: "Crisis Center",
-        routes: [
-            {
-                path: "pengumuman",
-                name: "Pengumuman",
-            },
-            {
-                path: "laporan-kendala",
-                name: "Laporan Kendala",
-            },
-        ],
-    },
 ];
 
 export default routes;
