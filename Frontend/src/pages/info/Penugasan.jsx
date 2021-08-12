@@ -38,7 +38,7 @@ const Penugasan = () => {
 				Ketentuan lebih lanjut dapat dilihat pada panduan, yang bisa
 				didownload{' '}
 				<a
-					href="https://drive.google.com/file/d/1ZuYJgTMzOvQDWR0BBY3XDjCv-gN7VIhx/view?usp=sharing"
+					href="https://drive.google.com/file/d/1Eip0dYX_ufshv-Iqh3C7g-b9hdnJVynY/view?usp=sharing"
                target="_blank"
                rel="noreferrer"
 					className="underline"
