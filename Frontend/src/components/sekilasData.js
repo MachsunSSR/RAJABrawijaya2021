@@ -1,5 +1,12 @@
 export const sekilasData = [
 	{
+		id: 5,
+		title: 'Informasi Pertanyaan',
+		link: '/abhiyaksa-info/info-pertanyaan',
+      desc:'',
+      bg:'bg-halo-bg'
+	},
+	{
 		id: 1,
 		title: 'Informasi Twibbon',
 		link: '/abhiyaksa-info/info-twibbon',

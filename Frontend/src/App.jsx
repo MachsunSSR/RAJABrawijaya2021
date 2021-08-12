@@ -18,6 +18,7 @@ import { ArticlesContext } from "./routes/Context";
 import { getArticles } from "./routes/FetchArticles";
 import FetchInfo from "./pages/info/FetchInfo";
 import Maps from "./pages/Maps";
+import InfoHaloSelma from "./pages/info/InformasiHaloSelma";
 
 // import Aos from 'aos'/;
 
@@ -59,6 +60,11 @@ export default function App() {
                         exact
                         path={"/abhiyaksa-info/info-atribut"}
                         component={Atribut}
+                    />
+                    <Route
+                        exact
+                        path={"/abhiyaksa-info/info-pertanyaan"}
+                        component={InfoHaloSelma}
                     />
                     <Route path={`/abhiyaksa-info/:slug`}>
                         <FetchInfo />

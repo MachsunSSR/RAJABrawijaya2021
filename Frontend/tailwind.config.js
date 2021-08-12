@@ -16,6 +16,7 @@ module.exports = {
                 "oh-bg": "url('/src/assets/ohDummy.svg')",
                 "twibbon-bg": "url('/src/assets/twibbon.jpg')",
                 "gladi-bg": "url('/src/assets/gladi.jpg')",
+                "halo-bg": "url('/src/assets/haloselma.jpg')",
             }),
         },
         screens: {
