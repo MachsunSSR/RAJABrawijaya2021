@@ -38,7 +38,7 @@ const Penugasan = () => {
 				Ketentuan lebih lanjut dapat dilihat pada panduan, yang bisa
 				didownload{' '}
 				<a
-					href="https://drive.google.com/drive/folders/1JcF2vOxYxkjAu_02JzFZed6RLh4Wuqb0"
+					href="https://drive.google.com/file/d/1ZuYJgTMzOvQDWR0BBY3XDjCv-gN7VIhx/view?usp=sharing"
                target="_blank"
                rel="noreferrer"
 					className="underline"
@@ -55,11 +55,19 @@ const Penugasan = () => {
 				<li>Dharma Warta Abhiyaksa</li>
 				<li>Gaung Budaya Nusantara</li>
 			</ol>
+         <iframe
+				title="Youtube Video"
+				src={`https://www.youtube.com/embed/BC3FhyPfhVw`}
+				className="my-0 mx-auto"
+				width="100%"
+				frameBorder="0"
+				height="100%"
+			/>
 			<p className="my-8 text-lg">
 				Ketentuan lebih lanjut dapat dilihat pada panduan, yang bisa
 				didownload{' '}
 				<a
-					href="https://drive.google.com/drive/folders/1JNfqKYe27oD8X7f7OZ1H_bo1rmpq5O53"
+					href="https://drive.google.com/file/d/1N4Ir9knBTo0ZH39qmVf_flfNNjpm9ZXh/view?usp=sharing"
                target="_blank"
                rel="noreferrer"
 					className="underline"
