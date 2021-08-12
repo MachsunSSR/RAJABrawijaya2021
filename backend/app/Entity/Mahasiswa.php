@@ -13,12 +13,17 @@ class Mahasiswa extends Model implements Authenticatable, JWTSubject
 
     protected $table = 'mahasiswa';
     protected $primaryKey = 'nim';
-    protected $guarded = [];
+    protected $keyType = 'string';
     public $timestamps = false;
     public $incrementing = false;
+    protected $guarded = [];
 
     public function accesses() {
-        return $this->belongsToMany('App\Entity\Access', 'access_mahasiswa', 'nim_mahasiswa', 'access_id'); 
+        return $this->belongsToMany('App\Entity\Access', 'access_mahasiswa', 'nim_mahasiswa', 'access_id');
+    }
+
+    public function penugasan() {
+        return $this->hasOne('App\Entity\Penugasan', 'nim', 'nim');
     }
 
     public function getJWTIdentifier()
