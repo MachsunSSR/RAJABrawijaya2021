@@ -1,5 +1,12 @@
 export const sekilasData = [
 	{
+		id: 7,
+		title: 'Penugasan RAJA Brawijaya 2021',
+		link: '/abhiyaksa-info/penugasan',
+      desc:'',
+      bg:'bg-penugasan-bg'
+	},
+	{
 		id: 6,
 		title: 'Panduan PKKMB 2021',
 		link: '/abhiyaksa-info/panduan-pkkmb',

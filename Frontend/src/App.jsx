@@ -20,6 +20,7 @@ import FetchInfo from "./pages/info/FetchInfo";
 import Maps from "./pages/Maps";
 import InfoHaloSelma from "./pages/info/InformasiHaloSelma";
 import Panduan from "./pages/info/Panduan";
+import Penugasan from "./pages/info/Penugasan";
 
 // import Aos from 'aos'/;
 
@@ -71,6 +72,11 @@ export default function App() {
                         exact
                         path={"/abhiyaksa-info/panduan-pkkmb"}
                         component={Panduan}
+                    />
+                    <Route
+                        exact
+                        path={"/abhiyaksa-info/penugasan"}
+                        component={Penugasan}
                     />
                     <Route path={`/abhiyaksa-info/:slug`}>
                         <FetchInfo />

@@ -72,6 +72,9 @@ const AdhikaraInfo = ({ match }) => {
 					<Link to={`/abhiyaksa-info/panduan-pkkmb`}>
 						<Cards title={'Panduan PKKMB 2021'} bg={'bg-panduan-bg'} />
 					</Link>
+					<Link to={`/abhiyaksa-info/penugasan`}>
+						<Cards title={'Penugasan RAJA Brawijaya 2021'} bg={'bg-penugasan-bg'} />
+					</Link>
 					<div></div>
 
 					{/* <Link to={`/abhiyaksa-info/informasi-lain1`}>

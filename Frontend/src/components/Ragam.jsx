@@ -6,12 +6,15 @@ import classNames from 'classnames';
 import Tilt from 'react-tilt';
 
 const Ragam = () => {
-	const [active, setActive] = useState({
-		id: 1,
-		namaOspek: 'PROBINMABA FKH',
-		desc: 'PROBINMABA (Program Pembinaan Mahasiswa Baru) merupakan sebuah program dalam upaya pembinaan Mahasiswa Baru Fakultas Kedokteran Hewan Universitas Brawijaya yang diadakan rutin setiap tahunnya. PROBINMABA FKH UB memiliki dua rangkaian yakni PKKMABA (Pengenalan Kehidupan Kampus) dan KRIMA (Krida Mahasiswa). PROBINMABA FKH UB mengangkat sebuah tema yakni “Aktualisasi Pembentukan Pribadi Mahasiswa Baru yang Berintegritas Tinggi Sesuai Keprofesian Dokter Hewan”.',
-		sosmed: [['https://www.instagram.com/maba_fkhubofficial/', 'instagram']],
-	});
+	const [active, setActive] = useState( {
+      id: 1,
+      namaOspek: "PKKMB FKH 2021",
+      desc: "PROBINMABA (Program Pembinaan Mahasiswa Baru) merupakan sebuah program dalam upaya pembinaan Mahasiswa Baru Fakultas Kedokteran Hewan Universitas Brawijaya yang diadakan rutin setiap tahunnya. PROBINMABA FKH UB memiliki dua rangkaian yakni PKKMABA (Pengenalan Kehidupan Kampus) dan KRIMA (Krida Mahasiswa). PROBINMABA FKH UB mengangkat sebuah tema yakni “Aktualisasi Pembentukan Pribadi Mahasiswa Baru yang Berintegritas Tinggi Sesuai Keprofesian Dokter Hewan”.",
+      sosmed: [
+          ["https://www.instagram.com/maba_fkhubofficial/", "instagram"],
+      ],
+      img: "fkh",
+  });
 	return (
 		<Sections
 			propsClass={

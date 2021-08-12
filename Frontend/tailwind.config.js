@@ -18,6 +18,7 @@ module.exports = {
                 "gladi-bg": "url('/src/assets/gladi.jpg')",
                 "halo-bg": "url('/src/assets/haloselma.jpg')",
                 "panduan-bg": "url('/src/assets/panduan.jpg')",
+                "penugasan-bg": "url('/src/assets/penugasan.jpg')",
             }),
         },
         screens: {
