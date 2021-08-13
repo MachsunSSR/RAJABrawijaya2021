@@ -21,6 +21,7 @@ import Maps from "./pages/Maps";
 import InfoHaloSelma from "./pages/info/InformasiHaloSelma";
 import Panduan from "./pages/info/Panduan";
 import Penugasan from "./pages/info/Penugasan";
+import CountDown from "./components/CountDown";
 
 // import Aos from 'aos'/;
 
@@ -51,7 +52,7 @@ export default function App() {
                         component={AdhikaraInfo}
                     />
                     <Route path={"/faq"} component={Faq} />
-                    <Route path={"/raja-apps"} component={ComingSoon} />
+                    <Route path={"/raja-apps"} component={CountDown} />
                     <Route path={"/maps"} component={ComingSoon} />
                     <Route
                         exact
