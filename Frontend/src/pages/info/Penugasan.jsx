@@ -38,7 +38,7 @@ const Penugasan = () => {
 				Ketentuan lebih lanjut dapat dilihat pada panduan, yang bisa
 				didownload{' '}
 				<a
-					href="https://drive.google.com/file/d/1Eip0dYX_ufshv-Iqh3C7g-b9hdnJVynY/view?usp=sharing"
+					href="https://drive.google.com/folderview?id=1G31FOpEPIfDJWBkrjJy7nhNytrY0VsWd"
                target="_blank"
                rel="noreferrer"
 					className="underline"
@@ -67,7 +67,7 @@ const Penugasan = () => {
 				Ketentuan lebih lanjut dapat dilihat pada panduan, yang bisa
 				didownload{' '}
 				<a
-					href="https://drive.google.com/file/d/1N4Ir9knBTo0ZH39qmVf_flfNNjpm9ZXh/view?usp=sharing"
+					href="https://drive.google.com/folderview?id=1GC8UryFmHsg9BnyTODeVgxYCJRMUT_vg"
                target="_blank"
                rel="noreferrer"
 					className="underline"
@@ -76,7 +76,10 @@ const Penugasan = () => {
 				</a>
 			</p>
          <p className="my-8 text-lg">
-				Seluruh penugasan dikumpulkan di RAJA Apps, jangan lupa baca panduan penugasan dengan baik, jangan malas membaca! semangat dan sehat selalu Brawijaya Muda!
+				Seluruh penugasan dikumpulkan di RAJA Apps, jangan lupa baca panduan penugasan dengan baik, jangan malas membaca!
+			</p>
+         <p className="my-8 text-lg">
+				Jangan panik, tetap tenang santui rileks enjoy!, semangat dan sehat selalu Brawijaya Muda!
 			</p>
 		</InfoTemplate>
 	);
