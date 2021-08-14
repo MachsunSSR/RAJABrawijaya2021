@@ -74,11 +74,11 @@ export default function App() {
                         path={"/abhiyaksa-info/panduan-pkkmb"}
                         component={Panduan}
                     />
-                    <Route
+                    {/* <Route
                         exact
                         path={"/abhiyaksa-info/penugasan"}
                         component={Penugasan}
-                    />
+                    /> */}
                     <Route path={`/abhiyaksa-info/:slug`}>
                         <FetchInfo />
                     </Route>

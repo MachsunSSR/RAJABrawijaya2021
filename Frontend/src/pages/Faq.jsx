@@ -70,7 +70,7 @@ const Faq = () => {
 								>
 									<h1>{pertanyaan}</h1>
 									<img
-										src={`${process.env.PUBLIC_URL}/assets/faqIcon.svg`}
+										src={`${process.env.PUBLIC_URL}/assets/faqicon.svg`}
 										alt="icon"
 										className={`${styles.faqIcon}`}
 									/>

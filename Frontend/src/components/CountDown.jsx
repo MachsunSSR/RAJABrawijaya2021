@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import Sections from './Sections';
 const CountDown = () => {
 	const [count, setCount] = useState();
-	var countDownDate = new Date('Aug 13, 2021 14:00:00').getTime();
+	// const [img, setImg] = useState();
+	var countDownDate = new Date('Aug 30, 2022 14:00:00').getTime();
 
 	// Update the count down every 1 second
 	var x = setInterval(function () {
@@ -23,7 +24,7 @@ const CountDown = () => {
 		setCount({ days, hours, minutes, seconds });
 		if (distance < 0) {
 			clearInterval(x);
-			setCount('Anda kena prank');
+			setCount('');
 		}
 	}, 1000);
 
@@ -48,10 +49,21 @@ const CountDown = () => {
 				Siang-siang main layang-layang, malamnya sakit hati. Page ini sedang
 				dalam proses pembuatan sayang. Silahkan datang lagi nanti!
 			</p>
-			{count && (
-				<p className="text-orange text-center text-2xl my-5">
+			{count !== '' ? count && (
+				<p className="text-orange text-center text-xl my-5">
 					{count.days}d {count.hours}h {count.minutes}m {count.seconds}s
 				</p>
+			) : (
+				<>
+					{/* <p className="text-orange text-center text-2xl my-5">
+						Mohon maaf, internet kamu tidak bermasalah
+					</p> */}
+					{/* <img
+						src={`${process.env.PUBLIC_URL}/assets/mem.jpg`}
+						alt="meme"
+                  className="mx-auto my-0 max-w-sm"
+					/> */}
+				</>
 			)}
 			<Link
 				className="text-white px-6 py-2 mt-5 mb-20 xs:mb-0 bg-purpleMaghrib my-0 mx-auto block w-fit rounded-2"
