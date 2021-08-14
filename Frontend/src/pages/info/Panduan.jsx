@@ -1,22 +1,25 @@
 import React, { useState } from 'react';
 import InfoTemplate from './InfoTemplate';
 const Panduan = () => {
-   // const [cluster, setCluster] = useState([]);
-   let cluster = [];
-   let count = 1;
-   let temp = [];
-   for(let i = 1; i <= 64; i++){
-      if(count === 1 || count === 4){
-         temp.push(i)
-      }
-      count++;
-      if (count > 4){
-         cluster.push(temp)
-         temp = [];
-         count = 1;
-      }
-      
-   }
+	// const [cluster, setCluster] = useState([]);
+	let cluster = [];
+	let count = 1;
+	let temp = [];
+	for (let i = 1; i <= 64; i++) {
+		if (count === 1 || count === 4) {
+			if (i < 10) {
+				temp.push(`0${i}`);
+			} else {
+				temp.push(i);
+			}
+		}
+		count++;
+		if (count > 4) {
+			cluster.push(temp);
+			temp = [];
+			count = 1;
+		}
+	}
 
 	return (
 		<InfoTemplate
@@ -171,17 +174,21 @@ const Panduan = () => {
 				</li>
 			</ol>
 
-         <h1 className="my-8 text-black xs:text-xl sm:text-xl ex:text-3xl exl:text-3xl">
+			<h1 className="my-8 text-black xs:text-xl sm:text-xl ex:text-3xl exl:text-3xl">
 				PEMBAGIAN ZOOM PERCLUSTER:
 			</h1>
-         <ol type="1" className="list-decimal my-8 ml-5 text-lg">
-            {cluster.map((cluster,index) => {
-               return(
-                  <li>Cluster {cluster[0]} - {cluster[1]} zoom {index+1}</li>
-               )
-            })}
-         </ol>
-         <p className="my-8 text-lg">Link zoom akan dibagikan di google classroom masing-masing cluster</p>
+			<ol type="1" className="list-decimal my-8 ml-5 text-lg">
+				{cluster.map((cluster, index) => {
+					return (
+						<li>
+							Cluster {cluster[0]} - {cluster[1]}, zoom (room {index + 1})
+						</li>
+					);
+				})}
+			</ol>
+			<p className="my-8 text-lg font-bold">
+				Link zoom akan dibagikan di google classroom masing-masing cluster
+			</p>
 		</InfoTemplate>
 	);
 };

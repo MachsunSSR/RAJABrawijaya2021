@@ -44,8 +44,11 @@ const AdhikaraInfo = ({ match }) => {
 				propsClass2={'w-full my-20  w-full '}
 			>
 				<div className={`${styles.infoCardWrapper}`}>
-					<Link to={`/abhiyaksa-info/info-twibbon`}>
-						<Cards title={'Informasi Twibbon'} bg={'bg-twibbon-bg'} />
+					<Link to={`/abhiyaksa-info/info-pertanyaan`}>
+						<Cards
+							title={'Informasi Pertanyaan PKKMB'}
+							bg={'bg-halo-bg'}
+						/>
 					</Link>
 					<Link to={`/abhiyaksa-info/info-atribut`}>
 						<Cards title={'Informasi Atribut'} bg={'bg-atribut-bg'} />
@@ -65,16 +68,16 @@ const AdhikaraInfo = ({ match }) => {
 					) : (
 						<div>loading</div>
 					)}
-
-					<Link to={`/abhiyaksa-info/info-pertanyaan`}>
-						<Cards title={'Informasi Pertanyaan PKKMB'} bg={'bg-halo-bg'} />
+					<Link to={`/abhiyaksa-info/info-twibbon`}>
+						<Cards title={'Informasi Twibbon'} bg={'bg-twibbon-bg'} />
 					</Link>
+
 					<Link to={`/abhiyaksa-info/panduan-pkkmb`}>
 						<Cards title={'Panduan PKKMB 2021'} bg={'bg-panduan-bg'} />
 					</Link>
-					<Link to={`/abhiyaksa-info/penugasan`}>
+					{/* <Link to={`/abhiyaksa-info/penugasan`}>
 						<Cards title={'Penugasan RAJA Brawijaya 2021'} bg={'bg-penugasan-bg'} />
-					</Link>
+					</Link> */}
 					<div></div>
 
 					{/* <Link to={`/abhiyaksa-info/informasi-lain1`}>

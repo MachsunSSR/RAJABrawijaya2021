@@ -12,7 +12,7 @@ const AnnounceButton = () => {
                     entered ? "visible" : "hidden"
                 }`}
             >
-               Update FAQ!, Cek FAQ terbaru!
+               Update FAQ!, Update Link Drive Penugasan!
             </div>
             <Link to={"/abhiyaksa-info"}>
                 <img
