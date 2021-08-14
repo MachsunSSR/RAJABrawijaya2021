@@ -1,10 +1,24 @@
 export const sekilasData = [
 	{
-		id: 5,
+		id: 9,
+		title: 'Informasi Pelaksanaan Rangkaian',
+		link: '/abhiyaksa-info/info-rangkaian',
+		desc: '',
+		bg: 'bg-rangkaian-bg',
+	},
+	{
+		id: 7,
 		title: 'Informasi Pertanyaan PKKMB',
 		link: '/abhiyaksa-info/info-pertanyaan',
 		desc: '',
 		bg: 'bg-halo-bg',
+	},
+	{
+		id: 8,
+		title: 'Informasi PKKMB Fakultas',
+		link: '/abhiyaksa-info/info-pkkmb-fakultas',
+		desc: '',
+		bg: 'bg-ospekFak-bg',
 	},
 	{
 		id: 2,
