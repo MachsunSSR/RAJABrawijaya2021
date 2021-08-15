@@ -87,13 +87,15 @@ const Navbar = () => {
                                 FAQ
                             </Link>
 
-                            <Link
-                                to={"/raja-apps"}
+                            <a
+                                href="https://rajabrawijaya.ub.ac.id/apps/login"
+                                target="_blank"
+                                rel="noreferrer"
                                 className={`links font-semibold  ${styles.linkAnimationsApps}`}
                                 onClick={handleMenuIcon}
                             >
                                 Raja Apps
-                            </Link>
+                            </a>
                             {clicked ? (
                                 <p className="text-white">
                                     &copy; 2021, Tim IT RAJA Brawijaya 2021.
@@ -137,6 +139,8 @@ const Navbar = () => {
 
                             <a
                                 href="https://rajabrawijaya.ub.ac.id/apps/login"
+                                rel="noreferrer"
+                                target="_blank"
                                 className={`links font-semibold ${
                                     pathname !== "/"
                                         ? styles.linkAnimationsApps
