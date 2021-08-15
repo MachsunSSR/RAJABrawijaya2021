@@ -19,6 +19,8 @@ module.exports = {
                 "halo-bg": "url('/src/assets/haloselma.jpg')",
                 "panduan-bg": "url('/src/assets/panduan.jpg')",
                 "penugasan-bg": "url('/src/assets/penugasan.jpg')",
+                "ospekFak-bg": "url('/src/assets/fakultas.jpg')",
+                "rangkaian-bg": "url('/src/assets/rangkaian.jpg')",
             }),
         },
         screens: {
@@ -262,6 +264,7 @@ module.exports = {
             navbarMax: "1600px",
             screenMax: "1500px",
             imgSalah: "14rem",
+            ospekFakIcon: "110px"
         },
         minHeight: {
             0: "0",

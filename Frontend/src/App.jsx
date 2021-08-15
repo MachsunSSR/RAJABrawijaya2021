@@ -22,7 +22,8 @@ import InfoHaloSelma from "./pages/info/InformasiHaloSelma";
 import Panduan from "./pages/info/Panduan";
 import Penugasan from "./pages/info/Penugasan";
 import CountDown from "./components/CountDown";
-
+import InfoOspekFak from "./pages/info/InfoOspekFak";
+import InformasiRangkaian from "./pages/info/InformasiRangkaian"
 // import Aos from 'aos'/;
 
 export default function App() {
@@ -73,6 +74,16 @@ export default function App() {
                         exact
                         path={"/abhiyaksa-info/panduan-pkkmb"}
                         component={Panduan}
+                    />
+                    <Route
+                        exact
+                        path={"/abhiyaksa-info/info-pkkmb-fakultas"}
+                        component={InfoOspekFak}
+                    />
+                    <Route
+                        exact
+                        path={"/abhiyaksa-info/info-rangkaian"}
+                        component={InformasiRangkaian}
                     />
                     {/* <Route
                         exact
