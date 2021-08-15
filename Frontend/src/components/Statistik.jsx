@@ -23,7 +23,7 @@ const Statistik = () => {
                             alt="maba"
                             width="80px"
                         />
-                        <CountUp end={13214} duration={4} redraw={true}>
+                        <CountUp end={15085} duration={4} redraw={true}>
                             {({ countUpRef, start }) => (
                                 <VisibilitySensor onChange={start} delayedCall>
                                     <h1
