@@ -65,10 +65,10 @@ const routes = [
         path: "/penugasan/biskuit",
         component: TugasBiskuit,
     },
-    {
-        path: "/presensi",
-        component: Presensi,
-    },
+    // {
+    //     path: "/presensi",
+    //     component: Presensi,
+    // },
     {
         path: "/penilaian",
         component: Penilaian,

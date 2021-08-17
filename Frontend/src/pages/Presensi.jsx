@@ -1,24 +1,7 @@
-// import React, { useState } from "react";
 import React from "react";
 import PresensiCard from "../components/cards/PresensiCard";
-// import { Button } from "@windmill/react-ui";
-// import { useForm } from "react-hook-form";
-// import swal from "sweetalert";
 
 const Presensi = () => {
-    // const { register, handleSubmit } = useForm();
-    // const [name, setName] = useState("");
-
-    // const onSubmit = (data) =>
-    //     swal(
-    //         "Berhasil Melakukan Presensi!",
-    //         `Kode Presensi = ${data.kode}`,
-    //         "success"
-    //     );
-    // const toInputUppercase = (e) => {
-    //     e.target.value = ("" + e.target.value).toUpperCase();
-    // };
-
     return (
         <>
             <h6>Presensi</h6>

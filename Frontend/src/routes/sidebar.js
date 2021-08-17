@@ -7,32 +7,32 @@
  */
 const routes = [
     {
-        path: "/app/dashboard", // the url
+        path: "/apps/dashboard", // the url
         icon: "HomeIcon", // the component being exported from icons/index.js
-        name: "Dashboard", // name that appear in Sidebar
+        name: "Dashboard", // name that appsear in Sidebar
     },
     {
-        path: "/app/penugasan",
+        path: "/apps/penugasan",
         icon: "PenugasanIcon",
         name: "Penugasan",
     },
     {
-        path: "/app/penilaian",
+        path: "/apps/penilaian",
         icon: "PenilaianIcon",
         name: "Penilaian",
     },
+    // {
+    //     path: "/apps/presensi",
+    //     icon: "PresensiIcon",
+    //     name: "Presensi",
+    // },
     {
-        path: "/app/presensi",
-        icon: "PresensiIcon",
-        name: "Presensi",
-    },
-    {
-        path: "/app/perizinan",
+        path: "/apps/perizinan",
         icon: "CrisisCenterIcon",
         name: "Perizinan",
     },
     // {
-    //     path: "/app/minat-ukm",
+    //     path: "/apps/minat-ukm",
     //     icon: "MinatUKMIcon",
     //     name: "Minat UKM",
     // },

@@ -5,25 +5,36 @@ import {
     Route,
     Redirect,
 } from "react-router-dom";
+import PrivateRoute from "./routes/PrivateRoute";
+import PublicRoute from "./routes/PublicRoute";
 import { AuthContext } from "./context/GlobalState";
-// import { PrivateRoute } from "./routes/PrivateRoute";
 const Layout = lazy(() => import("./components/Layout"));
 const Login = lazy(() => import("./pages/Login"));
+const Pendataan = lazy(() => import("./pages/Pendataan"));
 
 export default function App() {
-    const [state, dispatch] = useContext(AuthContext);
+    const { isAuthenticated } = useContext(AuthContext);
     return (
         <>
             <Router>
                 <Switch>
                     {/* {!state.isAuthenticated ? (
-                        <Redirect to={{ pathname: "/app" }} />
+                        <Redirect to={{ pathname: "/apps" }} />
                     ) : (
                         <Redirect to={{ pathname: "/login" }} />
                     )} */}
-                    <Route path="/login" component={Login} />
-                    <Route path="/app" component={Layout} />
-                    <Redirect from="/" to="/login" />
+                    <PublicRoute
+                        restricted={isAuthenticated}
+                        path="/apps/login"
+                        component={Login}
+                    />
+                    <PrivateRoute
+                        path="/apps/pendataan"
+                        exact
+                        component={Pendataan}
+                    />
+                    <PrivateRoute path="/apps" component={Layout} />
+                    <Redirect from="/" to="/apps" />
                 </Switch>
             </Router>
         </>

@@ -1,9 +1,9 @@
 import { Button } from "@windmill/react-ui";
 import React from "react";
 
-const ProfileCard = () => {
+const ProfileCard = ({ nama, fakultas, nim, prodi, kelompok, cluster }) => {
     return (
-        <section className="p-5 shadow-lg rounded-lg space-y-10 dark:bg-gray-800">
+        <section className="p-5 shadow-lg rounded-lg space-y-10 bg-white dark:bg-gray-800">
             <h1 className="font-bold text-xl dark:text-gray-200">Data Diri</h1>
 
             <div
@@ -13,25 +13,37 @@ const ProfileCard = () => {
                 <span id="Nama">
                     <h2 className="dark:text-gray-400">NAMA</h2>
                     <h2 className="font-bold text-lg dark:text-gray-200">
-                        Safir Rahmahuda Machsun
+                        {nama}
                     </h2>
                 </span>
                 <span id="fakultas">
                     <h2 className="dark:text-gray-400">FAKULTAS</h2>
                     <h2 className="font-bold text-lg dark:text-gray-200">
-                        Fakultas Ilmu Komputer
+                        {fakultas}
                     </h2>
                 </span>
                 <span id="nim">
                     <h2 className="dark:text-gray-400">NIM</h2>
                     <h2 className="font-bold text-lg dark:text-gray-200">
-                        195150207111029
+                        {nim}
                     </h2>
                 </span>
                 <span id="prodi">
                     <h2 className="dark:text-gray-400">PRODI</h2>
                     <h2 className="font-bold text-lg dark:text-gray-200">
-                        Teknik Informatika
+                        {prodi}
+                    </h2>
+                </span>
+                <span id="kelompok">
+                    <h2 className="dark:text-gray-400">KELOMPOK</h2>
+                    <h2 className="font-bold text-lg dark:text-gray-200">
+                        {kelompok}
+                    </h2>
+                </span>
+                <span id="cluster">
+                    <h2 className="dark:text-gray-400">CLUSTER</h2>
+                    <h2 className="font-bold text-lg dark:text-gray-200">
+                        {cluster}
                     </h2>
                 </span>
             </div>

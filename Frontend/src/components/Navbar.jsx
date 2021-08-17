@@ -8,15 +8,47 @@ import {
 } from "../assets/icons";
 import { Avatar, Dropdown, DropdownItem } from "@windmill/react-ui";
 import { AuthContext } from "../context/GlobalState";
+import { UserContext } from "../context/UserContext";
+import $ from "jquery";
 
 export default function Navbar() {
     const { toggleSidebar } = useContext(SidebarContext);
     const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
-    const { state, dispatch } = useContext(AuthContext);
+    const { setLogout } = useContext(AuthContext);
+    const [user, setUser] = useContext(UserContext);
 
     function handleProfileClick() {
         setIsProfileMenuOpen(!isProfileMenuOpen);
     }
+
+    function namaSingkat(nama) {
+        if (nama === null) {
+            return;
+        }
+        const fullName = nama.split(" ");
+        return fullName[0] + " " + fullName[1];
+    }
+
+    const logout = () => {
+        const token = JSON.parse(localStorage.getItem("token"));
+        $.ajax({
+            type: "POST",
+            url: "https://rajabrawijaya.ub.ac.id/api/maba/logout",
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader(
+                    "Authorization",
+                    `Bearer ${token.access_token}`
+                );
+            },
+            data: {},
+            success: function (res) {
+                setLogout();
+            },
+            complete: () => {
+                setLogout();
+            },
+        });
+    };
 
     return (
         <header className="z-40 py-4 bg-white shadow-bottom dark:bg-gray-800 shadow">
@@ -32,12 +64,12 @@ export default function Navbar() {
                 {/* <!-- Search input --> */}
                 <span></span>
                 <ul
-                    className="flex items-center flex-shrink-0 space-x-6 cursor-pointer hover:shadow-md px-4 py-2 rounded transition-bg duration-200"
+                    className="flex items-center flex-shrink-0 space-x-6 cursor-pointer border-2 border-gray-200 dark:border-gray-600 hover:shadow-md px-4 py-2 rounded transition-bg duration-200"
                     key={isProfileMenuOpen.toString()}
                     onClick={handleProfileClick}
                 >
                     <li className="text-black font-semibold dark:text-gray-200">
-                        Safir Rahmahuda Machsun
+                        {namaSingkat(user.nama)}
                     </li>
                     {/* <!-- Profile menu --> */}
                     <li className="relative">
@@ -47,8 +79,8 @@ export default function Navbar() {
                             aria-haspopup="true"
                         >
                             <Avatar
-                                className="align-middle"
-                                src="https://images.unsplash.com/photo-1502378735452-bc7d86632805?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&s=aa3a807e1bbdfd4364d1f449eaa96d82"
+                                className="align-middle block dark:bg-white"
+                                src="https://image.flaticon.com/icons/png/512/483/483361.png"
                                 alt=""
                                 aria-hidden="true"
                             />
@@ -58,9 +90,7 @@ export default function Navbar() {
                             isOpen={isProfileMenuOpen}
                             onClose={() => setIsProfileMenuOpen(false)}
                         >
-                            <DropdownItem
-                                onClick={() => dispatch({ type: "LOGOUT" })}
-                            >
+                            <DropdownItem onClick={logout}>
                                 <OutlineLogoutIcon
                                     className="w-4 h-4 mr-3"
                                     aria-hidden="true"

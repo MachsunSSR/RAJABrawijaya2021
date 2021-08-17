@@ -1,66 +1,66 @@
-import React, { useState, useReducer, createContext } from "react";
-
-export const AuthContext = createContext();
+import { createContext, useReducer } from "react";
 
 const initialState = {
-    isAuthenticated: false,
-    user: null,
-    token: null,
+    isAuthenticated: localStorage.getItem("token") || false,
+    userInfo: {},
 };
 
-const reducer = (state, action) => {
+const AuthContext = createContext({
+    isAuthenticated: false,
+    userInfo: {},
+    setLogin: () => {},
+    setLogout: () => {},
+});
+
+function AuthReducer(state, action) {
     switch (action.type) {
         case "LOGIN":
-            localStorage.setItem("user", JSON.stringify(action.payload.user));
-            localStorage.setItem("token", JSON.stringify(action.payload.token));
+            localStorage.setItem("token", JSON.stringify(action.payload));
             return {
                 ...state,
                 isAuthenticated: true,
-                user: action.payload.user,
-                token: action.payload.token,
+                userInfo: action.payload,
             };
-
         case "LOGOUT":
-            localStorage.clear();
+            localStorage.removeItem("token");
+            localStorage.removeItem("accessToken");
             return {
                 ...state,
                 isAuthenticated: false,
-                user: action.payload.user,
+                userInfo: {},
             };
         default:
-            return state;
+            break;
     }
-};
+}
 
-export const AuthProvider = (props) => {
-    const [state, dispatch] = useReducer(reducer, initialState);
+function AuthProvider({ ...restProps }) {
+    const [state, dispatch] = useReducer(AuthReducer, initialState);
+
+    const setLogin = (value) => {
+        dispatch({
+            type: "LOGIN",
+            payload: value,
+        });
+    };
+
+    const setLogout = () => {
+        dispatch({
+            type: "LOGOUT",
+        });
+    };
 
     return (
-        <AuthContext.Provider value={[state, dispatch]}>
-            {props.children}
-        </AuthContext.Provider>
+        <AuthContext.Provider
+            value={{
+                isAuthenticated: state.isAuthenticated,
+                userInfo: state.userInfo,
+                setLogin,
+                setLogout,
+            }}
+            {...restProps}
+        />
     );
-};
+}
 
-// export const AuthProvider = (props) => {
-//     const [authState, setauthState] = useState({
-//         token: "",
-//         nim: "",
-//         nama: "",
-//         fakultas: "",
-//         jurusan: "",
-//         prodi: "",
-//         jenjang: "",
-//         foto: "",
-//         cluster: "",
-//         kelompok: "",
-//         sosmed: "",
-//         teman_sekelompok: [],
-//     });
-
-//     return (
-//         <AuthContext.Provider value={[authState, setauthState]}>
-//             {props.children}
-//         </AuthContext.Provider>
-//     );
-// };
+export { AuthContext, AuthProvider };

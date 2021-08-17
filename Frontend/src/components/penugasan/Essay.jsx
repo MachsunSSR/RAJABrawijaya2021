@@ -28,6 +28,7 @@ const Essay = () => {
                     name="essay"
                     placeholder="Tulis essay disini... (minimal 500 kata)"
                     id="essay"
+                    required
                     className=" h-64"
                 />
                 <p className="pt-5 font-semibold text-lg">Masukkan Sumber :</p>
@@ -37,6 +38,7 @@ const Essay = () => {
                     name="source"
                     placeholder="Tulis sumber disini..."
                     id="source"
+                    required
                     className=" h-24"
                 />
                 <p className="pt-5 font-semibold text-lg">
@@ -46,6 +48,7 @@ const Essay = () => {
                     {...register("post")}
                     type="text"
                     name="post"
+                    required
                     placeholder="https://www.instagram.com/p/k0d3iG/"
                     className="py-5"
                 />

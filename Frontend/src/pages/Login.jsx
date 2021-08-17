@@ -5,14 +5,71 @@ import swal from "sweetalert";
 import { Label, Input, Button } from "@windmill/react-ui";
 import $ from "jquery";
 import { AuthContext } from "../context/GlobalState";
+import { useHistory } from "react-router-dom";
+import { UserContext } from "../context/UserContext";
+import { checkLogin } from "../services/LoginCheck";
 
 function Login() {
     const { register, handleSubmit } = useForm();
     const [nim, setNim] = useState("");
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
+    const [user, setUser] = useContext(UserContext);
+    const history = useHistory();
 
-    const [state, dispatch] = useContext(AuthContext);
+    const { setLogin } = useContext(AuthContext);
+
+    function getData() {
+        const token = JSON.parse(localStorage.getItem("token"));
+        $.ajax({
+            type: "GET",
+            url: "https://rajabrawijaya.ub.ac.id/api/maba/dashboard",
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader(
+                    "Authorization",
+                    `Bearer ${token.access_token}`
+                );
+            },
+            data: {},
+            success: function (res) {
+                if (res.status === "success") {
+                    if (
+                        res.data.kelompok == null ||
+                        res.data.kelompok == undefined
+                    ) {
+                        history.push("/apps/pendataan");
+                    } else {
+                        setUser({
+                            ...user,
+                            nim: res.data.nim,
+                            nama: res.data.nama,
+                            fakultas: res.data.fakultas,
+                            jurusan: res.data.jurusan,
+                            prodi: res.data.prodi,
+                            jenjang: res.data.jenjang,
+                            foto: res.data.foto,
+                            cluster: res.data.cluster,
+                            kelompok: res.data.kelompok,
+                            sosmed: res.data.sosmed,
+                            teman_sekelompok: res.data.teman_sekelompok,
+                            perizinan: res.data.perizinan,
+                        });
+                    }
+                }
+                // successLogin();
+            },
+            error: () => {
+                swal(
+                    "Website Sedang Down",
+                    `Aduahhh ada apa iniii... duahh. Coba logout terus login lagi deh`,
+                    "error"
+                );
+            },
+            complete: () => {
+                setLoading(false);
+            },
+        });
+    }
 
     const submitLogin = () => {
         setLoading(true);
@@ -27,75 +84,65 @@ function Login() {
                 setLoading(true);
             },
             success: function (res) {
-                if (res.success) {
-                    console.log("hai");
-                    dispatch({
-                        type: "LOGIN",
-                        payload: res.data,
-                    });
+                // console.log(res);
+                if (res.status === "success") {
+                    if (!checkLogin(res.data.cluster)) {
+                        swal();
+                        onBukanWaktunya(res.data.cluster);
+                        return;
+                    }
+                    if (
+                        res.data.cluster == null ||
+                        res.data.cluster == undefined
+                    ) {
+                        setLogin(res.data);
+                        // console.log("masuk sini dong");
+                        history.push("/apps/pendataan");
+                    } else {
+                        setLogin(res.data);
+                        getData();
+                        history.push("/apps/pendataan");
+                    }
                 } else {
                     setLoading(false);
                     onPasswordSalah();
                 }
                 // successLogin();
             },
+            statusCode: {
+                401: () => {
+                    setLoading(false);
+                    onPasswordSalah();
+                },
+            },
+            error: () => {
+                setLoading(false);
+                onError();
+            },
+            complete: () => {
+                setLoading(false);
+            },
         });
-        setLoading(false);
+        // setLoading(false);
     };
 
     const onSubmit = () => {
         setLoading(true);
         if (nim.length !== 15) {
             onNimKurang();
+            setLoading(false);
         } else if (nim.substring(0, 2) !== "21") {
             onBukanMaba();
+            setLoading(false);
         } else {
             submitLogin();
         }
     };
 
-    // const fetchLogin = () => {
-    //     const config = {
-    //         headers: {
-    //             "Content-Type": "application/json",
-    //             Authorization: "Bearer" + authState.token,
-    //         },
-    //     };
-    // };
-
-    // const successLogin = () => {
-    //     $.ajax({
-    //         type: "POST",
-    //         url: "https://rajabrawijaya.ub.ac.id/api/maba/login",
-    //         data: {
-    //             nim,
-    //             password,
-    //         },
-    //         success: function (response) {
-    //             setauthState({
-    //                 ...authState,
-    //                 loggedIn: true,
-    //                 nim: response.data.nim,
-    //                 nama: response.data.nama,
-    //                 fakultas: response.data.fakultas,
-    //                 jurusan: response.data.jurusan,
-    //                 prodi: response.data.prodi,
-    //                 jenjang: response.data.jenjang,
-    //                 foto: response.data.foto,
-    //                 cluster: response.data.cluster,
-    //                 kelompok: response.data.kelompok,
-    //                 sosmed: response.data.sosmed,
-    //                 teman_sekelompok: response.data.teman_sekelompok,
-    //             });
-    //             <Redirect to="app/" />;
-    //         },
-    //     });
-    // };
-
     const onBukanMaba = () =>
         swal(
             "Anda bukan maba 😠",
-            "demi terjaganya server jangan coba coba login yaa sayangg...",
+            "Ngapain login sayang?? mau jadi maba lagi?",
             "error"
         );
 
@@ -109,9 +156,24 @@ function Login() {
     const onPasswordSalah = () =>
         swal(
             "Password Anda Salah",
-            "Meskipun kamu cewe, kalo password kamu salah ya gbs login :)",
+            "Sama password aja lupa, apalagi sama aku :(",
             "error"
         );
+
+    const onError = () =>
+        swal(
+            "Eee.. Servernya bermasalah nih :(",
+            "Bentarr lagi dibenerin.. mohon untuk mengsabar yaaa",
+            "error"
+        );
+
+    const onBukanWaktunya = (cluster) => {
+        swal(
+            "Bukan waktu cluster anda!!",
+            `cluster anda di RAJA Apps adalah ${cluster}. ikuti jadwal pendataan sesuai cluster Raja Apps untuk membenarkan pendataan`,
+            "error"
+        );
+    };
     return (
         <div className="flex items-center min-h-screen p-6 bg-gray-50 dark:bg-gray-900">
             <div className="flex-1 h-full max-w-4xl mx-auto overflow-hidden bg-white rounded-lg shadow-xl dark:bg-gray-800">
@@ -164,15 +226,25 @@ function Login() {
                                         }
                                     />
                                 </Label>
-
-                                <Button
-                                    className="mt-4"
-                                    block
-                                    type="submit"
-                                    disabled={loading}
-                                >
-                                    {loading ? "Loading..." : "Login"}
-                                </Button>
+                                {loading ? (
+                                    <Button
+                                        className="mt-4"
+                                        block
+                                        type="submit"
+                                        disabled={true}
+                                    >
+                                        Loading...
+                                    </Button>
+                                ) : (
+                                    <Button
+                                        className="mt-4"
+                                        block
+                                        type="submit"
+                                        disabled={false}
+                                    >
+                                        Login
+                                    </Button>
+                                )}
                             </form>
                         </div>
                     </main>

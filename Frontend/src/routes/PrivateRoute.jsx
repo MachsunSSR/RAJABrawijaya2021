@@ -1,27 +1,20 @@
-import React from "react";
-import { Route, Redirect } from "react-router-dom";
+import { Redirect, Route } from "react-router-dom";
+import useAuth from "../helpers/useAuth";
 
-import { authenticationService } from "../services";
-
-export const PrivateRoute = ({ component: Component, ...rest }) => (
-    <Route
-        {...rest}
-        render={(props) => {
-            const currentUser = authenticationService.currentUserValue;
-            if (!currentUser) {
-                // not logged in so redirect to login page with the return url
-                return (
-                    <Redirect
-                        to={{
-                            pathname: "/login",
-                            state: { from: props.location },
-                        }}
-                    />
-                );
+const PrivateRoute = ({ component: Component, ...rest }) => {
+    const { isAuthenticated } = useAuth();
+    return (
+        <Route
+            {...rest}
+            render={(props) =>
+                isAuthenticated ? (
+                    <Component {...props} />
+                ) : (
+                    <Redirect to="/apps/login" />
+                )
             }
+        />
+    );
+};
 
-            // authorised so return component
-            return <Component {...props} />;
-        }}
-    />
-);
+export default PrivateRoute;

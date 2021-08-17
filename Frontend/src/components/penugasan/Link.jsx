@@ -16,7 +16,7 @@ const Link = () => {
     };
     return (
         <div id="containerForm" className="flex flex-col space-y-8 py-8">
-            <h1 className="font-semibold text-3xl text-left text-center">
+            <h1 className="font-semibold text-3xl text-left text-center dark:text-gray-200">
                 Link Post Instagram
             </h1>
             <form
@@ -27,10 +27,11 @@ const Link = () => {
                     className="w-full lg:w-2/3 rounded-full px-7 py-6 text-lg font-semibold border-2 border-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                     {...register("kode")}
                     value={name}
+                    required
                     onChange={(e) => setName(e.target.value)}
                     placeholder="https://www.instagram.com/p/k0d3iG/"
                 />
-                <p className="text-gray-400 pb-4">
+                <p className="text-gray-400 pb-4 text-center lg:text-left">
                     NB: Jangan menggunakan link post Instagram yang pernah
                     dikumpulkan
                 </p>
