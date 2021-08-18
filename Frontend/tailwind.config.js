@@ -21,6 +21,9 @@ module.exports = {
                 "penugasan-bg": "url('/src/assets/penugasan.jpg')",
                 "ospekFak-bg": "url('/src/assets/fakultas.jpg')",
                 "rangkaian-bg": "url('/src/assets/rangkaian.jpg')",
+                "vbg-bg": "url('/src/assets/VBG.jpg')",
+                "enroll-bg": "url('/src/assets/enroll.jpg')",
+                "kbgo-bg": "url('/src/assets/kbgo.jpg')",
             }),
         },
         screens: {

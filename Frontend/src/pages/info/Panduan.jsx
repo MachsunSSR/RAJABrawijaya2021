@@ -132,11 +132,12 @@ const Panduan = () => {
 
 			<ol className="list-decimal my-8 ml-5 text-lg space-y-3">
 				<li>
-					Langkah Pertama buka aplikasi Zoom kemudian tekan ikon{' '}
-					<b> “Join”</b>, Masukan Kode Meeting yang sudah di share di
-					Google Clasroom. Kemudian masukan passcode jika ada. Pastikan
-					username yang tertera di Zoom mengikuti ketentuan sebagai berikut{' '}
-					<b>“Nama_NIM”.</b>
+					Peserta wajib mengganti display name ZOOM dengan format
+					RxCy-NIM-Nama Lengkap, dengan ketentuan variabel <b>x</b> sebagai
+					nomor Room pada ZOOM dan variabel<b> y</b> sebagai nomor Cluster.
+					<br />
+					Contoh: <br />
+					<b>R1C3-214536261761-Mikel Arteta</b>
 				</li>
 				<li>
 					Langkah Kedua setelah anda berada di Ruang Zoom meeting
@@ -181,7 +182,8 @@ const Panduan = () => {
 				{cluster.map((cluster, index) => {
 					return (
 						<li>
-							Cluster {cluster[0]} - {cluster[1]}, zoom (room {index + 1})
+							Cluster {cluster[0]} - {cluster[1]}, zoom (room {index + 1}
+							)
 						</li>
 					);
 				})}

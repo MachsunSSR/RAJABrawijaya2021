@@ -44,6 +44,24 @@ const AdhikaraInfo = ({ match }) => {
 				propsClass2={'w-full my-20  w-full '}
 			>
 				<div className={`${styles.infoCardWrapper}`}>
+					<Link to={`/abhiyaksa-info/laporan-pelecehan-seksual`}>
+						<Cards
+							title={'Laporan Pelecehan Seksual'}
+							bg={'bg-kbgo-bg'}
+						/>
+					</Link>
+					<Link to={`/abhiyaksa-info/info-kesalahan-enroll`}>
+						<Cards
+							title={'Informasi Kesalahan Enroll Classroom'}
+							bg={'bg-enroll-bg'}
+						/>
+					</Link>
+					<Link to={`/abhiyaksa-info/info-vbg`}>
+						<Cards
+							title={'Informasi Virtual Background'}
+							bg={'bg-vbg-bg'}
+						/>
+					</Link>
 					<Link to={`/abhiyaksa-info/info-rangkaian`}>
 						<Cards
 							title={'Informasi Pelaksanaan Rangkaian'}

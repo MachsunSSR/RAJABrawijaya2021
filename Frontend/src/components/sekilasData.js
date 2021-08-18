@@ -1,5 +1,26 @@
 export const sekilasData = [
 	{
+		id: 12,
+		title: 'Laporan Pelecehan Seksual',
+		link: '/abhiyaksa-info/laporan-pelecehan-seksual',
+		desc: '',
+		bg: 'bg-kbgo-bg',
+	},
+	{
+		id: 10,
+		title: 'Informasi Virtual Background',
+		link: '/abhiyaksa-info/info-vbg',
+		desc: '',
+		bg: 'bg-vbg-bg',
+	},
+	{
+		id: 11,
+		title: 'Informasi Kesalahan Enroll Classroom',
+		link: '/abhiyaksa-info/info-kesalahan-enroll',
+		desc: '',
+		bg: 'bg-enroll-bg',
+	},
+	{
 		id: 9,
 		title: 'Informasi Pelaksanaan Rangkaian',
 		link: '/abhiyaksa-info/info-rangkaian',

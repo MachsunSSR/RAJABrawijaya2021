@@ -26,7 +26,7 @@ const InformasiRangkaian = () => {
 					16 Agustus 2021 Pukul 12:00 WIB - 17.00 WIB <br />
 					Untuk informasi lebih lanjut dapat dilihat{' '}
 					<a
-						href="https://rajabrawijaya.ub.ac.id/#/abhiyaksa-info/pengumuman-pelaksanaan-rangkaian"
+						href="https://rajabrawijaya.ub.ac.id/#/abhiyaksa-info/pengumuman-pelaksanaan-gladi"
 						className="underline"
 					>
 						di sini
