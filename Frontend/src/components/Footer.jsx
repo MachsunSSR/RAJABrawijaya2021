@@ -60,7 +60,7 @@ const Footer = () => {
 				</h1>
 				<p className="text-white text-center mt-5">
 					Gedung EM-DPM UB Lantai 1, Jln. Veteran 06C Malang 65145 <br />
-					Telp : 0816-552-514 <br />
+					Telp : 0812-4949-1019<br />
 					Email : rajabrawijaya2021@gmail.com
 				</p>
 

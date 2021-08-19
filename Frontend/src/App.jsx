@@ -27,6 +27,7 @@ import InformasiRangkaian from "./pages/info/InformasiRangkaian";
 import InfoVBG from './pages/info/InfoVBG.jsx';
 import PanduanGCR from "./pages/info/PanduanGCR";
 import LaporanKBGO from "./pages/info/LaporanKBGO";
+import PendataanEmail from "./pages/info/PendataanEmail";
 // import Aos from 'aos'/;
 
 export default function App() {
@@ -102,6 +103,11 @@ export default function App() {
                         exact
                         path={"/abhiyaksa-info/laporan-pelecehan-seksual"}
                         component={LaporanKBGO}
+                    />
+                    <Route
+                        exact
+                        path={"/abhiyaksa-info/pendataan-email-ub-yang-terkendala"}
+                        component={PendataanEmail}
                     />
                     {/* <Route
                         exact

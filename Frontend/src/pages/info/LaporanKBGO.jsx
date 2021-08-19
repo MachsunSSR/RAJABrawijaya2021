@@ -9,32 +9,24 @@ const LaporanKBGO = () => {
 			<h1 className="text-black xs:text-xl sm:text-xl ex:text-3xl exl:text-3xl">
 				Halo Abhiyaksa 59!
 			</h1>
-			<h2 className="text-black xs:text-lg sm:text-lg ex:text-xl exl:text-xl my-8 font-bold">
-				Hotline Lekas.pulih
-			</h2>
-			<p className="my-2 text-lg">
-				Unit Pemberdayaan Perempuan Progresif EM UB 2021
-			</p>
 			<p className="my-8 text-lg">
-				Bagi kalian atau para mahasiswa baru yang merasa mendapatkan
-				perlakuan tidak nyaman atau tindakan seperti KBGO/Kekerasan Seksual bisa menghubungi kami:
+				Link Pengaduan Pencegahan Perundungan Kekerasan Seksual Universitas
+				Brawijaya. Bagi Mahasiswa Baru yang mengalamai perundungan,
+				kekerasan seksual selama rangkaian kegiatan pkkmb dapat melaporkan
+				tindakan tersebut melalui.
 			</p>
 			<p className="my-8 text-lg font-bold">
-				Sandrina : 081296992172 <br />
-				Yaning : 082333334143
-			</p>
-			<p className="my-8 text-lg font-bold">
-				Atau melalui :{' '}
+				Form :{' '}
 				<a
-					href="https://docs.google.com/forms/d/e/1FAIpQLSdLtmMO6YnpoPKhqLMWtLcfJ2Chh3EloUEPFhxaHGYNlGlL9A/viewform?vc=0&c=0&w=1"
+					href="https://docs.google.com/forms/d/e/1FAIpQLSew1G6pySCTdTwtDib8D-cTzZ4343aDfrZ2Nfo6GuigwD5U_A/viewform?vc=0&c=0&w=1&flr=0"
 					className="underline"
 				>
-					form berikut
+					di sini
 				</a>
 			</p>
 			<p className="my-8 text-lg">
 				Jangan pernah takut untuk melawan supaya pelaku jera, ingat bahwa
-				kalian tidak sendiri! <br/> @pemberdayaanperempuanub
+				kalian tidak sendiri!
 			</p>
 		</InfoTemplate>
 	);

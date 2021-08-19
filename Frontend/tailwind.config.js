@@ -24,6 +24,7 @@ module.exports = {
                 "vbg-bg": "url('/src/assets/VBG.jpg')",
                 "enroll-bg": "url('/src/assets/enroll.jpg')",
                 "kbgo-bg": "url('/src/assets/kbgo.jpg')",
+                "email-bg": "url('/src/assets/email.jpg')",
             }),
         },
         screens: {

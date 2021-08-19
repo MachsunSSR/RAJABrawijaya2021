@@ -1,10 +1,17 @@
 export const sekilasData = [
 	{
+		id: 13,
+		title: 'Pendataan Email UB yang Terkendala',
+		link: '/abhiyaksa-info/pendataan-email-ub-yang-terkendala',
+		desc: '',
+		bg: 'bg-email-bg',
+	},
+	{
 		id: 12,
 		title: 'Laporan Pelecehan Seksual',
 		link: '/abhiyaksa-info/laporan-pelecehan-seksual',
 		desc: '',
-		bg: 'bg-kbgo-bg',
+		bg: 'bg-panduan-bg',
 	},
 	{
 		id: 10,
@@ -67,7 +74,7 @@ export const sekilasData = [
 		title: 'Panduan PKKMB 2021',
 		link: '/abhiyaksa-info/panduan-pkkmb',
 		desc: '',
-		bg: 'bg-panduan-bg',
+		bg: 'bg-kbgo-bg',
 	},
 
 	{

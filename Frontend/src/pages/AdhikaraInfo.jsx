@@ -44,10 +44,16 @@ const AdhikaraInfo = ({ match }) => {
 				propsClass2={'w-full my-20  w-full '}
 			>
 				<div className={`${styles.infoCardWrapper}`}>
+					<Link to={`/abhiyaksa-info/pendataan-email-ub-yang-terkendala`}>
+						<Cards
+							title={'Pendataan Email UB yang Terkendala'}
+							bg={'bg-email-bg'}
+						/>
+					</Link>
 					<Link to={`/abhiyaksa-info/laporan-pelecehan-seksual`}>
 						<Cards
 							title={'Laporan Pelecehan Seksual'}
-							bg={'bg-kbgo-bg'}
+							bg={'bg-panduan-bg'}
 						/>
 					</Link>
 					<Link to={`/abhiyaksa-info/info-kesalahan-enroll`}>
@@ -103,7 +109,7 @@ const AdhikaraInfo = ({ match }) => {
 					</Link>
 
 					<Link to={`/abhiyaksa-info/panduan-pkkmb`}>
-						<Cards title={'Panduan PKKMB 2021'} bg={'bg-panduan-bg'} />
+						<Cards title={'Panduan PKKMB 2021'} bg={'bg-kbgo-bg'} />
 					</Link>
 					{/* <Link to={`/abhiyaksa-info/penugasan`}>
 						<Cards title={'Penugasan RAJA Brawijaya 2021'} bg={'bg-penugasan-bg'} />
