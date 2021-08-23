@@ -109,11 +109,11 @@ export default function App() {
                         path={"/abhiyaksa-info/pendataan-email-ub-yang-terkendala"}
                         component={PendataanEmail}
                     />
-                    {/* <Route
+                    <Route
                         exact
                         path={"/abhiyaksa-info/penugasan"}
                         component={Penugasan}
-                    /> */}
+                    />
                     <Route path={`/abhiyaksa-info/:slug`}>
                         <FetchInfo />
                     </Route>
