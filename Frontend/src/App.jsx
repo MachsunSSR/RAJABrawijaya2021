@@ -58,7 +58,7 @@ export default function App() {
                     />
                     <Route path={"/faq"} component={Faq} />
                     <Route path={"/raja-apps"} component={CountDown} />
-                    <Route path={"/maps"} component={ComingSoon} />
+                    <Route path={"/maps"} component={Maps} />
                     <Route
                         exact
                         path={"/abhiyaksa-info/info-twibbon"}

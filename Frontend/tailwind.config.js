@@ -25,6 +25,7 @@ module.exports = {
                 "enroll-bg": "url('/src/assets/enroll.jpg')",
                 "kbgo-bg": "url('/src/assets/kbgo.jpg')",
                 "email-bg": "url('/src/assets/email.jpg')",
+                "mapsJumbotron-bg": "url('/src/assets/mapsJumbotron.png')",
             }),
         },
         screens: {

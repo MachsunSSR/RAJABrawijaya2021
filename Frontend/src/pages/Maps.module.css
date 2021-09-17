@@ -18,4 +18,41 @@
     right: 43%;
     top: 60%;
   }
+}
+
+.mapsTitle {
+  font-size: 2.9rem;
+}
+@media only screen and (min-width: 500px) {
+  .mapsTitle {
+    font-size: 3.9rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .mapsTitle {
+    font-size: 4.9rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .mapsTitle {
+    font-size: 5.9rem;
+  }
+}
+@media only screen and (min-width: 1300px) {
+  .mapsTitle {
+    font-size: 7.9rem;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  .mapsTitle {
+    font-size: 10rem;
+  }
+}
+
+.pinMaps {
+  width: 90%;
+  position: absolute;
+  top: 5%;
+  left: -6%;
+  height: 82%;
 }/*# sourceMappingURL=Maps.module.css.map */

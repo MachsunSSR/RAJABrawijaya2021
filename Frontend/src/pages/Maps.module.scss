@@ -25,3 +25,47 @@
       top: 60%;
 	}
 }
+
+
+.mapsTitle{
+  font-size: 2.9rem;
+		@media only screen and (min-width: 500px) {
+			font-size: 3.9rem;
+		}
+
+		@media only screen and (min-width: 768px) {
+			font-size: 4.9rem;
+		}
+
+		@media only screen and (min-width: 1024px) {
+			font-size: 5.9rem;
+		}
+		//125%
+		@media only screen and (min-width: 1300px) {
+			font-size: 7.9rem;
+		}
+
+		//100%
+		@media only screen and (min-width: 1600px) {
+			font-size: 10rem;
+		}
+}
+
+
+
+
+
+  .pinMaps{
+    width: 90%;
+    position: absolute;
+    // top: 50px;
+    // left: 30px;
+    top: 5%;
+    left: -6%;
+    height: 82%;
+    // border: 2px solid red;
+    // top: 50px;
+    // right: 150px;
+    // max-height: 1000px;
+    // width: 100%;
+  }
