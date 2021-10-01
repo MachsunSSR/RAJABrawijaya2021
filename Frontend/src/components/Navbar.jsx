@@ -80,6 +80,13 @@ const Navbar = () => {
                                 Abhiyaksa Info
                             </Link>
                             <Link
+                                to={"/ukm"}
+                                className={`links font-semibold  ${styles.linkAnimations}`}
+                                onClick={handleMenuIcon}
+                            >
+                                UKM
+                            </Link>
+                            <Link
                                 to={"/faq"}
                                 className={`links font-semibold  ${styles.linkAnimations}`}
                                 onClick={handleMenuIcon}
@@ -129,6 +136,12 @@ const Navbar = () => {
                                 className={`links font-semibold  ${styles.linkAnimations} exl:text-2xl`}
                             >
                                 Abhiyaksa Info
+                            </Link>
+                            <Link
+                                to={"/ukm"}
+                                className={`links font-semibold  ${styles.linkAnimations} exl:text-2xl`}
+                            >
+                                UKM
                             </Link>
                             <Link
                                 to={"/faq"}

@@ -28,6 +28,8 @@ import InfoVBG from './pages/info/InfoVBG.jsx';
 import PanduanGCR from "./pages/info/PanduanGCR";
 import LaporanKBGO from "./pages/info/LaporanKBGO";
 import PendataanEmail from "./pages/info/PendataanEmail";
+import MusicButton from "./components/MusicButton";
+import Ukm from "./pages/Ukm";
 // import Aos from 'aos'/;
 
 export default function App() {
@@ -48,6 +50,7 @@ export default function App() {
                 <ScrollTop />
                 <Navbar />
                 <AnnounceButton />
+                {/* <MusicButton/> */}
                 <Switch>
                     <Route exact path={"/"} component={Landing} />
                     <Route path={"/galeri"} component={Galeri} />
@@ -55,6 +58,11 @@ export default function App() {
                         exact
                         path={"/abhiyaksa-info"}
                         component={AdhikaraInfo}
+                    />
+                    <Route
+                        exact
+                        path={"/ukm"}
+                        component={Ukm}
                     />
                     <Route path={"/faq"} component={Faq} />
                     <Route path={"/raja-apps"} component={CountDown} />

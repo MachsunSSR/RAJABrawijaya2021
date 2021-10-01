@@ -50,7 +50,7 @@ const Sekilas = () => {
                         Sekilas Rabraw
                     </h1>
                 </div>
-                <Carousel breakPoints={breakPoints}>
+                <Carousel breakPoints={breakPoints} className="space-x-2">
                     {articles.map((article) => {
                         return (
                             <div

@@ -1,0 +1,112 @@
+.title {
+	position: absolute;
+	// top: 10%;
+	// transform: translateY(-50%);
+	// top: 60%;
+	// transform: translateY(-50%);
+	// right: 0;
+	// left: 0;
+	// bottom: 10px;
+	// margin-top: 5rem;
+	top: 0;
+	color: #2aa58c;
+	font-size: 6.5rem;
+	@media screen and (min-width: 800px) {
+		// top: 30%;
+		font-size: 9.5rem;
+		// bottom: 20%;
+	}
+}
+
+.cloud {
+	position: absolute;
+	top: 50%;
+	z-index: 4;
+	transform: translateY(-50%);
+	@media screen and (min-width: 800px) {
+		top: 70px;
+	}
+	@media screen and (min-width: 1300px) {
+		top: 100px;
+	}
+}
+
+.cardWrapperContainer {
+	// border: 1px solid red;
+	position: relative;
+	z-index: 1;
+  min-height: 70vh;
+	// padding-top: 20%;
+	@media screen and (min-width: 1024px) {
+		// padding-top: 15%;
+	}
+}
+
+.tree {
+	position: absolute;
+	bottom: -1;
+	left: 0;
+	right: 0;
+}
+
+.bg {
+	// display: none;
+
+	// padding-top: 20%;
+	/* Set up proportionate scaling */
+	min-width: 100%;
+	// width: 2000px;
+	// min-height: 100%;
+	z-index: 2;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	// max-height: 500px;
+}
+
+.cardUkm {
+	min-width: 245px;
+  // min-width: 100%;
+	max-width: 400px;
+	height: 180px;
+	border-radius: 1rem;
+  // width: 1000vw;
+	// background-color: red;
+}
+
+.treeContainer {
+	// border: 3px solid red;
+	padding: 0;
+	// margin-top: 7%;
+	@media screen and (min-width: 1600px) {
+		// margin-top: 15%;
+	}
+}
+
+.ukmCloud {
+	height: 100vh;
+	max-height: 200px;
+	// min-height: 200px;
+	width: 100%;
+	@media screen and (min-width: 768px) {
+		max-height: 400px;
+	}
+	@media screen and (min-width: 1024px) {
+		max-height: 500px;
+	}
+	@media screen and (min-width: 1500px) {
+		max-height: 600px;
+	}
+}
+
+
+.textContainer{
+  width: 100%;
+  min-width: 300px;
+  max-width: 300px;
+  @media screen and (min-width: 639px) {
+		min-width: inherit;
+    max-width: inherit;
+	}
+}

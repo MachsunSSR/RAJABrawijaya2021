@@ -1,0 +1,93 @@
+.title {
+  position: absolute;
+  top: 0;
+  color: #2aa58c;
+  font-size: 6.5rem;
+}
+@media screen and (min-width: 800px) {
+  .title {
+    font-size: 9.5rem;
+  }
+}
+
+.cloud {
+  position: absolute;
+  top: 50%;
+  z-index: 4;
+  transform: translateY(-50%);
+}
+@media screen and (min-width: 800px) {
+  .cloud {
+    top: 70px;
+  }
+}
+@media screen and (min-width: 1300px) {
+  .cloud {
+    top: 100px;
+  }
+}
+
+.cardWrapperContainer {
+  position: relative;
+  z-index: 1;
+  min-height: 70vh;
+}
+.tree {
+  position: absolute;
+  bottom: -1;
+  left: 0;
+  right: 0;
+}
+
+.bg {
+  /* Set up proportionate scaling */
+  min-width: 100%;
+  z-index: 2;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.cardUkm {
+  min-width: 245px;
+  max-width: 400px;
+  height: 180px;
+  border-radius: 1rem;
+}
+
+.treeContainer {
+  padding: 0;
+}
+.ukmCloud {
+  height: 100vh;
+  max-height: 200px;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .ukmCloud {
+    max-height: 400px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .ukmCloud {
+    max-height: 500px;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .ukmCloud {
+    max-height: 600px;
+  }
+}
+
+.textContainer {
+  width: 100%;
+  min-width: 300px;
+  max-width: 300px;
+}
+@media screen and (min-width: 639px) {
+  .textContainer {
+    min-width: inherit;
+    max-width: inherit;
+  }
+}/*# sourceMappingURL=Ukm.module.css.map */

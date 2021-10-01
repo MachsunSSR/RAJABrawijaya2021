@@ -24,7 +24,7 @@ const Jumbotron = () => {
 			</video>
 			<Sections
 				propsClass={
-					`justify-center items-center md:items-end lg:items-end xl:items-end ex:items-end exl:items-end ${styles.sectionProps1} `
+					`justify-center items-center lg:items-end xl:items-end ex:items-end exl:items-end lg:px-25 ${styles.sectionProps1} `
 				}
 				propsClass2={'xs:mt-10 lg:mb-5 xl:mb-5 w-full'}
 			>
@@ -40,7 +40,7 @@ const Jumbotron = () => {
 
 					<div className="relative">
 						<h1
-							className={`batavia text-white ${styles.jumbotronHeadline1}`}
+							className={`batavia text-white ${styles.jumbotronHeadline1} `}
                      data-aos="fade-up"
 						>
 							RAJA

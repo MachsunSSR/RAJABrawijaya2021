@@ -9,13 +9,13 @@
 }
 @media only screen and (min-width: 768px) {
   .jumbotronHeadline1 {
-    font-size: 5.9rem;
+    font-size: 6.9rem;
     top: 40px;
   }
 }
 @media only screen and (min-width: 1024px) {
   .jumbotronHeadline1 {
-    font-size: 6.9rem;
+    font-size: 7.9rem;
   }
 }
 @media only screen and (min-width: 1300px) {
@@ -39,12 +39,12 @@
 }
 @media only screen and (min-width: 768px) {
   .jumbotronHeadline2 {
-    font-size: 5.9rem;
+    font-size: 6.9rem;
   }
 }
 @media only screen and (min-width: 1024px) {
   .jumbotronHeadline2 {
-    font-size: 6.9rem;
+    font-size: 7.9rem;
   }
 }
 @media only screen and (min-width: 1300px) {
