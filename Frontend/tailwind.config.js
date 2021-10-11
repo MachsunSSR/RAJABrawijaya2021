@@ -32,6 +32,7 @@ module.exports = {
                 "ukmWall-bg": "url('/src/assets/ukmWal.png')",
                 "redUkm-bg": "url('/src/assets/red.png')",
                 "cardUkm-bg": "url('/src/assets/cardUkm.png')",
+                "openhouse-bg": "url('/src/assets/panduanoh.jpg')",
             }),
         },
         screens: {
@@ -77,6 +78,7 @@ module.exports = {
             yellowPucat: "#F9B66C",
             greenLumut: "#1A5B4A",
             redUkm: "#9E1B43",
+            greenDetail: "#2AA58C",
         },
         spacing: {
             px: "1px",
@@ -279,7 +281,7 @@ module.exports = {
             navbarMax: "1600px",
             screenMax: "1500px",
             imgSalah: "14rem",
-            ospekFakIcon: "110px"
+            ospekFakIcon: "110px",
         },
         minHeight: {
             0: "0",

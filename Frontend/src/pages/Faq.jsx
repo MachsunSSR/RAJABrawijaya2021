@@ -90,7 +90,7 @@ const Faq = () => {
 						);
 					}) : faqData.map(({ id, pertanyaan, jawaban }) => {
 						return (
-							<div className={`${styles.a1}`} onClick={() => handleClick(id)} key={id}>
+							<div className={`${styles.a1}`} onClick={() => handleClick(id)} key={id} className="border-2">
 								<div
 									className={`${styles.ask} ${
 										clicked && idActive === id

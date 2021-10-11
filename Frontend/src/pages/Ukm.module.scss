@@ -68,11 +68,15 @@
 .cardUkm {
 	min-width: 245px;
   // min-width: 100%;
-	max-width: 400px;
+	max-width: 350px;
 	height: 180px;
 	border-radius: 1rem;
   // width: 1000vw;
 	// background-color: red;
+  border: 4px solid transparent;
+&:hover{
+  border: 4px solid #1A5B4A;
+}
 }
 
 .treeContainer {
@@ -103,8 +107,8 @@
 
 .textContainer{
   width: 100%;
-  min-width: 300px;
-  max-width: 300px;
+  min-width: 280px;
+  max-width: 280px;
   @media screen and (min-width: 639px) {
 		min-width: inherit;
     max-width: inherit;

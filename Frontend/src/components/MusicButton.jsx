@@ -19,7 +19,7 @@ const MusicButton = () => {
 					className={``}
 				>
 					<source
-						src={`${process.env.PUBLIC_URL}/assets/alltime.mp3`}
+						src={`${process.env.PUBLIC_URL}/assets/alltimes.m4a`}
 						type="audio/mp3"
 					/>
 				</audio>
@@ -61,7 +61,7 @@ const MusicButton = () => {
 							RAJA Brawijaya?
 						</p>
 						<div className="flex justify-center items-center ">
-							<div className="xs:flex xs:flex-col xs:space-y-2 space-x-3">
+							<div className="xs:flex xs:flex-col xs:space-y-2 xs:space-x-0 space-x-3">
 								<button
 									className="bg-purpleMaghrib py-2 px-4 text-white rounded-3 text-sm"
 									onClick={handleClick}

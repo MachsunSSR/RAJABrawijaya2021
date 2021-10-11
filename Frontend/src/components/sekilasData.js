@@ -1,5 +1,12 @@
 export const sekilasData = [
 	{
+		id: 14,
+		title: 'Panduan Open House',
+		link: '/abhiyaksa-info/panduan-oh',
+		desc: '',
+		bg: 'bg-openhouse-bg',
+	},
+	{
 		id: 13,
 		title: 'Pendataan Email UB yang Terkendala',
 		link: '/abhiyaksa-info/pendataan-email-ub-yang-terkendala',

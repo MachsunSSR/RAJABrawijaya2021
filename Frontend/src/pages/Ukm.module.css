@@ -51,9 +51,13 @@
 
 .cardUkm {
   min-width: 245px;
-  max-width: 400px;
+  max-width: 350px;
   height: 180px;
   border-radius: 1rem;
+  border: 4px solid transparent;
+}
+.cardUkm:hover {
+  border: 4px solid #1A5B4A;
 }
 
 .treeContainer {
@@ -82,8 +86,8 @@
 
 .textContainer {
   width: 100%;
-  min-width: 300px;
-  max-width: 300px;
+  min-width: 280px;
+  max-width: 280px;
 }
 @media screen and (min-width: 639px) {
   .textContainer {

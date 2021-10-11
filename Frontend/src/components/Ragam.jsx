@@ -88,6 +88,7 @@ const Ragam = () => {
 													href={active.sosmed[index][0]}
 													target="_blank"
 													rel="noreferrer"
+                          key={index}
 												>
 													<img
 														src={`${process.env.PUBLIC_URL}/assets/icon/${active.sosmed[index][1]}.png`}

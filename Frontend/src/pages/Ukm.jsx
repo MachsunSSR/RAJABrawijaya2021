@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Cards from '../components/SekilasCard';
 import Sections from '../components/Sections';
@@ -9,31 +9,38 @@ import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 import Skeleton from '@mui/material/Skeleton';
 import axios from 'axios';
-import { getDetailAllUkm, loading } from './ukmData';
+import { getDetailAllUkm, loading, versions } from './ukmData';
 
 const Ukm = () => {
 	const [pageCount, setPageCount] = useState();
-	const [offsetData, setOffsetData] = useState(1);
+	const [offsetData, setOffsetData] = useState(0);
 	const [dataToBePosted, setData] = useState([]);
 	const [pages, setPages] = useState(1);
 	const [scroll, setScroll] = useState();
 	const [filtered, setFiltered] = useState('Semua');
-
 	const getData = () => {
-		axios.get(`https://jsonplaceholder.typicode.com/photos`).then((res) => {
-			localStorage.setItem('data', JSON.stringify(getDetailAllUkm));
+    let data = []
+		axios.get(`https://rajabrawijaya.ub.ac.id/api/maba/ukm/getDetailAllUkm`).then((res) => {
+			localStorage.setItem('data', JSON.stringify(res.data.data));
 			getLocalData();
 		});
 	};
 
 	const getLocalData = (data, words = 'Semua') => {
 		let perPages = JSON.parse(localStorage.getItem('perPages'));
-		// console.log(data)
-		// let hasFiltered = [];
 		if (words === 'Semua') {
 			data = JSON.parse(localStorage.getItem('data'));
 		}
-		// if (filtered === 'Olahraga') {
+    setData(data);
+		// if (data.length <= perPages) {
+    //   setPageCount(1);
+    //   setData(data);
+		// } else {
+		// 	setPageCount(Math.ceil(data.length / perPages));
+		// 	const slice = data.slice(offsetData, offsetData + perPages);
+		// 	setData(slice);
+		// }
+    // if (filtered === 'Olahraga') {
 		// 	hasFiltered = filteringByButton('Olahraga')
 		// }
 		// if (filtered === 'Khusus') {
@@ -49,16 +56,41 @@ const Ukm = () => {
 		//   hasFiltered = filteringByButton('Kesejahteraan')
 		// }
 
-		if (data.length <= perPages) {
-			setPageCount(1);
-			setData(data);
-		} else {
-			setPageCount(Math.ceil(data.length / perPages));
-			const slice = data.slice(offsetData, offsetData + perPages);
-			setData(slice);
-		}
 	};
-	// const filteringByButton = (kriterias) => {
+
+	const handleFilteredButton = (words) => {
+		setFiltered(words);
+		setOffsetData(1);
+		setPages(1);
+		let hasFiltered = [];
+		JSON.parse(localStorage.getItem('data')).forEach((data) => {
+			data.kriteria.forEach((kriteria) => {
+				if (kriteria.kriteria === words) hasFiltered.push(data);
+			});
+		});
+		getLocalData(hasFiltered, words);
+	};
+
+	// const handlePagination = (e, value) => {
+	// 	let perPages = JSON.parse(localStorage.getItem('perPages'));
+	// 	setPages(value);
+	// 	const offset = value * perPages;
+	// 	setOffsetData(offset);
+	// };
+
+	useEffect(() => {
+		localStorage.setItem('perPages', JSON.stringify(12));
+		if (localStorage.getItem('data') === null || JSON.parse(localStorage.getItem('version')) !== versions) {
+			getData();
+      localStorage.setItem('version', JSON.stringify(versions));
+			console.log('fetching to server....');
+		} else {
+			getLocalData();
+			console.log('fetching to local...');
+		}
+	}, []);
+
+  // const filteringByButton = (kriterias) => {
 	//   let hasFiltered = [];
 	//   JSON.parse(localStorage.getItem('data')).forEach((data) => {
 	//     data.kriteria.forEach((kriteria) => {
@@ -68,36 +100,6 @@ const Ukm = () => {
 
 	//   return hasFiltered;
 	// }
-
-	const handleFilteredButton = (words) => {
-		setFiltered(words);
-		setOffsetData(1);
-		setPages(1);
-		let hasFiltered = [];
-		JSON.parse(localStorage.getItem('data')).forEach((data) => {
-			data.kriteria.forEach((kriteria) => {
-				if (kriteria === words) hasFiltered.push(data);
-			});
-		});
-		getLocalData(hasFiltered, words);
-	};
-	const handlePagination = (e, value) => {
-		let perPages = JSON.parse(localStorage.getItem('perPages'));
-		setPages(value);
-		const offset = value * perPages;
-		setOffsetData(offset);
-	};
-
-	useEffect(() => {
-		localStorage.setItem('perPages', JSON.stringify(12));
-		if (localStorage.getItem('data') === null) {
-			getData();
-			console.log('fetching to server....');
-		} else {
-			getLocalData();
-			console.log('fetching to local...');
-		}
-	}, []);
 
 	// useEffect(() => {
 	// 	getLocalData();
@@ -220,11 +222,11 @@ const Ukm = () => {
 								? dataToBePosted.map((data) => {
 										return (
 											<Link
-												to={`/abhiyaksa-info/penugasan`}
+												to={`/ukm/${data.slug}`}
 												key={data.id}
 											>
 												<div
-													className={`${styles.cardUkm} bg-cardUkm-bg flex justify-center items-center px-2`}
+													className={`${styles.cardUkm} bg-cardUkm-bg flex justify-center bg-no-repeat items-center px-2`}
 												>
 													<p
 														className={`text-center text-lg font-semibold rounded-3 opacity-95 bg-greenLumut text-white py-2 px-4 w-full ${styles.textContainer}`}
@@ -249,7 +251,7 @@ const Ukm = () => {
 								  })}
 						</div>
 					</div>
-					<div className="w-full flex justify-center items-center mt-10">
+					{/* <div className="w-full flex justify-center items-center mt-10">
 						<Stack spacing={2}>
 							<Pagination
 								count={pageCount}
@@ -258,7 +260,7 @@ const Ukm = () => {
 								onChange={handlePagination}
 							/>
 						</Stack>
-					</div>
+					</div> */}
 				</Sections>
 			</div>
 		</>

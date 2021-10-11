@@ -44,6 +44,9 @@ const AdhikaraInfo = ({ match }) => {
 				propsClass2={'w-full my-20  w-full '}
 			>
 				<div className={`${styles.infoCardWrapper}`}>
+          <Link to={`/abhiyaksa-info/panduan-oh`}>
+						<Cards title={'Panduan Open House'} bg={'bg-openhouse-bg'} />
+					</Link>
           <Link to={`/abhiyaksa-info/penugasan`}>
 						<Cards title={'Penugasan RAJA Brawijaya 2021'} bg={'bg-penugasan-bg'} />
 					</Link>
@@ -94,9 +97,9 @@ const AdhikaraInfo = ({ match }) => {
 					</Link>
 
 					{articles.length > 0 ? (
-						articles.map((article) => {
+						articles.map((article, index) => {
 							return (
-								<Link to={`/abhiyaksa-info/${article.slug}`}>
+								<Link to={`/abhiyaksa-info/${article.slug}`} key={index}>
 									<Cards
 										title={`${article.title}`}
 										bg={`${article.image.url}`}
