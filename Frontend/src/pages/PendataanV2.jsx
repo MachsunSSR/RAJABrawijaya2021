@@ -6,6 +6,7 @@ import {
     ModalHeader,
     ModalBody,
     ModalFooter,
+    Select,
 } from "@windmill/react-ui";
 import { useForm } from "react-hook-form";
 import swal from "sweetalert";
@@ -21,6 +22,7 @@ const Pendataan = () => {
     const [user, setUser] = useContext(UserContext);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [dataKirim, setDataKirim] = useState({});
+    const [checkedItems, setCheckedItems] = useState({}); //plain object as state
 
     function openModal() {
         setIsModalOpen(true);
@@ -30,20 +32,31 @@ const Pendataan = () => {
         setIsModalOpen(false);
     }
 
+    const handleChange = (event) => {
+        // updating an object instead of a Map
+        setCheckedItems({
+            ...checkedItems,
+            [event.target.name]: event.target.checked,
+        });
+    };
+
     useEffect(() => {
-        // if (user.cluster !== 0) {
-        //     history.push("/apps/dashboard");
-        // }
+        if (user.agama !== null) {
+            history.push("/apps/dashboard");
+        }
     }, []);
 
+    useEffect(() => {
+        console.log("checkedItems: ", checkedItems);
+    }, [checkedItems]);
+
     const onKirim = () => {
-        const endpoint =
-            user.kelompok === 0 || user.kelompok === null
-                ? "https://rajabrawijaya.ub.ac.id/api/maba/isi_form"
-                : "https://rajabrawijaya.ub.ac.id/api/maba/update";
+        console.log(dataKirim);
+        const endpoint = "https://rajabrawijaya.ub.ac.id/api/maba/pendataan";
         closeModal();
         setLoading(true);
         // console.log(data);
+
         const token = JSON.parse(localStorage.getItem("token"));
         $.ajax({
             type: "POST",
@@ -55,10 +68,10 @@ const Pendataan = () => {
                 );
             },
             data: {
-                ig: dataKirim.ig,
-                line: dataKirim.line,
-                wa: dataKirim.wa,
-                cluster: dataKirim.cluster,
+                agama: dataKirim.agama,
+                jenis_kelamin: dataKirim.jenis_kelamin,
+                hobi: null,
+                email: dataKirim.email,
             },
             success: function (res) {
                 if (res.status === "success") {
@@ -106,79 +119,152 @@ const Pendataan = () => {
         setDataKirim(data);
     };
     const dataInformasi = [
-        "Silahkan isi kontak dan cluster kamu",
-        "Cluster bisa dilihat pada KTMS yang ada di siam.ub.ac.id",
+        "Silahkan isi data dibawah ini",
         "Usahakan data yang kalian isi benar",
-        "Kalo salah bisa edit lagi, tapi kalo udah bener langsung ke dashboard aja",
-        "Kontak akan digunakan untuk berhubungan dengan kelompok untuk penugasan",
     ];
+
+    const agama = [
+        "Islam",
+        "Kristen",
+        "Hindu",
+        "Buddha",
+        "Katholik",
+        "Kong Hu Cu",
+    ];
+
+    // const hobbies = [
+    //     {
+    //         name: "check-box-1",
+    //         key: "checkBox1",
+    //         label: "Check Box 1",
+    //     },
+    //     {
+    //         name: "check-box-2",
+    //         key: "checkBox2",
+    //         label: "Check Box 2",
+    //     },
+    //     {
+    //         name: "check-box-3",
+    //         key: "checkBox3",
+    //         label: "Check Box 3",
+    //     },
+    //     {
+    //         name: "check-box-4",
+    //         key: "checkBox4",
+    //         label: "Check Box 4",
+    //     },
+    //     {
+    //         name: "check-box-5",
+    //         key: "checkBox5",
+    //         label: "Check Box 5",
+    //     },
+    //     {
+    //         name: "check-box-6",
+    //         key: "checkBox6",
+    //         label: "Check Box 6",
+    //     },
+    //     {
+    //         name: "check-box-7",
+    //         key: "checkBox7",
+    //         label: "Check Box 7",
+    //     },
+    //     {
+    //         name: "check-box-8",
+    //         key: "checkBox8",
+    //         label: "Check Box 8",
+    //     },
+    //     {
+    //         name: "check-box-9",
+    //         key: "checkBox9",
+    //         label: "Check Box 9",
+    //     },
+    //     {
+    //         name: "check-box-10",
+    //         key: "checkBox10",
+    //         label: "Check Box 10",
+    //     },
+    //     {
+    //         name: "check-box-11",
+    //         key: "checkBox11",
+    //         label: "Check Box 11",
+    //     },
+    //     {
+    //         name: "check-box-12",
+    //         key: "checkBox12",
+    //         label: "Check Box 12",
+    //     },
+    // ];
+
     return (
-        <section className="py-8 flex flex-col space-y-8 xl:px-60 lg:px-40 px-10 bg-white dark:bg-gray-800">
-            <h6 className="text-center">Pendataan Ulang Abhyaksa 59</h6>
+        <section className="py-8 flex flex-col space-y-8 xl:px-60 lg:px-40 px-10 min-h-screen bg-white dark:bg-gray-800">
+            <h6 className="text-center">Pendataan Ulang Abhiyaksa 59</h6>
             <Informasi data={dataInformasi} />
-            <p className="text-center text-2xl font-bold dark:text-gray-200">
-                {" "}
-                !!! Jika data anda sudah benar silahkan langsung menuju
-                dashboard !!!{" "}
-            </p>
-            <Button
-                onClick={() => {
-                    history.push("/apps/dashboard");
-                }}
-                className="py-4"
-            >
-                Menuju Dashboard
-            </Button>
+
             <form
                 onSubmit={handleSubmit(onSubmit)}
                 className="flex flex-col space-y-2"
             >
                 <p className="pt-5 font-semibold text-lg dark:text-gray-200">
-                    Cluster :
+                    Agama :
                 </p>
-                <Input
-                    {...register("cluster")}
+                <Select
+                    {...register("agama")}
                     type="text"
-                    name="cluster"
-                    className="py-5"
+                    name="agama"
+                    className="py-4"
                     required
-                    placeholder="Tulis cluster anda"
-                    id="cluster"
-                />
+                    id="agama"
+                >
+                    {agama.map((e) => {
+                        return <option key={e}>{e}</option>;
+                    })}
+                </Select>
                 <p className="pt-5 font-semibold text-lg dark:text-gray-200">
-                    Username Instagram :
+                    Jenis Kelamin :
                 </p>
-                <Input
-                    {...register("ig")}
+                <Select
+                    {...register("jenis_kelamin")}
                     type="text"
-                    name="ig"
+                    name="jenis_kelamin"
+                    className="py-4"
                     required
-                    className="py-5"
-                    placeholder="masukkan username ig (tanpa menggunakan @)"
-                    id="ig"
-                />
+                    id="jenis_kelamin"
+                >
+                    {["Laki-Laki", "Perempuan"].map((e) => {
+                        return <option key={e}>{e}</option>;
+                    })}
+                </Select>
+                {/* <p className="pt-5 font-semibold text-lg dark:text-gray-200">
+                    Pilih Hobby :
+                </p>
+                <div className="grid grid-cols-3 lg:grid-cols-5 gap-y-4">
+                    {hobbies.map((item) => (
+                        <label
+                            key={item.key}
+                            className=" text-lg dark:text-gray-200"
+                        >
+                            <span className="mr-5">{item.name}</span>
+                            <Input
+                                type="checkbox"
+                                className="w-6 h-6"
+                                name={item.name}
+                                checked={checkedItems[item.name]}
+                                onChange={handleChange}
+                            />
+                        </label>
+                    ))}
+                </div> */}
                 <p className="pt-5 font-semibold text-lg dark:text-gray-200">
-                    ID Line :
+                    Email UB :
                 </p>
                 <Input
-                    {...register("line")}
+                    {...register("email")}
                     type="text"
-                    name="line"
-                    className="py-5"
-                    placeholder="masukkan id line"
-                    id="line"
-                    required
-                />
-                <p className="pt-5 font-semibold text-lg dark:text-gray-200">
-                    Nomor WA Aktif :
-                </p>
-                <Input
-                    {...register("wa")}
-                    type="text"
-                    name="wa"
+                    name="email"
+                    id="emai"
                     required
                     className="py-5"
-                    placeholder="081234567890"
+                    placeholder="usernameanda@student.ub.ac.id"
                 />
                 <div></div>
                 <div></div>
@@ -204,11 +290,11 @@ const Pendataan = () => {
                 <ModalHeader className="text-5xl font-bold text-center"></ModalHeader>
                 <ModalBody className="py-5 text-center">
                     <span className="font-bold text-lg">
-                        Cluster : {dataKirim.cluster}
+                        Agama : {dataKirim.agama}
                         <br />
-                        Whatsapp : {dataKirim.wa} <br />
-                        ID Line : {dataKirim.line} <br />
-                        Instagram : {dataKirim.ig} <br /> <br />
+                        Jenis Kelamin : {dataKirim.jenis_kelamin} <br />
+                        Email : {dataKirim.email} <br />
+                        Hobby : {dataKirim.hobby} <br /> <br />
                     </span>
                     Sudah yakin dengan data anda?
                 </ModalBody>

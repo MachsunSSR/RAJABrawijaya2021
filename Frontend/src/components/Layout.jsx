@@ -25,6 +25,7 @@ function Layout() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        console.log("fetching....");
         const token = JSON.parse(localStorage.getItem("token"));
         if (user.kelompok == 0 || user.kelompok === null) {
             $.ajax({
@@ -38,12 +39,17 @@ function Layout() {
                 },
                 data: {},
                 success: function (res) {
+                    console.log(res);
                     if (res.status === "success") {
                         if (
                             res.data.cluster == null ||
-                            res.data.cluster == undefined
+                            res.data.cluster == undefined ||
+                            res.data.kelompok == null ||
+                            res.data.kelompok == undefined ||
+                            res.data.agama == null ||
+                            res.data.agama == undefined 
                         ) {
-                            history.push("/apps/pendataan");
+                            history.push("/apps/pendataan-oh");
                         } else {
                             setUser({
                                 ...user,
@@ -54,11 +60,15 @@ function Layout() {
                                 prodi: res.data.prodi,
                                 jenjang: res.data.jenjang,
                                 foto: res.data.foto,
-                                cluster: res.data.cluster,
+                                cluster: res.data.cluster.match(/\d+/),
                                 kelompok: res.data.kelompok,
                                 sosmed: res.data.sosmed,
                                 teman_sekelompok: res.data.teman_sekelompok,
                                 perizinan: res.data.perizinan,
+                                penilaian: res.data.penilaian,
+                                agama: res.data.agama,
+                                pemminatan_ukm: res.data.pemminatan_ukm,
+                                hobi: res.data.hobi,
                             });
                         }
                     } else {
@@ -68,15 +78,20 @@ function Layout() {
                 },
                 statusCode: {
                     401: () => {
+                        swal(
+                            "Silahkan Login Kembali",
+                            `Sesi kamu udah habis, jadi harus login lagi. tapi kalo perasaanmu yang habis, silahkan healing dulu.`,
+                            "warning"
+                        );
                         setLogout();
                         history.push("/apps/login");
                     },
                 },
                 error: () => {
                     swal(
-                        "Website Sedang Down",
-                        `Aduahhh ada apa iniii... duahh. Coba logout terus login lagi deh`,
-                        "error"
+                        "Kumpulin twibbon dulu!!",
+                        `Developernya cape semalem ga tidur :(, cuma bug kecil. kumpulin link tugas twibbon kalian dulu biar bisa akses website seperti biasa.`,
+                        "warning"
                     );
                 },
                 complete: () => {
@@ -86,7 +101,7 @@ function Layout() {
         }
 
         closeSidebar();
-    }, []);
+    }, [user]);
 
     return (
         <div>

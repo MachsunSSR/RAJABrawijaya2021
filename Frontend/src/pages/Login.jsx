@@ -48,11 +48,12 @@ function Login() {
                             prodi: res.data.prodi,
                             jenjang: res.data.jenjang,
                             foto: res.data.foto,
-                            cluster: res.data.cluster,
+                            cluster: res.data.cluster.match(/\d+/),
                             kelompok: res.data.kelompok,
                             sosmed: res.data.sosmed,
                             teman_sekelompok: res.data.teman_sekelompok,
                             perizinan: res.data.perizinan,
+                            penilaian: res.data.penilaian,
                         });
                     }
                 }
@@ -60,9 +61,9 @@ function Login() {
             },
             error: () => {
                 swal(
-                    "Website Sedang Down",
-                    `Aduahhh ada apa iniii... duahh. Coba logout terus login lagi deh`,
-                    "error"
+                    "Kumpulin twibbon dulu!!",
+                    `Developernya cape semalem ga tidur :(, cuma bug kecil. kumpulin link tugas twibbon kalian dulu biar bisa akses website seperti biasa.`,
+                    "warning"
                 );
             },
             complete: () => {
@@ -86,11 +87,6 @@ function Login() {
             success: function (res) {
                 // console.log(res);
                 if (res.status === "success") {
-                    if (!checkLogin(res.data.cluster)) {
-                        swal();
-                        onBukanWaktunya(res.data.cluster);
-                        return;
-                    }
                     if (
                         res.data.cluster == null ||
                         res.data.cluster == undefined
@@ -101,7 +97,7 @@ function Login() {
                     } else {
                         setLogin(res.data);
                         getData();
-                        history.push("/apps/pendataan");
+                        history.push("/apps/dashboard");
                     }
                 } else {
                     setLoading(false);

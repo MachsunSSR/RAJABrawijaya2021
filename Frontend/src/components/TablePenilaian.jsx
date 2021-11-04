@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
     TableContainer,
     Table,
@@ -12,16 +12,23 @@ import {
     Badge,
 } from "@windmill/react-ui";
 import { DataPenugasan } from "../services/Penugasan";
+import { UserContext } from "../context/UserContext";
 
 const TablePenilaian = () => {
     const headerTable = ["NAMA TUGAS", "NILAI", "STATUS", "DEADLINE"];
-    const listTugas = [
-        { nama: "Presensi Rangkaian PKKMB", deadline: "31 Agustus 2021" },
-        { nama: "Presensi Rangkaian PBPBK", deadline: "23 Agustus 2021" },
-        { nama: "TTS RAJA Brawijaya", deadline: "20 September 2021" },
-        { nama: "Video Pengenalan Tik Tok", deadline: "18 Agustus 2021" },
-        { nama: "Twibbon Instagram", deadline: "18 Agustus 2021" },
-    ];
+    const [user, setUser] = useContext(UserContext);
+    const [dataPenugasan, setDataTugas] = useState(DataPenugasan);
+
+    useEffect(() => {
+        console.log("fetching penilaian...");
+        for (const [index, [key, value]] of Object.entries(
+            Object.entries(user.penilaian)
+        )) {
+            dataPenugasan[index].nilai = value;
+        }
+
+        // setDataTugas(dataPenugasan);
+    }, [user]);
 
     return (
         <TableContainer>
@@ -34,18 +41,38 @@ const TablePenilaian = () => {
                     </TableRow>
                 </TableHeader>
                 <TableBody>
-                    {DataPenugasan.map((dataTugas) => (
-                        <TableRow className=" hover:bg-gray-200 transition-bg duration-300 cursor-pointer">
+                    {dataPenugasan.map((dataTugas, index) => (
+                        <TableRow
+                            className=" hover:bg-gray-200 transition-bg duration-300 cursor-pointer"
+                            key={dataTugas.judul}
+                        >
                             <TableCell>
                                 <span className="text-sm">
                                     {dataTugas.judul}
                                 </span>
                             </TableCell>
                             <TableCell>
-                                <span className="text-sm">-</span>
+                                {dataTugas.judul == "Kenali Brawijaya" ||
+                                dataTugas.judul == "Kenali Minat Abhiyaksa" ? (
+                                    <span className="text-sm">
+                                        {dataTugas.nilai == null
+                                            ? "-"
+                                            : dataTugas.nilai}
+                                    </span>
+                                ) : (
+                                    <span className="text-sm">-</span>
+                                )}
                             </TableCell>
                             <TableCell>
-                                <Badge type="danger">Belum Dikerjakan</Badge>
+                                {dataTugas.nilai == null ? (
+                                    <Badge type="danger">
+                                        Belum Dikerjakan
+                                    </Badge>
+                                ) : dataTugas.judul == "Kenali Brawijaya" ? (
+                                    <Badge>Dinilai</Badge>
+                                ) : (
+                                    <Badge type="success">Sedang dinilai</Badge>
+                                )}
                             </TableCell>
                             <TableCell>
                                 <span className="text-sm">
@@ -58,8 +85,8 @@ const TablePenilaian = () => {
             </Table>
             <TableFooter>
                 <Pagination
-                    totalResults={5}
-                    resultsPerPage={5}
+                    totalResults={10}
+                    resultsPerPage={10}
                     onChange={() => {}}
                     label="Table navigation"
                 />

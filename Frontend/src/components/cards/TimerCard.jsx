@@ -1,11 +1,25 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { Button } from "@windmill/react-ui";
+import {
+    Button,
+    Modal,
+    ModalHeader,
+    ModalBody,
+    ModalFooter,
+} from "@windmill/react-ui";
 
-const TimerCard = ({ tanggal, judul, route }) => {
+const TimerCard = ({ tanggal, judul, route, latarBelakang }) => {
     const [timerDays, setTimerDays] = useState(0);
     const [timerHours, setTimerHours] = useState(0);
     const [timerMinutes, setTimerMinutes] = useState(0);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    function openModal() {
+        setIsModalOpen(true);
+    }
+
+    function closeModal() {
+        setIsModalOpen(false);
+    }
 
     let interval;
     const day = 24 * 60 * 60 * 1000;
@@ -18,7 +32,7 @@ const TimerCard = ({ tanggal, judul, route }) => {
         const jarakWaktu = countdownDate - now;
         if (jarakWaktu < 0) {
             //Stop Timer
-            clearInterval(interval.current);
+            clearInterval(interval);
             return;
         }
         const hari = ("0" + Math.floor(jarakWaktu / day)).slice(-2);
@@ -45,6 +59,8 @@ const TimerCard = ({ tanggal, judul, route }) => {
         startTimer();
         return () => clearInterval(countDown);
     }, []);
+
+    useEffect(() => {});
 
     return (
         <section
@@ -94,9 +110,24 @@ const TimerCard = ({ tanggal, judul, route }) => {
                     <h4 className="text-center dark:text-gray-400">Menit</h4>
                 </span>
             </div>
-            <NavLink exact to={route} className="w-full">
-                <Button className="w-full mt-5">Kerjakan</Button>
-            </NavLink>
+            <Button className="w-full mt-5" onClick={() => openModal()}>
+                Kerjakan
+            </Button>
+
+            <Modal isOpen={isModalOpen} onClose={closeModal}>
+                <ModalHeader className="text-xl lg:text-3xl font-bold text-center">
+                    Latar Belakang Tugas :
+                </ModalHeader>
+                <ModalBody className="py-5 text-center lg:text-lg">
+                    {latarBelakang}
+                </ModalBody>
+                <ModalFooter className="w-full flex flex-col text-center ml-1">
+                    <NavLink exact to={route} className="w-full">
+                        <Button className="w-full">Kerjakan</Button>
+                    </NavLink>
+                </ModalFooter>
+                <div className="py-2"></div>
+            </Modal>
         </section>
     );
 };

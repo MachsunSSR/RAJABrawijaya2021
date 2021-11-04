@@ -2,6 +2,7 @@ import { lazy } from "react";
 
 // use lazy for better code splitting, a.k.a. load faster
 // const Dashboard = lazy(() => import("../pages/Dashboard"));
+const Sayembara = lazy(() => import("../pages/Sayembara"));
 const Dashboard = lazy(() => import("../pages/Dashboard"));
 const Penugasan = lazy(() => import("../pages/Penugasan"));
 const Presensi = lazy(() => import("../pages/Presensi"));
@@ -10,6 +11,7 @@ const Perizinan = lazy(() => import("../pages/Perizinan"));
 const TugasTwibbon = lazy(() => import("../pages/TugasTwibbon"));
 const TugasBiskuit = lazy(() => import("../pages/TugasBiskuit"));
 const TugasDharma = lazy(() => import("../pages/TugasDharma"));
+const TugasMinat = lazy(() => import("../pages/TugasMinat"));
 const TugasGaung = lazy(() => import("../pages/TugasGaung"));
 const TugasKenali = lazy(() => import("../pages/TugasKenali"));
 const TugasTransformer = lazy(() => import("../pages/TugasTransformer"));
@@ -58,6 +60,10 @@ const routes = [
         component: TugasGaung,
     },
     {
+        path: "/penugasan/kenali-minat",
+        component: TugasMinat,
+    },
+    {
         path: "/penugasan/transformer",
         component: TugasTransformer,
     },
@@ -66,11 +72,16 @@ const routes = [
         component: TugasBiskuit,
     },
     // {
+    //     path: "/sayembara",
+    //     component: Sayembara,
+    // },
+    // {
     //     path: "/presensi",
     //     component: Presensi,
     // },
     {
         path: "/penilaian",
+
         component: Penilaian,
     },
     {
@@ -80,3 +91,36 @@ const routes = [
 ];
 
 export default routes;
+
+const soals = [
+    {
+        soal: "UKM yang bergerak di bidang agrikultur dibawah ini, yaitu",
+        soalGambar: null,
+        jawaban: [
+            { pilihan: "IAAS LC UB", isAnswer: true },
+            { pilihan: "IASC LC UB", isAnswer: false },
+            { pilihan: "IASV LC UB", isAnswer: false },
+            { pilihan: "IAES LC UB", isAnswer: false },
+        ],
+    },
+    {
+        soal: "Berikut ini merupakan kegiatan yang dilakukan oleh UKM",
+        soalGambar: "nama_file.png",
+        jawaban: [
+            { pilihan: "IAAS LC UB", isAnswer: true },
+            { pilihan: "IASC LC UB", isAnswer: false },
+            { pilihan: "IASV LC UB", isAnswer: false },
+            { pilihan: "IAES LC UB", isAnswer: false },
+        ],
+    },
+    {
+        soal: "UKM yang bergerak di bidang agrikultur dibawah ini, yaitu",
+        soalGambar: null,
+        jawaban: [
+            { pilihan: "a.png", isAnswer: true },
+            { pilihan: "b.png", isAnswer: false },
+            { pilihan: "c.png", isAnswer: false },
+            { pilihan: "d.png", isAnswer: false },
+        ],
+    },
+];

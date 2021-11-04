@@ -7,7 +7,7 @@ import $ from "jquery";
 import { UserContext } from "../../context/UserContext";
 import { AuthContext } from "../../context/GlobalState";
 
-const FormPerizinan = ({ rangkaianAcara, disable }) => {
+const FormPerizinan = ({ rangkaianAcara = "oh", disable }) => {
     const history = useHistory();
     const { register, handleSubmit } = useForm();
     const [loading, setLoading] = useState(false);
@@ -86,6 +86,8 @@ const FormPerizinan = ({ rangkaianAcara, disable }) => {
             success: function (res) {
                 if (res.status === "success") {
                     setData();
+                    history.push("/apps");
+                    window.location.reload();
                     swal(
                         "Berhasil melakukan perizinan",
                         `Perizinan kamu sudah terekam, silahkan tunggu perizinan untuk diproses`,
@@ -163,6 +165,9 @@ const FormPerizinan = ({ rangkaianAcara, disable }) => {
                 />
                 <div></div>
                 <div></div>
+                <p className="text-gray-500 pb-4 text-center">
+                    NB: Pastikan folder drive tidak di private
+                </p>
                 <div></div>
                 {loading ? (
                     <Button disabled={true} type="submit" className="mt-5">

@@ -1,7 +1,7 @@
-import { Button } from "@windmill/react-ui";
+import { Button, Input } from "@windmill/react-ui";
 import React, { useState, useEffect, useContext } from "react";
 import Informasi from "../components/penugasan/Informasi";
-import Pilgan from "../components/penugasan/Pilgan";
+import PilganMinat from "../components/penugasan/PilganMinat";
 import { useTimer } from "react-timer-hook";
 import { cekJadwalPilgan } from "../services/Penugasan";
 import { useHistory } from "react-router-dom";
@@ -9,12 +9,13 @@ import { UserContext } from "../context/UserContext";
 import $ from "jquery";
 import swal from "sweetalert";
 
-const TugasKenali = () => {
+const TugasMinat = () => {
     const [isMulai, setIsMulai] = useState(false);
     const time = new Date();
-    time.setSeconds(time.getSeconds() + 2700);
+    time.setSeconds(time.getSeconds() + 1800);
     const [user, setUser] = useContext(UserContext);
     const history = useHistory();
+    const [checkedItems, setCheckedItems] = useState({});
     const {
         seconds,
         minutes,
@@ -32,7 +33,7 @@ const TugasKenali = () => {
     });
 
     useEffect(() => {
-        if (user.penilaian.nilai_kenali !== null) {
+        if (user.penilaian.nilai_kenali_minat !== null) {
             swal(
                 "Anda sudah mengerjakan tugasnya",
                 `Eitss kamu udah ngerjain tugas ini. kesempatan kamu cuma sekali, gaada kesempatan kedua. makanya kalo ada kesempatan jangan disia siain :(`,
@@ -43,11 +44,23 @@ const TugasKenali = () => {
         // console.log(cekJadwalPilgan(user.cluster));
     }, []);
 
+    useEffect(() => {
+        console.log("checkedItems: ", checkedItems);
+    }, [checkedItems]);
+
     function startTimer() {
         start();
         console.log(seconds);
         setIsMulai(true);
     }
+
+    const handleChange = (event) => {
+        // updating an object instead of a Map
+        setCheckedItems({
+            ...checkedItems,
+            [event.target.name]: event.target.checked,
+        });
+    };
 
     function onTimesUp() {
         const token = JSON.parse(localStorage.getItem("token"));
@@ -100,29 +113,57 @@ const TugasKenali = () => {
     }
 
     const listInfo = [
-        "Kerjakan “kenali brawijaya” secara individu",
-        "Perhatikan pembagian cluster dan tanggal pengerjaannya ",
-        "Pengerjaan diberi waktu 45 menit ",
-        "Akan ada 15 soal yang berbeda-beda, jadi jangan sampai kerjasama ya! ",
-        "Informasi dapat dicari dari seputar website UB, instagram Raja brawijaya dan EM UB, serta dari buku panduan PKM 2021",
+        "Kerjakan “kenali minat brawijaya” secara individu",
+        "Perhatikan pembagian cluster dan tanggal pengerjaannya",
+        "Pengerjaan diberi waktu 30 menit ",
+        "Akan ada 10 soal",
+        "Informasi dapat dicari dari seputar website RAJA Brawijaya dan UKM UB 2021",
+    ];
+
+    const hobbies = [
+        {
+            name: "Olahraga",
+            key: "Olahraga",
+            label: "Olahraga",
+        },
+        {
+            name: "Khusus",
+            key: "Khusus",
+            label: "Khusus",
+        },
+        {
+            name: "Kesenian",
+            key: "Kesenian",
+            label: "Kesenian",
+        },
+        {
+            name: "Penalaran",
+            key: "Penalaran",
+            label: "Penalaran",
+        },
+        {
+            name: "Kesejahteraan",
+            key: "Kesejahteraan",
+            label: "Kesejahteraan",
+        },
     ];
 
     return (
         <div>
             <h6 className="text-center mt-6">
-                Pengerjaan Tugas Kenali Brawijaya
+                Pengerjaan Tugas Kenali Minat Brawijaya
             </h6>
 
             <Informasi
                 data={listInfo}
-                link="https://drive.google.com/drive/folders/1gWzU1D0c6YQ1PcdAOXyr-TIWGUTWc7Rj"
+                link="https://drive.google.com/drive/folders/1-JryaNArX_wxhXSVNQqywgI23StTn4OV?usp=sharing"
             />
             {isMulai ? (
                 <>
                     <p className="text-2xl font-bold right-10 lg:right-20 top-32 absolute dark:text-gray-200">
                         <span>{minutes}</span>:<span>{seconds}</span>
                     </p>
-                    <Pilgan />
+                    <PilganMinat keminatans={checkedItems} />
                 </>
             ) : (
                 // <Button
@@ -131,16 +172,40 @@ const TugasKenali = () => {
                 // >
                 //     Kerjakan
                 // </Button>
-                <Button
-                    className="w-full px-8 lg:px-20"
-                    onClick={() => startTimer()}
-                >
-                    Kerjakan
-                </Button>
+                <>
+                    <form className="space-y-8">
+                        <p className="pt-5 font-semibold text-lg dark:text-gray-200">
+                            Pilih Keminatan :
+                        </p>
+                        <div className="grid grid-cols-3 lg:grid-cols-5 gap-y-4">
+                            {hobbies.map((item) => (
+                                <label
+                                    key={item.key}
+                                    className=" text-lg dark:text-gray-200"
+                                >
+                                    <span className="mr-5">{item.name}</span>
+                                    <Input
+                                        type="checkbox"
+                                        className="w-6 h-6"
+                                        name={item.name}
+                                        checked={checkedItems[item.name]}
+                                        onChange={handleChange}
+                                    />
+                                </label>
+                            ))}
+                        </div>
+                        <Button
+                            className="w-full px-8 lg:px-20"
+                            onClick={() => startTimer()}
+                        >
+                            Kerjakan
+                        </Button>
+                    </form>
+                </>
             )}
             <div className="py-10"></div>
         </div>
     );
 };
 
-export default TugasKenali;
+export default TugasMinat;

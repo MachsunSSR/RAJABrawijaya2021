@@ -1,8 +1,30 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
+import { useHistory } from "react-router-dom";
+import swal from "sweetalert";
 import Essay from "../components/penugasan/Essay";
 import Informasi from "../components/penugasan/Informasi";
+import { UserContext } from "../context/UserContext";
 
 const TugasDharma = () => {
+    const [user, setUser] = useContext(UserContext);
+    const history = useHistory();
+
+    useEffect(() => {
+        if (user.penilaian.nilai_dharma_warta !== null) {
+            // swal(
+            //     "Anda sudah mengerjakan tugasnya",
+            //     `Eitss kamu udah ngerjain tugas ini. kesempatan kamu cuma sekali, gaada kesempatan kedua. makanya kalo ada kesempatan jangan disia siain :(`,
+            //     "warning"
+            // );
+            // history.push("/apps/penugasan");
+            swal(
+                "Kamu udah ngumpulin!",
+                "Kalau sudah menginputkan link post twibbon RAJA yang benar, anda tidak perlu mengirim ulang. tetapi apabila anda salah mengirim link, silahkan kirim link yang terbaru. jangan salah lagi yaa.. aku udah ngasih kesempatan ke 2 nih buat kamu :(",
+                "warning"
+            );
+        }
+    }, []);
+
     const listInfo = [
         'Pengerjaan "Dharma Warta Abiyaksa" dilakukan secara individu.',
         'Perhatikan ketentuan pada saat pengerjaan penugasan "Dharma Warta Abiyaksa".',
@@ -16,7 +38,7 @@ const TugasDharma = () => {
             </h6>
             <Informasi
                 data={listInfo}
-                link="https://drive.google.com/file/d/1FcOf074C5umbAE_7iRaJ8N2H46jOmX-W/view?usp=sharing"
+                link="https://drive.google.com/drive/folders/1z-EXCGoLibv1sjB51LFCHLzpxDTXZRYd"
             />
             <Essay />
         </div>

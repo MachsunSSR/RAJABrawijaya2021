@@ -22,6 +22,11 @@ const routes = [
         name: "Penilaian",
     },
     // {
+    //     path: "/apps/sayembara",
+    //     icon: "SearchIcon",
+    //     name: "Sayembara",
+    // },
+    // {
     //     path: "/apps/presensi",
     //     icon: "PresensiIcon",
     //     name: "Presensi",

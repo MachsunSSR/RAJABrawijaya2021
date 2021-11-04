@@ -32,10 +32,10 @@ export default function SidebarContent() {
                         >
                             <NavLink
                                 exact
+                                onClick={closeSidebar}
                                 to={route.path}
                                 className="inline-flex items-center w-full text-md font-semibold px-6 py-3 "
                                 activeClassName="text-white bg-purple-600 rounded"
-                                onClick={() => closeSidebar()}
                             >
                                 <Icon
                                     className="w-5 h-5"
@@ -50,7 +50,7 @@ export default function SidebarContent() {
             </ul>
             <div className="px-6 my-6">
                 {/* className="bg-purple-600 rounded px-3 py-2 text-white font-semibold hover:bg-purple-500 transition-bg duration-300" */}
-                <a href="https://rajabrawijaya.ub.ac.id/">
+                <a href="https://rajabrawijaya.ub.ac.id/#/">
                     <Button>
                         Landing Page
                         <Icon className="w-6 h-4 ml-2" icon="backIcon" />

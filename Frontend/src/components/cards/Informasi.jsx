@@ -13,7 +13,7 @@ const Informasi = ({ data, link }) => {
                     })}
                     {link !== undefined ? (
                         <li className="mt-2">
-                            Untuk detail penugasan lebih lanjut, silahkan menuju
+                            Untuk detail perizinan lebih lanjut, silahkan menuju
                             <a
                                 href={link}
                                 target="_blank"

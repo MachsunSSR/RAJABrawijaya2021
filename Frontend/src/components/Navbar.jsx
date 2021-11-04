@@ -22,7 +22,7 @@ export default function Navbar() {
     }
 
     function namaSingkat(nama) {
-        if (nama === null) {
+        if (nama === null || nama === undefined) {
             return;
         }
         const fullName = nama.split(" ");

@@ -8,10 +8,13 @@ import { useHistory } from "react-router-dom";
 const Link = ({ linkUrl }) => {
     const { register, handleSubmit } = useForm();
     const [name, setName] = useState("");
+    const [poster, setPoster] = useState("");
     const [loading, setLoading] = useState(false);
     const history = useHistory();
 
     const onSubmit = (data) => {
+        setLoading(true);
+        console.log(data);
         const token = JSON.parse(localStorage.getItem("token"));
         $.ajax({
             type: "POST",
@@ -23,7 +26,8 @@ const Link = ({ linkUrl }) => {
                 );
             },
             data: {
-                url: data.kode,
+                url_poster: data.poster,
+                url_video: data.video,
             },
             success: function (res) {
                 if (res.status === "success") {
@@ -54,6 +58,7 @@ const Link = ({ linkUrl }) => {
                         `Seharusnya anda sudah logout, tapi kok ga logout sihh.. coba logout dulu dan login kembali untuk mengerjakan tugas`,
                         "error"
                     );
+                    setLoading(false);
                 },
             },
             error: () => {
@@ -68,19 +73,30 @@ const Link = ({ linkUrl }) => {
     };
     return (
         <div id="containerForm" className="flex flex-col space-y-8 py-8">
-            <h1 className="font-semibold text-3xl text-left text-center dark:text-gray-200">
-                Link Post Instagram
-            </h1>
             <form
                 onSubmit={handleSubmit(onSubmit)}
                 className="w-full space-y-4 flex flex-col justify-center items-center"
             >
+                <h1 className="font-semibold text-3xl text-left text-center dark:text-gray-200">
+                    Link Video Biskuit
+                </h1>
                 <input
                     className="w-full lg:w-2/3 rounded-full px-7 py-6 text-lg font-semibold border-2 border-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
-                    {...register("kode")}
+                    {...register("video")}
                     value={name}
                     required
                     onChange={(e) => setName(e.target.value)}
+                    placeholder="https://www.instagram.com/p/k0d3iG/"
+                />
+                <h1 className="font-semibold text-3xl text-left text-center dark:text-gray-200 pt-10">
+                    Link Poster Biskuit
+                </h1>
+                <input
+                    className="w-full lg:w-2/3 rounded-full px-7 py-6 text-lg font-semibold border-2 border-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                    {...register("poster")}
+                    value={poster}
+                    required
+                    onChange={(e) => setPoster(e.target.value)}
                     placeholder="https://www.instagram.com/p/k0d3iG/"
                 />
                 <p className="text-gray-400 pb-4 text-center lg:text-left">
@@ -89,11 +105,11 @@ const Link = ({ linkUrl }) => {
                 </p>
 
                 {loading ? (
-                    <Button type="submit" className="w-48" disabled={true}>
+                    <Button type="submit" className="w-60 py-4" disabled={true}>
                         Mengumpulkan Tugas...
                     </Button>
                 ) : (
-                    <Button type="submit" className="w-48">
+                    <Button type="submit" className="w-60 py-4">
                         Kumpulkan
                     </Button>
                 )}

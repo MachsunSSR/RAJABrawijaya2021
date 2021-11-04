@@ -2,15 +2,16 @@ import React, { useState, useEffect } from "react";
 import { Button } from "@windmill/react-ui";
 import { useForm } from "react-hook-form";
 import swal from "sweetalert";
-import { pilgan } from "../../services/Penugasan";
+import { pilgan } from "../../services/SoalMinat";
 import $ from "jquery";
 import { useHistory } from "react-router-dom";
 
-const Pilgan = () => {
+const Pilgan = ({ keminatans }) => {
     const { register, handleSubmit } = useForm();
     const [loading, setLoading] = useState(false);
     const [dataJawaban, setDataJawaban] = useState(pilgan);
     const [dataPilganAcak, setDataPilganAcak] = useState([]);
+    const [talenta, setTalenta] = useState("");
 
     function shuffleJawaban(arr) {
         for (let i = 0; i < arr.length; i++) {
@@ -40,27 +41,45 @@ const Pilgan = () => {
 
     useEffect(() => {
         console.log(pilgan);
+        console.log(keminatans);
         setDataPilganAcak([...shuffleJawaban(dataJawaban)]);
     }, []);
+
+    function mode(arr) {
+        return arr
+            .sort(
+                (a, b) =>
+                    arr.filter((v) => v === a).length -
+                    arr.filter((v) => v === b).length
+            )
+            .pop();
+    }
 
     const history = useHistory();
 
     const onSubmit = (data) => {
         setLoading(true);
-        let score = 55;
         // console.log(data);
+        let score = 60;
+        let talent = [];
+        // console.log(data);
+        let i = 0;
         for (const answers in data) {
             if (data[answers] == "true") {
-                score += 3;
+                score += 4;
+                talent.push(dataPilganAcak[i].jenis);
+                // console.log(dataPilganAcak[i].jenis);
             }
+            i++;
         }
 
-        console.log(score);
+        // console.log(score);
+        setTalenta(mode(talent));
 
         const token = JSON.parse(localStorage.getItem("token"));
         $.ajax({
             type: "POST",
-            url: "https://rajabrawijaya.ub.ac.id/api/maba/penugasan/kenali_brawijaya",
+            url: "https://rajabrawijaya.ub.ac.id/api/maba/penugasan/kenali_minat",
             beforeSend: function (xhr) {
                 xhr.setRequestHeader(
                     "Authorization",
@@ -73,8 +92,8 @@ const Pilgan = () => {
             success: function (res) {
                 if (res.status === "success") {
                     swal(
-                        "Berhasil mengumpulkan tugas",
-                        `Selamat anda sudah menaklukan salah satu tantangan hidup`,
+                        "Berhasil menemukan keminatan",
+                        `Bakat yang anda miliki terpendam dalam bidang ${talenta}`,
                         "success"
                     );
                     history.push("/apps");
@@ -103,10 +122,15 @@ const Pilgan = () => {
                 },
             },
             error: () => {
+                // swal(
+                //     "Ada yang salah dengan server nya",
+                //     `Kalau anda melihat ini segera laporkan ke panitia Rabraw`,
+                //     "error"
+                // );
                 swal(
-                    "Ada yang salah dengan server nya",
-                    `Kalau anda melihat ini segera laporkan ke panitia Rabraw`,
-                    "error"
+                    `Minat anda ada dalam bidang ${talenta}`,
+                    `Bakat yang anda miliki terpendam dalam bidang ${talenta}`,
+                    "success"
                 );
                 setLoading(false);
             },

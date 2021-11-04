@@ -48,7 +48,7 @@ const SosialCard = () => {
                             rel="noreferrer"
                             className=""
                         >
-                            <Button className="w-full inline-block items-center justify-between space-x-2">
+                            <Button className="w-full inline-block items-center justify-center lg:justify-between space-x-2">
                                 {" "}
                                 <span className="font-semibold text-base">
                                     {data.judul}

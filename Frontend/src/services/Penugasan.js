@@ -1,39 +1,66 @@
 export const DataPenugasan = [
     {
         judul: "Twibbon RAJA Brawijaya",
-        deadline: "August 23, 2021",
+        deadline: "7 September, 2021",
         route: "/apps/penugasan/tugas-twibbon",
+        latarBelakang: "Bangga menjadi mahasiswa baru Universitas Brawijaya",
         type: "kelompok",
     },
     {
         judul: "Kenali Brawijaya",
-        deadline: "August 20, 2021",
+        deadline: "August 31, 2021",
+        latarBelakang:
+            "Mahasiswa baru Universitas Brawijaya masuk ke dalam kategori generasi millenial yang mana mereka memiliki sikap eksploratif yang tinggi untuk mendapatkan informasi yang mereka butuhkan sehingga dengan adanya penugasan ini diharapkan dapat menjadi jembatan bagi mahasiswa baru dalam menambah pengetahuan sehingga menumbuhkan rasa semangat dan dapat beradaptasi dengan situasi perkuliahan",
         route: "/apps/penugasan/kenali-brawijaya",
     },
     {
-        judul: "Dharma Warta Abhiyaksa",
-        deadline: "August 22, 2021",
-        route: "/apps/penugasan/dharma-warta-abhiyaksa",
-        type: "individu",
-    },
-    {
-        judul: "Gaung Budaya Nusantara",
-        deadline: "August 22, 2021",
-        route: "/apps/penugasan/gaung-budaya-nusantara",
-        type: "individu",
-    },
-    {
         judul: "TRANSFORMER (Transisi For Merdeka)",
-        deadline: "12 September 2021",
+        deadline: "28 September 2021",
         route: "/apps/penugasan/transformer",
+        latarBelakang:
+            "Kami merancang sebuah ide penugasan guna mengekspresikan kreativitas yang dinamis dan inspiratif untuk mahasiswa baru berupa TRANSFORMER (Transisi For Merdeka). Melalui Instagram, kami mengharapkan mahasiswa baru dapat berkreasi dalam membuat video yang dapat meningkatkan branding RAJA Brawijaya. Video tersebut berupa transisi dari baju mahasiswa baru (atasan putih bawahan hitam) ke batik bebas yang sopan. ",
         type: "individu",
     },
     {
         judul: "BISKUIT (Bisnis Kui Tancep)",
-        deadline: "12 September 2021",
+        deadline: "28 September 2021",
         route: "/apps/penugasan/biskuit",
+        latarBelakang:
+            "Penugasan BISKUIT (Bisnis Kui Tancep) diharapkan dapat membentuk mahasiswa baru yang responsif, berkarakter, dan eksploratif terhadap era revolusi industri 4.0 yang serba digital terutama dalam sektor wirausaha.",
         type: "kelompok",
     },
+    {
+        judul: "Dharma Warta Abhiyaksa",
+        deadline: "7 September 2021",
+        route: "/apps/penugasan/dharma-warta-abhiyaksa",
+        latarBelakang:
+            "Mahasiswa sebagai generasi penerus bangsa, dengan pengetahuan serta pendidikan yang dimiliki, harapan besar terdapat pada mahasiswa untuk dapat berperan dalam memberikan pemikiran atau ide yang dapat merubah kehidupan masyarakat menjadi lebih baik. Hal tersebut diwujudkan dalam penerapan penugasan “Dharma Warta Abhiyaksa” yang mengandung 5 peran mahasiswa diantaranya Agent of Change, Iron Stock, Moral Force, Social Control, dan Guardian of Value.",
+        type: "individu",
+    },
+    {
+        judul: "Gaung Budaya Nusantara",
+        deadline: "7 September 2021",
+        route: "/apps/penugasan/gaung-budaya-nusantara",
+        latarBelakang:
+            "Penugasan Gaung Budaya Nusantara mengingatkan mahasiswa baru terkait kebudayaan yang dimiliki Indonesia mulai dari Sabang-Merauke. Berhubungan dengan tema “MERDEKA Inspiratif”, penggunaan sosial media ini dapat menjadi platform yang tepat sebagai media menginspirasi masyarakat umum, guna mengingatkan dan melestarikan beragam budaya yang ada di Indonesia. Proses pencarian materi akan meningkatkan rasa ingin tahu para mahasiswa seiring dengan semakin tereksplornya kebudayaan Indonesia.",
+        type: "individu",
+    },
+    {
+        judul: "Kenali Minat Abhiyaksa",
+        deadline: "20 October 2021",
+        route: "/apps/penugasan/kenali-minat",
+        latarBelakang:
+            "Banyaknya minat dan bakat mahasiswa baru, dan dengan adanya penugasan tersebut mahasiswa baru dapat memiliki gambaran UKM yang sesuai dengan minat dan bakat mereka.",
+        type: "individu",
+    },
+    // {
+    //     judul: "Kenali Minat Abhiyaksa",
+    //     deadline: "15 Oktober 2021",
+    //     route: "/apps/penugasan/kenali-minat",
+    //     latarBelakang:
+    //         "Penugasan Gaung Budaya Nusantara mengingatkan mahasiswa baru terkait kebudayaan yang dimiliki Indonesia mulai dari Sabang-Merauke. Berhubungan dengan tema “MERDEKA Inspiratif”, penggunaan sosial media ini dapat menjadi platform yang tepat sebagai media menginspirasi masyarakat umum, guna mengingatkan dan melestarikan beragam budaya yang ada di Indonesia. Proses pencarian materi akan meningkatkan rasa ingin tahu para mahasiswa seiring dengan semakin tereksplornya kebudayaan Indonesia.",
+    //     type: "individu",
+    // },
 ];
 
 const dataPilgan = [
@@ -84,18 +111,18 @@ const dataPilgan = [
     {
         soal: "Pada logo Universitas Brawijaya memiliki elemen sayap yang berjumlah tiga buah yang memiliki arti?",
         jawaban: [
-            { pilihan: "Tri Dharma Perguruan Tinggi", jawaban: true },
-            { pilihan: "Tri Satya", jawaban: false },
+            { pilihan: "Tri Dharma Perguruan Tinggi", isAnswer: true },
+            { pilihan: "Tri Satya", isAnswer: false },
             {
                 pilihan: "Tiga Karakter Mahasiswa Universitas Brawijaya",
-                jawaban: false,
+                isAnswer: false,
             },
-            { pilihan: "Tiga Tujuan Universitas Brawijaya", jawaban: false },
+            { pilihan: "Tiga Tujuan Universitas Brawijaya", isAnswer: false },
             {
                 pilihan: "Tiga Visi dan Misi Universitas Brawijaya",
-                jawaban: false,
+                isAnswer: false,
             },
-            { pilihan: "Tiga Tujuan Universitas Brawijaya", jawaban: false },
+            { pilihan: "Tiga Tujuan Universitas Brawijaya", isAnswer: false },
         ],
     },
     {
@@ -453,38 +480,62 @@ const dataPilgan = [
     },
     {
         soal: "Fakultas Hukum dan Fakultas Ekonomi didirikan pada tahun...",
-        jawaban: ["1957", "1963", "1973", "1968", "1958", "1967"],
+        jawaban: [
+            { pilihan: "1957", isAnswer: true },
+            { pilihan: "1963", isAnswer: false },
+            { pilihan: "1973", isAnswer: false },
+            { pilihan: "1968", isAnswer: false },
+            { pilihan: "1958", isAnswer: false },
+            { pilihan: "1967", isAnswer: false },
+        ],
     },
     {
         soal: "Pada tanggal berapakah Fakultas Administrasi Niaga (FAN) didirikan?",
         jawaban: [
-            "10 November 1960",
-            "10 November 1950",
-            "12 November 1960",
-            "12 September 1950",
-            "10 September 1960",
-            "10 Oktober 1960",
+            { pilihan: "10 November 1960", isAnswer: true },
+            { pilihan: "10 November 1950", isAnswer: false },
+            { pilihan: "12 November 1960", isAnswer: false },
+            { pilihan: "12 September 1950", isAnswer: false },
+            { pilihan: "10 September 1960", isAnswer: false },
+            { pilihan: "10 Oktober 1960", isAnswer: false },
         ],
     },
 
     {
         soal: "Siapakah rektor universitas brawijaya saat ini ?",
         jawaban: [
-            "Prof. Dr. Ir. Nuhfil Hanani",
-            "Prof. Dr. drh. Aulanni’am",
-            "Prof. Drs. Gugus Irianto",
-            "Prof. Dr. Drs. Abdul Hakim",
-            "Drs. Halid Hasan, M.SRAT.",
-            "Prof. Dr. Ir. Mochamad Ashari, M.Eng",
+            { pilihan: "Prof. Dr. Ir. Nuhfil Hanani", isAnswer: true },
+            { pilihan: "Prof. Dr. drh. Aulanni’am", isAnswer: false },
+            { pilihan: "Prof. Drs. Gugus Irianto", isAnswer: false },
+            { pilihan: "Prof. Dr. Drs. Abdul Hakim", isAnswer: false },
+            { pilihan: "Drs. Halid Hasan, M.SRAT.", isAnswer: false },
+            {
+                pilihan: "Prof. Dr. Ir. Mochamad Ashari, M.Eng",
+                isAnswer: false,
+            },
         ],
     },
     {
         soal: "Dari tahun berapa Prof. Dr. Ir. Nuhfil Hanani menjabat sebagai rektor?",
-        jawaban: ["2019", "2016", "2017", "2018", "2020", "2021"],
+        jawaban: [
+            { pilihan: "2019", isAnswer: true },
+            { pilihan: "2016", isAnswer: false },
+            { pilihan: "2017", isAnswer: false },
+            { pilihan: "2018", isAnswer: false },
+            { pilihan: "2020", isAnswer: false },
+            { pilihan: "2021", isAnswer: false },
+        ],
     },
     {
         soal: "Ada berapa wakil rektor universitas brawijaya?",
-        jawaban: ["4", "1", "2", "3", "5", "6"],
+        jawaban: [
+            { pilihan: "4", isAnswer: true },
+            { pilihan: "1", isAnswer: false },
+            { pilihan: "2", isAnswer: false },
+            { pilihan: "3", isAnswer: false },
+            { pilihan: "5", isAnswer: false },
+            { pilihan: "6", isAnswer: false },
+        ],
     },
     {
         soal: "Siapakah wakil rektor bidang kemahasiswaan Universitas Brawijaya?",
@@ -578,62 +629,62 @@ const dataPilgan = [
         ],
     },
 
-    {
-        soal: " Berikut manakah foto dari Prof. Dr. Ir. Nuhfil Hanani",
-        jawaban: [
-            {
-                pilihan:
-                    "Berikut manakah foto dari Prof. Dr. Ir. Nuhfil Hanani BENAR.png",
-                isAnswer: true,
-            },
-            {
-                pilihan:
-                    "Berikut manakah foto dari Prof. Dr. Ir. Nuhfil Hanani.png",
-                isAnswer: false,
-            },
-            {
-                pilihan:
-                    "Berikut manakah foto dari Prof. Dr. Ir. Nuhfil Hanani(2).png",
-                isAnswer: false,
-            },
-            {
-                pilihan:
-                    "Berikut manakah foto dari Prof. Dr. Ir. Nuhfil Hanani(3).png",
-                isAnswer: false,
-            },
-            {
-                pilihan:
-                    "Berikut manakah foto dari Prof. Dr. Ir. Nuhfil Hanani(4).png",
-                isAnswer: false,
-            },
-        ],
-    },
+    // {
+    //     soal: " Berikut manakah foto dari Prof. Dr. Ir. Nuhfil Hanani",
+    //     jawaban: [
+    //         {
+    //             pilihan:
+    //                 "Berikut manakah foto dari Prof. Dr. Ir. Nuhfil Hanani BENAR.png",
+    //             isAnswer: true,
+    //         },
+    //         {
+    //             pilihan:
+    //                 "Berikut manakah foto dari Prof. Dr. Ir. Nuhfil Hanani.png",
+    //             isAnswer: false,
+    //         },
+    //         {
+    //             pilihan:
+    //                 "Berikut manakah foto dari Prof. Dr. Ir. Nuhfil Hanani(2).png",
+    //             isAnswer: false,
+    //         },
+    //         {
+    //             pilihan:
+    //                 "Berikut manakah foto dari Prof. Dr. Ir. Nuhfil Hanani(3).png",
+    //             isAnswer: false,
+    //         },
+    //         {
+    //             pilihan:
+    //                 "Berikut manakah foto dari Prof. Dr. Ir. Nuhfil Hanani(4).png",
+    //             isAnswer: false,
+    //         },
+    //     ],
+    // },
 
-    {
-        soal: "Manakah gambar dari samantha krida?",
-        jawaban: [
-            {
-                pilihan: "Manakah gambar dari samantha krida BENAR.png",
-                isAnswer: true,
-            },
-            {
-                pilihan: "Manakah gambar dari samantha krida.png",
-                isAnswer: false,
-            },
-            {
-                pilihan: "Manakah gambar dari samantha krida (2).png",
-                isAnswer: false,
-            },
-            {
-                pilihan: "Manakah gambar dari samantha krida (3).png",
-                isAnswer: false,
-            },
-            {
-                pilihan: "Manakah gambar dari samantha krida(4).png",
-                isAnswer: false,
-            },
-        ],
-    },
+    // {
+    //     soal: "Manakah gambar dari samantha krida?",
+    //     jawaban: [
+    //         {
+    //             pilihan: "Manakah gambar dari samantha krida BENAR.png",
+    //             isAnswer: true,
+    //         },
+    //         {
+    //             pilihan: "Manakah gambar dari samantha krida.png",
+    //             isAnswer: false,
+    //         },
+    //         {
+    //             pilihan: "Manakah gambar dari samantha krida (2).png",
+    //             isAnswer: false,
+    //         },
+    //         {
+    //             pilihan: "Manakah gambar dari samantha krida (3).png",
+    //             isAnswer: false,
+    //         },
+    //         {
+    //             pilihan: "Manakah gambar dari samantha krida(4).png",
+    //             isAnswer: false,
+    //         },
+    //     ],
+    // },
     {
         soal: "Salah satu sarana olahraga yang ada di Universitas Brawijaya adalah Gor Pertamina. Pada Gor pertamina ada berapa fasilitas lapangan yang dapat digunakan?",
         jawaban: [
@@ -724,7 +775,7 @@ const dataPilgan = [
         jawaban: [
             {
                 pilihan:
-                    "Menyelenggarakan pendidikan akademik dan dapat menyelenggarakan pendidikan vokasi dal isAnswer: true}am berbagai rumpun ilmu pengetahuan dan/atau teknologi dan jika memenuhi syarat dapat menyelenggarakan pendidikan profesi",
+                    "Menyelenggarakan pendidikan akademik dan dapat menyelenggarakan pendidikan vokasi dalam berbagai rumpun ilmu pengetahuan dan/atau teknologi dan jika memenuhi syarat dapat menyelenggarakan pendidikan profesi",
                 isAnswer: true,
             },
             {
@@ -1523,22 +1574,22 @@ const dataPilgan = [
         jawaban: [
             {
                 pilihan:
-                    "Sebagai penggerak untuk masyarakat ke arah yang lebihisAnswer: true}, baik lagi dengan menggunakan ilmu, gagasan dan pengetahuan yang dimiliki",
+                    "Sebagai penggerak untuk masyarakat ke arah yang lebih baik lagi dengan menggunakan ilmu, gagasan dan pengetahuan yang dimiliki",
                 isAnswer: true,
             },
             { pilihan: "Penjaga nilai-nilai pada masyarakat", isAnswer: false },
             {
                 pilihan:
-                    "Sebagai genarasi penerus bangsa, mahasiswa meisAnswer: false},rupakan aset, cadangan dan harapan bangsa di masa depan",
+                    "Sebagai genarasi penerus bangsa, mahasiswa merupakan aset, cadangan dan harapan bangsa di masa depan",
                 isAnswer: false,
             },
             {
                 pilihan:
-                    "Bisa menjadi contoh dan pergisAnswer: false},erakan perbaikan moral kepada masyarakat",
+                    "Bisa menjadi contoh dan pergerakan perbaikan moral kepada masyarakat",
                 isAnswer: false,
             },
             {
-                pilihan: "Sebagai socisAnswer: false},ial control mahasiswa",
+                pilihan: "Sebagai social control mahasiswa",
                 isAnswer: false,
             },
         ],
@@ -1548,27 +1599,27 @@ const dataPilgan = [
         jawaban: [
             {
                 pilihan:
-                    "Pendidikan dan Pengajaran, Penelitian dan Pengembangan, Pengabdian Kepada MasyaisAnswer: true},rakat",
+                    "Pendidikan dan Pengajaran, Penelitian dan Pengembangan, Pengabdian Kepada Masyarakat",
                 isAnswer: true,
             },
             {
                 pilihan:
-                    "Pengajaran dan Pendidikan, Penelitian dan Perencanaan, PengabdisAnswer: false},ian Kepada Masyarakat",
+                    "Pengajaran dan Pendidikan, Penelitian dan Perencanaan, Pengabdian Kepada Masyarakat",
                 isAnswer: false,
             },
             {
                 pilihan:
-                    "Pengajaran dan Pengabdian, Perencanaan dan PeisAnswer: false},ngembangan, Pembekalan Kepada Masyarakat",
+                    "Pengajaran dan Pengabdian, Perencanaan dan Pengembangan, Pembekalan Kepada Masyarakat",
                 isAnswer: false,
             },
             {
                 pilihan:
-                    "Pembelajaran dan Penelitian,isAnswer: false}, Perencanaan dan Pengembangan, Pengabdian Kepada Masyarakat",
+                    "Pembelajaran dan Penelitian, Perencanaan dan Pengembangan, Pengabdian Kepada Masyarakat",
                 isAnswer: false,
             },
             {
                 pilihan:
-                    "Pendidikan isAnswer: false},dan Penelitian, Perencanaan dan Pengembangan, Pengabdian Kepada Masyarakat",
+                    "Pendidikan dan Penelitian, Perencanaan dan Pengembangan, Pengabdian Kepada Masyarakat",
                 isAnswer: false,
             },
         ],
@@ -2108,14 +2159,16 @@ export const pilgan = () => {
 };
 
 export const cekJadwalPilgan = (cluster) => {
-    const now = new Date().getDay;
-    if (now <= 13 && now >= 14 && cluster >= 1 && cluster <= 16) {
+    const now = new Date().getDate();
+    console.log(cluster);
+    console.log(now);
+    if (now >= 24 && now <= 25 && cluster >= 1 && cluster <= 16) {
         return true;
-    } else if (now <= 15 && now >= 16 && cluster >= 17 && cluster <= 32) {
+    } else if (now >= 26 && now <= 27 && cluster >= 17 && cluster <= 32) {
         return true;
-    } else if (now <= 17 && now >= 18 && cluster >= 33 && cluster <= 48) {
+    } else if (now >= 28 && now <= 29 && cluster >= 33 && cluster <= 48) {
         return true;
-    } else if (now <= 19 && now >= 20 && cluster >= 49 && cluster <= 64) {
+    } else if (now >= 30 && now <= 31 && cluster >= 49 && cluster <= 64) {
         return true;
     } else {
         return false;
