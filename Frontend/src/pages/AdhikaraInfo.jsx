@@ -5,12 +5,11 @@ import styles from './AdhikaraInfo.module.css';
 import { Link } from 'react-router-dom';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import { useArticles } from '../routes/Context';
+import { abhiyaksaInfo } from './AbhiyaksaInfoData';
 
 Aos.init();
 
-const AdhikaraInfo = ({ match }) => {
-	const { articles, setArticles } = useArticles();
+const AdhikaraInfo = () => {
 	return (
 		<>
 			<Sections
@@ -44,101 +43,16 @@ const AdhikaraInfo = ({ match }) => {
 				propsClass2={'w-full my-20  w-full '}
 			>
 				<div className={`${styles.infoCardWrapper}`}>
-          <Link to={`/abhiyaksa-info/panduan-oh`}>
-						<Cards title={'Panduan Open House'} bg={'bg-openhouse-bg'} />
-					</Link>
-          <Link to={`/abhiyaksa-info/penugasan`}>
-						<Cards title={'Penugasan RAJA Brawijaya 2021'} bg={'bg-penugasan-bg'} />
-					</Link>
-					<Link to={`/abhiyaksa-info/pendataan-email-ub-yang-terkendala`}>
-						<Cards
-							title={'Pendataan Email UB yang Terkendala'}
-							bg={'bg-email-bg'}
-						/>
-					</Link>
-					<Link to={`/abhiyaksa-info/laporan-pelecehan-seksual`}>
-						<Cards
-							title={'Laporan Pelecehan Seksual'}
-							bg={'bg-panduan-bg'}
-						/>
-					</Link>
-					<Link to={`/abhiyaksa-info/info-kesalahan-enroll`}>
-						<Cards
-							title={'Informasi Kesalahan Enroll Classroom'}
-							bg={'bg-enroll-bg'}
-						/>
-					</Link>
-					<Link to={`/abhiyaksa-info/info-vbg`}>
-						<Cards
-							title={'Informasi Virtual Background'}
-							bg={'bg-vbg-bg'}
-						/>
-					</Link>
-					<Link to={`/abhiyaksa-info/info-rangkaian`}>
-						<Cards
-							title={'Informasi Pelaksanaan Rangkaian'}
-							bg={'bg-rangkaian-bg'}
-						/>
-					</Link>
-					<Link to={`/abhiyaksa-info/info-pkkmb-fakultas`}>
-						<Cards
-							title={'Informasi PKKMB Fakultas'}
-							bg={'bg-ospekFak-bg'}
-						/>
-					</Link>
-					<Link to={`/abhiyaksa-info/info-pertanyaan`}>
-						<Cards
-							title={'Informasi Pertanyaan PKKMB'}
-							bg={'bg-halo-bg'}
-						/>
-					</Link>
-					<Link to={`/abhiyaksa-info/info-atribut`}>
-						<Cards title={'Informasi Atribut'} bg={'bg-atribut-bg'} />
-					</Link>
-
-					{articles.length > 0 ? (
-						articles.map((article, index) => {
+					{abhiyaksaInfo.map((data, index) => {
+						if (data.slug !== null) {
 							return (
-								<Link to={`/abhiyaksa-info/${article.slug}`} key={index}>
-									<Cards
-										title={`${article.title}`}
-										bg={`${article.image.url}`}
-									/>
+								<Link to={data.slug}>
+									<Cards title={data.title} bg={data.bg} key={index} />
 								</Link>
 							);
-						})
-					) : (
-						<div>loading</div>
-					)}
-					<Link to={`/abhiyaksa-info/info-twibbon`}>
-						<Cards title={'Informasi Twibbon'} bg={'bg-twibbon-bg'} />
-					</Link>
-
-					<Link to={`/abhiyaksa-info/panduan-pkkmb`}>
-						<Cards title={'Panduan PKKMB 2021'} bg={'bg-kbgo-bg'} />
-					</Link>
-					
+						}
+					})}
 					<div></div>
-
-					{/* <Link to={`/abhiyaksa-info/informasi-lain1`}>
->>>>>>> 40e8ea9683c95396645d05f3f8d96ff10c951d7a
-						<Cards title={'Informasi 1'} bg={'bg-sekilas3-bg'}/>
-					</Link> */}
-					{/* {articles === ''
-						? 'anjing'
-						: articles.map((article) => {
-								return (
-									<Link to={`/abhiyaksa-info/${article.id}`}>
-										<Cards
-											title={`${article.title}`}
-											fetchImg={`http://103.139.244.67${article.image.url}`}
-										/>
-									</Link>
-								);
-						  })} */}
-					{/* <Link to={`/abhiyaksa-info/informasi-lain2`} className={`hidden`}> 
-						<Cards title={'Informasi 2'} bg={'bg-sekilas1-bg'}/>
-					</Link> */}
 				</div>
 			</Sections>
 		</>

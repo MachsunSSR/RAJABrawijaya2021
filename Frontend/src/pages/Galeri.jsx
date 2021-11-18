@@ -12,31 +12,31 @@ import 'aos/dist/aos.css';
 Aos.init();
 
 const Galeri = () => {
-	const [visible, setVisible] = useState(false);
-	const [currentImage, setCurrentImage] = useState(0);
+	const [viewerData, setViewerData] = useState({
+		visible: false,
+		currentImg: 0,
+	});
 	const [modalData, setModalData] = useState();
 	const [filtered, setFiltered] = useState('semua');
-	let close = true;
-	const handleOpenModal = (link) => {
-		setModalData({ link, close });
-	};
-	const handleCloseModal = () => {
-		setModalData();
-	};
 
-	const openLightbox = useCallback((event, { photo, index }) => {
-		if (photo.links !== '') {
-			handleOpenModal(photo.links);
-		} else {
-			setCurrentImage(index);
-			setVisible(true);
-		}
-	}, [handleOpenModal]);
+	const openLightbox = useCallback(
+		(event, { photo, index }) => {
+			if (photo.links !== '') {
+				setModalData({ link: photo.links });
+			} else {
+				setViewerData((viewerData) => ({
+					visible: true,
+					currentImg: index,
+				}));
+			}
+		},
+		[setModalData]
+	);
 
 	const closeLightbox = () => {
-		setCurrentImage(0);
-		setVisible(false);
+		setViewerData((viewerData) => ({ visible: false, currentImg: 0 }));
 	};
+
 	return (
 		<>
 			<Sections
@@ -50,11 +50,14 @@ const Galeri = () => {
 						<div className="max-w-sm lg:self-start md:self-start xl:self-start ex:self-start exl:self-start">
 							<h1
 								className={`batavia text-5xl text-white ${styles.galeriHeading}`}
-                        data-aos="fade-right"
+								data-aos="fade-right"
 							>
 								Galeri
 							</h1>
-							<p className={`text-white pb-5 ${styles.galeriDesc}`} data-aos="fade-up">
+							<p
+								className={`text-white pb-5 ${styles.galeriDesc}`}
+								data-aos="fade-up"
+							>
 								Berikut adalah beberapa foto dan video pada rangkaian
 								RAJA Brawijaya sebelumnya.
 							</p>
@@ -83,49 +86,83 @@ const Galeri = () => {
 					<div className="flex space-x-3 mb-5">
 						<p
 							className={classNames(
-								'cursor-pointer text-lg text-purpleMaghrib ex:text-xl exl:text-2xl', filtered === 'semua' ? 'font-bold border-b-2 border-purpleMaghrib' : ''
+								'cursor-pointer text-lg text-purpleMaghrib ex:text-xl exl:text-2xl',
+								filtered === 'semua'
+									? 'font-bold border-b-2 border-purpleMaghrib'
+									: ''
 							)}
-                        onClick={() => setFiltered('semua')}
+							onClick={() => setFiltered('semua')}
 						>
 							Semua
 						</p>
 						<p
 							className={classNames(
-								'cursor-pointer text-lg text-purpleMaghrib ex:text-xl exl:text-2xl', filtered === 'foto' ? 'font-bold border-b-2 border-purpleMaghrib' : ''
+								'cursor-pointer text-lg text-purpleMaghrib ex:text-xl exl:text-2xl',
+								filtered === 'foto'
+									? 'font-bold border-b-2 border-purpleMaghrib'
+									: ''
 							)}
-                     onClick={() => setFiltered('foto')}
+							onClick={() => setFiltered('foto')}
 						>
 							Foto
 						</p>
 						<p
 							className={classNames(
-								'cursor-pointer  text-lg text-purpleMaghrib ex:text-xl exl:text-2xl', filtered === 'video' ? 'font-bold border-b-2 border-purpleMaghrib' : ''
+								'cursor-pointer  text-lg text-purpleMaghrib ex:text-xl exl:text-2xl',
+								filtered === 'video'
+									? 'font-bold border-b-2 border-purpleMaghrib'
+									: ''
 							)}
-                     onClick={() => setFiltered('video')}
+							onClick={() => setFiltered('video')}
 						>
 							Video
 						</p>
 					</div>
 					<div>
 						<Viewer
-							visible={visible}
+							visible={viewerData.visible}
 							onClose={closeLightbox}
 							images={photos}
-							activeIndex={currentImage}
+							activeIndex={viewerData.currentImg}
 						/>
 						{filtered === 'semua' ? (
-							<div className={`${styles.contentWrapper} object-cover flex-start`} key={Math.random()}>
-								<Gallery photos={photos} className={`object-cover flex-start`} onClick={openLightbox} />
-								<Gallery photos={videos} className={`object-cover flex-start`} onClick={openLightbox} />
+							<div
+								className={`${styles.contentWrapper} object-cover flex-start`}
+								key={Math.random()}
+							>
+								<Gallery
+									photos={photos}
+									className={`object-cover flex-start`}
+									onClick={openLightbox}
+								/>
+								<Gallery
+									photos={videos}
+									className={`object-cover flex-start`}
+									onClick={openLightbox}
+								/>
 							</div>
 						) : filtered === 'foto' ? (
-                     <div className={`${styles.contentWrapper} object-cover flex-start`} key={Math.random()}>
-							<Gallery photos={photos} className={`object-cover flex-start`} onClick={openLightbox} />
-                     </div>
+							<div
+								className={`${styles.contentWrapper} object-cover flex-start`}
+								key={Math.random()}
+							>
+								<Gallery
+									photos={photos}
+									className={`object-cover flex-start`}
+									onClick={openLightbox}
+								/>
+							</div>
 						) : filtered === 'video' ? (
-                     <div className={`${styles.contentWrapper} object-cover flex-start`} key={Math.random()}>
-							<Gallery photos={videos} className={`object-cover flex-start`} onClick={openLightbox} />
-                     </div>
+							<div
+								className={`${styles.contentWrapper} object-cover flex-start`}
+								key={Math.random()}
+							>
+								<Gallery
+									photos={videos}
+									className={`object-cover flex-start`}
+									onClick={openLightbox}
+								/>
+							</div>
 						) : (
 							''
 						)}
@@ -135,7 +172,7 @@ const Galeri = () => {
 					className={`${styles1.modal} ${
 						modalData ? 'flex justify-center items-center' : 'hidden'
 					}`}
-					onClick={handleCloseModal}
+					onClick={() => setModalData()}
 				>
 					<div className={`${styles1.modalContent}`}>
 						<img
@@ -147,7 +184,7 @@ const Galeri = () => {
 							{modalData ? (
 								<div className="h-full mt-5">
 									<iframe
-                           title="Youtube Video"
+										title="Youtube Video"
 										src={`${modalData.link}`}
 										className="my-0 mx-auto"
 										width="100%"

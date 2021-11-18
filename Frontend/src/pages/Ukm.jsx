@@ -1,9 +1,7 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import Cards from '../components/SekilasCard';
 import Sections from '../components/Sections';
 import styles from '../pages/Ukm.module.css';
-import styles1 from './AdhikaraInfo.module.css';
 import classNames from 'classnames';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
@@ -13,97 +11,68 @@ import { getDetailAllUkm, loading, versions } from './ukmData';
 
 const Ukm = () => {
 	const [pageCount, setPageCount] = useState();
-	const [offsetData, setOffsetData] = useState(0);
 	const [dataToBePosted, setData] = useState([]);
 	const [pages, setPages] = useState(1);
 	const [scroll, setScroll] = useState();
 	const [filtered, setFiltered] = useState('Semua');
-	const getData = () => {
-    let data = []
-		axios.get(`https://rajabrawijaya.ub.ac.id/api/maba/ukm/getDetailAllUkm`).then((res) => {
-			localStorage.setItem('data', JSON.stringify(res.data.data));
-			getLocalData();
-		});
+
+	const getApiData = () => {
+		localStorage.setItem('data', JSON.stringify(getDetailAllUkm));
+		getLocalData();
+		// let data = [];
+		// axios
+		// 	.get(`https://rajabrawijaya.ub.ac.id/api/maba/ukm/getDetailAllUkm`)
+		// 	.then((res) => {
+		// 		localStorage.setItem('data', JSON.stringify(res.data.data));
+		// 		getLocalData();
+		// 	});
 	};
 
-	const getLocalData = (data, words = 'Semua') => {
-		let perPages = JSON.parse(localStorage.getItem('perPages'));
-		if (words === 'Semua') {
-			data = JSON.parse(localStorage.getItem('data'));
-		}
-    setData(data);
-		// if (data.length <= perPages) {
-    //   setPageCount(1);
-    //   setData(data);
-		// } else {
-		// 	setPageCount(Math.ceil(data.length / perPages));
-		// 	const slice = data.slice(offsetData, offsetData + perPages);
-		// 	setData(slice);
-		// }
-    // if (filtered === 'Olahraga') {
-		// 	hasFiltered = filteringByButton('Olahraga')
-		// }
-		// if (filtered === 'Khusus') {
-		//   hasFiltered = filteringByButton('Khusus')
-		// }
-		// if (filtered === 'Kesenian') {
-		//   hasFiltered = filteringByButton('Kesenian')
-		// }
-		// if (filtered === 'Penalaran') {
-		//   hasFiltered = filteringByButton('Penalaran')
-		// }
-		// if (filtered === 'Kesejahteraan') {
-		//   hasFiltered = filteringByButton('Kesejahteraan')
-		// }
-
-	};
-
-	const handleFilteredButton = (words) => {
-		setFiltered(words);
-		setOffsetData(1);
-		setPages(1);
+	const getLocalData = (e, value = 1) => {
+		//filter data
 		let hasFiltered = [];
-		JSON.parse(localStorage.getItem('data')).forEach((data) => {
-			data.kriteria.forEach((kriteria) => {
-				if (kriteria.kriteria === words) hasFiltered.push(data);
+		if (filtered === 'Semua') {
+			hasFiltered = JSON.parse(localStorage.getItem('data'));
+		} else {
+			JSON.parse(localStorage.getItem('data')).forEach((data) => {
+				data.kriteria.forEach((kriteria) => {
+					if (kriteria.kriteria === filtered) hasFiltered.push(data);
+				});
 			});
-		});
-		getLocalData(hasFiltered, words);
+		}
+		//lakukan perhitungan pagination
+		hasFiltered = handlePagination(hasFiltered, value);
+		//set data yang akan dipost
+		setData(hasFiltered);
 	};
 
-	// const handlePagination = (e, value) => {
-	// 	let perPages = JSON.parse(localStorage.getItem('perPages'));
-	// 	setPages(value);
-	// 	const offset = value * perPages;
-	// 	setOffsetData(offset);
-	// };
+	const handlePagination = (hasFiltered, value) => {
+		//total data bagi data yang ditampilkan perpage
+		let splitPageByTotalData = Math.ceil(hasFiltered.length / 12);
+		//set hasilnya jadi berapa page yang akan dipagination
+		setPageCount(splitPageByTotalData);
+		//set value di component pagination, page 1.. page 2 ... dst
+		setPages(value);
+		//set offset atau pergeseran data tiap page yang diklik
+		const offset = value * 12;
+		//slice array dari indeks awal sampai batas atasnya tiap pergeseran pagination
+		let copyData = hasFiltered.slice(offset - 12, offset);
+		return copyData;
+	};
 
 	useEffect(() => {
-		localStorage.setItem('perPages', JSON.stringify(12));
-		if (localStorage.getItem('data') === null || JSON.parse(localStorage.getItem('version')) !== versions) {
-			getData();
-      localStorage.setItem('version', JSON.stringify(versions));
+		if (
+			localStorage.getItem('data') === null ||
+			JSON.parse(localStorage.getItem('version')) !== versions
+		) {
+			getApiData();
+			localStorage.setItem('version', JSON.stringify(versions));
 			console.log('fetching to server....');
 		} else {
 			getLocalData();
 			console.log('fetching to local...');
 		}
-	}, []);
-
-  // const filteringByButton = (kriterias) => {
-	//   let hasFiltered = [];
-	//   JSON.parse(localStorage.getItem('data')).forEach((data) => {
-	//     data.kriteria.forEach((kriteria) => {
-	//       if (kriteria === kriterias) hasFiltered.push(data);
-	//     });
-	//   });
-
-	//   return hasFiltered;
-	// }
-
-	// useEffect(() => {
-	// 	getLocalData();
-	// }, [filtered, offsetData]);
+	}, [filtered]);
 
 	useEffect(() => {
 		window.onscroll = () => {
@@ -154,7 +123,7 @@ const Ukm = () => {
 									? 'font-bold  bg-greenLumut rounded-3'
 									: ''
 							)}
-							onClick={() => handleFilteredButton('Semua')}
+							onClick={() => setFiltered('Semua')}
 						>
 							Semua
 						</p>
@@ -165,7 +134,7 @@ const Ukm = () => {
 									? 'font-bold  bg-greenLumut rounded-3'
 									: ''
 							)}
-							onClick={() => handleFilteredButton('Olahraga')}
+							onClick={() => setFiltered('Olahraga')}
 						>
 							Olahraga
 						</p>
@@ -176,7 +145,7 @@ const Ukm = () => {
 									? 'font-bold  bg-greenLumut  rounded-3'
 									: ''
 							)}
-							onClick={() => handleFilteredButton('Khusus')}
+							onClick={() => setFiltered('Khusus')}
 						>
 							Khusus
 						</p>
@@ -187,7 +156,7 @@ const Ukm = () => {
 									? 'font-bold  bg-greenLumut  rounded-3'
 									: ''
 							)}
-							onClick={() => handleFilteredButton('Kesenian')}
+							onClick={() => setFiltered('Kesenian')}
 						>
 							Kesenian
 						</p>
@@ -198,7 +167,7 @@ const Ukm = () => {
 									? 'font-bold  bg-greenLumut  rounded-3'
 									: ''
 							)}
-							onClick={() => handleFilteredButton('Penalaran')}
+							onClick={() => setFiltered('Penalaran')}
 						>
 							Penalaran
 						</p>
@@ -209,7 +178,7 @@ const Ukm = () => {
 									? 'font-bold  bg-greenLumut  rounded-3'
 									: ''
 							)}
-							onClick={() => handleFilteredButton('Kesejahteraan')}
+							onClick={() => setFiltered('Kesejahteraan')}
 						>
 							Kesejahteraan
 						</p>
@@ -221,10 +190,7 @@ const Ukm = () => {
 							{dataToBePosted.length !== 0
 								? dataToBePosted.map((data) => {
 										return (
-											<Link
-												to={`/ukm/${data.slug}`}
-												key={data.id}
-											>
+											<Link to={`/ukm/${data.slug}`} key={data.id}>
 												<div
 													className={`${styles.cardUkm} bg-cardUkm-bg flex justify-center bg-no-repeat items-center px-2`}
 												>
@@ -251,16 +217,16 @@ const Ukm = () => {
 								  })}
 						</div>
 					</div>
-					{/* <div className="w-full flex justify-center items-center mt-10">
+					<div className="w-full flex justify-center items-center mt-10">
 						<Stack spacing={2}>
 							<Pagination
 								count={pageCount}
 								page={pages}
 								color="primary"
-								onChange={handlePagination}
+								onChange={getLocalData}
 							/>
 						</Stack>
-					</div> */}
+					</div>
 				</Sections>
 			</div>
 		</>

@@ -4,7 +4,6 @@ import styles from './Maps.module.css';
 
 const Maps = () => {
 	const [pinActive, setPinActive] = useState('');
-	console.log(pinActive);
 	const togglePin = (id) => {
 		if (pinActive === '') {
 			setPinActive(id);

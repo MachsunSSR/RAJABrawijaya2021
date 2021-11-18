@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './SekilasCard.module.css';
-// ex:min-w-cards-ex ex:min-h-cards-ex min-w-cards
+
 const Cards = ({ title, bg, from }) => {
 	return (
 		<>

@@ -3,35 +3,30 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getDetailAllUkm, versions } from '../pages/ukmData';
 import Sections from './Sections';
-import styles from '../components/DetailUkm.module.css';
-import styles1 from '../pages/Faq.module.css';
-import classnames from 'classnames';
-import { Skeleton } from '@mui/material';
-import DetailUkmSkeleton from './DetailUkmSkeleton';
-
+import ProfileUkm from './ProfileUkm';
+import DescriptionUkm from './DescriptionUkm';
+import KegiatanUkm from './KegiatanUkm';
+import QuestionAnswer from './QuestionAnswer';
 const DetailUkm = () => {
 	let { slug } = useParams();
-	const [clicked, setClicked] = useState(false);
-	const [idActive, setIdActive] = useState(0);
+	const [dataDetail, setDataDetail] = useState([]);
 
-	const handleClick = (id) => {
-		setClicked(!clicked);
-		setIdActive(id);
+	const getData = () => {
+		// axios.get(`https://rajabrawijaya.ub.ac.id/api/maba/ukm/getDetailAllUkm`).then((res) => {
+		// 	let data = [];
+		// 	localStorage.setItem('data', JSON.stringify(res.data.data));
+		// 	getDataBySlug();
+		// });
+		localStorage.setItem('data', JSON.stringify(getDetailAllUkm));
+		getDataBySlug();
 	};
 
-	const [dataDetail, setDataDetail] = useState([]);
 	const getDataBySlug = () => {
+		// let data = [];
 		let data = JSON.parse(localStorage.getItem('data'));
 		data = data.filter((data) => data.slug === slug);
 		setDataDetail(data);
-	};
-
-	const getData = () => {
-		axios.get(`https://rajabrawijaya.ub.ac.id/api/maba/ukm/getDetailAllUkm`).then((res) => {
-			let data = [];
-			localStorage.setItem('data', JSON.stringify(res.data.data));
-			getDataBySlug();
-		});
+		console.log(dataDetail);
 	};
 
 	useEffect(() => {
@@ -58,13 +53,15 @@ const DetailUkm = () => {
 				propsClass2={'mt-25 lg:mb-5 xl:mb-5 w-full'}
 			>
 				{dataDetail.length === 0 ? (
-					<>
-						<DetailUkmSkeleton />
-					</>
+					<div>
+						<ProfileUkm data={[]} />
+						<DescriptionUkm data={[]} />
+					</div>
 				) : (
-					dataDetail.map((data, index) => {
-						return <DetailUkmSkeleton data={data} key={index}/>;
-					})
+					<div>
+						<ProfileUkm data={dataDetail[0]} />
+						<DescriptionUkm data={dataDetail[0]} />
+					</div>
 				)}
 			</Sections>
 			<Sections
@@ -78,36 +75,18 @@ const DetailUkm = () => {
 				<div className="">
 					<div className="grid grid-cols-3 gap-5 xs:grid-cols-1">
 						{dataDetail.length !== 0
-							? dataDetail.map((data, index) => {
+							? dataDetail[0].kegiatan.map((dataKegiatan, index) => {
 									return (
-										// <div key={index}>
-											data.kegiatan.map((dataKegiatan, index) => {
-												return (
-													<div
-														className={`${styles.cardKegiatan} text-center p-5`}
-														key={index}
-													>
-														<h1 className="text-white font-bold text-xl mb-2">
-															{dataKegiatan.nama_kegiatan}
-														</h1>
-														<p className="text-lg text-white mt-5">
-															{dataKegiatan.deskripsi}
-														</p>
-													</div>
-												);
-											})
-										// </div>
+										<div key={index}>
+											<KegiatanUkm data={dataKegiatan} />
+										</div>
 									);
 							  })
-							: [1, 2, 3].map((data) => {
+							: [1, 2, 3].map((data, index) => {
 									return (
-										<Skeleton
-                    key = {data}
-											variant="rectangular"
-											animation="wave"
-											width={'100%'}
-											height={300}
-										/>
+										<div key={index}>
+											<KegiatanUkm data={{}} />
+										</div>
 									);
 							  })}
 					</div>
@@ -119,53 +98,18 @@ const DetailUkm = () => {
 
 				<div>
 					{dataDetail.length !== 0 ? (
-						dataDetail.map((data, indexs) => {
+						dataDetail[0].faq.map(({ question, answer }, index) => {
 							return (
-								<div key={indexs}>
-									{data.faq.map(({ question, answer }, index) => {
-										return (
-											<div
-												className={`${styles.a1} mt-2`}
-												onClick={() => handleClick(index)}
-												key={index}
-											>
-												<div
-													className={`${styles.ask} ${
-														clicked && idActive === index
-															? 'bg-yellowPucat text-black'
-															: 'bg-greenDetail text-purpleMaghrib'
-													}`}
-												>
-													<h1>{question}</h1>
-													<img
-														src={`${process.env.PUBLIC_URL}/assets/faqicon.svg`}
-														alt="icon"
-														className={`${styles.faqIcon}`}
-													/>
-												</div>
-												<div
-													className={classnames(
-														styles.ans,
-														clicked && idActive === index
-															? `${styles.show} 'bg-white'`
-															: ''
-													)}
-												>
-													<p>{answer}</p>
-												</div>
-											</div>
-										);
-									})}
-								</div>
+								<QuestionAnswer
+									question={question}
+									answer={answer}
+									idx={index}
+									from={'detailUkm'}
+								/>
 							);
 						})
 					) : (
-						<Skeleton
-							variant="rectangular"
-							animation="wave"
-							width={'100%'}
-							height={50}
-						/>
+						<QuestionAnswer question={''} />
 					)}
 				</div>
 			</Sections>

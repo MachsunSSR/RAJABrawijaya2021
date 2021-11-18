@@ -6,20 +6,10 @@ import classNames from 'classnames';
 import Tilt from 'react-tilt';
 
 const Ragam = () => {
-	const [active, setActive] = useState( {
-      id: 1,
-      namaOspek: "PKKMB FKH 2021",
-      desc: "PROBINMABA (Program Pembinaan Mahasiswa Baru) merupakan sebuah program dalam upaya pembinaan Mahasiswa Baru Fakultas Kedokteran Hewan Universitas Brawijaya yang diadakan rutin setiap tahunnya. PROBINMABA FKH UB memiliki dua rangkaian yakni PKKMABA (Pengenalan Kehidupan Kampus) dan KRIMA (Krida Mahasiswa). PROBINMABA FKH UB mengangkat sebuah tema yakni “Aktualisasi Pembentukan Pribadi Mahasiswa Baru yang Berintegritas Tinggi Sesuai Keprofesian Dokter Hewan”.",
-      sosmed: [
-          ["https://www.instagram.com/maba_fkhubofficial/", "instagram"],
-      ],
-      img: "fkh",
-  });
+	const [active, setActive] = useState(ragamData[0]);
 	return (
 		<Sections
-			propsClass={
-				'justify-center items-center relative'
-			}
+			propsClass={'justify-center items-center relative'}
 			propsClass2={'w-full '}
 		>
 			<div className="py-25 xs:py-10">
@@ -88,7 +78,7 @@ const Ragam = () => {
 													href={active.sosmed[index][0]}
 													target="_blank"
 													rel="noreferrer"
-                          key={index}
+													key={index}
 												>
 													<img
 														src={`${process.env.PUBLIC_URL}/assets/icon/${active.sosmed[index][1]}.png`}

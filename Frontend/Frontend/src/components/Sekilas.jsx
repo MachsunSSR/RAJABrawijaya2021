@@ -8,11 +8,11 @@ import { sekilasData } from "./sekilasData";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useHistory } from "react-router-dom";
-import { useArticles } from "../routes/Context";
+// import { useArticles } from "../routes/Context";
 
 const Sekilas = () => {
     let history = useHistory();
-    const { articles, setArticles } = useArticles();
+    // const { articles, setArticles } = useArticles();
     const breakPoints = [
         { width: 1, itemsToShow: 1, showArrows: false },
         { width: 530, itemsToShow: 2 },
@@ -51,7 +51,7 @@ const Sekilas = () => {
                     </h1>
                 </div>
                 <Carousel breakPoints={breakPoints}>
-                    {articles.map((article) => {
+                    {/* {articles.map((article) => {
                         return (
                             <div
                                 key={article.id}
@@ -69,7 +69,7 @@ const Sekilas = () => {
                                 />
                             </div>
                         );
-                    })}
+                    })} */}
                     {sekilasData.map(({ id, title, link, desc, bg }) => {
                         return (
                             <div

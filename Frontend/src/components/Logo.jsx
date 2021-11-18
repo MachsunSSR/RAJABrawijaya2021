@@ -9,24 +9,20 @@ import Tilt from 'react-tilt';
 Aos.init();
 
 const Logo = () => {
-	const [active, setActive] = useState(1);
-	const [nameActive, setNameActive] = useState('Jamang Susun 3');
-	const [imgActive, setImgActive] = useState('jamang');
-	const [descActive, setDescActive] = useState(
-		'Melambangkan 3 rangkaian Raja Brawijaya sebagai awal (PKKMB), tengah (PBPK), dan akhir (OH) perjalanan sebagai mahasiswa baru, serta melambangkan Tri Dharma Perguruan Tinggi.'
-	);
+	const [dataActive, setDataActive] = useState({
+		nama: 'Jamang Susun 3',
+		desc: 'Melambangkan 3 rangkaian Raja Brawijaya sebagai awal (PKKMB), tengah (PBPK), dan akhir (OH) perjalanan sebagai mahasiswa baru, serta melambangkan Tri Dharma Perguruan Tinggi.',
+		img: 'jamang',
+		id: 1,
+	});
+
 	const handleActive = (e, nama, desc, img, id) => {
-		setNameActive(nama);
-		setDescActive(desc);
-		setImgActive(img);
-		setActive(id);
+		setDataActive((dataActive) => ({ nama, desc, img, id }));
 	};
 
 	return (
 		<Sections
-			propsClass={
-				'justify-center items-center relative'
-			}
+			propsClass={'justify-center items-center relative'}
 			propsClass2={'w-full'}
 		>
 			<div className="py-25 xs:py-10">
@@ -60,7 +56,7 @@ const Logo = () => {
 										<div
 											className={`${classNames(
 												styles.logoBox,
-												id === active
+												id === dataActive.id
 													? 'bg-purpleMaghrib'
 													: 'bg-transparent'
 											)}`}
@@ -114,12 +110,12 @@ const Logo = () => {
 									<h1
 										className={`text-purpleMaghrib text-4xl xs:text-3xl lg:text-2xl font-bold xs:text-center exl:text-5xl`}
 									>
-										{nameActive}
+										{dataActive.nama}
 									</h1>
 									<p
 										className={`text-white font-light text-md mt-3 xs:text-center exl:text-xl`}
 									>
-										{descActive}
+										{dataActive.desc}
 									</p>
 									<div className={`${styles.lines}`}></div>
 								</div>
@@ -139,8 +135,8 @@ const Logo = () => {
 							}}
 						>
 							<img
-								src={`${process.env.PUBLIC_URL}/assets/logo/${imgActive}.png`}
-								alt={`${imgActive}`}
+								src={`${process.env.PUBLIC_URL}/assets/logo/${dataActive.img}.png`}
+								alt={`${dataActive.img}`}
 								className={` ${styles.imgLogo}`}
 							/>
 						</Tilt>

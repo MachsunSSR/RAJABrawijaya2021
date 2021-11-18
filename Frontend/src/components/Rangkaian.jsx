@@ -9,9 +9,7 @@ Aos.init();
 const Rangkaian = () => {
 	return (
 		<Sections
-			propsClass={
-				'justify-center items-center relative'
-			}
+			propsClass={'justify-center items-center relative'}
 			propsClass2={'w-full'}
 		>
 			<div className="flex justify-between">
@@ -27,7 +25,7 @@ const Rangkaian = () => {
 				<div className={`${styles.rangkaianTextHeading}`}>
 					<h1
 						className={`batavia text-jumbotronmd xs:text-5xl sm:text-jumbotronsm md:text-jumbotronmd text-pinkThrid ${styles.rangkaianHeadline}`}
-                  data-aos="fade-up"
+						data-aos="fade-up"
 					>
 						Rangkaian Acara
 					</h1>

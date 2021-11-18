@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import InfoTemplate from './InfoTemplate';
 const Panduan = () => {
 	// const [cluster, setCluster] = useState([]);
