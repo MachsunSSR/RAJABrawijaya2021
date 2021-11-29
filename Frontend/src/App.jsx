@@ -1,22 +1,22 @@
 import React from 'react';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import Landing from './pages/Landing';
-import Navbar from './components/Navbar';
-import Galeri from './pages/Galeri';
-import AdhikaraInfo from './pages/AdhikaraInfo';
-import Faq from './pages/Faq';
-import AnnounceButton from './components/AnnounceButton';
-import MusicButton from './components/MusicButton';
-import Footer from './components/Footer';
-import NotFound from './pages/NotFound';
+import Navbar from './components/Navbar/Navbar';
+import Galeri from './pages/Galeri/Galeri';
+import AdhikaraInfo from './pages/AbhiyaksaInfo/AdhikaraInfo';
+import Faq from './pages/Faq/Faq';
+import AnnounceButton from './components/AnnounceButton/AnnounceButton';
+import MusicButton from './components/MusicButton/MusicButton';
+import Footer from './components/Footer/Footer';
+import NotFound from './pages/404/NotFound';
 import ScrollTop from './components/ScrollTop';
-import ComingSoon from './components/ComingSoon';
+import ComingSoon from './components/ComingSoon/ComingSoon';
 import AccessibleNavigationAnnouncer from './components/AccessibleNavigationAnnouncer';
-import Maps from './pages/Maps';
-import CountDown from './components/CountDown';
-import Ukm from './pages/Ukm';
-import DetailUkm from './components/DetailUkm';
-import { abhiyaksaInfo } from './pages/AbhiyaksaInfoData';
+import Maps from './pages/Maps/Maps';
+import CountDown from './components/CountDown/CountDown';
+import Ukm from './pages/Ukm/Ukm';
+import DetailUkm from './components/DetailUkm/DetailUkm';
+import { abhiyaksaInfo } from './pages/AbhiyaksaInfo/AbhiyaksaInfoData';
 
 export default function App() {
 	return (

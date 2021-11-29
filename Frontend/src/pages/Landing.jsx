@@ -1,9 +1,9 @@
-import Jumbotron from '../components/Jumbotron';
-import Logo from '../components/Logo';
-import Ragam from '../components/Ragam';
-import Rangkaian from '../components/Rangkaian';
-import Sekilas from '../components/Sekilas';
-import Statistik from '../components/Statistik';
+import Jumbotron from '../components/Jumbotron/Jumbotron';
+import Logo from '../components/ArtiLogo/Logo';
+import Ragam from '../components/Ragam/Ragam';
+import Rangkaian from '../components/Rangkaian/Rangkaian';
+import Sekilas from '../components/Sekilas/Sekilas';
+import Statistik from '../components/Statistik/Statistik';
 
 const Landing = () => {
 	return (
