@@ -4,7 +4,7 @@ namespace App\Helpers;
 
 class SIAMHelper
 {
-    // memasukan nim dan password yang benar saja yang boleh.
+    // memasukan nim dan password yang benar saja yang boleh
     public static function auth($nim, $password){
         $pass = md5('123ab' . $password) . '_' . $nim;
         $ip = $_SERVER['REMOTE_ADDR'];
@@ -21,6 +21,25 @@ class SIAMHelper
             return false;
 
         return $xml->CONTENT->USER;
+    }
+
+    public static function validateInstagram($url) {
+        $url  = 'https://api.instagram.com/oembed/?url=' . $url;
+        $curl = curl_init();
+        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        $x = curl_exec($curl);
+        curl_close($curl);
+        $result = json_decode($x, true);
+        return isset($result['title']);
+        // if (isset($result['title'])) {
+        //     if (str_contains(strtolower($result['title']), '#rajabrawijaya2021') &&
+        //     str_contains(strtolower($result['title']), '#kitasatubrawijaya') &&
+        //     str_contains(strtolower($result['title']), '#abhiyaksa59')) {
+        //         return 'true';
+        //     }
+        // }
+        // return 'false';
     }
 
     // CONST BAIS_LOGIN_URL = "https://bais.ub.ac.id/api/login/xmlapi/";

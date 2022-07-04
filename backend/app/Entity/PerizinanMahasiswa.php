@@ -4,16 +4,17 @@ namespace App\Entity;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Penugasan extends Model
+class PerizinanMahasiswa extends Model
 {
-    protected $table = '21_penugasan';
+    protected $table = '21_perizinan';
     protected $primaryKey = 'nim';
     protected $keyType = 'string';
     public $timestamps = false;
     public $incrementing = false;
     protected $guarded = [];
 
-    public function mahasiswa() {
+    public function Mahasiswa()
+    {
         return $this->belongsTo('App\Entity\Mahasiswa', 'nim', 'nim');
     }
 }

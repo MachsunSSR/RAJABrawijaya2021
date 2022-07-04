@@ -11,7 +11,7 @@ class Mahasiswa extends Model implements Authenticatable, JWTSubject
 {
     use AuthenticableTrait;
 
-    protected $table = 'mahasiswa';
+    protected $table = '21_maba';
     protected $primaryKey = 'nim';
     protected $keyType = 'string';
     public $timestamps = false;
@@ -24,6 +24,11 @@ class Mahasiswa extends Model implements Authenticatable, JWTSubject
 
     public function penugasan() {
         return $this->hasOne('App\Entity\Penugasan', 'nim', 'nim');
+    }
+
+    public function PerizinanMahasiswa()
+    {
+        return $this->hasMany('App\Entity\PerizinanMahasiswa', 'nim', 'nim');
     }
 
     public function getJWTIdentifier()

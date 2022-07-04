@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset('assets/raport/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('rapor/style.css') }}">
     <script src="https://kit.fontawesome.com/c2b9b7aca3.js"></script>
     <title>Raport Penilaian RAJA Brawijaya</title>
 
@@ -20,7 +20,7 @@
 
 <body>
     <div class="container-fluid edit-twibbon"
-        style="min-height:100vh;background-image: url('{{asset('assets/raport/bg.svg')}}');">
+        style="min-height:100vh;background-image: url('{{asset('rapor/bg.svg')}}');">
         <div class="judul text-center">
             <h1 style="font-size: 50px; margin-bottom:0px">Unduh Raport Penilaian</h1>
             <h3 style="font-size:35px;margin-top:0px;">RAJA Brawijaya 2020</h3>
@@ -37,7 +37,7 @@
                 <span data-v-28a36be6="">Informasi</span></div>
             <ol data-v-28a36be6="" class="p-0 pl-4">
                 <li data-v-28a36be6=""><strong data-v-28a36be6="">Nilai yang keluar merupakan hasil penilaian ketika kamu mengikuti RAJA Brawijaya 2020.</strong></li>
-                <li data-v-28a36be6="">Apabila terdapat kendala atau pertanyaan raport RAJA Brawijaya 2020 silahkan hubungi : <strong>-</strong></li>
+                <li data-v-28a36be6="">Apabila terdapat kendala atau pertanyaan raport RAJA Brawijaya 2020 silahkan hubungi : <strong>+6283856901707 (Firhan)</strong></li>
             </ol>
         </div>
         <form method="POST">
@@ -49,8 +49,11 @@
                         <input type="text" class="form-control" name="nim">
                     </div>
                     <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" class="form-control" name="password">
+                        <label for="angkatan">Angkatan</label>
+                        <select class="form-control" name="angkatan">
+                            <!-- <option value="2019">2019</option> -->
+                            <option value="2020">2020</option>
+                        </select>
                     </div>
                     <button type="submit" class="btn btn-success w-100">Unduh Raport</button>
                 </div>
